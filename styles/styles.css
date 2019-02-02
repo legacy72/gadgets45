@@ -15,7 +15,6 @@ li{
 	display: flex;
 	height: 128px;
 	align-items: center;
-	background-color: #f6f6f6;
 }
 .logo{
 	width: 300px;
@@ -150,10 +149,10 @@ li{
 	text-decoration: none;
 }
 
-.stock_and_bestsellers_container{
+.new_section_container{
 	margin-top: 100px;
 }
-.stock_and_bestsellers_title{
+.new_section_title{
 	height: 86px;
 	font-size: 30pt;
 	font-weight: bold;
@@ -236,9 +235,128 @@ li{
 	font-weight: bold;
 }
 
+.advertising{
+	margin-top: 100px;
+	height: 370px;
+	display: flex;
+    justify-content: space-between;
+}
+.left_advertising_block{
+	width: 670px;
+	height: 370px;
+	display: flex;
+	justify-content: center;
+	background: linear-gradient(to bottom left, #f0c1b7, #604c65);
+}
+.left_advertising{
+	display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.left_advertising_description{
+	color: #fff;
+	font-size: 20pt;
+	font-weight: bold;
+}
+.button_see_all{
+	margin-top: 30px;
+}
+.left_advertising_image{
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+}
+.right_advertising_block{
+	width: 470px;
+	display: flex;
+	flex-direction: column;
+    justify-content: space-between;
+}
+.right_advertising{
+	height: 170px;
+	display: flex;
+    justify-content: space-around;
+    align-items: center;
+	background: linear-gradient(to right, #f4f4f4, #d9d9ed);
+}
+.image_advertising{
+	width: 210px;
+	display: flex;
+	justify-content: center;
+}
+.description_advertising{
+	font-size: 20pt;
+	font-weight: bold;
+}
+
+.about_company{
+	width: 100%;
+	height: 520px;
+	display: flex;
+}
+.about_company_left_container{
+	background-color: #b8b8b8;
+	height: 460px;
+	width: 66%;
+}
+.about_company_right_container{
+	background-color: green;
+	width: 50%;
+	height: 460px;
+	margin-left: -35px;
+    margin-top: 60px;
+}
+.about_company_description{
+	width: 733px;
+	float: right;
+}
+.about_company_text{
+	width: 600px;
+}
+
+.advantages{
+	margin-top: 100px;
+	height: 140px;
+	display: flex;
+	justify-content: space-between;
+}
+.advantage_item{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.advantage_description{
+	text-align: center;
+}
 /*footer*/
 footer{
 	height: 170px;
 	background-color: #000;
 	padding: 0;
+}
+.footer_container{
+	height: 170px;
+	display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer_menu{
+	width: 500px;
+}
+.footer_menu ul{
+	display: flex;
+    justify-content: space-between;
+}
+.footer_menu ul li a{
+	color: #aeaeae;
+    text-decoration: none;
+}
+.footer_phone{
+	color: #aeaeae;
+	font-size: 14pt;
+}
+.footer_call_order{
+	color: #fff;
+	font-size: 14pt;
+	font-weight: bold;
 }

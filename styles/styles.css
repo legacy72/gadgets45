@@ -197,7 +197,7 @@ li{
 	margin-top: 100px;
 }
 .new_section_title{
-	height: 86px;
+	height: 68px;
 	font-size: 30px;
 	font-weight: 600;
 }
@@ -704,4 +704,120 @@ footer{
 }
 .catalog_item:nth-child(n+4){
 	margin-top: 30px;
+}
+.catalog_price_title{
+	font-size: 16px;
+	font-weight: 600;
+    margin: 30px 0 0 30px;
+}
+.price_range{
+	margin-top: 25px;
+	display: flex;
+	justify-content: center;
+}
+.price_range input{
+	width: 90px;
+	height: 35px;
+	background-color: #fff;
+	border: 0;
+    box-sizing: border-box;	
+    padding-left: 10px;
+}
+.price_to{
+	margin-left: 10px;
+}
+.price_variants{
+	margin-top: 30px;
+}
+.price_variants_row{
+	height: 30px;
+	font-size: 14px;
+    display: flex;
+    align-items: center;
+    margin-left: 36px;
+}
+.price_variants_row p{
+	margin-left: 5px;
+}
+/*order*/ 
+.order_container{ 
+	display: flex; 
+	justify-content: space-between; 
+} 
+.order_info{ 
+	width: 570px; 
+} 
+.order_contacts{ 
+	width: 470px; 
+}
+.order_info_title{
+	font-size: 20px;
+}
+.order_info_row{
+	width: 100%;
+	margin-top: 20px;
+	display: flex;
+	justify-content: space-between;
+}
+.order_input{
+	width: 100%;
+	height: 50px; 	
+    box-sizing: border-box;	
+	font-size: 16px; 
+	padding: 0 20px 0 20px; 
+	border: 0px; 
+	background-color: #f3f3f3;
+}
+.order_rich_text_box{
+	width: 100%;
+	height: 200px; 	
+    box-sizing: border-box;	
+	font-size: 16px; 
+	padding: 20px; 
+	border: 0px; 
+	background-color: #f3f3f3; 	
+}
+.street{ 
+	width: 570px;
+}
+.home_info{
+	width: 170px; 
+}
+.intercom_info{
+	width: 370px;
+}
+.btn{
+	width: 100%;
+	height: 70px;
+	margin-top: 20px;
+	outline: none;
+    font-size: 22px;
+    cursor: pointer; 
+	color: #fff;
+    background: linear-gradient(to right, #068eee, #6e37fb);
+	border: none;
+}
+.paymant_block{
+	margin-top: 30px;
+}
+.paymant_title{
+	font-size: 20px;
+}
+.paymant{
+	margin-top: 20px;
+	width: 570px;
+	height: 65px;
+	border: 4px solid #fff;
+    display: flex;
+    align-items: center;
+}
+.paymant:hover{
+	border: 4px solid #ddd;
+}
+.paymant img{
+	margin-left: 30px;
+}
+.paymant_text{
+	margin-left: 20px;
+	font-size: 20px;
 }

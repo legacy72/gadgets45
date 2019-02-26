@@ -20,14 +20,15 @@ li{
 }
 .logo{
 	width: 300px;
-	float: left;
 }
 .header_menu{
     width: 500px;
-    float: left;
     height: 60px;
     font-size: 16px;
     font-weight: 600;
+}
+.header_menu ul{
+	padding-left: 0;
 }
 .header_menu li:nth-child(1){
 	display: inline-block;
@@ -55,8 +56,10 @@ li{
 	font-weight: 600;
 }
 .header_contacts{
+	display: flex;
+	flex-direction: column;
 	width: 170px;
-	float: left;
+    align-items: flex-end;
 	font-weight: 600;
 }
 .header_phone{
@@ -68,6 +71,7 @@ li{
 }
 .call_order{
 	color: #0093ed;
+	font-size: 15.5px;
 }
 /*main*/
 .main_container{
@@ -89,9 +93,15 @@ li{
 	
 }
 .header_catalog_menu{
+	display: flex;
 	width: 300px;
-	text-align: center;
-	justify-content: center;
+	align-items: center;
+}
+.header_catalog_menu img{
+	margin-left: 15px;
+}
+.header_catalog_menu p{
+	margin-left: 58px;
 }
 .catalog{
 	height: 200px;
@@ -187,12 +197,16 @@ li{
 	margin-top: 36px;
 	font-size: 14px;
 	font-weight: 600;
+    display: flex;
+    align-items: center;
 }
 .slider_more_info a{
 	color: #000;
 	text-decoration: none;
 }
-
+.slider_more_info img{
+	margin-left: 8px;
+}
 .new_section_container{
 	margin-top: 100px;
 }
@@ -421,8 +435,7 @@ footer{
 }
 .footer_call_order{
 	color: #fff;
-	font-size: 14px;
-	font-weight: 600;
+	font-size: 15.5px;
 }
 
 /*cart*/
@@ -820,4 +833,83 @@ footer{
 .paymant_text{
 	margin-left: 20px;
 	font-size: 20px;
+}
+/*About*/
+.about_container{
+	display: flex;
+	justify-content: space-between;
+}
+.about_text{
+	width: 570px;
+	font-size: 18px;
+}
+.about_text p{
+	font-weight: 600;
+}
+.about_contacts{
+	width: 470px;
+}
+.about_contacts_title{
+	font-size: 30px;
+	font-weight: 600;
+}
+.about_contacts_info{
+	margin-top: 30px;
+}
+.contact_row{
+	display: flex;
+	margin-top: 20px;
+}
+.contact_key{
+	font-size: 18px;
+}
+.contact_value{
+	margin-left: 15px;
+	font-size: 18px;
+	font-weight: bold;
+}
+.guarantees_container{
+	display: flex;
+	justify-content: space-around;
+}
+.guarantees_block{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.guarantees_title{
+	font-size: 50px;
+	font-weight: 60;
+}
+.guarantees_text{
+	font-size: 18px;
+}
+.about_background{
+	position: relative;
+}
+.about_background::after {
+	content: "";
+	background-image: url(../images/background.jpg);
+	background-repeat: no-repeat;
+	background-position: center top;
+	opacity: 0.06;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	position: absolute;
+	z-index: -1;   
+}
+.requisites_row{
+	display: flex;
+	margin-top: 10px;
+	font-size: 20px;
+}
+.req_key{
+	width: 370px;
+	font-weight: 600;
+}
+.req_value{
+	margin-left: 230px;
+	color: #383838;
 }

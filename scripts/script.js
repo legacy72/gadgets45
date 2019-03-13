@@ -5,21 +5,29 @@ $(document).ready(function() {
     $('.footer_phone__image').animate({
       opacity: 0
     }, {
-      speed: 150,
-      complete: function () {
+      duration: 'fast',
+      done: function () {
         $('.footer_phone img').attr('src', 'images/white_phone.png');
       }
+    }).animate({
+      opacity: 1
+    }, {
+      duration: 'fast',
+
     });
   },
   function(event) {
     $('.footer_phone__image').animate({
       opacity: 0
     }, {
-      speed: 150,
-      complete: function () {
-        $('.footer_phone img').attr('src', 'images/white_phone.png');
+      duration: 'fast',
+      done: function () {
+        $('.footer_phone img').attr('src', 'images/phone.png');
       }
+    }).animate({
+      opacity: 1
+    }, {
+      duration: 'fast'
     });
   });
-
 });

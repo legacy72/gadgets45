@@ -7,7 +7,7 @@ $(document).ready(function() {
     }, {
       speed: 150,
       complete: function () {
-        $('.footer_phone img').attr('src', 'images/phone-white.png');
+        $('.footer_phone img').attr('src', 'images/white_phone.png');
       }
     });
   },
@@ -17,7 +17,7 @@ $(document).ready(function() {
     }, {
       speed: 150,
       complete: function () {
-        $('.footer_phone img').attr('src', 'images/phone.png');
+        $('.footer_phone img').attr('src', 'images/white_phone.png');
       }
     });
   });

@@ -15,7 +15,7 @@
 				<div class="header_menu">
 					<ul>
 						<li><a href="">О компании</a></li>
-						<li><a href="">Каталог</a></li>
+						<li><a href="catalog.php">Каталог</a></li>
 						<li><a href="">Контакты</a></li>
 					</ul>					
 				</div>

@@ -1,3 +1,9 @@
+<?
+require_once 'db/queries.php';
+require_once 'templates/config.php';
+
+$images = getImages($dbh);
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -142,13 +148,9 @@
 							</div>
 						</div>
 						<div class="catalog_items">
-							<div class="catalog_item"></div>
-							<div class="catalog_item"></div>
-							<div class="catalog_item"></div>
-							<div class="catalog_item"></div>
-							<div class="catalog_item"></div>
-							<div class="catalog_item"></div>
-							<div class="catalog_item"></div>
+							<?php foreach($images as $image): ?>
+								<div class="catalog_item"><img src=<?=PRODUCT_IMAGES_PATH.$image['name']; ?>></div>
+							<?php endforeach; ?>
 						</div>
 					</div>
 				</div>

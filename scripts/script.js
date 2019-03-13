@@ -5,14 +5,14 @@ $(document).ready(function() {
     $('.footer_phone__image').animate({
       opacity: 0
     }, {
-      duration: 'fast',
+      duration: 100,
       done: function () {
         $('.footer_phone img').attr('src', 'images/white_phone.png');
       }
     }).animate({
       opacity: 1
     }, {
-      duration: 'fast',
+      duration: 100,
 
     });
   },
@@ -20,14 +20,14 @@ $(document).ready(function() {
     $('.footer_phone__image').animate({
       opacity: 0
     }, {
-      duration: 'fast',
+      duration: 100,
       done: function () {
         $('.footer_phone img').attr('src', 'images/phone.png');
       }
     }).animate({
       opacity: 1
     }, {
-      duration: 'fast'
+      duration: 100
     });
   });
 });

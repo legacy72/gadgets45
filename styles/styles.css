@@ -423,7 +423,8 @@ footer{
 }
 .footer_menu ul{
 	display: flex;
-    justify-content: space-between;
+  justify-content: space-between;
+	list-style-type: none;
 }
 
 .footer_menu ul li a {
@@ -455,6 +456,7 @@ footer{
 
 .footer_call_order {
 	cursor: pointer;
+	width: 117px;
 }
 
 .footer_phone img.rotate {
@@ -1011,4 +1013,12 @@ display: grid;
 
 .dropdown .dropdown-item {
 	padding: .5rem 1.5rem;
+}
+
+.slider .slick-prev:before, .slider .slick-next:before {
+	color: #73c3f5;
+}
+
+.slider .slick-prev:hover, .slider .slick-next:hover {
+	color: #2ba6f4;
 }

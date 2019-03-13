@@ -10,6 +10,8 @@ $images = getImages($dbh);
 	<meta charset="utf-8">
 	<title>Каталог</title>
 	<link rel="stylesheet" type="text/css" href="styles/styles.css">
+	<link rel="stylesheet" type="text/css" href="slick-master/slick/slick-theme.css"/>
+	<link rel="stylesheet" type="text/css" href="slick-master/slick/slick.css"/>
 </head>
 <body>
 	<header>
@@ -23,7 +25,7 @@ $images = getImages($dbh);
 						<li><a href="">О компании</a></li>
 						<li><a href="">Каталог</a></li>
 						<li><a href="">Контакты</a></li>
-					</ul>					
+					</ul>
 				</div>
 				<div class="working_period">
 					<div class="working_period_text">Без выходных</div>
@@ -73,7 +75,7 @@ $images = getImages($dbh);
 								<li><a href=""></a>Оплата и доставка</li>
 								<li><a href=""></a>Гаратнии</li>
 								<li><a href=""></a>Возврат</li>
-							</ul>		
+							</ul>
 						</div>
 						<div class="loupe">
 							<img src="images/loupe.png">
@@ -89,7 +91,7 @@ $images = getImages($dbh);
 			</div>
 			<div class="container new_container">
 				<div class="navigation_menu">
-					<a href="#">Главная</a> 
+					<a href="#">Главная</a>
 					<img src="images/strelka.png">
 					<a href="#">Каталог</a>
 				</div>
@@ -147,10 +149,12 @@ $images = getImages($dbh);
 								</div>
 							</div>
 						</div>
-						<div class="catalog_items">
-							<?php foreach($images as $image): ?>
-								<div class="catalog_item"><img src=<?=PRODUCT_IMAGES_PATH.$image['name']; ?>></div>
-							<?php endforeach; ?>
+						<div class="slider">
+							<div class="phone-carousel">
+								<?php foreach($images as $image): ?>
+									<div class="catalog_item"><img src=<?=PRODUCT_IMAGES_PATH.$image['name']; ?>></div>
+								<?php endforeach; ?>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -183,5 +187,16 @@ $images = getImages($dbh);
 			</div>
 		</div>
 	</footer>
+
+	<!-- jQuerry -->
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+
+	<!-- Bootstrap -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+
+	<!-- Slick-Carousel -->
+	<script type="text/javascript" src="scripts/catalog-carousel.js" charset="utf-8"></script>
+	<script type="text/javascript" src="slick-master/slick/slick.min.js"></script>
 </body>
 </html>

@@ -715,12 +715,12 @@ footer{
 	justify-content: space-between;
 }
 .catalog_menu{
-	width: 270px;
+	width: 256px;
 	height: 600px;
 	background-color: #f5f5f5;
 }
 .catalog_block{
-	width: 870px;
+	width: 843px;
 }
 .catalog_header{
 	height: 60px;
@@ -772,9 +772,10 @@ display: grid;
     margin: 30px 0 0 30px;
 }
 .price_range{
-	margin-top: 25px;
+	/* margin-top: 25px; */
 	display: flex;
 	justify-content: center;
+	flex-direction: column;
 }
 .price_range input{
 	width: 90px;
@@ -793,9 +794,10 @@ display: grid;
 .price_variants_row{
 	height: 30px;
 	font-size: 14px;
-    display: flex;
-    align-items: center;
-    margin-left: 36px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	/* margin-left: 36px; */
 }
 .price_variants_row p{
 	margin-left: 5px;
@@ -1021,4 +1023,33 @@ display: grid;
 
 .slider .slick-prev:hover, .slider .slick-next:hover {
 	color: #2ba6f4;
+}
+
+.header-menu-link {
+	font-size: 13.5pt;
+	cursor: pointer;
+	padding: .75rem 1.25rem;
+}
+
+.accordion .card-header {
+	cursor: pointer;
+	padding: 0;
+}
+
+.accordion .card-body {
+	background-color: #f7f7f7;
+}
+
+.price_range__label,
+.price_range__inputs {
+	display: flex;
+	justify-content: space-around;
+}
+
+.prices-range__checkbox {
+	margin-top: 10px;
+}
+
+.price-variants-row__range {
+	padding-left: 8px;
 }

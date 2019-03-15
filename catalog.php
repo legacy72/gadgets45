@@ -48,11 +48,17 @@ $images = getImages($dbh);
 		<section>
 			<div class="container minimized_menu">
 				<div class="sidebar">
-					<div class="sidebar_menu_container">
-						<div class="header_catalog_menu">
-							<img src="images/burger.png">
-							<p>Каталог товаров</p>
-						</div>
+					<div class="dropdown menu-button">
+					  <button class="btn  dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					    Каталог товаров
+					  </button>
+					  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+					    <a class="dropdown-item" href="#">Смартфоны</a>
+							<div class="dropdown-divider"></div>
+					    <a class="dropdown-item" href="#">Ноутбуки</a>
+							<div class="dropdown-divider"></div>
+					    <a class="dropdown-item" href="#">Аксессуары</a>
+					  </div>
 					</div>
 					<!-- <div class="catalog catalog_gadgets">
 						<ul>
@@ -249,8 +255,14 @@ $images = getImages($dbh);
 								<div class="sort_text">
 									Соритровать по:
 								</div>
-								<div class="sort_menu">
-									Цене
+								<div class="dropdown price-button">
+								  <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								    Цене
+								  </button>
+								  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+								    <div class="dropdown-item dropdown-menu__row">По возрастанию</div>
+								    <div class="dropdown-item dropdown-menu__row">По убыванию</div>
+								  </div>
 								</div>
 							</div>
 						</div>
@@ -297,6 +309,9 @@ $images = getImages($dbh);
 	<!-- Bootstrap -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 	<script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+
+	<!-- Phone Animation -->
+  <script src="scripts/script.js" type="text/javascript"></script>
 
 </body>
 </html>

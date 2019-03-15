@@ -211,7 +211,7 @@ li{
 	margin-top: 100px;
 }
 .new_section_title{
-	height: 68px;
+	height: 100px;
 	font-size: 30px;
 	font-weight: 600;
 }
@@ -717,7 +717,7 @@ footer{
 .catalog_menu{
 	width: 256px;
 	height: 600px;
-	background-color: #f5f5f5;
+	/* background-color: #f5f5f5; */
 }
 .catalog_block{
 	width: 843px;
@@ -731,10 +731,14 @@ footer{
 	font-size: 20px;
 	font-weight: 600;
 }
+
 .catalog_sort_block{
 	font-size: 16px;
 	display: flex;
+	width: 220px;
+	justify-content: space-between;
 }
+
 .sort_text{
 	padding-top: 3px;
 }
@@ -1029,6 +1033,10 @@ display: grid;
 	font-size: 13.5pt;
 	cursor: pointer;
 	padding: .75rem 1.25rem;
+	background-color: #fff;
+	color: rgb(37, 52, 50);
+	display: flex;
+	align-items: center;
 }
 
 .accordion .card-header {
@@ -1052,4 +1060,32 @@ display: grid;
 
 .price-variants-row__range {
 	padding-left: 8px;
+}
+
+.catalog_menu .card {
+	margin: -1px 0;
+	/* border-color: #f3f3f3; */
+}
+
+.header-menu-link::after {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: .255em;
+    vertical-align: .255em;
+    content: "";
+    border-top: .3em solid;
+    border-right: .3em solid transparent;
+    border-bottom: 0;
+    border-left: .3em solid transparent;
+		color: rgb(160, 179, 180);
+}
+
+.price-button .btn {
+	margin: 0;
+	height: 35px;
+}
+
+.price-button .dropdown-menu {
+	padding: 0;
 }

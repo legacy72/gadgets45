@@ -1,0 +1,3 @@
+<?
+$sth = null;
+$dbh = null;

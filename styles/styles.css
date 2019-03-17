@@ -759,13 +759,14 @@ footer{
 }
 .catalog_item{
 	width: 270px;
-	height: 350px;
+	height: 450px;
 	background-color: #f6f6f6;
 	font-size: 18px;
 }
 .item_name{
 	margin: 0 auto;
 	width: 200px;
+	height: 80px;
 	display: flex;
 	justify-content: center;
 	text-align: center;
@@ -815,15 +816,15 @@ footer{
 .price_variants{
 	margin-top: 30px;
 }
-.price_variants_row{
+.variants_row{
 	height: 30px;
 	font-size: 14px;
 	display: flex;
 	align-items: center;
-	justify-content: center;
-	/* margin-left: 36px; */
+	/*justify-content: center;*/
+	margin-left: 6px; 
 }
-.price_variants_row p{
+.variants_row p{
 	margin-left: 5px;
 }
 /*order*/
@@ -1039,6 +1040,7 @@ footer{
 
 .dropdown .dropdown-item {
 	padding: .5rem 1.5rem;
+	cursor: pointer;
 }
 
 .slider .slick-prev:before, .slider .slick-next:before {
@@ -1057,6 +1059,9 @@ footer{
 	color: rgb(37, 52, 50);
 	display: flex;
 	align-items: center;
+}
+.header-menu-link:hover{
+	background-color: #f6f6f6;
 }
 
 .accordion .card-header {
@@ -1078,7 +1083,7 @@ footer{
 	margin-top: 10px;
 }
 
-.price-variants-row__range {
+.variants_value {
 	padding-left: 8px;
 }
 

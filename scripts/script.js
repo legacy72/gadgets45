@@ -30,4 +30,41 @@ $(document).ready(function() {
       duration: 100
     });
   });
+
+  $('.collapse').on('show.bs.collapse', function(event) {
+
+    var parentNode = $(this.parentElement),
+        headerLink = parentNode.find('.header-menu-link');
+
+    headerLink.addClass('expanded');
+    headerLink.addClass('gray-colored');
+
+  });
+
+  $('.collapse').on('hide.bs.collapse', function(event) {
+
+    var parentNode = $(this.parentElement),
+        headerLink = parentNode.find('.header-menu-link');
+
+    headerLink.removeClass('expanded');
+    headerLink.removeClass('gray-colored');
+  });
+
+  $('.dropdown-menu__row').on('click', function(event) {
+    var isUp = $(this).attr('value') == 'up' ? true : false,
+        dropdown = $(this).parent().parent(),
+        button = dropdown.find('button');
+
+    if(isUp) {
+
+      button.addClass('expanded');
+
+    } else {
+
+      button.removeClass('expanded');
+
+    }
+
+  });
+
 });

@@ -822,7 +822,7 @@ footer{
 	display: flex;
 	align-items: center;
 	/*justify-content: center;*/
-	margin-left: 6px; 
+	margin-left: 6px;
 }
 .variants_row p{
 	margin-left: 5px;
@@ -1059,6 +1059,7 @@ footer{
 	color: rgb(37, 52, 50);
 	display: flex;
 	align-items: center;
+	transition: all .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 .header-menu-link:hover{
 	background-color: #f6f6f6;
@@ -1104,6 +1105,7 @@ footer{
     border-bottom: 0;
     border-left: .3em solid transparent;
 		color: rgb(160, 179, 180);
+		transition: all .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 
 .price-button .btn {
@@ -1111,6 +1113,19 @@ footer{
 	height: 35px;
 }
 
+.price-button .btn:after {
+	transition: all .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
 .price-button .dropdown-menu {
 	padding: 0;
+}
+
+
+.expanded::after {
+	transform: rotate(180deg);
+}
+
+.gray-colored {
+	background-color: #f7f7f7 !important;
 }

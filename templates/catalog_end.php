@@ -8,8 +8,8 @@
 										Цене
 									</button>
 									<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-										<div class="dropdown-item dropdown-menu__row">По возрастанию</div>
-										<div class="dropdown-item dropdown-menu__row">По убыванию</div>
+										<div value="up" class="dropdown-item dropdown-menu__row">По возрастанию</div>
+										<div value="down" class="dropdown-item dropdown-menu__row">По убыванию</div>
 									</div>
 								</div>
 							</div>

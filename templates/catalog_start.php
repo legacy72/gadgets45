@@ -100,7 +100,7 @@ require_once 'config.php';
 						<div class="card">
 							<div class="card-header" id="headingOne">
 								<h2 class="mb-0">
-									<div class="header-menu-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+									<div class="header-menu-link gray-colored expanded" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
 										Цена
 									</div>
 								</h2>

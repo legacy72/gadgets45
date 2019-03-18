@@ -203,14 +203,14 @@ $specifications = getSmartphonesSpecifications($dbh);
 						</div>
 
 						<div class="card">
-							<div class="card-header" id="headingFor">
+							<div class="card-header" id="headingFour">
 								<h2 class="mb-0">
-									<div class="header-menu-link collapsed" data-toggle="collapse" data-target="#collapseFor" aria-expanded="false" aria-controls="collapseFor">
+									<div class="header-menu-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
 										Оперативная память
 									</div>
 								</h2>
 							</div>
-							<div id="collapseFor" class="collapse" aria-labelledby="headingFor" data-parent="#accordionExample">
+							<div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
 								<div class="card-body">
 									<div class="card-body">
 									<?php foreach($specifications as $spec):?>
@@ -224,6 +224,30 @@ $specifications = getSmartphonesSpecifications($dbh);
 								</div>
 							</div>
 						</div>
+
+						<div class="card">
+							<div class="card-header" id="headingFive">
+								<h2 class="mb-0">
+									<div class="header-menu-link collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+										Версия операционной системы
+									</div>
+								</h2>
+							</div>
+							<div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+								<div class="card-body">
+									<div class="card-body">
+									<?php foreach($specifications as $spec):?>
+										<?php if($spec['specification_id'] != SPECIFICATIONS_DICT['operating_system_version']) continue;?>
+										<div class="variants_row">
+											<input type="checkbox" name="operating_system_version_variant">
+											<span class="variants_value"><?=$spec['value']?></span>
+										</div>
+									<?php endforeach; ?>
+									</div>
+								</div>
+							</div>
+						</div>
+
 						<div class="accept_filters">
 							<button class="btn_accept_filters">Применить</button>
 						</div>

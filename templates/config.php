@@ -20,8 +20,7 @@ define(
 		"number_of_processor_cores" => 8,
 		"cpu_frequency" => 9,
 		"amount_of_internal_memory" => 12,
-		"" => "",
-		"" => "",
+		"operating_system_version" => 110,
 	)
 );
 

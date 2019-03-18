@@ -82,29 +82,57 @@
 							</div>
 						</div>
 					</div>
-					<div class="slider_container">
-						<div class="slider_image_block">
-							<div class="slider_image">
-								<img src="images/phone_slider.png">
+					<div class="slide-main main-carousel">
+						<div class="slider_container">
+							<div class="slider_image_block">
+								<div class="slider_image">
+									<img src="images/phone_slider.png">
+								</div>
+								<div class="slider_image_frame">
+									<img src="images/ramka.png">
+								</div>
 							</div>
-							<div class="slider_image_frame">
-								<img src="images/ramka.png">
+							<div class="slider_info">
+								<div class="slider_title">
+									Топовый
+									<br>
+									смартфон
+								</div>
+								<div class="slider_description">
+									Lorem idаыфpsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+									tempor incididunt ut афlabore et dolore magna aliqua. Ut enim ad minim veniam,
+									quis nostrud exercitыation ullвamco lаaboris nisi ut aliquip ex ea commodo
+								</div>
+								<div class="slider_more_info">
+									<a href="#">Подробнее</a>
+									<img src="images/strelka.png">
+								</div>
 							</div>
 						</div>
-						<div class="slider_info">
-							<div class="slider_title">
-								Топовый
-								<br>
-								смартфон
+						<div class="slider_container">
+							<div class="slider_image_block">
+								<div class="slider_image">
+									<img src="images/phone_slider.png">
+								</div>
+								<div class="slider_image_frame">
+									<img src="images/ramka.png">
+								</div>
 							</div>
-							<div class="slider_description">
-								Lorem idаыфpsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-								tempor incididunt ut афlabore et dolore magna aliqua. Ut enim ad minim veniam,
-								quis nostrud exercitыation ullвamco lаaboris nisi ut aliquip ex ea commodo
-							</div>
-							<div class="slider_more_info">
-								<a href="#">Подробнее</a>
-								<img src="images/strelka.png">
+							<div class="slider_info">
+								<div class="slider_title">
+									Топовый
+									<br>
+									смартфон
+								</div>
+								<div class="slider_description">
+									Lorem idаыфpsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+									tempor incididunt ut афlabore et dolore magna aliqua. Ut enim ad minim veniam,
+									quis nostrud exercitыation ullвamco lаaboris nisi ut aliquip ex ea commodo
+								</div>
+								<div class="slider_more_info">
+									<a href="#">Подробнее</a>
+									<img src="images/strelka.png">
+								</div>
 							</div>
 						</div>
 					</div>
@@ -217,7 +245,16 @@
 				</div>
 				<div class="slider_main_block">
 					<div class="bg_slider">
-						<div class="items_bestsellers_container">
+						<div class="items_bestsellers_container bestseller-carousel">
+							<div class="item_bestseller">
+								<img src="images/item.png">
+								<div class="bestseller_description">
+									Huawei Macbook X Pro
+								</div>
+								<div class="bestseller_price">
+									99 990 р.
+								</div>
+							</div>
 							<div class="item_bestseller">
 								<img src="images/item.png">
 								<div class="bestseller_description">

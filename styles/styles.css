@@ -166,12 +166,15 @@ li{
 }
 
 .slider_container{
-	display: flex;
+	display: flex !important;
+	justify-content: space-around;
+	/* align-items: flex-start; */
 }
 .slider_image_block{
-	width: 600px;
+	width: 406px;
 	height: 455px;
-	margin-left: 100px;
+	display: inline-block;
+	/* margin-left: 100px; */
 	margin-top: 30px;
 	position: relative;
 }
@@ -185,6 +188,7 @@ li{
 }
 .slider_info{
 	width: 270px;
+	display: inline-block;
 }
 .slider_title{
 	font-size: 34px;
@@ -275,19 +279,27 @@ li{
 .items_bestsellers_container{
 	width: 1170px;
 	margin: 0 auto;
-	display: flex;
-	justify-content: space-between;
+	top: -70px;
+	/* display: flex !important; */
+	/* justify-content: space-between; */
 }
+
 .item_bestseller{
-	width: 270px;
-	height: 414px;
+	z-index: 99999;
+	width: 270px !important;
+	height: 385px;
 	background-color: #fff;
-	margin-top: -100px;
-	display: flex;
+	/* margin-top: -100px; */
+	display: flex !important;
 	flex-direction: column;
 	align-items: center;
-	justify-content: center;
+	justify-content: flex-end;
 }
+
+.items_bestsellers_container .slick-track {
+	top: -70px;
+}
+
 .bestseller_description{
 	margin-top: 26px;
 	font-size: 18px;
@@ -332,6 +344,7 @@ li{
 	padding: 12px;
 	font-size: 16px;
 	cursor: pointer;
+	transition: all .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
 }
 .button_see_all button:hover{
 	background-color: #fff;

@@ -68,9 +68,9 @@ $specifications = getSpecifications($dbh);
 					<div class="main_top_head">
 						<div class="main_top_menu">
 							<ul>
-								<li><a href=""></a>Оплата и доставка</li>
-								<li><a href=""></a>Гаратнии</li>
-								<li><a href=""></a>Возврат</li>
+								<li><a href="">Оплата и доставка</a></li>
+								<li><a href="">Гаратнии</a></li>
+								<li><a href="">Возврат</a></li>
 							</ul>
 						</div>
 						<div class="loupe">

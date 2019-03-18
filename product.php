@@ -17,7 +17,7 @@
 						<li><a href="">О компании</a></li>
 						<li><a href="">Каталог</a></li>
 						<li><a href="">Контакты</a></li>
-					</ul>					
+					</ul>
 				</div>
 				<div class="working_period">
 					<div class="working_period_text">Без выходных</div>
@@ -64,10 +64,10 @@
 					<div class="main_top_head">
 						<div class="main_top_menu">
 							<ul>
-								<li><a href=""></a>Оплата и доставка</li>
-								<li><a href=""></a>Гаратнии</li>
-								<li><a href=""></a>Возврат</li>
-							</ul>		
+								<li><a href="">Оплата и доставка</a></li>
+								<li><a href="">Гаратнии</a></li>
+								<li><a href="">Возврат</a></li>
+							</ul>
 						</div>
 						<div class="loupe">
 							<img src="images/loupe.png">
@@ -83,7 +83,7 @@
 			</div>
 			<div class="container new_container">
 				<div class="navigation_menu">
-					<a href="#">Главная</a> 
+					<a href="#">Главная</a>
 					<img src="images/strelka.png">
 					<a href="#">Каталог</a>
 					<img src="images/strelka.png">
@@ -98,7 +98,7 @@
 				<div class="product_container">
 					<div class="product_images">
 						<div class="main_image">
-							
+
 						</div>
 						<div class="small_images">
 							<div class="small_img"></div>
@@ -115,7 +115,7 @@
 							26 990 р.
 						</div>
 						<div class="product_color">
-							Цвет 
+							Цвет
 							<div class="product_colors_blocks">
 								<div class="color_block black">
 
@@ -177,7 +177,7 @@
 						</div>
 					</div>
 				</div>
-			</div>	
+			</div>
 		</section>
 		<section>
 			<div class="container product_menu_background">
@@ -186,7 +186,7 @@
 						<ul>
 							<li><a href="">Описание</a></li>
 							<li><a href="">Технические характеристики</a></li>
-						</ul>					
+						</ul>
 					</div>
 				</div>
 			</div>
@@ -195,7 +195,7 @@
 					Смартфон Xiaomi Mi8
 				</div>
 				<div class="product_info_text">
-					<p> 
+					<p>
 						ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo

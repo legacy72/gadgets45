@@ -17,7 +17,7 @@
 						<li><a href="">О компании</a></li>
 						<li><a href="">Каталог</a></li>
 						<li><a href="">Контакты</a></li>
-					</ul>					
+					</ul>
 				</div>
 				<div class="working_period">
 					<div class="working_period_text">Без выходных</div>
@@ -64,10 +64,10 @@
 					<div class="main_top_head">
 						<div class="main_top_menu">
 							<ul>
-								<li><a href=""></a>Оплата и доставка</li>
-								<li><a href=""></a>Гаратнии</li>
-								<li><a href=""></a>Возврат</li>
-							</ul>		
+								<li><a href="">Оплата и доставка</a></li>
+								<li><a href="">Гаратнии</a></li>
+								<li><a href="">Возврат</a></li>
+							</ul>
 						</div>
 						<div class="loupe">
 							<img src="images/loupe.png">
@@ -84,7 +84,7 @@
 			<div class="container new_container">
 				<div class="navigation_menu">
 					<div class="navigation_menu">
-						<a href="#">Главная</a> 
+						<a href="#">Главная</a>
 						<img src="images/strelka.png">
 						<a href="#">Каталог</a>
 						<img src="images/strelka.png">
@@ -149,7 +149,7 @@
 						</button>
 					</div>
 				</div>
-			</div>	
+			</div>
 		</section>
 	</main>
 	<footer>

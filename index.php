@@ -17,7 +17,7 @@
 						<li><a href="">О компании</a></li>
 						<li><a href="catalog/smartphones.php">Каталог</a></li>
 						<li><a href="">Контакты</a></li>
-					</ul>					
+					</ul>
 				</div>
 				<div class="working_period">
 					<div class="working_period_text">Без выходных</div>
@@ -64,10 +64,10 @@
 					<div class="main_top_head">
 						<div class="main_top_menu">
 							<ul>
-								<li><a href=""></a>Оплата и доставка</li>
-								<li><a href=""></a>Гаратнии</li>
-								<li><a href=""></a>Возврат</li>
-							</ul>		
+								<li><a href="">Оплата и доставка</a></li>
+								<li><a href="">Гаратнии</a></li>
+								<li><a href="">Возврат</a></li>
+							</ul>
 						</div>
 						<div class="loupe">
 							<img src="images/loupe.png">
@@ -91,7 +91,7 @@
 						<div class="slider_info">
 							<div class="slider_title">
 								Топовый
-								<br> 
+								<br>
 								смартфон
 							</div>
 							<div class="slider_description">

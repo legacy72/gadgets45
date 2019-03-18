@@ -6,7 +6,15 @@ $category_id = $_POST['category_id'];
 $price_from = $_POST['price_from'];
 $price_to = $_POST['price_to'];
 
-$productItems = GetProductItems($dbh, $category_id, $price_from, $price_to);
+if ($category_id == 1){
+	$productItems = getSmartphones($dbh, $price_from, $price_to);
+}
+else if ($category_id == 2){
+	$productItems = getNotebooks($dbh, $price_from, $price_to);
+}
+else if ($category_id == 3){
+	//
+}
 
 foreach($productItems as $product){
 	echo '

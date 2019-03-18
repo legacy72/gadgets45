@@ -4,6 +4,9 @@
 	<meta charset="utf-8">
 	<title>Главная</title>
 	<link rel="stylesheet" type="text/css" href="styles/styles.css">
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="slick-master/slick/slick.css">
+	<link rel="stylesheet" href="slick-master/slick/slick-theme.css">
 </head>
 <body>
 	<header>
@@ -114,45 +117,91 @@
 					Наши акции
 				</div>
 				<div class="stock_items">
-					<div class="stock_block">
-						<div class="stock_image">
-							<img src="images/stock_item_1.jpg">
-						</div>
-						<div class="stock_text_container">
-							<div class="stock_text">
-								<div class="stock_description">
-									Легкие ноутбуки
-									<br>
-									Xiaomi Mi Notebook Air
-								</div>
-								<div class="stock_prices">
-									<div class="stock_new_price">
-										64 990 р.
+					<div class="goods-carousel">
+						<div class="stock_block">
+							<div class="stock_image">
+								<img src="images/stock_item_1.jpg">
+							</div>
+							<div class="stock_text_container">
+								<div class="stock_text">
+									<div class="stock_description">
+										Легкие ноутбуки
+										<br>
+										Xiaomi Mi Notebook Air
 									</div>
-									<div class="stock_old_price">
-										72 990
+									<div class="stock_prices">
+										<div class="stock_new_price">
+											64 990 р.
+										</div>
+										<div class="stock_old_price">
+											72 990
+										</div>
 									</div>
 								</div>
 							</div>
 						</div>
-					</div>
-					<div class="stock_block">
-						<div class="stock_image">
-							<img src="images/stock_item_2.jpg">
-						</div>
-						<div class="stock_text_container">
-							<div class="stock_text">
-								<div class="stock_description">
-									Беспроводные
-									<br>
-									Наушники
-								</div>
-								<div class="stock_prices">
-									<div class="stock_new_price">
-										8 590 р.
+						<div class="stock_block">
+							<div class="stock_image">
+								<img src="images/stock_item_1.jpg">
+							</div>
+							<div class="stock_text_container">
+								<div class="stock_text">
+									<div class="stock_description">
+										Легкие ноутбуки
+										<br>
+										Xiaomi Mi Notebook Air
 									</div>
-									<div class="stock_old_price">
-										10 590
+									<div class="stock_prices">
+										<div class="stock_new_price">
+											64 990 р.
+										</div>
+										<div class="stock_old_price">
+											72 990
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="stock_block">
+							<div class="stock_image">
+								<img src="images/stock_item_1.jpg">
+							</div>
+							<div class="stock_text_container">
+								<div class="stock_text">
+									<div class="stock_description">
+										Легкие ноутбуки
+										<br>
+										Xiaomi Mi Notebook Air
+									</div>
+									<div class="stock_prices">
+										<div class="stock_new_price">
+											64 990 р.
+										</div>
+										<div class="stock_old_price">
+											72 990
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="stock_block">
+							<div class="stock_image">
+								<img src="images/stock_item_2.jpg">
+							</div>
+							<div class="stock_text_container">
+								<div class="stock_text">
+									<div class="stock_description">
+										Беспроводные
+										<br>
+										Наушники
+									</div>
+									<div class="stock_prices">
+										<div class="stock_new_price">
+											8 590 р.
+										</div>
+										<div class="stock_old_price">
+											10 590
+										</div>
 									</div>
 								</div>
 							</div>
@@ -349,5 +398,16 @@
 			</div>
 		</div>
 	</footer>
+	<!-- jQuerry -->
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+
+	<!-- Bootstrap -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+
+	<script src="slick-master/slick/slick.min.js" type="text/javascript"></script>
+
+	<script src="scripts/script.js" type="text/javascript"></script>
+	<script src="scripts/catalog-carousel.js" type="text/javascript"></script>
 </body>
 </html>

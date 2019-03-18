@@ -1,13 +1,9 @@
 $(document).ready(function() {
-  $('.phone-carousel').slick({
-    infinite: true,
-    slidesToShow: 5,
+  $('.goods-carousel').slick({
+    slidesToShow: 2,
     dots: true,
     slidesToScroll: 1,
     variableWidth: true,
-    centerMode: true,
-    centerPadding: '60px',
-    adaptiveHeight: true,
     responsive: [
     {
       breakpoint: 556,

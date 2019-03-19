@@ -5,8 +5,6 @@ require_once '../templates/config.php';
 $productItems = getSmartphones($dbh, 1);
 $specifications = getSmartphonesSpecifications($dbh);
 
-
-
 ?>
 
 <!DOCTYPE html>
@@ -290,14 +288,17 @@ $specifications = getSmartphonesSpecifications($dbh);
 									<div class="item_price">
 										<div class="standart_price">
 											<?
-											if ($product['discount_price'])
+											if ($product['discount_price'] != $product['price'])
 												echo '<strike>'. $product['price']. '</strike>';
 											else
 												echo $product['price'];
 											?>
 										</div>
 										<div class="discount_price">
-											<?=$product['discount_price'];?>
+											<?
+											if ($product['discount_price'] != $product['price'])
+												echo $product['discount_price'];
+											?>
 										</div>
 									</div>
 									<div class="item_button">

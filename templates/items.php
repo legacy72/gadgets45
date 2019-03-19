@@ -28,13 +28,16 @@ foreach($productItems as $product){
 			</div>
 			<div class="item_price">
 				<div class="standart_price">';
-				if ($product['discount_price'])
+				if ($product['discount_price'] != $product['price'])
 					echo '<strike>'. $product['price']. '</strike>';
 				else
 					echo $product['price'];
 	echo '
 			</div>
-			<div class="discount_price">'. $product['discount_price'] .'</div>
+			<div class="discount_price">';
+				if ($product['discount_price'] != $product['price'])
+					echo $product['discount_price'];
+	echo	'</div>
 		</div>
 		<div class="item_button">
 			<button>

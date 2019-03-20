@@ -1,5 +1,5 @@
 <?
-// получаем параметры для фильртации
+// получаем параметры фильртации(строки для вставки конкатенации с основным запросом)
 function getFilterParams($filterSpecs){
 	// формируем из пришедших на фильтрацию характеристик словарь по типу
 	// ['имя_характеристики'] => [':имя_характеристики_0', ':имя_характеристики_1', ...]
@@ -10,13 +10,10 @@ function getFilterParams($filterSpecs){
 		for($i = 0; $i < count($specValue); $i++){
 			array_push($filterParam, ':'. $specKey. '_'. $i);
 		}
-		
 		$filterParams[$specKey] = $filterParam;
 	}
-
 	return $filterParams;
 }
-
 
 // формируем параметры для фильтра в зависимости от того, какие чекбоксы были нажаты
 function getSpecificationsForFilter(PDO $dbh, $filter = array()){
@@ -32,9 +29,6 @@ function getSpecificationsForFilter(PDO $dbh, $filter = array()){
 	}
 	return $filterSpecifications;
 }
-
-
-
 
 // Генерируем параметры категорий, по которым нужно фильтровать
 function generateBindParams($filterSpecs){

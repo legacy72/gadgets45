@@ -20,10 +20,12 @@ if(!empty($_POST['price_to'])){
 	$price_to = intval($_POST['price_to']);
 }
 
-$filterSpecs = getSpecificationsForFilter($dbh, $filter);
+// Получаем фильтры, по которым нужно сортирвать (по активным чекбоксам)
+list($filterSpecs, $filterParams) = getSpecificationsForFilter($dbh, $filter);
 
+// Выбор какую категорию сортировать
 if ($category_id == 1){
-	$productItems = getSmartphones($dbh, $filterSpecs, $price_from, $price_to);
+	$productItems = getSmartphones($dbh, $filterSpecs, $filterParams, $price_from, $price_to);
 }
 else if ($category_id == 2){
 	$productItems = getNotebooks($dbh, $price_from, $price_to);

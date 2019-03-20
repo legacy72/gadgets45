@@ -1,33 +1,23 @@
 <?
-// получаем параметры фильртации(строки для вставки конкатенации с основным запросом)
-function getFilterParams($filterSpecs){
-	// формируем из пришедших на фильтрацию характеристик словарь по типу
-	// ['имя_характеристики'] => [':имя_характеристики_0', ':имя_характеристики_1', ...]
-	$filterParams = array();
-
-	foreach ($filterSpecs as $specKey => $specValue) {
-		$filterParam = array();
-		for($i = 0; $i < count($specValue); $i++){
-			array_push($filterParam, ':'. $specKey. '_'. $i);
-		}
-		$filterParams[$specKey] = $filterParam;
-	}
-	return $filterParams;
-}
-
 // формируем параметры для фильтра в зависимости от того, какие чекбоксы были нажаты
 function getSpecificationsForFilter(PDO $dbh, $filter = array()){
 	// $filter для стартовой страртовой страницы пустой
+	// Return:
+	// array[0] - словарь характерстик
+	// array[1] - словарь характеристик со строками, которые нужно вставить в основной запрос
 	$filterSpecifications = array();
-
+	$filterStringParams = array();
 	foreach ($filter as $filterKey => $filterValue) {
 		$filterValues = array();
+		$filterStringParam = array();
 		for ($i = 0; $i < count($filterValue); $i++){
 			array_push($filterValues, $filterValue[$i]);
+			array_push($filterStringParam, ':'. $filterKey. '_'. $i);
 		}
-		$filterSpecifications[$filterKey] = $filterValues; 
+		$filterSpecifications[$filterKey] = $filterValues;
+		$filterStringParams[$filterKey] =  $filterStringParam;
 	}
-	return $filterSpecifications;
+	return array($filterSpecifications, $filterStringParams);
 }
 
 // Генерируем параметры категорий, по которым нужно фильтровать

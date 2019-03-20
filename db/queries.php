@@ -34,8 +34,8 @@ function getSmartphonesSpecifications(PDO $dbh){
 	return $specifications->fetchAll();
 }
 
-function getSmartphones(PDO $dbh, $filterSpecs, $price_from = 0, $price_to = 999999){
-	$filterParams = getFilterParams($filterSpecs);	
+function getSmartphones(PDO $dbh, $filterSpecs, $filterStringParams, $price_from = 0, $price_to = 999999){
+	// $filterParams = getFilterParams($filterSpecs);	
 	$sql = '
 		SELECT  
 			Image.name AS image_name, 
@@ -57,11 +57,11 @@ function getSmartphones(PDO $dbh, $filterSpecs, $price_from = 0, $price_to = 999
 
 	// если выбраны чекбоксы фильтров добавляем условия
 	if (array_key_exists('number_of_processor_cores', $filterSpecs)  && count($filterSpecs['number_of_processor_cores']) > 0){
-		$addSql = 'AND pts8.value IN ('.implode(',', $filterParams['number_of_processor_cores']).') ';
+		$addSql = 'AND pts8.value IN ('.implode(',', $filterStringParams['number_of_processor_cores']).') ';
 		$sql .= $addSql;
 	}
 	if (array_key_exists('ram_size', $filterSpecs) && count($filterSpecs['ram_size']) > 0){
-		$addSql = 'AND pts11.value IN ('.implode(',', $filterParams['ram_size']).') ';
+		$addSql = 'AND pts11.value IN ('.implode(',', $filterStringParams['ram_size']).') ';
 		$sql .= $addSql;
 	}
 

@@ -1,5 +1,6 @@
 <?
 require_once 'connection.php';
+require_once '../templates/functions.php';
 
 // динамически формируем параметры
 function bindDynamicParams(PDO $dbh, $sth, $values, $types = false) {
@@ -26,55 +27,15 @@ function getSmartphonesSpecifications(PDO $dbh){
 		SELECT DISTINCT specification_id, value FROM ProductToSpecification
 		JOIN Specification ON Specification.id = ProductToSpecification.specification_id
 		WHERE Specification.category_id = 1
-		ORDER BY value
+		-- ORDER BY value
 	');
 	$sth->execute();
 	$specifications = $sth;
 	return $specifications->fetchAll();
 }
 
-// получаем параметры для фильртации
-function getFilterParams($filterSpecs){
-	// формируем из пришедших на фильтрацию характеристик словарь по типу
-	// ['имя_характеристики'] => [':имя_характеристики_0', ':имя_характеристики_1', ...]
-	$filterParams = array();
-
-	foreach ($filterSpecs as $specKey => $specValue) {
-		$filterParam = array();
-		for($i = 0; $i < count($specValue); $i++){
-			array_push($filterParam, ':'. $specKey. '_'. $i);
-		}
-		
-		$filterParams[$specKey] = $filterParam;
-	}
-
-	return $filterParams;
-}
-
-// Получаем характериситки, по которым будем фильтровать
-function getSpecificationsForFilter(PDO $dbh){
-	$filterSpecifications = array();
-	$number_of_processor_cores = array();
-	$ram_size = array();
-
-	$specifications = getSmartphonesSpecifications($dbh);
-
-	foreach($specifications as $spec){
-		if($spec['specification_id'] == SPECIFICATIONS_DICT['number_of_processor_cores'])
-			array_push($number_of_processor_cores, $spec['value']);
-		else if($spec['specification_id'] == SPECIFICATIONS_DICT['ram_size'])
-			array_push($ram_size, $spec['value']);
-	}
-	$filterSpecifications['number_of_processor_cores'] = $number_of_processor_cores;
-	$filterSpecifications['ram_size'] = $ram_size;
-	return $filterSpecifications;
-}
-
-
-function getSmartphones(PDO $dbh, $price_from = 1, $price_to = 999999){
-	$filterSpecs = getSpecificationsForFilter($dbh);
-	$filterParams = getFilterParams($filterSpecs);
-
+function getSmartphones(PDO $dbh, $filterSpecs, $price_from = 0, $price_to = 999999){
+	$filterParams = getFilterParams($filterSpecs);	
 	$sql = '
 		SELECT  
 			Image.name AS image_name, 
@@ -92,27 +53,26 @@ function getSmartphones(PDO $dbh, $price_from = 1, $price_to = 999999){
 		WHERE Product.category_id = 1
 		AND Image.is_main = 1
         AND ptc.discount_price BETWEEN :price_from AND :price_to
-        AND pts8.value IN ('.implode(',', $filterParams['number_of_processor_cores']).')
-        AND pts11.value IN ('.implode(',', $filterParams['ram_size']).')
 	';
 
-
+	// если выбраны чекбоксы фильтров добавляем условия
+	if (array_key_exists('number_of_processor_cores', $filterSpecs)  && count($filterSpecs['number_of_processor_cores']) > 0){
+		$addSql = 'AND pts8.value IN ('.implode(',', $filterParams['number_of_processor_cores']).') ';
+		$sql .= $addSql;
+	}
+	if (array_key_exists('ram_size', $filterSpecs) && count($filterSpecs['ram_size']) > 0){
+		$addSql = 'AND pts11.value IN ('.implode(',', $filterParams['ram_size']).') ';
+		$sql .= $addSql;
+	}
 
 	$sth = $dbh->prepare($sql);
 	$sth->bindParam(':price_from', $price_from, PDO::PARAM_INT);
 	$sth->bindParam(':price_to', $price_to, PDO::PARAM_INT);
 
-	// todo: автоматизировать
-	$arr = array(
-		'number_of_processor_cores_0' => $filterSpecs['number_of_processor_cores'][0],
-		'number_of_processor_cores_1' => $filterSpecs['number_of_processor_cores'][1],
-		'number_of_processor_cores_2' => $filterSpecs['number_of_processor_cores'][2],
-		'ram_size_0' => $filterSpecs['ram_size'][0],
-		'ram_size_1' => $filterSpecs['ram_size'][1],
-		'ram_size_2' => $filterSpecs['ram_size'][2],
-	);
+	// генерируем параметры для WHERE pts.value IN 
+	$bindParams = generateBindParams($filterSpecs);
 
-	$sth = bindDynamicParams($dbh, $sth, $arr);
+	$sth = bindDynamicParams($dbh, $sth, $bindParams);
 
 	$sth->execute();
 	$products = $sth;

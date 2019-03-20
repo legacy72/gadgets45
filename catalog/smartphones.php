@@ -2,8 +2,15 @@
 
 require_once '../db/queries.php';
 require_once '../templates/config.php';
-$productItems = getSmartphones($dbh, 1);
+
+// Получаем все характеристики самртфонов для заполнения фильтра фронта
 $specifications = getSmartphonesSpecifications($dbh);
+
+// Получаем фильтры, по которым нужно сортирвать (по активным чекбоксам)
+$filterSpecs = getSpecificationsForFilter($dbh);
+// Получаем смартфоны, удовлетворяющие фильтрам
+$productItems = getSmartphones($dbh, $filterSpecs);
+
 
 ?>
 
@@ -214,7 +221,7 @@ $specifications = getSmartphonesSpecifications($dbh);
 									<?php foreach($specifications as $spec):?>
 										<?php if($spec['specification_id'] != SPECIFICATIONS_DICT['ram_size']) continue;?>
 										<div class="variants_row">
-											<input type="checkbox" name="ram_variant">
+											<input type="checkbox" name="ram_variant"value="<?=$spec['value']?>">
 											<span class="variants_value"><?=$spec['value']?></span>
 										</div>
 									<?php endforeach; ?>
@@ -238,6 +245,29 @@ $specifications = getSmartphonesSpecifications($dbh);
 										<?php if($spec['specification_id'] != SPECIFICATIONS_DICT['operating_system_version']) continue;?>
 										<div class="variants_row">
 											<input type="checkbox" name="operating_system_version_variant">
+											<span class="variants_value"><?=$spec['value']?></span>
+										</div>
+									<?php endforeach; ?>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="card">
+							<div class="card-header" id="headingSix">
+								<h2 class="mb-0">
+									<div class="header-menu-link collapsed" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+										Количество ядер операционной системы
+									</div>
+								</h2>
+							</div>
+							<div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionExample">
+								<div class="card-body">
+									<div class="card-body">
+									<?php foreach($specifications as $spec):?>
+										<?php if($spec['specification_id'] != SPECIFICATIONS_DICT['number_of_processor_cores']) continue;?>
+										<div class="variants_row">
+											<input type="checkbox" name="number_of_processor_cores_variant" value="<?=$spec['value']?>">
 											<span class="variants_value"><?=$spec['value']?></span>
 										</div>
 									<?php endforeach; ?>

@@ -2,12 +2,28 @@
 require_once '../db/queries.php';
 require_once 'config.php';
 
-$category_id = $_POST['category_id'];
-$price_from = $_POST['price_from'];
-$price_to = $_POST['price_to'];
+$filter = array(); // инициализируем пустой фильтр
+$category_id = 1; // по умолчанию ищем смартфоны
+$price_from = 0;
+$price_to = 999999;
+// если выбраны чекбоксы заполняем фильтр
+if(!empty($_POST['filter'])) {
+    $filter = $_POST['filter'];
+}
+if(!empty($_POST['category_id'])){
+	$category_id = $_POST['category_id'];
+}
+if(!empty($_POST['price_from'])){
+	$price_from = intval($_POST['price_from']);
+}
+if(!empty($_POST['price_to'])){
+	$price_to = intval($_POST['price_to']);
+}
+
+$filterSpecs = getSpecificationsForFilter($dbh, $filter);
 
 if ($category_id == 1){
-	$productItems = getSmartphones($dbh, $price_from, $price_to);
+	$productItems = getSmartphones($dbh, $filterSpecs, $price_from, $price_to);
 }
 else if ($category_id == 2){
 	$productItems = getNotebooks($dbh, $price_from, $price_to);

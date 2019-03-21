@@ -4,10 +4,10 @@ $(document).ready(function() {
 		var filter = {};
 	 	var ram_size_list = [];
 	 	var number_of_processor_cores_list = [];
-        $.each($("input[name='ram_variant']:checked"), function(){            
+        $.each($("input[name='ram_size']:checked"), function(){            
             ram_size_list.push($(this).val());
         });
-        $.each($("input[name='number_of_processor_cores_variant']:checked"), function(){            
+        $.each($("input[name='number_of_processor_cores']:checked"), function(){            
             number_of_processor_cores_list.push($(this).val());
         });
         filter['ram_size'] = ram_size_list;

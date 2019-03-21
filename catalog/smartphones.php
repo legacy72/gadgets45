@@ -167,118 +167,39 @@ $productItems = getSmartphones($dbh, $filterSpecs, $filterStringParams);
 							</div>
 						</div>
 
-						<div class="card">
-							<div class="card-header" id="headingThree">
-								<h2 class="mb-0">
-									<div class="header-menu-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-										Бренд
+						<?
+						// вывод всех фильтров
+						foreach (SPECIFICATION_ENG_TO_RUS as $key => $value) {
+							echo '
+								<div class="card">
+									<div class="card-header" id="heading'.$key.'">
+										<h2 class="mb-0">
+											<div class="header-menu-link collapsed" data-toggle="collapse" data-target="#collapse'.$key.'" aria-expanded="false" aria-controls="collapse'.$key.'">
+												'.SPECIFICATION_ENG_TO_RUS[$key].'
+											</div>
+										</h2>
 									</div>
-								</h2>
-							</div>
-							<div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-								<div class="card-body">
+									<div id="collapse'.$key.'" class="collapse" aria-labelledby="heading'.$key.'" data-parent="#accordionExample">
+										<div class="card-body">
+							';
+							foreach($specifications as $spec){
+								if($spec['specification_id'] != SPECIFICATIONS_DICT[$key]) 
+									continue;
+								echo '
 									<div class="variants_row">
-										<input type="checkbox" name="brand_variant">
-										<span class="variants_value">Xiaomi</span>
+										<input type="checkbox" name="'.$key.'" value="'.$spec['value'].'">
+										<span class="variants_value">'.$spec['value'].'</span>
 									</div>
-									<div class="variants_row">
-										<input type="checkbox" name="brand_variant">
-										<span class="variants_value">Huawei</span>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div class="card">
-							<div class="card-header" id="headingTwo">
-								<h2 class="mb-0">
-									<div class="header-menu-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-										Диагональ
-									</div>
-								</h2>
-							</div>
-							<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-								<div class="card-body">
-									<div class="variants_row">
-										<input type="checkbox" name="screen_diagonal_variant">
-										<span class="variants_value">1720х1980</span>
-									</div>
-									<div class="variants_row">
-										<input type="checkbox" name="screen_diagonal_variant">
-										<span class="variants_value">1280х720</span>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div class="card">
-							<div class="card-header" id="headingFour">
-								<h2 class="mb-0">
-									<div class="header-menu-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-										Оперативная память
-									</div>
-								</h2>
-							</div>
-							<div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
-								<div class="card-body">
-									<div class="card-body">
-									<?php foreach($specifications as $spec):?>
-										<?php if($spec['specification_id'] != SPECIFICATIONS_DICT['ram_size']) continue;?>
-										<div class="variants_row">
-											<input type="checkbox" name="ram_variant"value="<?=$spec['value']?>">
-											<span class="variants_value"><?=$spec['value']?></span>
+								';
+							}
+							echo '
 										</div>
-									<?php endforeach; ?>
 									</div>
 								</div>
-							</div>
-						</div>
+							';
+						} 
+						?>
 
-						<div class="card">
-							<div class="card-header" id="headingFive">
-								<h2 class="mb-0">
-									<div class="header-menu-link collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-										Версия операционной системы
-									</div>
-								</h2>
-							</div>
-							<div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
-								<div class="card-body">
-									<div class="card-body">
-									<?php foreach($specifications as $spec):?>
-										<?php if($spec['specification_id'] != SPECIFICATIONS_DICT['operating_system_version']) continue;?>
-										<div class="variants_row">
-											<input type="checkbox" name="operating_system_version_variant">
-											<span class="variants_value"><?=$spec['value']?></span>
-										</div>
-									<?php endforeach; ?>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div class="card">
-							<div class="card-header" id="headingSix">
-								<h2 class="mb-0">
-									<div class="header-menu-link collapsed" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-										Количество ядер операционной системы
-									</div>
-								</h2>
-							</div>
-							<div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionExample">
-								<div class="card-body">
-									<div class="card-body">
-									<?php foreach($specifications as $spec):?>
-										<?php if($spec['specification_id'] != SPECIFICATIONS_DICT['number_of_processor_cores']) continue;?>
-										<div class="variants_row">
-											<input type="checkbox" name="number_of_processor_cores_variant" value="<?=$spec['value']?>">
-											<span class="variants_value"><?=$spec['value']?></span>
-										</div>
-									<?php endforeach; ?>
-									</div>
-								</div>
-							</div>
-						</div>
 
 						<div class="accept_filters">
 							<button class="btn_accept_filters">Применить</button>

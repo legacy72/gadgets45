@@ -33,13 +33,13 @@ $(document).ready(function() {
         filter['number_of_processor_cores'] = number_of_processor_cores_list;
         filter['brand'] = brand_list;
         filter['screen_diagonal'] = screen_diagonal_list;
-        filter['processor_model'] = number_of_processor_cores_list;
+        filter['processor_model'] = processor_model_list;
         filter['amount_of_internal_memory'] = amount_of_internal_memory_list;
 
         return filter
 	}
 
-	// отправляем post запрос с запоненным фильтром
+	// отправляем post запрос с заполненным фильтром
 	function acceptFilters(order_by){
 		var category_text = $('.catalog_title').text().trim();
 		var category_id = 1;
@@ -53,40 +53,45 @@ $(document).ready(function() {
 		else if (category_text === 'Аксессуары'){
 			category_id = 3;
 		}
-		$.post(
-			'../templates/items.php',
-			{
+		$.ajax({
+			url: '../templates/items.php',
+			type: 'POST',
+			data: {
 				filter: filter,
 				category_id: category_id,
 				order_by: order_by,
 				price_from: $('.price_from').val(),
 				price_to: $('.price_to').val()
 			},
-			function(data){
+		    beforeSend: function(){
+		    	// передалать на вертящуюся загрузку
+		   		$('.catalog_items').html('LOADING... LOADING... LOADING... ');
+    		},
+			success: function(data){
+				
 				$('.catalog_items').html(data);
-			}
-		);
+			},
+		});
 	}
 
 
 
-	$(document).on('click','.price_range',function () {
+	$(document).on('click','.price_range', function () {
         if ($(this).is(':checked')) {
-        	$.post(
-				'../templates/price_range.php',
-				{
+        	$.ajax({
+				url: '../templates/price_range.php',
+				type: 'POST',
+				data: {
 					price_from: $(this).data('min'),
 					price_to: $(this).data('max')
 				},
-				function(data){
+				success: function(data){
 					$('.price_range__inputs').html(data);
 				}
-			);
+			});
         } 
      
     });
-
-
 
 
 	$(document.body).on('click', '#order_by_asc', function(){

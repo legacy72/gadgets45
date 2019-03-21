@@ -45,7 +45,7 @@ function getSmartphones(PDO $dbh, $filterSpecs, $filterStringParams, $price_from
 
 	// дополнительная строка фильтрации
 	$sql .= getAdditionaStringForlQuery($filterSpecs, $filterStringParams, $order_by);
-
+	
 	$sth = $dbh->prepare($sql);
 	$sth->bindParam(':price_from', $price_from, PDO::PARAM_INT);
 	$sth->bindParam(':price_to', $price_to, PDO::PARAM_INT);

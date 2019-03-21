@@ -30,6 +30,14 @@ function getSmartphones(PDO $dbh, $filterSpecs, $filterStringParams, $price_from
 		    JOIN ProductToColor ptc ON ptc.product_id = Product.id AND ptc.color_id = Color.id
 		    JOIN ProductToSpecification pts8 ON pts8.product_id = Product.id AND pts8.specification_id = 8
             JOIN ProductToSpecification pts11 ON pts11.product_id = Product.id AND pts11.specification_id = 11
+            JOIN ProductToSpecification pts1 ON pts1.product_id = Product.id AND pts1.specification_id = 1
+            JOIN ProductToSpecification pts2 ON pts2.product_id = Product.id AND pts2.specification_id = 2
+            -- JOIN ProductToSpecification pts3 ON pts3.product_id = Product.id AND pts3.specification_id = 3
+            -- JOIN ProductToSpecification pts22 ON pts22.product_id = Product.id AND pts22.specification_id = 22
+            JOIN ProductToSpecification pts7 ON pts7.product_id = Product.id AND pts7.specification_id = 7
+            -- JOIN ProductToSpecification pts9 ON pts9.product_id = Product.id AND pts9.specification_id = 9
+            JOIN ProductToSpecification pts12 ON pts12.product_id = Product.id AND pts12.specification_id = 12 
+            -- JOIN ProductToSpecification pts108 ON pts108.product_id = Product.id AND pts108.specification_id = 108
 		WHERE Product.category_id = 1
 		AND Image.is_main = 1
         AND ptc.discount_price BETWEEN :price_from AND :price_to

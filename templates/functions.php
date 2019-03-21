@@ -54,6 +54,23 @@ function getAdditionaStringForlQuery($filterSpecs, $filterStringParams, $order_b
 		$addSql = 'AND pts11.value IN ('.implode(',', $filterStringParams['ram_size']).') ';
 		$sql .= $addSql;
 	}
+	if (array_key_exists('brand', $filterSpecs) && count($filterSpecs['brand']) > 0){
+		$addSql = 'AND pts1.value IN ('.implode(',', $filterStringParams['brand']).') ';
+		$sql .= $addSql;
+	}
+	if (array_key_exists('screen_diagonal', $filterSpecs) && count($filterSpecs['screen_diagonal']) > 0){
+		$addSql = 'AND pts2.value IN ('.implode(',', $filterStringParams['screen_diagonal']).') ';
+		$sql .= $addSql;
+	}
+	if (array_key_exists('processor_model', $filterSpecs) && count($filterSpecs['processor_model']) > 0){
+		$addSql = 'AND pts7.value IN ('.implode(',', $filterStringParams['processor_model']).') ';
+		$sql .= $addSql;
+	}
+	if (array_key_exists('amount_of_internal_memory', $filterSpecs) && count($filterSpecs['amount_of_internal_memory']) > 0){
+		$addSql = 'AND pts12.value IN ('.implode(',', $filterStringParams['amount_of_internal_memory']).') ';
+		$sql .= $addSql;
+	}
+
 
 	// сортировка по возрастанию/убыванию цены
 	$order_by_string = '';

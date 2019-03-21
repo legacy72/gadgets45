@@ -2,17 +2,39 @@ $(document).ready(function() {
 	// заполняем фильтр
 	function fillFilter(){
 		var filter = {};
+
 	 	var ram_size_list = [];
 	 	var number_of_processor_cores_list = [];
-        $.each($("input[name='ram_size']:checked"), function(){            
+	 	var brand_list = [];
+	 	var screen_diagonal_list = [];
+	 	var processor_model_list = [];
+	 	var amount_of_internal_memory_list = [];
+
+        $.each($("input[name='ram_size']:checked"), function(){
             ram_size_list.push($(this).val());
         });
-        $.each($("input[name='number_of_processor_cores']:checked"), function(){            
+        $.each($("input[name='number_of_processor_cores']:checked"), function(){
             number_of_processor_cores_list.push($(this).val());
         });
+        $.each($("input[name='brand']:checked"), function(){
+            brand_list.push($(this).val());
+        });
+        $.each($("input[name='screen_diagonal']:checked"), function(){
+            screen_diagonal_list.push($(this).val());
+        });
+        $.each($("input[name='processor_model']:checked"), function(){
+            processor_model_list.push($(this).val());
+        });
+        $.each($("input[name='amount_of_internal_memory']:checked"), function(){ 
+            amount_of_internal_memory_list.push($(this).val());
+        });
+
         filter['ram_size'] = ram_size_list;
         filter['number_of_processor_cores'] = number_of_processor_cores_list;
-        console.log(filter);
+        filter['brand'] = brand_list;
+        filter['screen_diagonal'] = screen_diagonal_list;
+        filter['processor_model'] = number_of_processor_cores_list;
+        filter['amount_of_internal_memory'] = amount_of_internal_memory_list;
 
         return filter
 	}

@@ -169,13 +169,13 @@ $productItems = getSmartphones($dbh, $filterSpecs, $filterStringParams);
 
 						<?
 						// вывод всех фильтров
-						foreach (SPECIFICATION_ENG_TO_RUS as $key => $value) {
+						foreach (SPECIFICATIONS_ENG_TO_RUS as $key => $value) {
 							echo '
 								<div class="card">
 									<div class="card-header" id="heading'.$key.'">
 										<h2 class="mb-0">
 											<div class="header-menu-link collapsed" data-toggle="collapse" data-target="#collapse'.$key.'" aria-expanded="false" aria-controls="collapse'.$key.'">
-												'.SPECIFICATION_ENG_TO_RUS[$key].'
+												'.SPECIFICATIONS_ENG_TO_RUS[$key].'
 											</div>
 										</h2>
 									</div>
@@ -183,7 +183,7 @@ $productItems = getSmartphones($dbh, $filterSpecs, $filterStringParams);
 										<div class="card-body">
 							';
 							foreach($specifications as $spec){
-								if($spec['specification_id'] != SPECIFICATIONS_DICT[$key]) 
+								if($spec['specification_id'] != SPECIFICATIONS_NAME_TO_INDEX[$key]) 
 									continue;
 								echo '
 									<div class="variants_row">

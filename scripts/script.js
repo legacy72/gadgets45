@@ -51,7 +51,7 @@ $(document).ready(function() {
   });
 
   $('.dropdown-menu__row').on('click', function(event) {
-    var isUp = $(this).attr('value') == 'up' ? true : false,
+    var isUp = $(this).attr('value') === 'up' ? true : false,
         dropdown = $(this).parent().parent(),
         button = dropdown.find('button');
 

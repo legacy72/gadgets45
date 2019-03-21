@@ -2,25 +2,6 @@
 require_once 'connection.php';
 require_once '../templates/functions.php';
 
-// динамически формируем параметры
-function bindDynamicParams(PDO $dbh, $sth, $values, $types = false) {
-    foreach($values as $key => $value) {
-        if($types) {
-            $sth->bindValue(":$key",$value,$types[$key]);
-        } else {
-            if(is_int($value))        { $param = PDO::PARAM_INT; }
-            elseif(is_bool($value))   { $param = PDO::PARAM_BOOL; }
-            elseif(is_null($value))   { $param = PDO::PARAM_NULL; }
-            elseif(is_string($value)) { $param = PDO::PARAM_STR; }
-            else { $param = FALSE; }
-
-            if($param) $sth->bindValue(":$key", $value, $param);
-        }
-    }
-
-    return $sth;
-}
-
 // получаем все виды характеристик смартфонов
 function getSmartphonesSpecifications(PDO $dbh){
 	$sth = $dbh->prepare('
@@ -34,8 +15,7 @@ function getSmartphonesSpecifications(PDO $dbh){
 	return $specifications->fetchAll();
 }
 
-function getSmartphones(PDO $dbh, $filterSpecs, $filterStringParams, $price_from = 0, $price_to = 999999){
-	// $filterParams = getFilterParams($filterSpecs);	
+function getSmartphones(PDO $dbh, $filterSpecs, $filterStringParams, $price_from = 0, $price_to = 999999, $order_by = 1){
 	$sql = '
 		SELECT  
 			Image.name AS image_name, 
@@ -55,15 +35,8 @@ function getSmartphones(PDO $dbh, $filterSpecs, $filterStringParams, $price_from
         AND ptc.discount_price BETWEEN :price_from AND :price_to
 	';
 
-	// если выбраны чекбоксы фильтров добавляем условия
-	if (array_key_exists('number_of_processor_cores', $filterSpecs)  && count($filterSpecs['number_of_processor_cores']) > 0){
-		$addSql = 'AND pts8.value IN ('.implode(',', $filterStringParams['number_of_processor_cores']).') ';
-		$sql .= $addSql;
-	}
-	if (array_key_exists('ram_size', $filterSpecs) && count($filterSpecs['ram_size']) > 0){
-		$addSql = 'AND pts11.value IN ('.implode(',', $filterStringParams['ram_size']).') ';
-		$sql .= $addSql;
-	}
+	// дополнительная строка фильтрации
+	$sql .= getAdditionaStringForlQuery($filterSpecs, $filterStringParams, $order_by);
 
 	$sth = $dbh->prepare($sql);
 	$sth->bindParam(':price_from', $price_from, PDO::PARAM_INT);

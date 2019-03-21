@@ -11,9 +11,9 @@ $specifications = getSmartphonesSpecifications($dbh);
 list($filterSpecs, $filterParams) = getSpecificationsForFilter($dbh);
 // Получаем смартфоны, удовлетворяющие фильтрам
 $productItems = getSmartphones($dbh, $filterSpecs, $filterStringParams);
-
-
 ?>
+
+
 
 <!DOCTYPE html>
 <html>
@@ -122,65 +122,46 @@ $productItems = getSmartphones($dbh, $filterSpecs, $filterStringParams);
 								<div class="card-body">
 									<div class="price_range">
 										<div class="price_range__inputs">
-											<input class="price_from" id="price_from" type="text" placeholder="6990" value="<?=$_GET['price_from']; ?>" name="">
+											<input class="price_from" id="price_from" type="text" placeholder="6990" name="">
 											<input class="price_to" id="price_to" type="text" placeholder="199 000" name="">
 										</div>
-
 									</div>
 									<div class="prices-range__checkbox">
 										<div class="variants_row">
-											<input type="radio" name="price_variant">
+											<input type="radio" class="price_range" name="price_variant">
 											<span class="variants_value">Все цены</span>
 										</div>
 										<div class="variants_row">
-											<input type="radio" name="price_variant">
+											<input type="radio" data-min="10000" data-max="20000" class="price_range" name="price_variant" name="price_variant">
+											<span class="variants_value">10 000 - 20 000 р.</span>
+										</div>
+										<div class="variants_row">
+											<input type="radio" data-min="20000" data-max="30000" class="price_range" name="price_variant" name="price_variant">
 											<span class="variants_value">20 000 - 30 000 р.</span>
 										</div>
 										<div class="variants_row">
-											<input type="radio" name="price_variant">
+											<input type="radio" data-min="30000" data-max="40000" class="price_range" name="price_variant" name="price_variant">
 											<span class="variants_value">30 000 - 40 000 р.</span>
 										</div>
 										<div class="variants_row">
-											<input type="radio" name="price_variant">
+											<input type="radio" data-min="40000" data-max="50000" class="price_range" name="price_variant" name="price_variant">
 											<span class="variants_value">40 000 - 50 000 р.</span>
 										</div>
 										<div class="variants_row">
-											<input type="radio" name="price_variant">
+											<input type="radio" data-min="50000" data-max="60000" class="price_range" name="price_variant" name="price_variant">
 											<span class="variants_value">50 000 - 60 000 р.</span>
 										</div>
 										<div class="variants_row">
-											<input type="radio" name="price_variant">
+											<input type="radio" data-min="60000" data-max="70000" class="price_range" name="price_variant" name="price_variant">
 											<span class="variants_value">60 000 - 70 000 р.</span>
 										</div>
 										<div class="variants_row">
-											<input type="radio" name="price_variant">
+											<input type="radio" data-min="70000" data-max="80000" class="price_range" name="price_variant" name="price_variant">
 											<span class="variants_value">70 000 - 80 000 р.</span>
 										</div><div class="variants_row">
-											<input type="radio" name="price_variant">
+											<input type="radio" data-min="80000" data-max="90000" class="price_range" name="price_variant" name="price_variant">
 											<span class="variants_value">80 000 - 90 000 р.</span>
 										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div class="card">
-							<div class="card-header" id="headingTwo">
-								<h2 class="mb-0">
-									<div class="header-menu-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-										Диагональ
-									</div>
-								</h2>
-							</div>
-							<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-								<div class="card-body">
-									<div class="variants_row">
-										<input type="checkbox" name="screen_diagonal_variant">
-										<span class="variants_value">1720х1980</span>
-									</div>
-									<div class="variants_row">
-										<input type="checkbox" name="screen_diagonal_variant">
-										<span class="variants_value">1280х720</span>
 									</div>
 								</div>
 							</div>
@@ -203,6 +184,28 @@ $productItems = getSmartphones($dbh, $filterSpecs, $filterStringParams);
 									<div class="variants_row">
 										<input type="checkbox" name="brand_variant">
 										<span class="variants_value">Huawei</span>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="card">
+							<div class="card-header" id="headingTwo">
+								<h2 class="mb-0">
+									<div class="header-menu-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+										Диагональ
+									</div>
+								</h2>
+							</div>
+							<div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+								<div class="card-body">
+									<div class="variants_row">
+										<input type="checkbox" name="screen_diagonal_variant">
+										<span class="variants_value">1720х1980</span>
+									</div>
+									<div class="variants_row">
+										<input type="checkbox" name="screen_diagonal_variant">
+										<span class="variants_value">1280х720</span>
 									</div>
 								</div>
 							</div>
@@ -292,12 +295,12 @@ $productItems = getSmartphones($dbh, $filterSpecs, $filterStringParams);
 									Соритровать по:
 								</div>
 								<div class="dropdown price-button">
-									<button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									<button class="btn dropdown-toggle expanded" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 										Цене
 									</button>
 									<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-										<div value="up" class="dropdown-item dropdown-menu__row">По возрастанию</div>
-										<div value="down" class="dropdown-item dropdown-menu__row">По убыванию</div>
+										<div value="up" id="order_by_asc" class="dropdown-item dropdown-menu__row">По возрастанию</div>
+										<div value="down" id="order_by_desc" class="dropdown-item dropdown-menu__row">По убыванию</div>
 									</div>
 								</div>
 							</div>

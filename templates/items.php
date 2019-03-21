@@ -6,6 +6,11 @@ $filter = array(); // инициализируем пустой фильтр
 $category_id = 1; // по умолчанию ищем смартфоны
 $price_from = 0;
 $price_to = 999999;
+$order_by = 1; // по умолчанию сортировка по возрастанию
+// Сортировка по возрастанию (1) или по убыванию (2)
+if(!empty($_POST['order_by'])){
+	$order_by = $_POST['order_by'];
+}
 // если выбраны чекбоксы заполняем фильтр
 if(!empty($_POST['filter'])) {
     $filter = $_POST['filter'];
@@ -20,12 +25,13 @@ if(!empty($_POST['price_to'])){
 	$price_to = intval($_POST['price_to']);
 }
 
+
 // Получаем фильтры, по которым нужно сортирвать (по активным чекбоксам)
 list($filterSpecs, $filterParams) = getSpecificationsForFilter($dbh, $filter);
 
 // Выбор какую категорию сортировать
 if ($category_id == 1){
-	$productItems = getSmartphones($dbh, $filterSpecs, $filterParams, $price_from, $price_to);
+	$productItems = getSmartphones($dbh, $filterSpecs, $filterParams, $price_from, $price_to, $order_by);
 }
 else if ($category_id == 2){
 	$productItems = getNotebooks($dbh, $price_from, $price_to);

@@ -41,3 +41,49 @@ function generateBindParams($filterSpecs){
 	}
 	return $bindParams;
 }
+
+// Генерируме допонительную строку (фильтрация) для основного селекта
+function getAdditionaStringForlQuery($filterSpecs, $filterStringParams, $order_by){
+	$sql = '';
+	// если выбраны чекбоксы фильтров добавляем условия
+	if (array_key_exists('number_of_processor_cores', $filterSpecs)  && count($filterSpecs['number_of_processor_cores']) > 0){
+		$addSql = 'AND pts8.value IN ('.implode(',', $filterStringParams['number_of_processor_cores']).') ';
+		$sql .= $addSql;
+	}
+	if (array_key_exists('ram_size', $filterSpecs) && count($filterSpecs['ram_size']) > 0){
+		$addSql = 'AND pts11.value IN ('.implode(',', $filterStringParams['ram_size']).') ';
+		$sql .= $addSql;
+	}
+
+	// сортировка по возрастанию/убыванию цены
+	$order_by_string = '';
+	if($order_by == 1){
+		$order_by_string = 'ORDER BY ptc.discount_price ASC';
+	}
+	else if($order_by == 2){
+		$order_by_string = 'ORDER BY ptc.discount_price DESC';
+	}
+
+	$sql .= $order_by_string;
+
+	return $sql;
+}
+
+// динамически формируем параметры
+function bindDynamicParams(PDO $dbh, $sth, $values, $types = false) {
+    foreach($values as $key => $value) {
+        if($types) {
+            $sth->bindValue(":$key",$value,$types[$key]);
+        } else {
+            if(is_int($value))        { $param = PDO::PARAM_INT; }
+            elseif(is_bool($value))   { $param = PDO::PARAM_BOOL; }
+            elseif(is_null($value))   { $param = PDO::PARAM_NULL; }
+            elseif(is_string($value)) { $param = PDO::PARAM_STR; }
+            else { $param = FALSE; }
+
+            if($param) $sth->bindValue(":$key", $value, $param);
+        }
+    }
+
+    return $sth;
+}

@@ -3,7 +3,7 @@ $(document).ready(function() {
 	function fillFilter(){
 		var filter = {};
 
-	 	$('input[type=checkbox]').each(function () {
+	 	$('input.filterCheckBox[type=checkbox]').each(function () {
     		if (this.checked ){
     			// Если по ключу ничего не лежит то инициализируем массив
     			if(!filter[this.name])
@@ -41,18 +41,42 @@ $(document).ready(function() {
 			},
 		    beforeSend: function(){
 		    	// передалать на вертящуюся загрузку
-		   		$('.catalog_items').html('LOADING... LOADING... LOADING... ');
+		   		$('.catalog_items_block').html('LOADING... LOADING... LOADING... ');
     		},
 			success: function(data){
 				
-				$('.catalog_items').html(data);
+				$('.catalog_items_block').html(data);
 			},
 		});
 	}
 
 
 
-	$(document).on('click','.price_range', function () {
+
+	// постраничный вывод продуктов
+	$(document).on('click', '.page_num', function(){
+		$.ajax({
+			url: '../templates/items.php',
+			type: 'POST',
+			data: {
+				page_num: $(this).text(),
+			},
+		    beforeSend: function(){
+		    	// передалать на вертящуюся загрузку
+		   		$('.catalog_items_block').html('LOADING... LOADING... LOADING... ');
+    		},
+			success: function(data){
+				
+				$('.catalog_items_block').html(data);
+			},
+		});
+	});
+
+
+
+
+
+	$(document).on('click', '.price_range', function(){
         if ($(this).is(':checked')) {
         	$.ajax({
 				url: '../templates/price_range.php',

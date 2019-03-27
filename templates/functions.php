@@ -53,3 +53,31 @@ function getAdditionaStringForlQuery($filterSpecs, $order_by){
 
 	return $sql;
 }
+
+// Получить массив страниц для вывода
+function getPageNumbers($countPages, $currentPage){
+	$pagesList = array();
+	for($i = 1; $i <= $countPages; $i++){
+		if($i == 1 && abs($currentPage - $i) != 1)
+			array_push($pagesList, $i);
+		if($i == $countPages && abs($currentPage - $i) != 1)
+			array_push($pagesList, $i);
+		if(abs($currentPage - $i) == 1 || abs($currentPage - $i) == 0)
+			array_push($pagesList, $i);
+	}
+	$pagesList = array_values(array_unique($pagesList));
+	return $pagesList;
+}
+// Вывод номеров страниц
+function showPageNumbers($countPages, $currentPage){
+	$pagesList = getPageNumbers($countPages, $currentPage);
+	for($i = 0; $i < count($pagesList); $i++){
+		if($pagesList[$i] === $currentPage)
+			echo '<span class="page_num current_page" value="'. $pagesList[$i]. '">'. $pagesList[$i]. '</span>';
+		else
+			echo '<span class="page_num" value="'. $pagesList[$i]. '">'. $pagesList[$i]. '</span>';
+		if($pagesList[$i] != ($pagesList[$i + 1] - 1) && $i != count($pagesList) - 1)
+			echo('...');
+		echo(' ');
+	}
+}

@@ -57,7 +57,7 @@ function getSmartphones(PDO $dbh, $filterSpecs = array(), $price_from = 0, $pric
 	$sql = '
 		SELECT * FROM
 	    (
-	        SELECT DISTINCT 
+	        SELECT 
                 Image.name AS image_name, 
                 Product.name AS product_name, 
                 Color.name AS color_name,
@@ -76,8 +76,7 @@ function getSmartphones(PDO $dbh, $filterSpecs = array(), $price_from = 0, $pric
 	        AND ptc.discount_price BETWEEN :price_from AND :price_to
 	    ) T
 	';
-	
-	echo(empty($filterSpecs));
+
 	// дополнительная строка фильтрации
 	$sql .= getAdditionaStringForlQuery($filterSpecs, $order_by);
 

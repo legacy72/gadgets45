@@ -12,7 +12,25 @@ $specifications = getSmartphonesSpecifications($dbh);
 $filterSpecs = getSpecificationsForFilter($dbh);
 // Получаем смартфоны, удовлетворяющие фильтрам
 $productItems = getSmartphones($dbh, $filterSpecs);
+
+
+
+
+
+
+
+
+
+$countProducts = count($productItems);
+$productsOnPage = 2;
+$countPages = ceil($countProducts / $productsOnPage);
+$currentPage = 1;
+
+
+$productItems = array_slice($productItems, ($currentPage - 1) * $productsOnPage, $productsOnPage);
 ?>
+
+
 
 
 
@@ -189,7 +207,7 @@ $productItems = getSmartphones($dbh, $filterSpecs);
 									continue;
 								echo '
 									<div class="variants_row">
-										<input type="checkbox" name="'.SPECIFICATIONS_NAME_TO_INDEX[$key].'" value="'.$spec['value'].'">
+										<input class="filterCheckBox" type="checkbox" name="'.SPECIFICATIONS_NAME_TO_INDEX[$key].'" value="'.$spec['value'].'">
 										<span class="variants_value">'.$spec['value'].'</span>
 									</div>
 								';
@@ -228,43 +246,47 @@ $productItems = getSmartphones($dbh, $filterSpecs);
 								</div>
 							</div>
 						</div>
-						<div class="catalog_items">
-							<?php foreach($productItems as $product): ?>
-								<div class="catalog_item">
-									<div class="item_name">
-										<?=$product['product_name'] .' '. $product[
-											'color_name'];?>
-									</div>
-									<div class="item_image">
-										<img src=<?='../'. PRODUCT_IMAGES_PATH.$product['image_name']; ?>>
-									</div>
-									<div class="item_count">
-										Кол-во:
-										<?=$product['quantity'];?>
-									</div>
-									<div class="item_price">
-										<div class="standart_price">
-											<?
-											if ($product['discount_price'] != $product['price'])
-												echo '<strike>'. $product['price']. '</strike>';
-											else
-												echo $product['price'];
-											?>
+						<div class="catalog_items_block">
+							<div class="catalog_items">
+								<?php foreach($productItems as $product): ?>
+									<div class="catalog_item">
+										<div class="item_name">
+											<?=$product['product_name'] .' '. $product[
+												'color_name'];?>
 										</div>
-										<div class="discount_price">
-											<?
-											if ($product['discount_price'] != $product['price'])
-												echo $product['discount_price'];
-											?>
+										<div class="item_image">
+											<img src=<?='../'. PRODUCT_IMAGES_PATH.$product['image_name']; ?>>
+										</div>
+										<div class="item_count">
+											Кол-во:
+											<?=$product['quantity'];?>
+										</div>
+										<div class="item_price">
+											<div class="standart_price">
+												<?
+												if ($product['discount_price'] != $product['price'])
+													echo '<strike>'. $product['price']. '</strike>';
+												else
+													echo $product['price'];
+												?>
+											</div>
+											<div class="discount_price">
+												<?
+												if ($product['discount_price'] != $product['price'])
+													echo $product['discount_price'];
+												?>
+											</div>
+										</div>
+										<div class="item_button">
+											<button>
+												В корзину
+											</button>
 										</div>
 									</div>
-									<div class="item_button">
-										<button>
-											В корзину
-										</button>
-									</div>
-								</div>
-							<?php endforeach; ?>
+								<?php endforeach; ?>
+						</div>
+						<div class="pages_list">
+							<?showPageNumbers($countPages, $currentPage);?>
 						</div>
 					</div>
 				</div>

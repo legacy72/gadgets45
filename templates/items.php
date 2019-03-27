@@ -7,6 +7,7 @@ $category_id = 1; // по умолчанию ищем смартфоны
 $price_from = 0;
 $price_to = 999999;
 $order_by = 1; // по умолчанию сортировка по возрастанию
+$page_num = 1; // по умолчанию первая страница
 // Сортировка по возрастанию (1) или по убыванию (2)
 if(!empty($_POST['order_by'])){
 	$order_by = $_POST['order_by'];
@@ -24,6 +25,9 @@ if(!empty($_POST['price_from'])){
 if(!empty($_POST['price_to'])){
 	$price_to = intval($_POST['price_to']);
 }
+if(!empty($_POST['page_num'])){
+	$page_num = intval($_POST['page_num']);
+}
 
 // Получаем фильтры, по которым нужно сортирвать (по активным чекбоксам)
 $filterSpecs = getSpecificationsForFilter($dbh, $filter);
@@ -39,6 +43,19 @@ else if ($category_id == 3){
 	//
 }
 
+
+$countProducts = count($productItems);
+$productsOnPage = 2;
+$countPages = ceil($countProducts / $productsOnPage);
+$currentPage = $page_num;
+
+
+$productItems = array_slice($productItems, ($currentPage - 1) * $productsOnPage, $productsOnPage);
+
+
+
+
+echo '<div class="catalog_items">';
 foreach($productItems as $product){
 	echo '
 		<div class="catalog_item">
@@ -70,3 +87,7 @@ foreach($productItems as $product){
 	</div>
 	';
 }
+echo '</div>';
+echo '<div class="pages_list">';
+showPageNumbers($countPages, $currentPage);
+echo '</div>';

@@ -189,7 +189,7 @@ $productItems = getSmartphones($dbh, $filterSpecs);
 									continue;
 								echo '
 									<div class="variants_row">
-										<input type="checkbox" name="'.$key.'" value="'.$spec['value'].'">
+										<input type="checkbox" name="'.SPECIFICATIONS_NAME_TO_INDEX[$key].'" value="'.$spec['value'].'">
 										<span class="variants_value">'.$spec['value'].'</span>
 									</div>
 								';

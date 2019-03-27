@@ -6,11 +6,12 @@ require_once '../templates/config.php';
 // Получаем все характеристики самртфонов для заполнения фильтра фронта
 $specifications = getSmartphonesSpecifications($dbh);
 
+
 // Получаем фильтры, по которым нужно сортирвать (по активным чекбоксам)
 // для стартвой (этой) страницы фиьлтры пустые
-list($filterSpecs, $filterParams) = getSpecificationsForFilter($dbh);
+$filterSpecs = getSpecificationsForFilter($dbh);
 // Получаем смартфоны, удовлетворяющие фильтрам
-$productItems = getSmartphones($dbh, $filterSpecs, $filterStringParams);
+$productItems = getSmartphones($dbh, $filterSpecs);
 ?>
 
 

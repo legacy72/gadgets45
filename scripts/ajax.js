@@ -29,12 +29,12 @@ $(document).ready(function() {
             amount_of_internal_memory_list.push($(this).val());
         });
 
-        filter['ram_size'] = ram_size_list;
-        filter['number_of_processor_cores'] = number_of_processor_cores_list;
-        filter['brand'] = brand_list;
-        filter['screen_diagonal'] = screen_diagonal_list;
-        filter['processor_model'] = processor_model_list;
-        filter['amount_of_internal_memory'] = amount_of_internal_memory_list;
+        filter['11'] = ram_size_list;
+        filter['8'] = number_of_processor_cores_list;
+        filter['1'] = brand_list;
+        filter['2'] = screen_diagonal_list;
+        filter['7'] = processor_model_list;
+        filter['12'] = amount_of_internal_memory_list;
 
         return filter
 	}

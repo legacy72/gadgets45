@@ -60,6 +60,7 @@ function getProducts(PDO $dbh, $filterSpecs, $price_from, $price_to, $order_by, 
 	        SELECT 
                 Image.name AS image_name, 
                 Product.name AS product_name, 
+                Product.url_name AS url_name,
                 Color.name AS color_name,
                 ptc.price,
                 ptc.discount_price,

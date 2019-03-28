@@ -48,7 +48,7 @@ else if ($category_id == 3){
 
 
 // количество продуктов всего (чтобы посчитать сколько страниц)
-$countProducts = getCountSmartphones($dbh, $filterSpecs);
+$countProducts = getCountSmartphones($dbh, $filterSpecs, $price_from, $price_to);
 // Количество страниц для вывода всех продуктов
 $countPages = getCountPages($countProducts);
 // Текущая страница
@@ -57,12 +57,13 @@ $currentPage = $page_num;
 
 
 
-
 echo '<div class="catalog_items">';
 foreach($productItems as $product){
+	$productFullName = $product['product_name'] .' '. $product['color_name'];
+
 	echo '
 		<div class="catalog_item">
-			<div class="item_name">'.$product['product_name'] .' '. $product['color_name'].'</div>
+			<div class="item_name"><a href="../product/'. $product['url_name']. '-'. $product['color_name'] .'">'. $productFullName. '</a></div>
 			<div class="item_image">
 				<img src="../'. PRODUCT_IMAGES_PATH.$product['image_name'] .'">
 			</div>

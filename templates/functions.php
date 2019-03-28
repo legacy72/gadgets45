@@ -1,4 +1,5 @@
 <?
+require_once 'config.php';
 // Получить кол-во всех элементов словаря (сумма  кол-ва элементов по всем ключам)
 function getCountOfDictItems($dict){
 	$len = 0;
@@ -25,7 +26,8 @@ function getSpecificationsForFilter(PDO $dbh, $filter = array()){
 }
 
 // Генерируме допонительную строку (фильтрация) для основного селекта
-function getAdditionaStringForlQuery($filterSpecs, $order_by){
+function getAdditionaStringForlQuery($filterSpecs, $order_by, $limit = False, $offset = 0){
+
 	$sql = '';
 	// если фильтр пустой, то возвращаем все, не накладывая никаких условий
 	if(empty($filterSpecs)){
@@ -50,6 +52,9 @@ function getAdditionaStringForlQuery($filterSpecs, $order_by){
 	}
 
 	$sql .= $order_by_string;
+
+	if($limit)
+		$sql .= ' LIMIT '. PRODUCTS_ON_PAGE. ' OFFSET '. $offset;
 
 	return $sql;
 }
@@ -80,4 +85,9 @@ function showPageNumbers($countPages, $currentPage){
 			echo('...');
 		echo(' ');
 	}
+}
+
+// Количество страниц для вывода всех продуктов
+function getCountPages($countProducts){
+	return ceil($countProducts / PRODUCTS_ON_PAGE);
 }

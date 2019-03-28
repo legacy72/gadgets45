@@ -28,13 +28,15 @@ if(!empty($_POST['price_to'])){
 if(!empty($_POST['page_num'])){
 	$page_num = intval($_POST['page_num']);
 }
+// офсет для вывода продуктов конкретной страницы
+$offset = ($page_num - 1) * PRODUCTS_ON_PAGE;
 
 // Получаем фильтры, по которым нужно сортирвать (по активным чекбоксам)
 $filterSpecs = getSpecificationsForFilter($dbh, $filter);
 
 // Выбор какую категорию сортировать
 if ($category_id == 1){
-	$productItems = getSmartphones($dbh, $filterSpecs, $price_from, $price_to, $order_by);
+	$productItems = getSmartphones($dbh, $filterSpecs, $price_from, $price_to, $order_by, $limit = True, $offset);
 }
 else if ($category_id == 2){
 	$productItems = getNotebooks($dbh, $price_from, $price_to);
@@ -44,13 +46,14 @@ else if ($category_id == 3){
 }
 
 
-$countProducts = count($productItems);
-$productsOnPage = 2;
-$countPages = ceil($countProducts / $productsOnPage);
+
+// количество продуктов всего (чтобы посчитать сколько страниц)
+$countProducts = getCountSmartphones($dbh, $filterSpecs);
+// Количество страниц для вывода всех продуктов
+$countPages = getCountPages($countProducts);
+// Текущая страница
 $currentPage = $page_num;
 
-
-$productItems = array_slice($productItems, ($currentPage - 1) * $productsOnPage, $productsOnPage);
 
 
 

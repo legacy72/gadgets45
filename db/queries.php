@@ -45,8 +45,8 @@ function dropTempTable(PDO $dbh){
 	$sth = $dbh->query('DROP TABLE Filter');
 }
 
-// Выборка смартфонов
-function getSmartphones(PDO $dbh, $filterSpecs = array(), $price_from = 0, $price_to = 999999, $order_by = 1){
+
+function getProducts(PDO $dbh, $filterSpecs, $price_from, $price_to, $order_by, $limit, $offset = 0){
 	// создаем временную таблицу, если были выбраны какие-то фильтры
 	if(!empty($filterSpecs))
 		createTempTable($dbh, $filterSpecs);
@@ -78,7 +78,7 @@ function getSmartphones(PDO $dbh, $filterSpecs = array(), $price_from = 0, $pric
 	';
 
 	// дополнительная строка фильтрации
-	$sql .= getAdditionaStringForlQuery($filterSpecs, $order_by);
+	$sql .= getAdditionaStringForlQuery($filterSpecs, $order_by, $limit, $offset);
 
 	$sth = $dbh->prepare($sql);
 
@@ -93,9 +93,19 @@ function getSmartphones(PDO $dbh, $filterSpecs = array(), $price_from = 0, $pric
 	if(!empty($filterSpecs))
 		dropTempTable($dbh);
 
+	return $products;
+}
+
+// Выборка смартфонов
+function getSmartphones(PDO $dbh, $filterSpecs = array(), $price_from = 0, $price_to = 999999, $order_by = 1, $limit = True, $offset = 0){
+	$products = getProducts($dbh, $filterSpecs, $price_from, $price_to, $order_by, $limit, $offset);
 	return $products->fetchAll();
 }
 
+function getCountSmartphones(PDO $dbh, $filterSpecs = array(), $price_from = 0, $price_to = 999999, $order_by = 1, $limit = False, $offset = 0){
+	$products = getProducts($dbh, $filterSpecs, $price_from, $price_to, $order_by, $limit, $offset);
+	return count($products->fetchAll());
+}
 
 
 

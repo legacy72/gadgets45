@@ -10,24 +10,15 @@ $specifications = getSmartphonesSpecifications($dbh);
 // Получаем фильтры, по которым нужно сортирвать (по активным чекбоксам)
 // для стартвой (этой) страницы фиьлтры пустые
 $filterSpecs = getSpecificationsForFilter($dbh);
+// количество продуктов всего (чтобы посчитать сколько страниц)
+$countProducts = getCountSmartphones($dbh, $filterSpecs);
 // Получаем смартфоны, удовлетворяющие фильтрам
 $productItems = getSmartphones($dbh, $filterSpecs);
-
-
-
-
-
-
-
-
-
-$countProducts = count($productItems);
-$productsOnPage = 2;
-$countPages = ceil($countProducts / $productsOnPage);
+// Количество страниц для вывода всех продуктов
+$countPages = getCountPages($countProducts);
+// Текущая страница
 $currentPage = 1;
 
-
-$productItems = array_slice($productItems, ($currentPage - 1) * $productsOnPage, $productsOnPage);
 ?>
 
 
@@ -240,8 +231,8 @@ $productItems = array_slice($productItems, ($currentPage - 1) * $productsOnPage,
 										Цене
 									</button>
 									<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-										<div value="up" id="order_by_asc" class="dropdown-item dropdown-menu__row">По возрастанию</div>
-										<div value="down" id="order_by_desc" class="dropdown-item dropdown-menu__row">По убыванию</div>
+										<div value="up" id="order_by_asc" class="dropdown-item price_sort_order_by dropdown-menu__row">По возрастанию</div>
+										<div value="down" id="order_by_desc" class="dropdown-item price_sort_order_by dropdown-menu__row">По убыванию</div>
 									</div>
 								</div>
 							</div>

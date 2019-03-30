@@ -91,3 +91,24 @@ function showPageNumbers($countPages, $currentPage){
 function getCountPages($countProducts){
 	return ceil($countProducts / PRODUCTS_ON_PAGE);
 }
+
+// Возвращаем название цвета если он не 'standart'
+function getColorName($color){
+	return $color != 'standart' ? ucfirst($color) : ''; 
+}
+// Форматирование числа. Пример: 11999 -> 11 999 р.
+function priceFormat($price){
+	return number_format($price, '0', ',', ' '). ' р.';
+}
+
+// Получить основную картинку продукта
+function getMainImage($productImages){
+	$mainImage = "";
+	foreach ($productImages as $prodImage) {
+		if ($prodImage['is_main'] == 1){
+			$mainImage = $prodImage['name'];
+			break;
+		}
+	}
+	return $mainImage;
+}

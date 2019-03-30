@@ -1,7 +1,21 @@
 <?
-echo $_GET['color_id'];
-echo('<br>');
-echo $_GET['product_name'];
+
+require_once 'templates/config.php';
+require_once 'db/queries.php';
+require_once 'templates/functions.php';
+
+// Айди цвета
+$color_id = getColorID($dbh, $_GET['color_name']);
+// Основная информация о пордукте
+$productMainInfo = getProductMainInfo($dbh, $_GET['product_url_name'], $color_id);
+// Цвет товара
+$colorName = getColorName($_GET['color_name']);
+// Все картинки продукта
+$productImages = getProductImages($dbh, $productMainInfo['id'], $color_id);
+// Основная картинка продукта
+$mainImage = getMainImage($productImages);
+
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -17,7 +31,7 @@ echo $_GET['product_name'];
 				<div class="product_container">
 					<div class="product_images">
 						<div class="main_image">
-
+							<? echo' <img src="../'. PRODUCT_IMAGES_PATH. $mainImage .'">'; ?>
 						</div>
 						<div class="small_images">
 							<div class="small_img"></div>
@@ -28,10 +42,10 @@ echo $_GET['product_name'];
 					</div>
 					<div class="product_description">
 						<div class="product_title">
-							Смарфтон Xiaomi Mi8
+							<?=$productMainInfo['name']. ' '. $colorName;?>
 						</div>
 						<div class="product_price">
-							26 990 р.
+							<?=priceFormat($productMainInfo['discount_price']);?>
 						</div>
 						<div class="product_color">
 							Цвет

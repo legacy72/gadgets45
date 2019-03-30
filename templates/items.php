@@ -1,6 +1,7 @@
 <?
-require_once '../db/queries.php';
 require_once 'config.php';
+require_once '../db/queries.php';
+require_once '../templates/functions.php';
 
 $filter = array(); // инициализируем пустой фильтр
 $category_id = 1; // по умолчанию ищем смартфоны
@@ -59,13 +60,17 @@ $currentPage = $page_num;
 
 echo '<div class="catalog_items">';
 foreach($productItems as $product){
-	$productFullName = $product['product_name'] .' '. $product['color_name'];
+	$productFullName = $product['product_name'];
+	if ($product['color_name'] != 'standart')
+		 $productFullName .= ' '. $product['color_name'];
 
 	echo '
 		<div class="catalog_item">
 			<div class="item_name"><a href="../product/'. $product['url_name']. '-'. $product['color_name'] .'">'. $productFullName. '</a></div>
 			<div class="item_image">
-				<img src="../'. PRODUCT_IMAGES_PATH.$product['image_name'] .'">
+				<a href="../product/'. $product['url_name']. '-'. $product['color_name'] .'">
+					<img src="../'. PRODUCT_IMAGES_PATH.$product['image_name'] .'">
+				</a>
 			</div>
 			<div class="item_count">
 				Кол-во: '. $product['quantity'].'

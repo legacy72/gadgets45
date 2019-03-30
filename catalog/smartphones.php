@@ -2,6 +2,7 @@
 
 require_once '../db/queries.php';
 require_once '../templates/config.php';
+require_once '../templates/functions.php';
 
 // Получаем все характеристики самртфонов для заполнения фильтра фронта
 $specifications = getSmartphonesSpecifications($dbh);
@@ -242,11 +243,18 @@ $currentPage = 1;
 								<?php foreach($productItems as $product): ?>
 									<div class="catalog_item">
 										<div class="item_name">
-											<?=$product['product_name'] .' '. $product[
-												'color_name'];?>
+											<?
+												$productFullName = $product['product_name'];
+												if ($product['color_name'] != 'standart')
+													 $productFullName .= ' '. $product['color_name'];
+											echo '<a href="../product/'. $product['url_name']. '-'. $product['color_name'] .'">'; ?>
+												<?=$productFullName;?>
+											</a>
 										</div>
 										<div class="item_image">
-											<img src=<?='../'. PRODUCT_IMAGES_PATH.$product['image_name']; ?>>
+											<? echo '<a href="../product/'. $product['url_name']. '-'. $product['color_name'] .'">';?> 
+												<img src=<?='../'. PRODUCT_IMAGES_PATH.$product['image_name']; ?>>
+											</a>
 										</div>
 										<div class="item_count">
 											Кол-во:

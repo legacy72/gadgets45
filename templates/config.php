@@ -10,7 +10,7 @@ define(
 	)
 );
 
-define("PRODUCTS_ON_PAGE", 2);
+define("PRODUCTS_ON_PAGE", 3);
 
 define(
 	"SPECIFICATIONS_NAME_TO_INDEX", array(

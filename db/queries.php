@@ -1,14 +1,27 @@
 <?
 require_once 'connection.php';
 
+// получаем id категории по названию
+function getCategoryID(PDO $dbh, $category_name){
+	$sth = $dbh->prepare('
+		SELECT id FROM Category WHERE name = :category_name
+	');
+	$sth->bindParam(':category_name', $category_name, PDO::PARAM_STR);
+	$sth->execute();
+	$categoryID = $sth->fetch();
+	return $categoryID['id'];
+} 
+
+
 // получаем все виды характеристик смартфонов
-function getSmartphonesSpecifications(PDO $dbh){
+function getSpecifications(PDO $dbh, $category_id){
 	$sth = $dbh->prepare('
 		SELECT DISTINCT specification_id, value FROM ProductToSpecification
 		JOIN Specification ON Specification.id = ProductToSpecification.specification_id
-		WHERE Specification.category_id = 1
+		WHERE Specification.category_id = :category_id
 		-- ORDER BY value
 	');
+	$sth->bindParam(':category_id', $category_id, PDO::PARAM_INT);
 	$sth->execute();
 	$specifications = $sth;
 	return $specifications->fetchAll(PDO::FETCH_ASSOC);
@@ -119,7 +132,7 @@ function dropTempTable(PDO $dbh){
 }
 
 
-function getProducts(PDO $dbh, $filterSpecs, $price_from, $price_to, $order_by, $limit, $offset = 0){
+function getProducts(PDO $dbh, $filterSpecs, $category_id, $price_from, $price_to, $order_by, $limit, $offset = 0){
 	// создаем временную таблицу, если были выбраны какие-то фильтры
 	if(!empty($filterSpecs))
 		createTempTable($dbh, $filterSpecs);
@@ -145,7 +158,7 @@ function getProducts(PDO $dbh, $filterSpecs, $price_from, $price_to, $order_by, 
 				JOIN Product ON Product.id = Image.product_id
 			    JOIN ProductToColor ptc ON ptc.product_id = Product.id AND ptc.color_id = Color.id
 	            JOIN ProductToSpecification pts ON pts.product_id = Product.id
-	        WHERE Product.category_id = 1
+	        WHERE Product.category_id = :category_id
 			AND Image.is_main = 1
 	        AND ptc.discount_price BETWEEN :price_from AND :price_to
 	    ) T
@@ -156,6 +169,7 @@ function getProducts(PDO $dbh, $filterSpecs, $price_from, $price_to, $order_by, 
 
 	$sth = $dbh->prepare($sql);
 
+	$sth->bindParam(':category_id', $category_id, PDO::PARAM_INT);
 	$sth->bindParam(':price_from', $price_from, PDO::PARAM_INT);
 	$sth->bindParam(':price_to', $price_to, PDO::PARAM_INT);
 	if(!empty($filterSpecs))
@@ -171,13 +185,13 @@ function getProducts(PDO $dbh, $filterSpecs, $price_from, $price_to, $order_by, 
 }
 
 // Выборка смартфонов
-function getSmartphones(PDO $dbh, $filterSpecs = array(), $price_from = 0, $price_to = 999999, $order_by = 1, $limit = True, $offset = 0){
-	$products = getProducts($dbh, $filterSpecs, $price_from, $price_to, $order_by, $limit, $offset);
+function getProductItems(PDO $dbh, $filterSpecs = array(), $category_id = 1, $price_from = 0, $price_to = 999999, $order_by = 1, $limit = True, $offset = 0){
+	$products = getProducts($dbh, $filterSpecs, $category_id, $price_from, $price_to, $order_by, $limit, $offset);
 	return $products->fetchAll(PDO::FETCH_ASSOC);
 }
 
-function getCountSmartphones(PDO $dbh, $filterSpecs = array(), $price_from = 0, $price_to = 999999, $order_by = 1, $limit = False, $offset = 0){
-	$products = getProducts($dbh, $filterSpecs, $price_from, $price_to, $order_by, $limit, $offset);
+function getCountProducts(PDO $dbh, $filterSpecs = array(), $category_id = 1, $price_from = 0, $price_to = 999999, $order_by = 1, $limit = False, $offset = 0){
+	$products = getProducts($dbh, $filterSpecs, $category_id, $price_from, $price_to, $order_by, $limit, $offset);
 	return count($products->fetchAll(PDO::FETCH_ASSOC));
 }
 

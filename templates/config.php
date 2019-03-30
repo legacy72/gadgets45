@@ -10,10 +10,18 @@ define(
 	)
 );
 
+define(
+	"CATEGORY_ENG_TO_RUS", array(
+		"smartphones" => "Смартфоны",
+		"notebooks" => "Ноутбуки",
+		"accessories" => "Аксессуары",
+	)
+);
+
 define("PRODUCTS_ON_PAGE", 3);
 
 define(
-	"SPECIFICATIONS_NAME_TO_INDEX", array(
+	"SMARTPHONES_SPECIFICATIONS_NAME_TO_INDEX", array(
 		"brand" => 1,
 		"screen_diagonal" => 2,
 		"screen_resolution" => 3,
@@ -28,7 +36,18 @@ define(
 );
 
 define(
-	"SPECIFICATIONS_ENG_TO_RUS", array(
+	"NOTEBOOKS_SPECIFICATIONS_NAME_TO_INDEX", array(
+		"brand" => 38,
+		"operating_system" => 39,
+		"ram_size" => 68,
+		"processor_model" => 58,
+		"number_of_processor_cores" => 59,
+		"cpu_frequency" => 60,
+	)
+);
+
+define(
+	"SMARTPHONES_SPECIFICATIONS_ENG_TO_RUS", array(
 		"brand" => "Бренд", 
 		"screen_diagonal" => "Диагональ экрана", 
 		"screen_resolution" => "Разрешение экрана",
@@ -39,6 +58,17 @@ define(
 		"cpu_frequency" => "Частоста процессора",
 		"amount_of_internal_memory" => "Объем встроенной памяти",
 		"operating_system_version" => "Версия операционной системы", 	
+	)
+);
+
+define(
+	"NOTEBOOKS_SPECIFICATIONS_ENG_TO_RUS", array(
+		"brand" => "Бренд", 
+		"operating_system" => "Операционная система", 
+		"ram_size" => "Оперативная память", 
+		"processor_model" => "Модель операционной системы",
+		"number_of_processor_cores" => "Количество ядер операционной системы", 
+		"cpu_frequency" => "Частоста процессора",
 	)
 );
 

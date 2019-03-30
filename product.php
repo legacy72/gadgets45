@@ -1,7 +1,7 @@
 <?
 
-require_once 'templates/config.php';
 require_once 'db/queries.php';
+require_once 'templates/config.php';
 require_once 'templates/functions.php';
 
 // Айди цвета

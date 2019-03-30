@@ -58,6 +58,14 @@ function getAdditionaStringForlQuery($filterSpecs, $order_by, $limit = False, $o
 
 	return $sql;
 }
+// Получить характерстики на русском конкретной категории для вывода фильтров
+function getRusAndIDSSpecifications($categoryID){
+	if ($categoryID == 1)
+		return array(SMARTPHONES_SPECIFICATIONS_ENG_TO_RUS, SMARTPHONES_SPECIFICATIONS_NAME_TO_INDEX);
+	if ($categoryID == 2)
+		return array(NOTEBOOKS_SPECIFICATIONS_ENG_TO_RUS, NOTEBOOKS_SPECIFICATIONS_NAME_TO_INDEX);
+	return array(array(), array());
+}
 
 // Получить массив страниц для вывода
 function getPageNumbers($countPages, $currentPage){

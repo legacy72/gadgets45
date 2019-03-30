@@ -102,13 +102,29 @@ function priceFormat($price){
 }
 
 // Получить основную картинку продукта
-function getMainImage($productImages){
+function getMainAndAdditionalImages($productImages){
 	$mainImage = "";
+	$additionalImages = array();
 	foreach ($productImages as $prodImage) {
-		if ($prodImage['is_main'] == 1){
+		if ($prodImage['is_main'] === NULL){
+			array_push($additionalImages, $prodImage['name']);
+		}
+		else{
 			$mainImage = $prodImage['name'];
-			break;
 		}
 	}
-	return $mainImage;
+	return array($mainImage, $additionalImages);
+}
+
+// получить основные характеристики продукта на русском
+function getMainProductSpecifications($productSpecs, $productMainSpecs){
+	$mainSpecs = array();
+	foreach($productSpecs as $productSpec){
+		if (array_key_exists($productSpec['specification_name'], $productMainSpecs)){
+			$key = $productMainSpecs[$productSpec['specification_name']];
+			$value = $productSpec['specification_value'];
+			$mainSpecs[$key] = $value;
+		}
+	}
+	return $mainSpecs;
 }

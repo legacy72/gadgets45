@@ -13,8 +13,11 @@ $colorName = getColorName($_GET['color_name']);
 // Все картинки продукта
 $productImages = getProductImages($dbh, $productMainInfo['id'], $color_id);
 // Основная картинка продукта
-$mainImage = getMainImage($productImages);
-
+list($mainImage, $additionalImages) = getMainAndAdditionalImages($productImages);
+// Характеристики продукта
+$productSpecificatios = getProductSpecifictions($dbh, $_GET['product_url_name']);
+// Основные характеристики продукта на русском
+$mainSpec = getMainProductSpecifications($productSpecificatios, SMARTPHONES_MAIN_SPECS);
 
 ?>
 <!DOCTYPE html>
@@ -34,10 +37,11 @@ $mainImage = getMainImage($productImages);
 							<? echo' <img src="../'. PRODUCT_IMAGES_PATH. $mainImage .'">'; ?>
 						</div>
 						<div class="small_images">
-							<div class="small_img"></div>
-							<div class="small_img"></div>
-							<div class="small_img"></div>
-							<div class="small_img"></div>
+							<?php foreach($additionalImages as $additionalImage): ?>
+								<div class="small_img">
+									<?='<img src="../'. PRODUCT_IMAGES_PATH. $additionalImage. '">';?>
+								</div>
+							<?php endforeach; ?>
 						</div>
 					</div>
 					<div class="product_description">
@@ -59,46 +63,16 @@ $mainImage = getMainImage($productImages);
 							</div>
 						</div>
 						<div class="product_specifications">
+							<?php foreach ($mainSpec as $mainSpecKey => $mainSpecValue): ?>
 							<div class="specification_row">
-								<div class="key">Материал корпуса</div>
-								<div class="value">металл, стекло</div>
+								<div class="key">
+									<?=$mainSpecKey;?>
+								</div>
+								<div class="value">
+									<?=$mainSpecValue;?>
+								</div>
 							</div>
-							<div class="specification_row">
-								<div class="key">Вес</div>
-								<div class="value">169 г.</div>
-							</div>
-							<div class="specification_row">
-								<div class="key">Диагональ</div>
-								<div class="value">6.26 дюйм</div>
-							</div>
-							<div class="specification_row">
-								<div class="key">Размер изображения</div>
-								<div class="value">2280х1080</div>
-							</div>
-							<div class="specification_row">
-								<div class="key">Фотокамера</div>
-								<div class="value">12.5 МП</div>
-							</div>
-							<div class="specification_row">
-								<div class="key">Фронтальная камера</div>
-								<div class="value">24 млн пикс</div>
-							</div>
-							<div class="specification_row">
-								<div class="key">Процессор</div>
-								<div class="value">Qualcom Snapdragon 660</div>
-							</div>
-							<div class="specification_row">
-								<div class="key">Количество ядер процессора</div>
-								<div class="value">8</div>
-							</div>
-							<div class="specification_row">
-								<div class="key">Объем встроенной памяти</div>
-								<div class="value">64 Гб</div>
-							</div>
-							<div class="specification_row">
-								<div class="key">Емкость аккумулятора</div>
-								<div class="value">3350 мА/ч</div>
-							</div>
+							<?php endforeach ?>
 						</div>
 						<div class="product_buttons">
 							<button class="button_add_product_to_cart">

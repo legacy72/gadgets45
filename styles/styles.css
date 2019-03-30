@@ -628,6 +628,11 @@ footer{
 	height: 80px;
 	border: 4px solid #e8e8e8;
 }
+.small_img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 .product_color{
 	display: flex;
 }

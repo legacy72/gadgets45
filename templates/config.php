@@ -42,4 +42,18 @@ define(
 	)
 );
 
+define(
+	"SMARTPHONES_MAIN_SPECS", array(
+		"screen_diagonal" => "Диагональ экрана", 
+		"screen_resolution" => "Разрешение экрана",
+		"ram_size" => "Оперативная память", 
+		"number_of_megapixels_of_the_front" => "Количество мегапикселей основной камеры",
+		"processor_model" => "Модель операционной системы",
+		"number_of_processor_cores" => "Количество ядер операционной системы", 
+		"cpu_frequency" => "Частоста процессора",
+		"amount_of_internal_memory" => "Объем встроенной памяти",
+		"operating_system_version" => "Версия операционной системы", 	
+	)
+);
+
 ?>

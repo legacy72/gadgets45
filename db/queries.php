@@ -14,7 +14,7 @@ function getSmartphonesSpecifications(PDO $dbh){
 	return $specifications->fetchAll(PDO::FETCH_ASSOC);
 }
 
-//
+// Название цвета в id
 function getColorID(PDO $dbh, $color_name){
 	$sth = $dbh->prepare('
 		SELECT Color.id FROM Color WHERE Color.name = :color_name
@@ -25,8 +25,8 @@ function getColorID(PDO $dbh, $color_name){
 	return $colorID['id'];
 }
 
-//
-function getProductSpecifictions(PDO $dbh){
+// Получаем харатеристики конкретного продутка
+function getProductSpecifictions(PDO $dbh, $product_url_name){
 	$sth = $dbh->prepare('
 		SELECT 
 			T.product_name, 
@@ -44,9 +44,13 @@ function getProductSpecifictions(PDO $dbh){
 		    JOIN ProductToSpecification pts ON pts.product_id = Product.id
 		    JOIN Specification ON Specification.id = pts.specification_id
 		    WHERE
-		    Product.url_name = :product_name
+		    Product.url_name = :product_url_name
 		) T
 	');
+	$sth->bindParam(':product_url_name', $product_url_name, PDO::PARAM_STR);
+	$sth->execute();
+	$productSpecificatios = $sth->fetchAll(PDO::FETCH_ASSOC);
+	return $productSpecificatios;
 }
 
 

@@ -1174,3 +1174,7 @@ footer{
 .small-images_container .small_img:nth-child(n + 1) {
 	/* margin-left: 50px; */
 }
+
+.small_images .slick-slide {
+	width: 105px;
+}

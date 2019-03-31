@@ -6,7 +6,7 @@ $(document).ready(function() {
       if (countSmallImages > 3) {
          smallImages.addClass('slider-small-images');
       } else {
-         smallImages.addClass('small-images_container');
+         // smallImages.addClass('small-images_container');
       }
 
       $('.slider-main-image').slick({
@@ -20,8 +20,7 @@ $(document).ready(function() {
 
       $('.slider-small-images').slick({
         slidesToShow: countSmallImages > 3 ? 3 : countSmallImages,
-        centerMode: true,
-        centerPadding: '1px',
+        variableWidth: true,
         dots: false,
         slidesToScroll: 1,
         speed: 900,

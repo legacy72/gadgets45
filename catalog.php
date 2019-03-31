@@ -252,12 +252,12 @@ $currentPage = 1;
 												$productFullName = $product['product_name'];
 												if ($product['color_name'] != 'standart')
 													 $productFullName .= ' '. $product['color_name'];
-											echo '<a href="../product/'. $product['url_name']. '-'. $product['color_name'] .'">'; ?>
+											echo '<a href="'. $_GET['category_name']. '/'. $product['url_name']. '-'. $product['color_name'] .'">'; ?>
 												<?=$productFullName;?>
 											</a>
 										</div>
 										<div class="item_image">
-											<? echo '<a href="../product/'. $product['url_name']. '-'. $product['color_name'] .'">';?> 
+											<? echo '<a href="'. $_GET['category_name']. '/'. $product['url_name']. '-'. $product['color_name'] .'">';?> 
 												<img src=<?='../'. PRODUCT_IMAGES_PATH.$product['image_name']; ?>>
 											</a>
 										</div>

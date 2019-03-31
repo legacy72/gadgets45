@@ -4,6 +4,7 @@ require_once 'db/queries.php';
 require_once 'templates/config.php';
 require_once 'templates/functions.php';
 
+
 // Айди цвета
 $color_id = getColorID($dbh, $_GET['color_name']);
 // Основная информация о пордукте
@@ -25,21 +26,21 @@ $mainSpec = getMainProductSpecifications($productSpecificatios, SMARTPHONES_MAIN
 <head>
 	<meta charset="utf-8">
 	<title>Товар</title>
-	<? require_once('html_templates/links.php'); ?>
+	<? require_once('html_templates/product_links.php'); ?>
 </head>
 <body>
-	<? require_once('html_templates/header.php'); ?>
+	<? require_once('html_templates/product_header.php'); ?>
 		<section>
 			<div class="container new_container">
 				<div class="product_container">
 					<div class="product_images">
 						<div class="main_image">
-							<? echo' <img src="../'. PRODUCT_IMAGES_PATH. $mainImage .'">'; ?>
+							<? echo' <img src="../../'. PRODUCT_IMAGES_PATH. $mainImage .'">'; ?>
 						</div>
 						<div class="small_images">
 							<?php foreach($additionalImages as $additionalImage): ?>
 								<div class="small_img">
-									<?='<img src="../'. PRODUCT_IMAGES_PATH. $additionalImage. '">';?>
+									<?='<img src="../../'. PRODUCT_IMAGES_PATH. $additionalImage. '">';?>
 								</div>
 							<?php endforeach; ?>
 						</div>
@@ -117,8 +118,8 @@ $mainSpec = getMainProductSpecifications($productSpecificatios, SMARTPHONES_MAIN
 		</section>
 	</main>
 
-	<? require_once('html_templates/footer.php'); ?>
-	<? require_once('html_templates/scripts_imports.php'); ?>
+	<? require_once('html_templates/product_footer.php'); ?>
+	<? require_once('html_templates/product_scripts_imports.php'); ?>
 
 </body>
 </html>

@@ -5,6 +5,7 @@ require_once '../templates/functions.php';
 
 $filter = array(); // инициализируем пустой фильтр
 $category_id = 1; // по умолчанию ищем смартфоны
+$category_name = 'smartphones'; // по умолчанию категория смартфоны
 $price_from = 0;
 $price_to = 999999;
 $order_by = 1; // по умолчанию сортировка по возрастанию
@@ -19,6 +20,9 @@ if(!empty($_POST['filter'])) {
 }
 if(!empty($_POST['category_id'])){
 	$category_id = $_POST['category_id'];
+}
+if(!empty($_POST['category_name'])){
+	$category_name = $_POST['category_name'];
 }
 if(!empty($_POST['price_from'])){
 	$price_from = intval($_POST['price_from']);
@@ -58,9 +62,9 @@ foreach($productItems as $product){
 
 	echo '
 		<div class="catalog_item">
-			<div class="item_name"><a href="../product/'. $product['url_name']. '-'. $product['color_name'] .'">'. $productFullName. '</a></div>
+			<div class="item_name"><a href="'. $category_name. '/'. $product['url_name']. '-'. $product['color_name'] .'">'. $productFullName. '</a></div>
 			<div class="item_image">
-				<a href="../product/'. $product['url_name']. '-'. $product['color_name'] .'">
+				<a href="'. $category_name. '/'. $product['url_name']. '-'. $product['color_name'] .'">
 					<img src="../'. PRODUCT_IMAGES_PATH.$product['image_name'] .'">
 				</a>
 			</div>

@@ -1,4 +1,14 @@
 $(document).ready(function() {
+	var categoryRusToEng = {
+		'Смартфоны': 'smartphones',
+		'Ноутбуки': 'notebooks',
+		'Аксессуары': 'accessories',
+	}
+	var categoryTextToID = {
+		'Смартфоны': 1,
+		'Ноутбуки': 2,
+		'Аксессуары': 3,
+	}
 	// заполняем фильтр
 	function fillFilter(){
 		var filter = {};
@@ -25,26 +35,22 @@ $(document).ready(function() {
 		}
 		return order_by;
 	}
+	// Поулучаем название категории
+	function getCategoryName(category_text){
+		return categoryRusToEng[category_text];
+	}
+
 	// Получаем категорию тоаров
-	function getCategoryID(){
-		var category_text = $('.catalog_title').text().trim();
-		var category_id = 1;
-		if (category_text === 'Смартфоны'){
-			category_id = 1;		
-		}
-		else if (category_text === 'Ноутбуки'){
-			category_id = 2;
-		}
-		else if (category_text === 'Аксессуары'){
-			category_id = 3;
-		}
-		return category_id;
+	function getCategoryID(category_text){
+		return categoryTextToID[category_text];
 	}
 	//получаем основные данные для фильтрации
 	function getFiltersData(){
+		var category_text = $('.catalog_title').text().trim();
 		return {
 			filter: fillFilter(),
-			category_id: getCategoryID(),
+			category_id: getCategoryID(category_text),
+			category_name: getCategoryName(category_text),
 			order_by: getOrderBy(),
 			price_from: $('.price_from').val(),
 			price_to: $('.price_to').val()

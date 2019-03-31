@@ -1171,3 +1171,6 @@ footer{
   border-bottom: 3px solid #0093ed;
 }
 
+.small-images_container .small_img:nth-child(n + 1) {
+	/* margin-left: 50px; */
+}

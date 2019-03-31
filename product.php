@@ -37,12 +37,16 @@ $mainSpec = getMainProductSpecifications($productSpecificatios, SMARTPHONES_MAIN
 						<div class="main_image">
 							<? echo' <img src="../../'. PRODUCT_IMAGES_PATH. $mainImage .'">'; ?>
 						</div>
-						<div class="small_images">
-							<?php foreach($additionalImages as $additionalImage): ?>
+						<div class="small_images slider-small-images">
+							<div class="small_img"></div>
+							<div class="small_img"></div>
+							<div class="small_img"></div>
+							<div class="small_img"></div>
+							<!-- <?php foreach($additionalImages as $additionalImage): ?>
 								<div class="small_img">
 									<?='<img src="../../'. PRODUCT_IMAGES_PATH. $additionalImage. '">';?>
 								</div>
-							<?php endforeach; ?>
+							<?php endforeach; ?> -->
 						</div>
 					</div>
 					<div class="product_description">
@@ -120,6 +124,8 @@ $mainSpec = getMainProductSpecifications($productSpecificatios, SMARTPHONES_MAIN
 
 	<? require_once('html_templates/product_footer.php'); ?>
 	<? require_once('html_templates/product_scripts_imports.php'); ?>
+
+	<script src="../../scripts/product.js" charset="utf-8"></script>
 
 </body>
 </html>

@@ -34,8 +34,13 @@ $mainSpec = getMainProductSpecifications($productSpecificatios, SMARTPHONES_MAIN
 			<div class="container new_container">
 				<div class="product_container">
 					<div class="product_images">
-						<div class="main_image">
-							<? echo' <img src="../../'. PRODUCT_IMAGES_PATH. $mainImage .'">'; ?>
+						<div class="slider-main-image">
+							<?php foreach($additionalImages as $additionalImage): ?>
+								<div class="main_image">
+									<?='<img src="../../'. PRODUCT_IMAGES_PATH. $additionalImage. '">';?>
+								</div>
+							<?php endforeach; ?>
+							<!-- <? echo' <img src="../../'. PRODUCT_IMAGES_PATH. $mainImage .'">'; ?> -->
 						</div>
 						<div class="small_images slider-small-images">
 							<?php foreach($additionalImages as $additionalImage): ?>

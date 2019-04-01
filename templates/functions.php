@@ -149,21 +149,23 @@ function getMainProductSpecifications($productSpecs, $category_name){
 function getSpecificationsByGroups($specifications){
 	$specsByGroup = array();
 	$specificationsArr = array();
+	// Идем во всем характеристикам и смотрим к какой группе она (хар-ка) относится
+	// Если в новом словарем с группами такой категории нет то создаем и записываем
+	// туда первую характеристику
+	// Если такая категория уже есть то добавляем по указанному ключу дополнительную характеристику
 	foreach($specifications as $spec){
 		if(!array_key_exists($spec['specifiaction_group'], $specsByGroup)){
 			$specificationsArr = array();
 			$dict = array(
 				$spec['specification_name_ru'] => $spec['specification_value'],
 			);
-			array_push($specificationsArr, $dict);
-			$specsByGroup[$spec['specifiaction_group']] = $specificationsArr;
+			$specsByGroup[$spec['specifiaction_group']] = array($dict);
 		}
 		else{
 			$dict = array(
 				$spec['specification_name_ru'] => $spec['specification_value'],
 			);
-			array_push($specificationsArr, $dict);
-			$specsByGroup[$spec['specifiaction_group']] = $specificationsArr;
+			array_push($specsByGroup[$spec['specifiaction_group']], $dict);
 		}
 	}
 

@@ -87,27 +87,46 @@ define(
 );
 
 define(
+	"NOTEBOOKS_MAIN_SPECS", array(
+		"screen_diagonal", 
+		"type_of_ram",
+		"ram_size", 
+		"operating_system",
+		"processor_model",
+		"number_of_processor_cores", 
+		"cpu_frequency",
+		"approximate_battery_life",
+		"type_of_ram", 	
+	)
+);
+
+define(
+	"ACCESSORIES_MAIN_SPECS", array(
+
+	)
+);
+
+define(
 	"CATEGORY_GROUP_ENG_TO_RUS", array(
 		"common" => "Основные",
 		"screen" => "Экран",
 		"system" => "Система",
-		"main_and_front_cameras" => "",
-		"mobile_connection" => "",
-		"wired_interfaces" => "",
-		"additional_information" => "",
-		"battery" => "",
-		"dimensions_and_weight" => "",
-		"classification" => "",
-		"housing_and_input_devices" => "",
-		"processor" => "",
-		"ram_info" => "",
-		"graphic_accelerator" => "",
-		"data_storages" => "",
-		"built_in_additional_equipment" => "",
-		"internet_data_transfer" => "",
-		"interfaces_connectors" => "",
-		"battery" => "",
-		"equipment" => "",
+		"main_and_front_cameras" => "Камеры",
+		"mobile_connection" => "Мобильная связь",
+		"wired_interfaces" => "Проводные интерфейсы",
+		"additional_information" => "Дополнительная информация",
+		"dimensions_and_weight" => "Габариты и вес",
+		"classification" => "Классификация",
+		"housing_and_input_devices" => "Корпус и устройства ввода",
+		"processor" => "Процессор",
+		"ram_info" => "Оперативная память",
+		"graphic_accelerator" => "Графический ускоритель",
+		"data_storages" => "Накопители данных",
+		"built_in_additional_equipment" => "Встроенное дополнительное оборудование",
+		"internet_data_transfer" => "Интернет/передача данных",
+		"interfaces_connectors" => "Интерфейсы/разъемы",
+		"battery" => "Питание",
+		"equipment" => "Комплектация",
 	)
 );
 

@@ -4,7 +4,6 @@ require_once 'db/queries.php';
 require_once 'templates/config.php';
 require_once 'templates/functions.php';
 
-
 // Айди цвета
 $color_id = getColorID($dbh, $_GET['color_name']);
 // Основная информация о пордукте
@@ -18,7 +17,7 @@ list($mainImage, $additionalImages) = getMainAndAdditionalImages($productImages)
 // Характеристики продукта
 $productSpecificatios = getProductSpecifictions($dbh, $_GET['product_url_name']);
 // Основные характеристики продукта на русском
-$mainSpec = getMainProductSpecifications($productSpecificatios, SMARTPHONES_MAIN_SPECS);
+$mainSpec = getMainProductSpecifications($productSpecificatios, $_GET['category_name']);
 // Получаем характеристики сгруппированные по  категориям
 $specificationsByGroups = getSpecificationsByGroups($productSpecificatios);
 

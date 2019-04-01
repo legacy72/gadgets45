@@ -125,8 +125,15 @@ function getMainAndAdditionalImages($productImages){
 }
 
 // получить основные характеристики продукта на русском
-function getMainProductSpecifications($productSpecs, $productMainSpecs){
+function getMainProductSpecifications($productSpecs, $category_name){
 	$mainSpecs = array();
+	if ($category_name === 'smartphones')
+		$productMainSpecs = SMARTPHONES_MAIN_SPECS;
+	else if ($category_name === 'notebooks')
+		$productMainSpecs = NOTEBOOKS_MAIN_SPECS;
+	else if ($category_name === 'accessories')
+		$productMainSpecs = ACCESSORIES_MAIN_SPECS;
+
 	foreach($productSpecs as $productSpec){
 		if (in_array($productSpec['specification_name'], $productMainSpecs)){
 			$key = $productSpec['specification_name_ru'];

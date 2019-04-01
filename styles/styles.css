@@ -755,6 +755,7 @@ footer{
 	width: 500px;
 	display: flex;
 	justify-content: flex-end;
+	text-align: right;
 }
 /*catalog*/
 .catalog_container{

@@ -19,6 +19,10 @@ list($mainImage, $additionalImages) = getMainAndAdditionalImages($productImages)
 $productSpecificatios = getProductSpecifictions($dbh, $_GET['product_url_name']);
 // Основные характеристики продукта на русском
 $mainSpec = getMainProductSpecifications($productSpecificatios, SMARTPHONES_MAIN_SPECS);
+// Получаем характеристики сгруппированные по  категориям
+$specificationsByGroups = getSpecificationsByGroups($productSpecificatios);
+// print_r($specificationsByGroups);
+
 
 ?>
 <!DOCTYPE html>

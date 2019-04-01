@@ -136,3 +136,28 @@ function getMainProductSpecifications($productSpecs, $productMainSpecs){
 	}
 	return $mainSpecs;
 }
+
+
+// Группируем характеристики по их категории
+function getSpecificationsByGroups($specifications){
+	$specsByGroup = array();
+	$specificationsArr = array();
+	foreach($specifications as $spec){
+		if(!array_key_exists($spec['specifiaction_group'], $specsByGroup)){
+			$specificationsArr = array();
+			$dict = array(
+				$spec['specification_name'] => $spec['specification_value'],
+			);
+			array_push($specificationsArr, $dict);
+			$specsByGroup[$spec['specifiaction_group']] = $specificationsArr;
+		}
+		else{
+			$dict = array(
+				$spec['specification_name'] => $spec['specification_value'],
+			);
+			array_push($specificationsArr, $dict);
+			$specsByGroup[$spec['specifiaction_group']] = $specificationsArr;
+		}
+	}
+	return $specsByGroup;
+}

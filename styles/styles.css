@@ -619,7 +619,7 @@ footer{
 }
 .small_images{
 	margin-top: 20px;
-	width: 370px;
+	max-width: 370px;
 	display: flex;
 	justify-content: space-between;
 }
@@ -731,7 +731,31 @@ footer{
 .product_info_text{
 	font-size: 18px;
 }
-
+.specifications_group_block{
+	width: 770px;
+	margin-top: 40px;
+}
+.specification_category{
+	font-size: 16px;
+	font-weight: 600;
+}
+.specification_block{
+	margin-top: 4px;
+	background-color: #f0f0f0;
+	display: flex;
+	justify-content: space-between;
+	font-size: 16px;
+    padding: 10px 20px;
+    align-items: center;
+}
+.specification_value{
+	width: 200px;
+}
+.specification_value{
+	width: 500px;
+	display: flex;
+	justify-content: flex-end;
+}
 /*catalog*/
 .catalog_container{
 	display: flex;

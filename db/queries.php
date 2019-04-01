@@ -44,6 +44,7 @@ function getProductSpecifictions(PDO $dbh, $product_url_name){
 		SELECT 
 			T.product_name, 
 			T.specification_name, 
+			T.specification_name_ru,
 		    T.specifiaction_group,
 		    T.specification_value
 		FROM
@@ -51,6 +52,7 @@ function getProductSpecifictions(PDO $dbh, $product_url_name){
 		    SELECT
 		    	Product.name AS product_name,
 		    	Specification.name AS specification_name,
+		    	Specification.name_ru AS specification_name_ru,
 		    	Specification.specifiaction_group,
 		    	pts.value AS specification_value
 		    FROM Product
@@ -194,14 +196,5 @@ function getCountProducts(PDO $dbh, $filterSpecs = array(), $category_id = 1, $p
 	$products = getProducts($dbh, $filterSpecs, $category_id, $price_from, $price_to, $order_by, $limit, $offset);
 	return count($products->fetchAll(PDO::FETCH_ASSOC));
 }
-
-
-
-
-
-function getNotebooks(PDO $dbh, $price_from = 1, $price_to = 999999){
-
-}
-
 
 ?>

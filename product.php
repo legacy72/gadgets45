@@ -21,8 +21,6 @@ $productSpecificatios = getProductSpecifictions($dbh, $_GET['product_url_name'])
 $mainSpec = getMainProductSpecifications($productSpecificatios, SMARTPHONES_MAIN_SPECS);
 // Получаем характеристики сгруппированные по  категориям
 $specificationsByGroups = getSpecificationsByGroups($productSpecificatios);
-// print_r($specificationsByGroups);
-
 
 ?>
 <!DOCTYPE html>
@@ -108,7 +106,7 @@ $specificationsByGroups = getSpecificationsByGroups($productSpecificatios);
 				</div>
 			</div>
 			<div class="product_info">
-				<div class="product_info_title">
+			<!-- 	<div class="product_info_title">
 					Смартфон Xiaomi Mi8
 				</div>
 				<div class="product_info_text">
@@ -122,7 +120,29 @@ $specificationsByGroups = getSpecificationsByGroups($productSpecificatios);
 						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 					</p>
-				</div>
+				</div> -->
+
+
+				<?php foreach($specificationsByGroups as $specGroupKey => $specGroupValue): ?>
+					<div class="specifications_group_block">
+						<div class="specification_category">
+							<?=CATEGORY_GROUP_ENG_TO_RUS[$specGroupKey];?>
+						</div>
+						<?php for($i = 0; $i < count($specGroupValue); $i++): ?>
+							<?php foreach($specGroupValue[$i] as $specKey => $specValue): ?>
+								<div class="specification_block">
+									<div class="specification_key">
+										<?=$specKey;?>
+									</div>
+									<div class="specification_value">
+										<?=$specValue;?>
+									</div>
+								</div>
+							<?php endforeach; ?>
+						<?php endfor; ?>
+					</div>
+				<?php endforeach; ?>
+
 			</div>
 		</section>
 	</main>

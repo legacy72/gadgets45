@@ -14,7 +14,7 @@ list($rusSpecifications, $specificationIDS) = getRusAndIDSSpecifications($catego
 
 
 // Получаем фильтры, по которым нужно сортирвать (по активным чекбоксам)
-// для стартвой (этой) страницы фиьлтры пустые
+// для стартовой (этой) страницы фиьлтры пустые
 $filterSpecs = getSpecificationsForFilter($dbh);
 // количество продуктов всего (чтобы посчитать сколько страниц)
 $countProducts = getCountProducts($dbh, $filterSpecs, $categoryID);

@@ -53,8 +53,8 @@ define(
 		"screen_resolution" => "Разрешение экрана",
 		"ram_size" => "Оперативная память", 
 		"number_of_megapixels_of_the_front" => "Количество мегапикселей основной камеры",
-		"processor_model" => "Модель операционной системы",
-		"number_of_processor_cores" => "Количество ядер операционной системы", 
+		"processor_model" => "Модель процессора",
+		"number_of_processor_cores" => "Количество", 
 		"cpu_frequency" => "Частоста процессора",
 		"amount_of_internal_memory" => "Объем встроенной памяти",
 		"operating_system_version" => "Версия операционной системы", 	
@@ -66,23 +66,48 @@ define(
 		"brand" => "Бренд", 
 		"operating_system" => "Операционная система", 
 		"ram_size" => "Оперативная память", 
-		"processor_model" => "Модель операционной системы",
-		"number_of_processor_cores" => "Количество ядер операционной системы", 
+		"processor_model" => "Модель процессора",
+		"number_of_processor_cores" => "Количество ядер", 
 		"cpu_frequency" => "Частоста процессора",
 	)
 );
 
 define(
 	"SMARTPHONES_MAIN_SPECS", array(
-		"screen_diagonal" => "Диагональ экрана", 
-		"screen_resolution" => "Разрешение экрана",
-		"ram_size" => "Оперативная память", 
-		"number_of_megapixels_of_the_front" => "Количество мегапикселей основной камеры",
-		"processor_model" => "Модель операционной системы",
-		"number_of_processor_cores" => "Количество ядер операционной системы", 
-		"cpu_frequency" => "Частоста процессора",
-		"amount_of_internal_memory" => "Объем встроенной памяти",
-		"operating_system_version" => "Версия операционной системы", 	
+		"screen_diagonal", 
+		"screen_resolution",
+		"ram_size", 
+		"number_of_megapixels_of_the_front",
+		"processor_model",
+		"number_of_processor_cores", 
+		"cpu_frequency",
+		"amount_of_internal_memory",
+		"operating_system_version", 	
+	)
+);
+
+define(
+	"CATEGORY_GROUP_ENG_TO_RUS", array(
+		"common" => "Основные",
+		"screen" => "Экран",
+		"system" => "Система",
+		"main_and_front_cameras" => "",
+		"mobile_connection" => "",
+		"wired_interfaces" => "",
+		"additional_information" => "",
+		"battery" => "",
+		"dimensions_and_weight" => "",
+		"classification" => "",
+		"housing_and_input_devices" => "",
+		"processor" => "",
+		"ram_info" => "",
+		"graphic_accelerator" => "",
+		"data_storages" => "",
+		"built_in_additional_equipment" => "",
+		"internet_data_transfer" => "",
+		"interfaces_connectors" => "",
+		"battery" => "",
+		"equipment" => "",
 	)
 );
 

@@ -128,8 +128,8 @@ function getMainAndAdditionalImages($productImages){
 function getMainProductSpecifications($productSpecs, $productMainSpecs){
 	$mainSpecs = array();
 	foreach($productSpecs as $productSpec){
-		if (array_key_exists($productSpec['specification_name'], $productMainSpecs)){
-			$key = $productMainSpecs[$productSpec['specification_name']];
+		if (in_array($productSpec['specification_name'], $productMainSpecs)){
+			$key = $productSpec['specification_name_ru'];
 			$value = $productSpec['specification_value'];
 			$mainSpecs[$key] = $value;
 		}
@@ -146,18 +146,19 @@ function getSpecificationsByGroups($specifications){
 		if(!array_key_exists($spec['specifiaction_group'], $specsByGroup)){
 			$specificationsArr = array();
 			$dict = array(
-				$spec['specification_name'] => $spec['specification_value'],
+				$spec['specification_name_ru'] => $spec['specification_value'],
 			);
 			array_push($specificationsArr, $dict);
 			$specsByGroup[$spec['specifiaction_group']] = $specificationsArr;
 		}
 		else{
 			$dict = array(
-				$spec['specification_name'] => $spec['specification_value'],
+				$spec['specification_name_ru'] => $spec['specification_value'],
 			);
 			array_push($specificationsArr, $dict);
 			$specsByGroup[$spec['specifiaction_group']] = $specificationsArr;
 		}
 	}
+
 	return $specsByGroup;
 }

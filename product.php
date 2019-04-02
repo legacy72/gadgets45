@@ -105,21 +105,12 @@ $specificationsByGroups = getSpecificationsByGroups($productSpecificatios);
 				</div>
 			</div>
 			<div class="product_info">
-			<!-- 	<div class="product_info_title">
-					Смартфон Xiaomi Mi8
+				<div class="product_info_title">
+					<?=$productMainInfo['description_title'];?>
 				</div>
 				<div class="product_info_text">
-					<p>
-						ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					</p>
-					<p>
-						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-					</p>
-				</div> -->
+					<?=$productMainInfo['description_text'];?>
+				</div>
 
 
 				<?php foreach($specificationsByGroups as $specGroupKey => $specGroupValue): ?>

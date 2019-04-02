@@ -75,6 +75,8 @@ function getProductMainInfo(PDO $dbh, $product_url_name, $color_id){
 		SELECT 
 			Product.id,
 			Product.name,
+			Product.description_title,
+			Product.description_text,
 		    ptc.discount_price,
 		    ptc.quantity
 		FROM Product

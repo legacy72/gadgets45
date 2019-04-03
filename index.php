@@ -3,15 +3,12 @@
 <head>
 	<meta charset="utf-8">
 	<title>Главная</title>
-	<link rel="stylesheet" type="text/css" href="styles/styles.css">
-	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-	<link rel="stylesheet" href="slick-master/slick/slick.css">
-	<link rel="stylesheet" href="slick-master/slick/slick-theme.css">
+	<? require_once('html_templates/links.php'); ?>
 </head>
 <body>
 	<header>
 		<section>
-			<div class="container header_container">
+			<div class="default_container header_container">
 				<div class="logo">
 					<img src="logo/white_logo.png">
 				</div>
@@ -40,7 +37,7 @@
 	</header>
 	<main>
 		<section>
-			<div class="container main_container">
+			<div class="default_container main_container">
 				<div class="sidebar">
 					<div class="sidebar_menu_container">
 						<div class="header_catalog_menu">
@@ -140,7 +137,7 @@
 			</div>
 		</section>
 		<section>
-			<div class="container new_section_container">
+			<div class="default_container new_section_container">
 				<div class="new_section_title">
 					Наши акции
 				</div>
@@ -240,7 +237,7 @@
 		</section>
 		<section>
 			<div class="new_section_container">
-				<div class="container new_section_title">
+				<div class="default_container new_section_title">
 					Хиты продаж
 				</div>
 				<div class="slider_main_block">
@@ -297,7 +294,7 @@
 			</div>
 		</section>
 		<section>
-			<div class="container advertising">
+			<div class="default_container advertising">
 				<div class="left_advertising_block">
 					<div class="left_advertising">
 						<div class="left_advertising_description">
@@ -339,7 +336,7 @@
 		</section>
 		<section>
 			<div class="new_section_container">
-				<div class="container new_section_title">
+				<div class="default_container new_section_title">
 					О компании
 				</div>
 				<div class="about_company">
@@ -364,7 +361,7 @@
 			</div>
 		</section>
 		<section>
-			<div class="container new_section_container">
+			<div class="default_container new_section_container">
 				<div class="advantages">
 					<div class="advantage_item">
 						<div class="advantage_image">
@@ -409,42 +406,11 @@
 			</div>
 		</section>
 	</main>
-	<footer>
-		<div class="container">
-			<div class="footer_container">
-				<div class="footer_logo">
-					<img src="logo/black_logo.png">
-				</div>
-				<div class="footer_menu">
-					<ul>
-						<li><a href="#">О компании</a></li>
-						<li><a href="#">Каталог</a></li>
-						<li><a href="#">Контакты</a></li>
-						<li><a href="#">Помощь</a></li>
-					</ul>
-				</div>
-				<div class="footer_contacts">
-					<div class="footer_phone">
-						<img src="images/phone.png">
-						+7 916 448 62 84
-					</div>
-					<div class="footer_call_order">
-						Заказать звонок
-					</div>
-				</div>
-			</div>
-		</div>
-	</footer>
-	<!-- jQuerry -->
-	<script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
-
-	<!-- Bootstrap -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-	<script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+	
+	<? require_once('html_templates/footer.php'); ?>
+	<? require_once('html_templates/scripts_imports.php'); ?>
 
 	<script src="slick-master/slick/slick.min.js" type="text/javascript"></script>
-
-	<script src="scripts/script.js" type="text/javascript"></script>
 	<script src="scripts/catalog-carousel.js" type="text/javascript"></script>
 </body>
 </html>

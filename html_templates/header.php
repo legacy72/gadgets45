@@ -1,13 +1,13 @@
 	<header>
 		<section>
-			<div class="container header_container">
+			<div class="default_container header_container">
 				<div class="logo">
-					<img src="../logo/white_logo.png">
+					<a href="/"><img src="../logo/white_logo.png"></a>
 				</div>
 				<div class="header_menu">
 					<ul>
 						<li><a href="">О компании</a></li>
-						<li><a href="">Каталог</a></li>
+						<li><a href="catalog/smartphones">Каталог</a></li>
 						<li><a href="">Контакты</a></li>
 					</ul>
 				</div>
@@ -29,7 +29,7 @@
 	</header>
 		<main>
 		<section>
-			<div class="container minimized_menu">
+			<div class="default_container minimized_menu">
 				<div class="sidebar">
 					<div class="dropdown menu-button">
 						<button class="btn  dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -65,7 +65,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="container new_container">
+			<div class="default_container new_container">
 				<div class="navigation_menu">
 					<a href="#">Главная</a>
 					<img src="../images/strelka.png">

@@ -62,7 +62,9 @@ $colors = getProductColors($dbh, $productMainInfo['id']);
 								Цвет
 								<div class="product_colors_blocks">
 									<?php foreach($colors as $color):?>
+										<?='<a href="'. $_GET['product_url_name']. '-'. $color['name'] .'">';?>
 										<div class="color_block" style="background-color: <?=$color['name']; ?>"></div>
+										<?='</a>';?>
 									<?php endforeach;?>
 								</div>
 							</div>

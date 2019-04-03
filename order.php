@@ -3,101 +3,13 @@
 <head>
 	<meta charset="utf-8">
 	<title>Заказ</title>
-	<link rel="stylesheet" type="text/css" href="styles/styles.css">
+	<? require_once('html_templates/links.php'); ?>
 </head>
 <body>
-	<header>
+	<? require_once('html_templates/header.php'); ?>
 		<section>
-			<div class="container header_container">
-				<div class="logo">
-					<img src="logo/white_logo.png">
-				</div>
-				<div class="header_menu">
-					<ul>
-						<li><a href="">О компании</a></li>
-						<li><a href="">Каталог</a></li>
-						<li><a href="">Контакты</a></li>
-					</ul>
-				</div>
-				<div class="working_period">
-					<div class="working_period_text">Без выходных</div>
-					<div class="working_period_time">С 8:00 до 22:00</div>
-				</div>
-				<div class="header_contacts">
-					<div class="header_phone">
-						<img src="images/phone.png">
-						<div class="phone_number">+7 916 448 62 84</div>
-					</div>
-					<div class="call_order">
-						Заказать звонок
-					</div>
-				</div>
-			</div>
-		</section>
-	</header>
-	<main>
-		<section>
-			<div class="container minimized_menu">
-				<div class="sidebar">
-					<div class="sidebar_menu_container">
-						<div class="header_catalog_menu">
-							<img src="images/burger.png">
-							<p>Каталог товаров</p>
-						</div>
-					</div>
-					<!-- <div class="catalog catalog_gadgets">
-						<ul>
-							<li><a href="#"></a>Смартфоны</li>
-							<li><a href="#"></a>Ноутбуки</li>
-							<li><a href="#"></a>Аксессуары</li>
-						</ul>
-					</div>
-					<div class="catalog catalog_firms">
-						<ul>
-							<li><a href="#"></a>Meizu</li>
-							<li><a href="#"></a>Xiaomi</li>
-							<li><a href="#"></a>Huawei</li>
-						</ul>
-					</div> -->
-				</div>
-				<div class="main_content">
-					<div class="main_top_head">
-						<div class="main_top_menu">
-							<ul>
-								<li><a href="">Оплата и доставка</a></li>
-								<li><a href="">Гаратнии</a></li>
-								<li><a href="">Возврат</a></li>
-							</ul>
-						</div>
-						<div class="loupe">
-							<img src="images/loupe.png">
-						</div>
-						<div class="shopping_cart_block">
-							<div class="shopping_cart_text">
-								<img src="images/push_cart.png">
-								6 540р. (2)
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="container new_container">
-				<div class="navigation_menu">
-					<div class="navigation_menu">
-						<a href="#">Главная</a>
-						<img src="images/strelka.png">
-						<a href="#">Каталог</a>
-						<img src="images/strelka.png">
-						<a href="#">Смартфоны</a>
-						<img src="images/strelka.png">
-						<a href="#">Смартфон Xiaomi Mi8</a>
-					</div>
-				</div>
-			</div>
-		</section>
-		<section>
-			<div class="container new_container">
-				<div class="container new_section_title">
+			<div class="default_container new_container">
+				<div class="default_container new_section_title">
 					Оформление заказа
 				</div>
 				<div class="order_container">
@@ -152,31 +64,7 @@
 			</div>
 		</section>
 	</main>
-	<footer>
-		<div class="container">
-			<div class="footer_container">
-				<div class="footer_logo">
-					<img src="logo/black_logo.png">
-				</div>
-				<div class="footer_menu">
-					<ul>
-						<li><a href="#">О компании</a></li>
-						<li><a href="#">Каталог</a></li>
-						<li><a href="#">Контакты</a></li>
-						<li><a href="#">Помощь</a></li>
-					</ul>
-				</div>
-				<div class="footer_contacts">
-					<div class="footer_phone">
-						<img src="images/phone.png">
-						+7 916 448 62 84
-					</div>
-					<div class="footer_call_order">
-						Заказать звонок
-					</div>
-				</div>
-			</div>
-		</div>
-	</footer>
+	<? require_once('html_templates/footer.php'); ?>
+	<? require_once('html_templates/scripts_imports.php'); ?>
 </body>
 </html>

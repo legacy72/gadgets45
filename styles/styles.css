@@ -86,7 +86,7 @@ li{
 	height: 42px;
 }
 .sidebar{
-	width: 300px;
+	width: 256px;
 }
 .sidebar_menu_container{
 	display: flex;
@@ -125,7 +125,7 @@ li{
 }
 
 .main_content{
-	width: 870px;
+	width: 914px;
 }
 .main_top_head{
 	height: 42px;
@@ -150,7 +150,7 @@ li{
 }
 .loupe{
 	display: flex;
-	width: 30px;
+	width: 74px;
 	margin-left: 170px;
 	align-items: center;
 }
@@ -767,7 +767,6 @@ footer{
 .catalog_menu{
 	width: 256px;
 	height: 1000px;
-	/* background-color: #f5f5f5; */
 }
 .catalog_block{
 	width: 843px;

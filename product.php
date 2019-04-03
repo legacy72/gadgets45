@@ -32,7 +32,7 @@ $colors = getProductColors($dbh, $productMainInfo['id']);
 <body>
 	<? require_once('html_templates/product_header.php'); ?>
 		<section>
-			<div class="container new_container">
+			<div class="default_container new_container">
 				<div class="product_container">
 					<div class="product_images">
 						<div class="slider-main-image">
@@ -94,7 +94,7 @@ $colors = getProductColors($dbh, $productMainInfo['id']);
 			</div>
 		</section>
 		<section>
-			<div class="container product_menu_background">
+			<div class="default_container product_menu_background">
 				<div class="product_menu_container">
 					<div class="product_menu">
 						<ul>

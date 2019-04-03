@@ -28,98 +28,17 @@ $currentPage = 1;
 ?>
 
 
-
-
-
 <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
 	<title>Каталог</title>
-	<link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
-	<link rel="stylesheet" type="text/css" href="../styles/styles.css">
-	<link rel="stylesheet" type="text/css" href="../slick-master/slick/slick-theme.css"/>
-	<link rel="stylesheet" type="text/css" href="../slick-master/slick/slick.css"/>
-	<link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
+	<? require_once('html_templates/links.php'); ?>
 </head>
 <body>
-	<header>
+	<? require_once('html_templates/header.php'); ?>
 		<section>
-			<div class="container header_container">
-				<div class="logo">
-					<img src="../logo/white_logo.png">
-				</div>
-				<div class="header_menu">
-					<ul>
-						<li><a href="">О компании</a></li>
-						<li><a href="">Каталог</a></li>
-						<li><a href="">Контакты</a></li>
-					</ul>
-				</div>
-				<div class="working_period">
-					<div class="working_period_text">Без выходных</div>
-					<div class="working_period_time">С 8:00 до 22:00</div>
-				</div>
-				<div class="header_contacts">
-					<div class="header_phone">
-						<img src="../images/phone.png">
-						<div class="phone_number">+7 916 448 62 84</div>
-					</div>
-					<div class="call_order">
-						Заказать звонок
-					</div>
-				</div>
-			</div>
-		</section>
-	</header>
-	<main>
-		<section>
-			<div class="container minimized_menu">
-				<div class="sidebar">
-					<div class="dropdown menu-button">
-						<button class="btn  dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							Каталог товаров
-						</button>
-						<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-							<a class="dropdown-item" id="1" href="/catalog/smartphones">Смартфоны</a>
-							<div class="dropdown-divider"></div>
-							<a class="dropdown-item" id="2" href="/catalog/notebooks">Ноутбуки</a>
-							<div class="dropdown-divider"></div>
-							<a class="dropdown-item" id="3" href="/catalog/accessories">Аксессуары</a>
-						</div>
-					</div>
-				</div>
-				<div class="main_content">
-					<div class="main_top_head">
-						<div class="main_top_menu">
-							<ul>
-								<li><a href="">Оплата и доставка</a></li>
-								<li><a href="">Гаратнии</a></li>
-								<li><a href="">Возврат</a></li>
-							</ul>
-						</div>
-						<div class="loupe">
-							<img src="../images/loupe.png">
-						</div>
-						<div class="shopping_cart_block">
-							<div class="shopping_cart_text">
-								<img src="../images/push_cart.png">
-								6 540р. (2)
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="container new_container">
-				<div class="navigation_menu">
-					<a href="#">Главная</a>
-					<img src="../images/strelka.png">
-					<a href="#">Каталог</a>
-				</div>
-			</div>
-		</section>
-		<section>
-			<div class="container new_container">
+			<div class="default_container new_container">
 				<div class="new_section_title">
 					Каталог
 				</div>
@@ -297,45 +216,8 @@ $currentPage = 1;
 			</div>
 		</section>
 	</main>
-	<footer>
-		<div class="container">
-			<div class="footer_container">
-				<div class="footer_logo">
-					<img src="../logo/black_logo.png">
-				</div>
-				<div class="footer_menu">
-					<ul>
-						<li><a href="#">О компании</a></li>
-						<li><a href="#">Каталог</a></li>
-						<li><a href="#">Контакты</a></li>
-						<li><a href="#">Помощь</a></li>
-					</ul>
-				</div>
-				<div class="footer_contacts">
-					<div class="footer_phone">
-						<img src="../images/phone.png">
-						+7 916 448 62 84
-					</div>
-					<div class="footer_call_order">
-						Заказать звонок
-					</div>
-				</div>
-			</div>
-		</div>
-	</footer>
-
-	<!-- jQuerry -->
-	<script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
-
-	<!-- Bootstrap -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-	<script src="../bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-
-	<!-- Phone Animation -->
-	<script src="../scripts/script.js" type="text/javascript"></script>
-
-	<!-- Ajax -->
-	<script src="../scripts/ajax.js" type="text/javascript"></script>
+	<? require_once('html_templates/footer.php'); ?>
+	<? require_once('html_templates/scripts_imports.php'); ?>
 
 </body>
 </html>

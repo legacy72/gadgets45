@@ -6,135 +6,64 @@
 	<? require_once('html_templates/links.php'); ?>
 </head>
 <body>
-	<header>
-		<section>
-			<div class="default_container header_container">
-				<div class="logo">
-					<img src="logo/white_logo.png">
-				</div>
-				<div class="header_menu">
-					<ul>
-						<li><a href="">О компании</a></li>
-						<li><a href="catalog/smartphones">Каталог</a></li>
-						<li><a href="">Контакты</a></li>
-					</ul>
-				</div>
-				<div class="working_period">
-					<div class="working_period_text">Без выходных</div>
-					<div class="working_period_time">С 8:00 до 22:00</div>
-				</div>
-				<div class="header_contacts">
-					<div class="header_phone">
-						<img src="images/phone.png">
-						<div class="phone_number">+7 916 448 62 84</div>
-					</div>
-					<div class="call_order">
-						Заказать звонок
-					</div>
-				</div>
-			</div>
-		</section>
-	</header>
-	<main>
-		<section>
-			<div class="default_container main_container">
-				<div class="sidebar">
-					<div class="sidebar_menu_container">
-						<div class="header_catalog_menu">
-							<img src="images/burger.png">
-							<p>Каталог товаров</p>
+	<? require_once('html_templates/header.php'); ?>
+	<section>
+		<div class="default_container new_container">
+			<div class="slide-main main-carousel">
+				<div class="slider_container">
+					<div class="slider_image_block">
+						<div class="slider_image">
+							<img src="images/phone_slider.png">
+						</div>
+						<div class="slider_image_frame">
+							<img src="images/ramka.png">
 						</div>
 					</div>
-					<div class="catalog catalog_gadgets">
-						<ul>
-							<li><a href="#"></a>Смартфоны</li>
-							<li><a href="#"></a>Ноутбуки</li>
-							<li><a href="#"></a>Аксессуары</li>
-						</ul>
-					</div>
-					<div class="catalog catalog_firms">
-						<ul>
-							<li><a href="#"></a>Meizu</li>
-							<li><a href="#"></a>Xiaomi</li>
-							<li><a href="#"></a>Huawei</li>
-						</ul>
+					<div class="slider_info">
+						<div class="slider_title">
+							Топовый
+							<br>
+							смартфон
+						</div>
+						<div class="slider_description">
+							Lorem idаыфpsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut афlabore et dolore magna aliqua. Ut enim ad minim veniam,
+							quis nostrud exercitыation ullвamco lаaboris nisi ut aliquip ex ea commodo
+						</div>
+						<div class="slider_more_info">
+							<a href="#">Подробнее</a>
+							<img src="images/strelka.png">
+						</div>
 					</div>
 				</div>
-				<div class="main_content">
-					<div class="main_top_head">
-						<div class="main_top_menu">
-							<ul>
-								<li><a href="">Оплата и доставка</a></li>
-								<li><a href="">Гаратнии</a></li>
-								<li><a href="">Возврат</a></li>
-							</ul>
+				<div class="slider_container">
+					<div class="slider_image_block">
+						<div class="slider_image">
+							<img src="images/phone_slider.png">
 						</div>
-						<div class="loupe">
-							<img src="images/loupe.png">
-						</div>
-						<div class="shopping_cart_block">
-							<div class="shopping_cart_text">
-								<img src="images/push_cart.png">
-								6 540р. (2)
-							</div>
+						<div class="slider_image_frame">
+							<img src="images/ramka.png">
 						</div>
 					</div>
-					<div class="slide-main main-carousel">
-						<div class="slider_container">
-							<div class="slider_image_block">
-								<div class="slider_image">
-									<img src="images/phone_slider.png">
-								</div>
-								<div class="slider_image_frame">
-									<img src="images/ramka.png">
-								</div>
-							</div>
-							<div class="slider_info">
-								<div class="slider_title">
-									Топовый
-									<br>
-									смартфон
-								</div>
-								<div class="slider_description">
-									Lorem idаыфpsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-									tempor incididunt ut афlabore et dolore magna aliqua. Ut enim ad minim veniam,
-									quis nostrud exercitыation ullвamco lаaboris nisi ut aliquip ex ea commodo
-								</div>
-								<div class="slider_more_info">
-									<a href="#">Подробнее</a>
-									<img src="images/strelka.png">
-								</div>
-							</div>
+					<div class="slider_info">
+						<div class="slider_title">
+							Топовый
+							<br>
+							смартфон
 						</div>
-						<div class="slider_container">
-							<div class="slider_image_block">
-								<div class="slider_image">
-									<img src="images/phone_slider.png">
-								</div>
-								<div class="slider_image_frame">
-									<img src="images/ramka.png">
-								</div>
-							</div>
-							<div class="slider_info">
-								<div class="slider_title">
-									Топовый
-									<br>
-									смартфон
-								</div>
-								<div class="slider_description">
-									Lorem idаыфpsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-									tempor incididunt ut афlabore et dolore magna aliqua. Ut enim ad minim veniam,
-									quis nostrud exercitыation ullвamco lаaboris nisi ut aliquip ex ea commodo
-								</div>
-								<div class="slider_more_info">
-									<a href="#">Подробнее</a>
-									<img src="images/strelka.png">
-								</div>
-							</div>
+						<div class="slider_description">
+							Lorem idаыфpsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt ut афlabore et dolore magna aliqua. Ut enim ad minim veniam,
+							quis nostrud exercitыation ullвamco lаaboris nisi ut aliquip ex ea commodo
+						</div>
+						<div class="slider_more_info">
+							<a href="#">Подробнее</a>
+							<img src="images/strelka.png">
 						</div>
 					</div>
 				</div>
 			</div>
+		</div>
 		</section>
 		<section>
 			<div class="default_container new_section_container">

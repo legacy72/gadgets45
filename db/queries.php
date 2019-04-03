@@ -199,4 +199,17 @@ function getCountProducts(PDO $dbh, $filterSpecs = array(), $category_id = 1, $p
 	return count($products->fetchAll(PDO::FETCH_ASSOC));
 }
 
+
+function getProductColors($dbh, $product_id){
+	$sth = $dbh->prepare('
+		SELECT Color.name FROM ProductToColor
+		JOIN Color ON Color.id = ProductToColor.color_id
+		WHERE ProductToColor.product_id = :product_id
+	');
+	$sth->bindParam(':product_id', $product_id, PDO::PARAM_INT);
+	$sth->execute();
+	$colors = $sth->fetchAll(PDO::FETCH_ASSOC);
+	return $colors;
+}
+
 ?>

@@ -1,5 +1,5 @@
 $(document).ready(function() {
-
+  // анимация телефона
   $('.footer_phone').hover(
   function(event) {
     $('.footer_phone__image').animate({
@@ -66,5 +66,16 @@ $(document).ready(function() {
     }
 
   });
+  
+  //
+  $('#product_description').on('click', function(){
+    $('.product_info_specs_block').fadeOut("fast");
+    $('.product_info_descr_block').fadeIn("fast");
+  });
+  $('#product_specifications').on('click', function(){
+    $('.product_info_descr_block').fadeOut("fast");
+    $('.product_info_specs_block').fadeIn("fast");
+  });
+
 
 });

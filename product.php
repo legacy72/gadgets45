@@ -12,14 +12,14 @@ $productMainInfo = getProductMainInfo($dbh, $_GET['product_url_name'], $color_id
 $colorName = getColorName($_GET['color_name']);
 // Все картинки продукта
 $productImages = getProductImages($dbh, $productMainInfo['id'], $color_id);
-// Основная картинка продукта
-list($mainImage, $additionalImages) = getMainAndAdditionalImages($productImages);
 // Характеристики продукта
 $productSpecificatios = getProductSpecifictions($dbh, $_GET['product_url_name']);
 // Основные характеристики продукта на русском
 $mainSpec = getMainProductSpecifications($productSpecificatios, $_GET['category_name']);
 // Получаем характеристики сгруппированные по  категориям
 $specificationsByGroups = getSpecificationsByGroups($productSpecificatios);
+// Получаем все цвета продукта
+$colors = getProductColors($dbh, $productMainInfo['id']);
 
 ?>
 <!DOCTYPE html>
@@ -36,17 +36,16 @@ $specificationsByGroups = getSpecificationsByGroups($productSpecificatios);
 				<div class="product_container">
 					<div class="product_images">
 						<div class="slider-main-image">
-							<?php foreach($additionalImages as $additionalImage): ?>
+							<?php foreach($productImages as $productImage): ?>
 								<div class="main_image">
-									<?='<img src="../../'. PRODUCT_IMAGES_PATH. $additionalImage. '">';?>
+									<?='<img src="../../'. PRODUCT_IMAGES_PATH. $productImage['name']. '">';?>
 								</div>
 							<?php endforeach; ?>
-							<!-- <? echo' <img src="../../'. PRODUCT_IMAGES_PATH. $mainImage .'">'; ?> -->
 						</div>
 						<div class="small_images slider-small-images">
-							<?php foreach($additionalImages as $additionalImage): ?>
+							<?php foreach($productImages as $productImage): ?>
 								<div class="small_img">
-									<?='<img src="../../'. PRODUCT_IMAGES_PATH. $additionalImage. '">';?>
+									<?='<img src="../../'. PRODUCT_IMAGES_PATH. $productImage['name']. '">';?>
 								</div>
 							<?php endforeach; ?>
 						</div>
@@ -58,17 +57,16 @@ $specificationsByGroups = getSpecificationsByGroups($productSpecificatios);
 						<div class="product_price">
 							<?=priceFormat($productMainInfo['discount_price']);?>
 						</div>
-						<div class="product_color">
-							Цвет
-							<div class="product_colors_blocks">
-								<div class="color_block black">
-
-								</div>
-								<div class="color_block blue">
-
+						<?php if(count($colors) != 1 && $colors[0]['name'] != 'standart'): ?>
+							<div class="product_color">
+								Цвет
+								<div class="product_colors_blocks">
+									<?php foreach($colors as $color):?>
+										<div class="color_block" style="background-color: <?=$color['name']; ?>"></div>
+									<?php endforeach;?>
 								</div>
 							</div>
-						</div>
+						<?php endif;?>
 						<div class="product_specifications">
 							<?php foreach ($mainSpec as $mainSpecKey => $mainSpecValue): ?>
 							<div class="specification_row">
@@ -98,21 +96,23 @@ $specificationsByGroups = getSpecificationsByGroups($productSpecificatios);
 				<div class="product_menu_container">
 					<div class="product_menu">
 						<ul>
-							<li><a href="">Описание</a></li>
-							<li><a href="">Технические характеристики</a></li>
+							<li><a id="product_description">Описание</a></li>
+							<li><a id="product_specifications">Технические характеристики</a></li>
 						</ul>
 					</div>
 				</div>
 			</div>
-			<div class="product_info">
+
+			<div class="product_info_descr_block product_info">
 				<div class="product_info_title">
 					<?=$productMainInfo['description_title'];?>
 				</div>
 				<div class="product_info_text">
 					<?=$productMainInfo['description_text'];?>
 				</div>
+			</div>
 
-
+			<div class="product_info_specs_block product_info">
 				<?php foreach($specificationsByGroups as $specGroupKey => $specGroupValue): ?>
 					<div class="specifications_group_block">
 						<div class="specification_category">

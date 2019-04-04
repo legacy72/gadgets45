@@ -13,3 +13,6 @@
 
 <!-- Ajax -->
 <script src="../../scripts/ajax.js" type="text/javascript"></script>
+
+<!-- LocalStorage -->
+<script src="../../scripts/local_storage.js"></script>

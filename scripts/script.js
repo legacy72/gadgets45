@@ -67,7 +67,7 @@ $(document).ready(function() {
 
   });
   
-  //
+  // Скрытие/показ характеристик/описание
   $('#product_description').on('click', function(){
     $('.product_info_specs_block').fadeOut("fast");
     $('.product_info_descr_block').fadeIn("fast");

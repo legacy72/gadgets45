@@ -71,6 +71,15 @@
 					</div>
 				</div>
 			</div>
+
+
+			<!-- Переделать норм -->
+			<div class="button_clear_cart">
+				<button>
+					Очистить корзину
+				</button>
+			</div>
+
 		</section>
 		<section>
 			<div class="default_container new_section_container">

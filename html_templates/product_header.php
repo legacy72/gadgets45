@@ -2,12 +2,12 @@
 <section>
 	<div class="container header_container">
 		<div class="logo">
-			<img src="../../logo/white_logo.png">
+			<a href="/"><img src="../../logo/white_logo.png"></a>
 		</div>
 		<div class="header_menu">
 			<ul>
 				<li><a href="">О компании</a></li>
-				<li><a href="catalog/smartphones">Каталог</a></li>
+				<li><a href="/catalog/smartphones">Каталог</a></li>
 				<li><a href="">Контакты</a></li>
 			</ul>
 		</div>

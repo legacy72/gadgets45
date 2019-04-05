@@ -1,4 +1,10 @@
 $(document).ready(function() {
+	// Цену из строки в инт
+	function getPrice(priceString){
+		return parseInt(priceString.split('р.')[0].replace(/\s/g, ''));
+	}
+
+
 	// Инициализируем корзину
 	function initCart(){
 		// Если в корзине что-то есть получаем json ил localStorage
@@ -10,7 +16,7 @@ $(document).ready(function() {
 		var cart = initCart();
 
 		var product_name = $('.product_title').text().trim();
-		var product_price = $('.product_price').text().trim();
+		var product_price = getPrice($('.product_price').text().trim());
 		var product_image = $('.main_image img').attr('src');
 
 		// Инициализируем объект продукта
@@ -34,15 +40,12 @@ $(document).ready(function() {
 	function clearCart(){
 		localStorage.removeItem("cart");
 	}
-	// Получить данные из корзины
-	function getCartData(){
-		return JSON.parse(localStorage.getItem('cart'));
-	}
 	// Вывод корзины
 	function showCart(){
-		var cartData = getCartData();
-		out = '';
-		for(var i = 0; i < cartData.length; i++){
+		var cartData = initCart();
+		var out = '';
+		var length = cartData.length || 0;
+		for(var i = 0; i < length; i++){
 			out += `
 			<div class="cart_row">
 				<div class="cart_item">
@@ -77,16 +80,36 @@ $(document).ready(function() {
 
 		$('.cart_items').html(out);
 	}
-
+	// Сумма и количетсво всех товаров в корзине
+	function getCartSumAndQuantity(){
+		var cartData = initCart();
+		var sum = 0;
+		var quantity = 0;
+		for(var i = 0; i < cartData.length; i++){
+			sum += cartData[i]['product_price'] * cartData[i]['product_quantity'];
+			quantity += cartData[i]['product_quantity'];
+		}
+		return [sum, quantity];
+	}
+	// Изменение значений в корзине
+	function editCartBlock(){
+		sumAndQuantity = getCartSumAndQuantity();
+		quantity = '('.concat(sumAndQuantity[1], ')'); 
+		$('.cart_price').text(sumAndQuantity[0]);
+		$('.cart_quantity').text(quantity);
+	}
 
 	$(document).on('click', '.button_add_product_to_cart', function(){
 		addToCart();
+		editCartBlock();
 	});
 	$(document).on('click', '.button_clear_cart', function(){
 		clearCart();
+		showCart();
 	});
 
-
+	// Вывод корзины
 	showCart();
+	editCartBlock();
 	
 });

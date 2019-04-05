@@ -1,6 +1,6 @@
 <header>
 <section>
-	<div class="container header_container">
+	<div class="default_container header_container">
 		<div class="logo">
 			<a href="/"><img src="../../logo/white_logo.png"></a>
 		</div>
@@ -29,7 +29,7 @@
 </header>
 <main>
 <section>
-	<div class="container minimized_menu">
+	<div class="default_container minimized_menu">
 		<div class="sidebar">
 			<div class="dropdown menu-button">
 				<button class="btn  dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -57,15 +57,18 @@
 					<img src="../../images/loupe.png">
 				</div>
 				<div class="shopping_cart_block">
-					<div class="shopping_cart_text">
-						<img src="../../images/push_cart.png">
-						6 540р. (2)
-					</div>
+					<a href="/cart.php">
+						<div class="shopping_cart_text">
+							<img src="../../images/push_cart.png">
+							<span class="cart_price"></span>
+							<span class="cart_quantity"></span>
+						</div>
+					</a>
 				</div>
 			</div>
 		</div>
 	</div>
-	<div class="container new_container">
+	<div class="default_container new_container">
 		<div class="navigation_menu">
 			<a href="#">Главная</a>
 			<img src="../../images/strelka.png">

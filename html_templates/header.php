@@ -57,10 +57,13 @@
 							<img src="../images/loupe.png">
 						</div>
 						<div class="shopping_cart_block">
-							<div class="shopping_cart_text">
-								<img src="../images/push_cart.png">
-								6 540р. (2)
-							</div>
+							<a href="/cart.php">
+								<div class="shopping_cart_text">
+									<img src="../../images/push_cart.png">
+									<span class="cart_price"></span>
+									<span class="cart_quantity"></span>
+								</div>
+							</a>
 						</div>
 					</div>
 				</div>

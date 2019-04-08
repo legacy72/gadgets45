@@ -57,7 +57,7 @@
 							<img src="../images/loupe.png">
 						</div>
 						<div class="shopping_cart_block">
-							<a href="/cart.php">
+							<a href="/cart">
 								<div class="shopping_cart_text">
 									<img src="../../images/push_cart.png">
 									<span class="cart_price"></span>

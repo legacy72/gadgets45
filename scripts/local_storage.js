@@ -94,8 +94,9 @@ $(document).ready(function() {
 	// Изменение значений в корзине
 	function editCartBlock(){
 		sumAndQuantity = getCartSumAndQuantity();
+		sum = sumAndQuantity[0].toLocaleString() + ' р.';
 		quantity = '('.concat(sumAndQuantity[1], ')'); 
-		$('.cart_price').text(sumAndQuantity[0]);
+		$('.cart_price').text(sum);
 		$('.cart_quantity').text(quantity);
 	}
 

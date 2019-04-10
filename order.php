@@ -56,7 +56,7 @@
 						<div class="order_info_row">
 							<textarea class="order_rich_text_box" type="text" placeholder="Ваш комментарий" name="" value=""></textarea>
 						</div>
-						<button class="btn">
+						<button class="btn_order">
 							Оформить заказ
 						</button>
 					</div>

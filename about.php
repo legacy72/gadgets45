@@ -7,6 +7,14 @@
 </head>
 <body class="about_background">
 	<? require_once('html_templates/header.php'); ?>
+			<div class="default_container new_container">
+				<div class="navigation_menu">
+					<a href="/">Главная</a>
+					<img src="../../images/strelka.png">
+					<a href="/about">О компании</a>
+				</div>
+			</div>
+		</section>
 		<section>
 			<div class="default_container new_section_container">
 				<div class="about_container">

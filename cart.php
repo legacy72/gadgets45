@@ -7,6 +7,13 @@
 </head>
 <body>
 	<? require_once('html_templates/header.php'); ?>
+			<div class="default_container new_container">
+				<div class="navigation_menu">
+					<a href="/">Главная</a>
+					<img src="../../images/strelka.png">
+					<a href="/cart">Корзина</a>
+				</div>
+			</div>
 		<section>
 			<div class="default_container new_container">
 				<div class="new_section_title">

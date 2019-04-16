@@ -6,9 +6,9 @@
 				</div>
 				<div class="header_menu">
 					<ul>
-						<li><a href="">О компании</a></li>
+						<li><a href="/about">О компании</a></li>
 						<li><a href="/catalog/smartphones">Каталог</a></li>
-						<li><a href="">Контакты</a></li>
+						<li><a href="#">Контакты</a></li>
 					</ul>
 				</div>
 				<div class="working_period">
@@ -40,7 +40,7 @@
 							<div class="dropdown-divider"></div>
 							<a class="dropdown-item" id="2" href="/catalog/notebooks">Ноутбуки</a>
 							<div class="dropdown-divider"></div>
-							<a class="dropdown-item" id="3" href="/catalog/accessories.php">Аксессуары</a>
+							<a class="dropdown-item" id="3" href="/catalog/accessories">Аксессуары</a>
 						</div>
 					</div>
 				</div>
@@ -68,11 +68,3 @@
 					</div>
 				</div>
 			</div>
-			<div class="default_container new_container">
-				<div class="navigation_menu">
-					<a href="#">Главная</a>
-					<img src="../images/strelka.png">
-					<a href="#">Каталог</a>
-				</div>
-			</div>
-		</section>

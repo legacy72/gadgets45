@@ -131,7 +131,6 @@ function getMainProductSpecifications($productSpecs, $category_name){
 	return $mainSpecs;
 }
 
-
 // Группируем характеристики по их категории
 function getSpecificationsByGroups($specifications){
 	$specsByGroup = array();
@@ -157,4 +156,9 @@ function getSpecificationsByGroups($specifications){
 	}
 
 	return $specsByGroup;
+}
+
+// Конкатенация названия продукта с его цветом
+function concatProductNameAndColor($name, $color){
+	return $name .'-'. $color;
 }

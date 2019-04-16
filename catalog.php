@@ -37,6 +37,16 @@ $currentPage = 1;
 </head>
 <body>
 	<? require_once('html_templates/header.php'); ?>
+			<div class="default_container new_container">
+				<div class="navigation_menu">
+					<a href="/">Главная</a>
+					<img src="../../images/strelka.png">
+					<a href="/catalog/smartphones">Каталог</a>
+					<img src="../../images/strelka.png">
+					<?='<a href="/catalog/'. $_GET['category_name'].'">'. CATEGORY_ENG_TO_RUS[$_GET['category_name']].'</a>';?>
+				</div>
+			</div>
+		</section>
 		<section>
 			<div class="default_container new_container">
 				<div class="new_section_title">

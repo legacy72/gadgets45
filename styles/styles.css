@@ -1210,3 +1210,37 @@ footer{
 .small_images .slick-slide {
 	width: 105px;
 }
+
+.counter_minus, .counter_plus {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: 1px solid black;
+	width: 20px;
+	height: 20px;
+	border-radius: 10px;
+	font-family: "Mystral";
+	border-color: #73c3f5;
+	background: #73c3f5;
+	color: white;
+	cursor: pointer;
+	/* text-align: center; */
+}
+
+.counter_minus:active, .counter_plus:active {
+	background: #cce9fb;
+}
+
+.counter_minus::selection, .counter_plus::selection {
+	background: transparent;
+}
+
+.counter_minus::-moz-selection, .counter_plus::-moz-selection {
+	background: transparent;
+}
+
+.cross {
+	color: #3fa0dc;
+	font-size: 20px;
+	cursor: pointer;
+}

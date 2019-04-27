@@ -3,6 +3,11 @@ $(document).ready(function() {
 	function getPrice(priceString){
 		return parseInt(priceString.split('р.')[0].replace(/\s/g, ''));
 	}
+	// Форматирование числа. Пример: 11999 -> 11 999 р.
+	function priceFormat(price){
+		return price.toLocaleString('ru-RU') + ' р.';
+	}
+
 
 
 	// Инициализируем корзину
@@ -36,10 +41,6 @@ $(document).ready(function() {
 		// Добавляем продукты в корзину localStorage
 		localStorage["cart"] = JSON.stringify(cart);
 	}
-	// Очистка корзины
-	function clearCart(){
-		localStorage.removeItem("cart");
-	}
 	// Вывод корзины
 	function showCart(){
 		var cartData = initCart();
@@ -61,17 +62,20 @@ $(document).ready(function() {
 					</div>
 					<div class="item_price">
 			`;
-			out += cartData[i]['product_price'];
+			out += priceFormat(cartData[i]['product_price']);
 			out += `
 					</div>
 					<div class="item_count">
-						<div class="counter_minus">-</div>
+						<div class="counter_minus" product_id="` + i + `">-</div>
 							<div class="item_counter">
 			`;
 			out += cartData[i]['product_quantity'];
 			out += `
 							</div>
-						<div class="counter_plus">+</div>
+						<div class="counter_plus" product_id="` + i + `">+</div>
+					</div>
+					<div clss="item_drop">
+						<button class="item_drop_btn" product_id="` + i + `">X</button>
 					</div>
 				</div>
 			</div>
@@ -80,6 +84,16 @@ $(document).ready(function() {
 
 		$('.cart_items').html(out);
 	}
+
+	// Вывод всей суммы и всего кол-ва товаров в корзине
+	function showFinalOrder(){
+		sumAndQuantity = getCartSumAndQuantity();
+		sum = sumAndQuantity[0].toLocaleString() + ' р.';
+		quantity = ''.concat(sumAndQuantity[1], ' шт.'); 
+		$('.sum_orders b').html(sum);
+		$('.count_orders b').text(quantity)
+	}
+
 	// Сумма и количетсво всех товаров в корзине
 	function getCartSumAndQuantity(){
 		var cartData = initCart();
@@ -99,18 +113,52 @@ $(document).ready(function() {
 		$('.cart_price').text(sum);
 		$('.cart_quantity').text(quantity);
 	}
+	// Увеличенине или уменьешение кол-ва продукта на 1
+	function editProductQuantity(prod_id, edit_mode){
+		var cartData = initCart();
+		if (edit_mode === 'increment')
+			cartData[prod_id]['product_quantity'] += 1;
+		else if(edit_mode === 'decrement' && cartData[prod_id]['product_quantity'] > 1)
+			cartData[prod_id]['product_quantity'] -= 1;
+		localStorage["cart"] = JSON.stringify(cartData);
+		reloadCart();
+	}
+	// Удаление продукта из корзины	
+	function dropProduct(prod_id){
+		var cartData = initCart();
+		cartData.splice(prod_id, 1);
+		localStorage["cart"] = JSON.stringify(cartData);
+		reloadCart();
+	}
 
+
+	// Обработчик нажатия кнопки "добавить в корзину"
 	$(document).on('click', '.button_add_product_to_cart', function(){
 		addToCart();
 		editCartBlock();
 	});
-	$(document).on('click', '.button_clear_cart', function(){
-		clearCart();
-		showCart();
+	// Обработчик нажатия кнопки "+" (увеличить кол-во продукта на 1)
+	$(document).on('click', '.counter_plus', function(){
+		editProductQuantity($(this).attr('product_id'), 'increment');
+	});
+	// Обработчик нажатия кнопки "-" (уменьшить кол-во продукта на 1)
+	$(document).on('click', '.counter_minus', function(){
+		editProductQuantity($(this).attr('product_id'), 'decrement');
+	});
+	// Обработчик нажатия на кнопку удаления товара из корзины
+	$(document).on('click', '.item_drop_btn', function(){
+		dropProduct($(this).attr('product_id'));
 	});
 
-	// Вывод корзины
-	showCart();
-	editCartBlock();
-	
+
+	// Обновление всех данных
+	function reloadCart(){
+		showCart();
+		showFinalOrder();
+		editCartBlock();
+	}
+
+
+	// При заходе на страницу обновляем всю инфу
+	reloadCart();
 });

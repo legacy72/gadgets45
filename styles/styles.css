@@ -507,6 +507,21 @@ footer{
 .new_container{
 	margin-top: 45px;
 }
+.cart{
+	display: flex;
+    justify-content: space-between;
+}
+.cart_items{
+	width: 770px;
+}
+.cart_result{
+	width: 370px;
+	height: 255px;
+	background-color: #f3f3f3;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
 .navigation_menu a{
 	color: #383838;
 	font-size: 12px;
@@ -554,15 +569,6 @@ footer{
 	display: flex;
 	align-items: center;
 	justify-content: center;
-}
-
-.cart_result{
-	width: 370px;
-	height: 255px;
-	background-color: #f3f3f3;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-around;
 }
 .result_info{
 	margin-left: 45px;

@@ -22,38 +22,13 @@
 
 
 
-				<!-- Переделать норм -->
-				<div class="button_clear_cart">
-					<button>
-						Очистить корзину
-					</button>
-				</div>
-
-				<div class="cart_items">
-					
-				</div>
-
-
-
-<!-- 				<div class="cart_row">
-					<div class="cart_item">
-						<div class="item_image">
-							<img src="images/ex1.jpg">
-						</div>
-						<div class="item_description">
-							Huawei
-							<br>
-							MediaPad M5
-						</div>
-						<div class="item_price">
-							35 990 р.
-						</div>
-						<div class="item_count">
-							<div class="counter_minus">-</div>
-							<div class="item_counter">1</div>
-							<div class="counter_plus">+</div>
-						</div>
+				<div class="cart">
+					<div class="cart_items">
+						
 					</div>
+
+
+
 					<div class="cart_result">
 						<div class="result_info">
 							<div class="cart_res_descr">
@@ -73,27 +48,11 @@
 						</div>
 					</div>
 				</div>
-				<div class="cart_row">
-					<div class="cart_item">
-						<div class="item_image">
 
-						</div>
-						<div class="item_description">
-							Huawei
-							<br>
-							MediaPad M5
-						</div>
-						<div class="item_price">
-							35 990 р.
-						</div>
-						<div class="item_count">
-							<div class="counter_minus">-</div>
-							<div class="item_counter">1</div>
-							<div class="counter_plus">+</div>
-						</div>
-					</div>
-				</div> -->
+				
+
 			</div>
+
 
 
 

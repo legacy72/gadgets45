@@ -17,12 +17,8 @@ $(document).ready(function() {
 		return JSON.parse(localStorage.getItem("cart")) || [];
 	}
 	// Добавление продукта в корзину
-	function addToCart(){
+	function addToCart(product_name, product_price, product_image){
 		var cart = initCart();
-
-		var product_name = $('.product_title').text().trim();
-		var product_price = getPrice($('.product_price').text().trim());
-		var product_image = $('.main_image img').attr('src');
 
 		// Инициализируем объект продукта
 		var product = {
@@ -62,7 +58,7 @@ $(document).ready(function() {
 					</div>
 					<div class="item_price">
 			`;
-			out += priceFormat(cartData[i]['product_price']);
+			out += priceFormat(cartData[i]['product_price'] * cartData[i]['product_quantity']);
 			out += `
 					</div>
 					<div class="item_count">
@@ -74,8 +70,8 @@ $(document).ready(function() {
 							</div>
 						<div class="counter_plus" product_id="` + i + `">+</div>
 					</div>
-					<div clss="item_drop">
-						<button class="item_drop_btn" product_id="` + i + `">X</button>
+					<div class="item_drop">
+						<div class="item_drop_btn cross" product_id="` + i + `">X</div>
 					</div>
 				</div>
 			</div>
@@ -132,9 +128,25 @@ $(document).ready(function() {
 	}
 
 
-	// Обработчик нажатия кнопки "добавить в корзину"
+	// Обработчик нажатия кнопки "добавить в корзину" со страницы продукта
 	$(document).on('click', '.button_add_product_to_cart', function(){
-		addToCart();
+		var product_name = $('.product_title').text().trim();
+		var product_price = getPrice($('.product_price').text().trim());
+		var product_image = $('.main_image img').attr('src');
+
+		addToCart(product_name, product_price, product_image);
+		editCartBlock();
+	});
+	// Обработчик нажатия кнопки "в корзину" со страницы каталога
+	$(document).on('click', '.item_button', function(){
+		var product_name = $(this).parent().find('.item_name').text().trim();
+		var product_price = $(this).parent().find('.discount_price').text().trim();
+		if(product_price === ''){
+			product_price = $(this).parent().find('.standart_price').text().trim();
+		}
+		var product_image = $(this).parent().find('.item_image')[0].children[0].children[0].src;
+		
+		addToCart(product_name, product_price, product_image);
 		editCartBlock();
 	});
 	// Обработчик нажатия кнопки "+" (увеличить кол-во продукта на 1)
@@ -157,7 +169,6 @@ $(document).ready(function() {
 		showFinalOrder();
 		editCartBlock();
 	}
-
 
 	// При заходе на страницу обновляем всю инфу
 	reloadCart();

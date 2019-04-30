@@ -78,34 +78,34 @@ $currentPage = 1;
 											<span class="variants_value">Все цены</span>
 										</div>
 										<div class="variants_row">
-											<input type="radio" data-min="10000" data-max="20000" class="price_range" name="price_variant" name="price_variant">
+											<input type="radio" data-min="10000" data-max="20000" class="price_range" name="price_variant">
 											<span class="variants_value">10 000 - 20 000 р.</span>
 										</div>
 										<div class="variants_row">
-											<input type="radio" data-min="20000" data-max="30000" class="price_range" name="price_variant" name="price_variant">
+											<input type="radio" data-min="20000" data-max="30000" class="price_range" name="price_variant">
 											<span class="variants_value">20 000 - 30 000 р.</span>
 										</div>
 										<div class="variants_row">
-											<input type="radio" data-min="30000" data-max="40000" class="price_range" name="price_variant" name="price_variant">
+											<input type="radio" data-min="30000" data-max="40000" class="price_range" name="price_variant">
 											<span class="variants_value">30 000 - 40 000 р.</span>
 										</div>
 										<div class="variants_row">
-											<input type="radio" data-min="40000" data-max="50000" class="price_range" name="price_variant" name="price_variant">
+											<input type="radio" data-min="40000" data-max="50000" class="price_range" name="price_variant">
 											<span class="variants_value">40 000 - 50 000 р.</span>
 										</div>
 										<div class="variants_row">
-											<input type="radio" data-min="50000" data-max="60000" class="price_range" name="price_variant" name="price_variant">
+											<input type="radio" data-min="50000" data-max="60000" class="price_range" name="price_variant">
 											<span class="variants_value">50 000 - 60 000 р.</span>
 										</div>
 										<div class="variants_row">
-											<input type="radio" data-min="60000" data-max="70000" class="price_range" name="price_variant" name="price_variant">
+											<input type="radio" data-min="60000" data-max="70000" class="price_range" name="price_variant">
 											<span class="variants_value">60 000 - 70 000 р.</span>
 										</div>
 										<div class="variants_row">
-											<input type="radio" data-min="70000" data-max="80000" class="price_range" name="price_variant" name="price_variant">
+											<input type="radio" data-min="70000" data-max="80000" class="price_range" name="price_variant">
 											<span class="variants_value">70 000 - 80 000 р.</span>
 										</div><div class="variants_row">
-											<input type="radio" data-min="80000" data-max="90000" class="price_range" name="price_variant" name="price_variant">
+											<input type="radio" data-min="80000" data-max="90000" class="price_range" name="price_variant">
 											<span class="variants_value">80 000 - 90 000 р.</span>
 										</div>
 									</div>
@@ -178,16 +178,15 @@ $currentPage = 1;
 									<div class="catalog_item">
 										<div class="item_name">
 											<?
-												$productFullName = $product['product_name'];
-												if ($product['color_name'] != 'standart')
-													 $productFullName .= ' '. $product['color_name'];
-											echo '<a href="'. $_GET['category_name']. '/'. $product['url_name']. '-'. $product['color_name'] .'">'; ?>
-												<?=$productFullName;?>
+												$productFullName = $product['product_name'] . ' '. getColorName($product['color_name']);
+												echo '<a href="'. $_GET['category_name']. '/'. $product['url_name']. '-'. $product['color_name'] .'">'; 
+											?>
+											<?=$productFullName;?>
 											</a>
 										</div>
 										<div class="item_image">
 											<? echo '<a href="'. $_GET['category_name']. '/'. $product['url_name']. '-'. $product['color_name'] .'">';?> 
-												<img src=<?='../'. PRODUCT_IMAGES_PATH.$product['image_name']; ?>>
+												<img class="item_img" src=<?='../'. PRODUCT_IMAGES_PATH.$product['image_name']; ?>>
 											</a>
 										</div>
 										<div class="item_count">

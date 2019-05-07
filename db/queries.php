@@ -19,7 +19,7 @@ function getSpecifications(PDO $dbh, $category_id){
 		SELECT DISTINCT specification_id, value FROM ProductToSpecification
 		JOIN Specification ON Specification.id = ProductToSpecification.specification_id
 		WHERE Specification.category_id = :category_id
-		-- ORDER BY value
+		ORDER BY CAST(value AS UNSIGNED), value
 	');
 	$sth->bindParam(':category_id', $category_id, PDO::PARAM_INT);
 	$sth->execute();

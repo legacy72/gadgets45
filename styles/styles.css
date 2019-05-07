@@ -529,6 +529,7 @@ footer{
 }
 .cart_row{
 	display: flex;
+	position: relative;
 	justify-content: space-between;
 }
 .cart_row:not(:first-child){
@@ -1246,7 +1247,10 @@ footer{
 }
 
 .cross {
+	position: absolute;
 	color: #3fa0dc;
 	font-size: 20px;
+	right: 10px;
+	top: 0;
 	cursor: pointer;
 }

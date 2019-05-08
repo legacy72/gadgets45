@@ -162,3 +162,7 @@ function getSpecificationsByGroups($specifications){
 function concatProductNameAndColor($name, $color){
 	return $name .'-'. $color;
 }
+// Конкатенация категории с полным названием (название+цвет)
+function concatCategoryAndFullName($category, $name, $color){
+	return $category . '/'. concatProductNameAndColor($name, $color);
+}

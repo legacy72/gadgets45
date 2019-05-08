@@ -20,14 +20,10 @@
 					Корзина
 				</div>
 
-
-
 				<div class="cart">
 					<div class="cart_items">
 						
 					</div>
-
-
 
 					<div class="cart_result">
 						<div class="result_info">
@@ -48,14 +44,7 @@
 						</div>
 					</div>
 				</div>
-
-				
-
 			</div>
-
-
-
-
 
 		</section>
 		<section>

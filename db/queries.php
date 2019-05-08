@@ -135,7 +135,7 @@ function dropTempTable(PDO $dbh){
 	$sth = $dbh->query('DROP TABLE Filter');
 }
 
-
+// Список всех продуктов, подходящих под фильтры
 function getProducts(PDO $dbh, $filterSpecs, $category_id, $price_from, $price_to, $order_by, $limit, $offset = 0){
 	// создаем временную таблицу, если были выбраны какие-то фильтры
 	if(!empty($filterSpecs))
@@ -163,7 +163,7 @@ function getProducts(PDO $dbh, $filterSpecs, $category_id, $price_from, $price_t
 			    JOIN ProductToColor ptc ON ptc.product_id = Product.id AND ptc.color_id = Color.id
 	            JOIN ProductToSpecification pts ON pts.product_id = Product.id
 	        WHERE Product.category_id = :category_id
-			AND Image.is_main = 1
+			AND Image.is_main = true
 	        AND ptc.discount_price BETWEEN :price_from AND :price_to
 	    ) T
 	';
@@ -186,6 +186,30 @@ function getProducts(PDO $dbh, $filterSpecs, $category_id, $price_from, $price_t
 		dropTempTable($dbh);
 
 	return $products;
+}
+
+// Получение хитов продаж
+function getBestSellers(PDO $dbh){
+	$sth = $dbh->prepare('
+		SELECT 
+			ptc.*, 
+		    p.url_name, 
+		    p.name, 
+		    img.name as image_name,
+		    Color.name AS color_name,
+		    Category.name AS category_name
+		FROM ProductToColor ptc
+		JOIN Product p ON p.id = ptc.product_id
+		JOIN Image img ON p.id = img.product_id
+		JOIN Color ON Color.id = img.color_id
+		JOIN Category ON p.category_id = Category.id
+		WHERE ptc.is_bestseller = true
+		AND img.is_main = true
+		GROUP BY ptc.color_id
+	');
+	$sth->execute();
+	$bestsellers = $sth->fetchAll(PDO::FETCH_ASSOC);
+	return $bestsellers;
 }
 
 // Выборка смартфонов

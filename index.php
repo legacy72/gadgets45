@@ -1,3 +1,13 @@
+<?
+require_once 'db/queries.php';
+require_once 'templates/config.php';
+require_once 'templates/functions.php';
+?>
+
+<?
+$bestsellers = getBestSellers($dbh);
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -172,51 +182,34 @@
 				<div class="slider_main_block">
 					<div class="bg_slider">
 						<div class="items_bestsellers_container bestseller-carousel">
+							<?php foreach($bestsellers as $bestseller): ?>
 							<div class="item_bestseller">
-								<img src="images/item.png">
+								<div class="bestseller_image">
+									<?='<a href="/catalog/'. concatCategoryAndFullName($bestseller['category_name'], $bestseller['url_name'], $bestseller['color_name']). '">';?>
+										<?='<img src="'. PRODUCT_IMAGES_PATH . $bestseller['image_name']. '">';?>
+									</a>
+								</div>
 								<div class="bestseller_description">
-									Huawei Macbook X Pro
+									<?=$bestseller['name']; ?>
 								</div>
 								<div class="bestseller_price">
-									99 990 р.
+									<div class="standart_price">
+										<?
+										if ($bestseller['discount_price'] != $bestseller['price'])
+											echo '<strike>'. $bestseller['price']. '</strike>';
+										else
+											echo $bestseller['price'];
+										?>
+									</div>
+									<div class="discount_price">
+										<?
+										if ($bestseller['discount_price'] != $bestseller['price'])
+											echo $bestseller['discount_price'];
+										?>
+									</div>
 								</div>
 							</div>
-							<div class="item_bestseller">
-								<img src="images/item.png">
-								<div class="bestseller_description">
-									Huawei Macbook X Pro
-								</div>
-								<div class="bestseller_price">
-									99 990 р.
-								</div>
-							</div>
-							<div class="item_bestseller">
-								<img src="images/item2.png">
-								<div class="bestseller_description">
-									Huawei P20 Lite
-								</div>
-								<div class="bestseller_price">
-									32 590 р.
-								</div>
-							</div>
-							<div class="item_bestseller">
-								<img src="images/item3.png">
-								<div class="bestseller_description">
-									Huawei FreeBuds
-								</div>
-								<div class="bestseller_price">
-									9 990 р.
-								</div>
-							</div>
-							<div class="item_bestseller">
-								<img src="images/item4.png">
-								<div class="bestseller_description">
-									Meizu M8
-								</div>
-								<div class="bestseller_price">
-									6 990 р.
-								</div>
-							</div>
+							<?php endforeach; ?>
 						</div>
 					</div>
 				</div>

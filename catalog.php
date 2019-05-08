@@ -179,13 +179,13 @@ $currentPage = 1;
 										<div class="item_name">
 											<?
 												$productFullName = $product['product_name'] . ' '. getColorName($product['color_name']);
-												echo '<a href="'. $_GET['category_name']. '/'. $product['url_name']. '-'. $product['color_name'] .'">'; 
+												echo '<a href="'. concatCategoryAndFullName($_GET['category_name'], $product['url_name'], $product['color_name']) .'">'; 
 											?>
 											<?=$productFullName;?>
 											</a>
 										</div>
 										<div class="item_image">
-											<? echo '<a href="'. $_GET['category_name']. '/'. $product['url_name']. '-'. $product['color_name'] .'">';?> 
+											<? echo '<a href="'. concatCategoryAndFullName($_GET['category_name'], $product['url_name'], $product['color_name']) .'">';?> 
 												<img class="item_img" src=<?='../'. PRODUCT_IMAGES_PATH.$product['image_name']; ?>>
 											</a>
 										</div>

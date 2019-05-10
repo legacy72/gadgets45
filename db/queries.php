@@ -189,8 +189,11 @@ function getProducts(PDO $dbh, $filterSpecs, $category_id, $price_from, $price_t
 }
 
 // Получение хитов продаж
-function getBestSellers(PDO $dbh){
-	$sth = $dbh->prepare('
+function getBestSellersOrStocks(PDO $dbh, $typeSelect){
+	// typeSelect (string) - тип продуктов для выбора 
+	// Варианты: 1) bestseller - хит продаж
+	//			 2) stock - наши акции
+	$sql = ('
 		SELECT 
 			ptc.*, 
 		    p.url_name, 
@@ -203,13 +206,20 @@ function getBestSellers(PDO $dbh){
 		JOIN Image img ON p.id = img.product_id
 		JOIN Color ON Color.id = img.color_id
 		JOIN Category ON p.category_id = Category.id
-		WHERE ptc.is_bestseller = true
-		AND img.is_main = true
-		GROUP BY ptc.color_id
+		WHERE img.is_main = true
+		AND 
 	');
+	if($typeSelect === 'bestseller')
+		$type = ' ptc.is_bestseller = true';
+	else if($typeSelect === 'stock')
+		$type = ' ptc.is_stock = true';
+	$groupBy = ' GROUP BY ptc.color_id';
+	$query = "{$sql}{$type}{$groupBy}";
+
+	$sth = $dbh->prepare($query);
 	$sth->execute();
-	$bestsellers = $sth->fetchAll(PDO::FETCH_ASSOC);
-	return $bestsellers;
+	$prods = $sth->fetchAll(PDO::FETCH_ASSOC);
+	return $prods;
 }
 
 // Выборка смартфонов

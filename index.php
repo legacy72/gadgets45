@@ -5,7 +5,8 @@ require_once 'templates/functions.php';
 ?>
 
 <?
-$bestsellers = getBestSellers($dbh);
+$bestsellers = getBestSellersOrStocks($dbh, 'bestseller');
+$stocks = getBestSellersOrStocks($dbh, 'stock');
 ?>
 
 <!DOCTYPE html>
@@ -82,94 +83,31 @@ $bestsellers = getBestSellers($dbh);
 				</div>
 				<div class="stock_items">
 					<div class="goods-carousel">
-						<div class="stock_block">
-							<div class="stock_image">
-								<img src="images/stock_item_1.jpg">
-							</div>
-							<div class="stock_text_container">
-								<div class="stock_text">
-									<div class="stock_description">
-										Легкие ноутбуки
-										<br>
-										Xiaomi Mi Notebook Air
-									</div>
-									<div class="stock_prices">
-										<div class="stock_new_price">
-											64 990 р.
+						<?php foreach($stocks as $stock): ?>
+							<div class="stock_block">
+								<div class="stock_image">
+									<?='<a href="/catalog/'. concatCategoryAndFullName($stock['category_name'], $stock['url_name'], $stock['color_name']). '">';?>
+										<?='<img src="'. PRODUCT_IMAGES_PATH . $stock['image_name']. '">';?>
+									</a>
+								</div>
+								<div class="stock_text_container">
+									<div class="stock_text">
+										<div class="stock_description">
+											<?=$stock['name']; ?>
 										</div>
-										<div class="stock_old_price">
-											72 990
+										<div class="stock_prices">
+											<div class="stock_new_price">
+												<?=priceFormat($stock['discount_price']); ?>
+											</div>
+											<div class="stock_old_price">
+												<?=priceFormat($stock['price']); ?>
+											</div>
 										</div>
 									</div>
 								</div>
 							</div>
-						</div>
-						<div class="stock_block">
-							<div class="stock_image">
-								<img src="images/stock_item_1.jpg">
-							</div>
-							<div class="stock_text_container">
-								<div class="stock_text">
-									<div class="stock_description">
-										Легкие ноутбуки
-										<br>
-										Xiaomi Mi Notebook Air
-									</div>
-									<div class="stock_prices">
-										<div class="stock_new_price">
-											64 990 р.
-										</div>
-										<div class="stock_old_price">
-											72 990
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="stock_block">
-							<div class="stock_image">
-								<img src="images/stock_item_1.jpg">
-							</div>
-							<div class="stock_text_container">
-								<div class="stock_text">
-									<div class="stock_description">
-										Легкие ноутбуки
-										<br>
-										Xiaomi Mi Notebook Air
-									</div>
-									<div class="stock_prices">
-										<div class="stock_new_price">
-											64 990 р.
-										</div>
-										<div class="stock_old_price">
-											72 990
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="stock_block">
-							<div class="stock_image">
-								<img src="images/stock_item_2.jpg">
-							</div>
-							<div class="stock_text_container">
-								<div class="stock_text">
-									<div class="stock_description">
-										Беспроводные
-										<br>
-										Наушники
-									</div>
-									<div class="stock_prices">
-										<div class="stock_new_price">
-											8 590 р.
-										</div>
-										<div class="stock_old_price">
-											10 590
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
+						<?php endforeach;?>
+						
 					</div>
 				</div>
 			</div>
@@ -196,15 +134,15 @@ $bestsellers = getBestSellers($dbh);
 									<div class="standart_price">
 										<?
 										if ($bestseller['discount_price'] != $bestseller['price'])
-											echo '<strike>'. $bestseller['price']. '</strike>';
+											echo '<strike>'. priceFormat($bestseller['price']). '</strike>';
 										else
-											echo $bestseller['price'];
+											echo priceFormat($bestseller['price']);
 										?>
 									</div>
 									<div class="discount_price">
 										<?
 										if ($bestseller['discount_price'] != $bestseller['price'])
-											echo $bestseller['discount_price'];
+											echo priceFormat($bestseller['discount_price']);
 										?>
 									</div>
 								</div>

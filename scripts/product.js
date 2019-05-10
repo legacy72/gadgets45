@@ -29,4 +29,7 @@ $(document).ready(function() {
         focusOnSelect: true
       });
 
+      $("a#main-image").fancybox({
+         'hideOnContentClick': true
+      });
 });

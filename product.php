@@ -50,7 +50,9 @@ $colors = getProductColors($dbh, $productMainInfo['id']);
 						<div class="slider-main-image">
 							<?php foreach($productImages as $productImage): ?>
 								<div class="main_image">
-									<?='<img src="../../'. PRODUCT_IMAGES_PATH. $productImage['name']. '">';?>
+									<a <?= 'href="../../'. PRODUCT_IMAGES_PATH. $productImage['name']. '"'?> id="main-image">
+										<?='<img src="../../'. PRODUCT_IMAGES_PATH. $productImage['name']. '">';?>
+									</a>
 								</div>
 							<?php endforeach; ?>
 						</div>

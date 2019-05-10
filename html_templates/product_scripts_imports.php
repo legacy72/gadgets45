@@ -16,3 +16,6 @@
 
 <!-- LocalStorage -->
 <script src="../../scripts/local_storage.js"></script>
+
+<!-- FancyBox -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>

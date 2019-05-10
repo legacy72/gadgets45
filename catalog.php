@@ -178,7 +178,7 @@ $currentPage = 1;
 									<div class="catalog_item">
 										<div class="item_name">
 											<?
-												$productFullName = $product['product_name'] . ' '. getColorName($product['color_name']);
+												$productFullName = getProductNameWithColor($product['product_name'], $product['color_name']);
 												echo '<a href="'. concatCategoryAndFullName($_GET['category_name'], $product['url_name'], $product['color_name']) .'">'; 
 											?>
 											<?=$productFullName;?>

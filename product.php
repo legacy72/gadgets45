@@ -1,9 +1,10 @@
 <?
-
 require_once 'db/queries.php';
 require_once 'templates/config.php';
 require_once 'templates/functions.php';
+?>
 
+<?
 // Айди цвета
 $color_id = getColorID($dbh, $_GET['color_name']);
 // Основная информация о пордукте
@@ -20,8 +21,8 @@ $mainSpec = getMainProductSpecifications($productSpecificatios, $_GET['category_
 $specificationsByGroups = getSpecificationsByGroups($productSpecificatios);
 // Получаем все цвета продукта
 $colors = getProductColors($dbh, $productMainInfo['id']);
-
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -50,7 +51,7 @@ $colors = getProductColors($dbh, $productMainInfo['id']);
 						<div class="slider-main-image">
 							<?php foreach($productImages as $productImage): ?>
 								<div class="main_image">
-									<a <?= 'href="../../'. PRODUCT_IMAGES_PATH. $productImage['name']. '"'?> id="main-image">
+									<a <?= 'href="../../'. PRODUCT_IMAGES_PATH. $productImage['name']. '"'?> class='main_page'>
 										<?='<img src="../../'. PRODUCT_IMAGES_PATH. $productImage['name']. '">';?>
 									</a>
 								</div>

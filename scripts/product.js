@@ -29,7 +29,10 @@ $(document).ready(function() {
         focusOnSelect: true
       });
 
-      $("a#main-image").fancybox({
-         'hideOnContentClick': true
+      $('.main_page').magnificPopup({
+         type:'image',
+         removalDelay: 300,
+         mainClass: 'mfp-fade'
       });
+
 });

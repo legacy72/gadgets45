@@ -93,7 +93,7 @@ $stocks = getBestSellersOrStocks($dbh, 'stock');
 								<div class="stock_text_container">
 									<div class="stock_text">
 										<div class="stock_description">
-											<?=$stock['name']; ?>
+											<?=getProductNameWithColor($stock['name'], $stock['color_name']); ?>
 										</div>
 										<div class="stock_prices">
 											<div class="stock_new_price">
@@ -128,7 +128,7 @@ $stocks = getBestSellersOrStocks($dbh, 'stock');
 									</a>
 								</div>
 								<div class="bestseller_description">
-									<?=$bestseller['name']; ?>
+									<?=getProductNameWithColor($bestseller['name'], $bestseller['color_name']); ?>
 								</div>
 								<div class="bestseller_price">
 									<div class="standart_price">

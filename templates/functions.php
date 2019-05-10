@@ -158,11 +158,17 @@ function getSpecificationsByGroups($specifications){
 	return $specsByGroup;
 }
 
-// Конкатенация названия продукта с его цветом
+// Конкатенация названия продукта с его цветом для урла
 function concatProductNameAndColor($name, $color){
 	return $name .'-'. $color;
 }
 // Конкатенация категории с полным названием (название+цвет)
 function concatCategoryAndFullName($category, $name, $color){
 	return $category . '/'. concatProductNameAndColor($name, $color);
+}
+// Конкатенация названия продукта с его цветом для вывода тайтла
+function getProductNameWithColor($name, $color){
+	if(getColorName($color) != '')
+		return $name .' '. getColorName($color);
+	return $name;
 }

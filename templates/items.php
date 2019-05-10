@@ -51,18 +51,16 @@ $countPages = getCountPages($countProducts);
 // Текущая страница
 $currentPage = $page_num;
 
-
-
-
 echo '<div class="catalog_items">';
 foreach($productItems as $product){
-	$productFullName = $product['product_name'];
-	if ($product['color_name'] != 'standart')
-		 $productFullName .= ' '. $product['color_name'];
-
+	$productFullName = getProductNameWithColor($product['product_name'], $product['color_name']);
 	echo '
 		<div class="catalog_item">
-			<div class="item_name"><a href="'. $category_name. '/'. $product['url_name']. '-'. $product['color_name'] .'">'. $productFullName. '</a></div>
+			<div class="item_name" ptc_id="'. $product['ptc_id']. '">
+				<a href="'. concatCategoryAndFullName($_GET['category_name'], $product['url_name'], $product['color_name']) .'">
+					'. $productFullName. '
+				</a>
+			</div>
 			<div class="item_image">
 				<a href="'. $category_name. '/'. $product['url_name']. '-'. $product['color_name'] .'">
 					<img src="../'. PRODUCT_IMAGES_PATH.$product['image_name'] .'">

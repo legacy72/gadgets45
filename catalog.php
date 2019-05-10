@@ -24,7 +24,6 @@ $productItems = getProductItems($dbh, $filterSpecs, $categoryID);
 $countPages = getCountPages($countProducts);
 // Текущая страница
 $currentPage = 1;
-
 ?>
 
 
@@ -176,7 +175,7 @@ $currentPage = 1;
 							<div class="catalog_items">
 								<?php foreach($productItems as $product): ?>
 									<div class="catalog_item">
-										<div class="item_name">
+										<?='<div class="item_name" ptc_id="'. $product['ptc_id']. '">';?>
 											<?
 												$productFullName = getProductNameWithColor($product['product_name'], $product['color_name']);
 												echo '<a href="'. concatCategoryAndFullName($_GET['category_name'], $product['url_name'], $product['color_name']) .'">'; 

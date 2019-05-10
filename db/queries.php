@@ -42,7 +42,7 @@ function getColorID(PDO $dbh, $color_name){
 function getProductSpecifictions(PDO $dbh, $product_url_name){
 	$sth = $dbh->prepare('
 		SELECT 
-			T.product_name, 
+			T.product_name,
 			T.specification_name, 
 			T.specification_name_ru,
 		    T.specifiaction_group,
@@ -77,6 +77,7 @@ function getProductMainInfo(PDO $dbh, $product_url_name, $color_id){
 			Product.name,
 			Product.description_title,
 			Product.description_text,
+		    ptc.id AS ptc_id,
 		    ptc.discount_price,
 		    ptc.quantity
 		FROM Product
@@ -152,6 +153,7 @@ function getProducts(PDO $dbh, $filterSpecs, $category_id, $price_from, $price_t
                 Product.name AS product_name, 
                 Product.url_name AS url_name,
                 Color.name AS color_name,
+                ptc.id AS ptc_id,
                 ptc.price,
                 ptc.discount_price,
                 ptc.quantity,

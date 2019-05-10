@@ -62,6 +62,9 @@
 							<input class="order_input" type="text" placeholder="Ваш телефон" name="" value="">
 						</div>
 						<div class="order_info_row">
+							<input class="order_input" type="email" placeholder="Ваш email" name="" value="">
+						</div>
+						<div class="order_info_row">
 							<textarea class="order_rich_text_box" type="text" placeholder="Ваш комментарий" name="" value=""></textarea>
 						</div>
 						<button class="btn_order">

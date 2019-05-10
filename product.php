@@ -46,7 +46,7 @@ $colors = getProductColors($dbh, $productMainInfo['id']);
 		</section>
 		<section>
 			<div class="default_container new_container">
-				<div class="product_container">
+				<?='<div class="product_container" ptc_id="'. $productMainInfo['ptc_id']. '">';?>
 					<div class="product_images">
 						<div class="slider-main-image">
 							<?php foreach($productImages as $productImage): ?>

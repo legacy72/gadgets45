@@ -38,9 +38,11 @@
 							</div>
 						</div>
 						<div class="button_order">
-							<button>
-								Оформить заказ
-							</button>
+							<a href="/order">
+								<button>
+									Оформить заказ
+								</button>
+							</a>
 						</div>
 					</div>
 				</div>

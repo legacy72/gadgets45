@@ -8,8 +8,6 @@ $(document).ready(function() {
 		return price.toLocaleString('ru-RU') + ' р.';
 	}
 
-
-
 	// Инициализируем корзину
 	function initCart(){
 		// Если в корзине что-то есть получаем json ил localStorage
@@ -167,16 +165,24 @@ $(document).ready(function() {
 	// обработка клика на кнопку "оформить заказ"
 	$(document.body).on('click', '.btn_order', function(){
 		var cartData = initCart();
-		console.log(cartData);
-
-	$.ajax({
+		$.ajax({
 			url: '../templates/save_order.php',
 			type: 'POST',
 			data: {
 				'cartData': JSON.stringify(cartData),
+				'name': 1,
+				'street': 1,
+				'home_number': 2,
+				'entrance': 3,
+				'apartment': 1,
+				'phone': 1,
+				'email': 1,
+				'comment': 1,
+				'payment_type': 1
 			},
 			success: function(data){
-				console.log(data);	
+				// todo: Переделать alert на нормальный блок
+				alert(data);	
 			},
 		});
 

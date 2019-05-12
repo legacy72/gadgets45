@@ -1,5 +1,6 @@
 <?
 require_once 'connection.php';
+require_once 'functions.php';
 
 // получаем id категории по названию
 function getCategoryID(PDO $dbh, $category_name){
@@ -223,6 +224,54 @@ function getBestSellersOrStocks(PDO $dbh, $typeSelect){
 	$prods = $sth->fetchAll(PDO::FETCH_ASSOC);
 
 	return $prods;
+}
+
+
+// Заполнение информации (данные корзины) о заказе
+function insertIntoOrderProducts(PDO $dbh, $cartData, $orderID){
+	// удаляем лишние поля и добавляем поле айди заказа
+	for($i = 0; $i < count($cartData); $i++){	
+		unset($cartData[$i]['product_name']);
+		unset($cartData[$i]['product_image']);
+		unset($cartData[$i]['product_price']);
+		$cartData[$i]['order_id'] = $orderID;
+	}
+
+	$res = pdoMultiInsert($dbh, 'OrdersProducts', $cartData);
+	return $res;
+}
+
+// Заполнение информации о заказчике
+function insertIntoOrder(PDO $dbh, $customerData, $cartData){
+	$orderInfo = [
+    	'name' => $customerData['name'],
+		'street' => $customerData['street'],
+		'home_number' => $customerData['home_number'],
+		'entrance' => $customerData['entrance'],
+		'apartment' => $customerData['apartment'],
+		'phone' => $customerData['phone'],
+		'email' => $customerData['email'],
+		'comment' => $customerData['comment'],
+		'payment_type' => $customerData['payment_type']
+	];
+	$query = '
+		INSERT INTO `Order` 
+		(
+			customer_name, customer_street, customer_home_number,
+			customer_entrance, customer_apartment, customer_phone,
+			customer_email, customer_comment, payment_type
+		)
+		VALUES
+		(
+			:name, :street, :home_number, :entrance, :apartment,
+			:phone, :email, :comment, :payment_type
+		)
+	';
+	$sth = $dbh->prepare($query);
+	$resCustomer = $sth->execute($orderInfo);
+	if($resCustomer === True)
+		$res = insertIntoOrderProducts($dbh, $cartData, $dbh->lastInsertId());
+	return $res;
 }
 
 // Выборка смартфонов

@@ -1,5 +1,15 @@
 <?
-if(isset($_POST) && !empty($_POST['cartData'])) {
-    $cartData = var_dump(json_decode($_POST['cartData']));
-    print_r($cartData);
+require_once('../db/queries.php');
+
+if(isset($_POST)) {
+	$customerData = $_POST;
+	$cartData = json_decode($_POST['cartData'], true);
+
+    $res = insertIntoOrder($dbh, $customerData, $cartData);
+    if($res === True){
+    	echo('Ваш заказ успешно оформлен');
+    }
+    else{
+    	echo('Что-то пошло не так');
+    }
 }

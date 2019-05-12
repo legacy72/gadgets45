@@ -1,5 +1,43 @@
 <?
 require_once 'config.php';
+
+
+function pdoMultiInsert($dbh, $tableName, $data){
+    //Will contain SQL snippets.
+    $rowsSQL = array();
+
+    //Will contain the values that we need to bind.
+    $toBind = array();
+    
+    //Get a list of column names to use in the SQL statement.
+    $columnNames = array_keys($data[0]);
+
+    //Loop through our $data array.
+    foreach($data as $arrayIndex => $row){
+        $params = array();
+        foreach($row as $columnName => $columnValue){
+            $param = ":" . $columnName . $arrayIndex;
+            $params[] = $param;
+            $toBind[$param] = $columnValue; 
+        }
+        $rowsSQL[] = "(" . implode(", ", $params) . ")";
+    }
+
+    //Construct our SQL statement
+    $sql = "INSERT INTO `$tableName` (" . implode(", ", $columnNames) . ") VALUES " . implode(", ", $rowsSQL);
+
+    //Prepare our PDO statement.
+    $pdoStatement = $dbh->prepare($sql);
+
+    //Bind our values.
+    foreach($toBind as $param => $val){
+        $pdoStatement->bindValue($param, $val);
+    }
+    
+    //Execute our statement (i.e. insert the data).
+    return $pdoStatement->execute();
+}
+
 // Получить кол-во всех элементов словаря (сумма  кол-ва элементов по всем ключам)
 function getCountOfDictItems($dict){
 	$len = 0;

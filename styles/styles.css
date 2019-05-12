@@ -963,7 +963,8 @@ footer{
 	color: #fff;
 	background: linear-gradient(to right, #068eee, #6e37fb);
 	border: none;
-	font-size: 22px;
+	font-size: 24px;
+	font-weight: 600;
 	cursor: pointer;
 }
 .paymant_block{

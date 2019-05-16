@@ -1,6 +1,6 @@
 <?
 require_once 'connection.php';
-require_once 'functions.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/templates/functions.php';
 
 // получаем id категории по названию
 function getCategoryID(PDO $dbh, $category_name){

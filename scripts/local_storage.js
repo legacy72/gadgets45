@@ -44,35 +44,35 @@ $(document).ready(function() {
 		for(var i = 0; i < length; i++){
 			out += `
 			<div class="cart_row">
-				<div class="cart_item">
-					<div class="item_image">
+			<div class="cart_item">
+			<div class="item_image">
 			`;
 			out += `<img src="${cartData[i]['product_image']}">`;
 			out += `
-					</div>
-					<div class="item_description">
+			</div>
+			<div class="item_description">
 			`;
 			out += cartData[i]['product_name'];
 			out += `
-					</div>
-					<div class="item_price">
+			</div>
+			<div class="item_price">
 			`;
 			out += priceFormat(cartData[i]['product_price'] * cartData[i]['product_quantity']);
 			out += `
-					</div>
-					<div class="item_count">
-						<div class="counter_minus" product_id="` + i + `">-</div>
-							<div class="item_counter">
+			</div>
+			<div class="item_count">
+			<div class="counter_minus" product_id="` + i + `">-</div>
+			<div class="item_counter">
 			`;
 			out += cartData[i]['product_quantity'];
 			out += `
-							</div>
-						<div class="counter_plus" product_id="` + i + `">+</div>
-					</div>
-					<div class="item_drop">
-						<div class="item_drop_btn cross" product_id="` + i + `">X</div>
-					</div>
-				</div>
+			</div>
+			<div class="counter_plus" product_id="` + i + `">+</div>
+			</div>
+			<div class="item_drop">
+			<div class="item_drop_btn cross" product_id="` + i + `">X</div>
+			</div>
+			</div>
 			</div>
 			`;
 		}
@@ -164,27 +164,30 @@ $(document).ready(function() {
 	});
 	// обработка клика на кнопку "оформить заказ"
 	$(document.body).on('click', '.btn_order', function(){
-		var cartData = initCart();
-		$.ajax({
-			url: '../templates/save_order.php',
-			type: 'POST',
-			data: {
-				'cartData': JSON.stringify(cartData),
-				'name': 1,
-				'street': 1,
-				'home_number': 2,
-				'entrance': 3,
-				'apartment': 1,
-				'phone': 1,
-				'email': 1,
-				'comment': 1,
-				'payment_type': 1
-			},
-			success: function(data){
-				// todo: Переделать alert на нормальный блок
-				alert(data);	
-			},
-		});
+		var streetValid = document.getElementById('street_order').validity.valid;
+		if (streetValid){
+			var cartData = initCart();
+			$.ajax({
+				url: '../templates/save_order.php',
+				type: 'POST',
+				data: {
+					'cartData': JSON.stringify(cartData),
+					'name': 1,
+					'street': $('#street_order').val(),
+					'home_number': 2,
+					'entrance': 3,
+					'apartment': 1,
+					'phone': 1,
+					'email': 1,
+					'comment': 1,
+					'payment_type': 1
+				},
+				success: function(data){
+					// todo: Переделать alert на нормальный блок
+					alert(data);	
+				},
+			});
+		}
 
 	});
 

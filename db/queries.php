@@ -254,6 +254,7 @@ function insertIntoOrder(PDO $dbh, $customerData, $cartData){
 		'comment' => $customerData['comment'],
 		'payment_type' => $customerData['payment_type']
 	];
+
 	$query = '
 		INSERT INTO `Order` 
 		(

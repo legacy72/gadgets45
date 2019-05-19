@@ -7,7 +7,37 @@ $(document).ready(function() {
     function priceFormat(price) {
         return price.toLocaleString('ru-RU') + ' р.';
     }
+    // Пост запрос на сохранение заказа
+    function saveOrder(){
+		var cartData = initCart();
+        $.ajax({
+            url: '../templates/save_order.php',
+            type: 'POST',
+            data: {
+                'cartData': JSON.stringify(cartData),
+                'name': $('#name_customer_order').val(),
+                'phone': $('#phone_customer_order').val(),
+                'email': $('#email_customer_order').val(),
+                'comment': $('#comment_order').val(),
+                'street': $('#street_order').val(),
+                'home_number': $('#home_order').val(),
+                'entrance': $('#entrance_order').val(),
+                'apartment': $('#apartment_order').val(),
+                'payment_type': 1
+            },
+            success: function(data) {
+                // todo: Переделать alert на нормальный блок
+                alert(data);
+            },
+        });
+    }
 
+    // Обновление всех данных
+    function reloadCart() {
+        showCart();
+        showFinalOrder();
+        editCartBlock();
+    }
     // Инициализируем корзину
     function initCart() {
         // Если в корзине что-то есть получаем json ил localStorage
@@ -163,47 +193,22 @@ $(document).ready(function() {
     });
     // обработка клика на кнопку "оформить заказ"
     $(document.body).on('click', '.btn_order', function() {
-        var streetValid = document.getElementById('street_order').validity.valid;
-        var homeValid = document.getElementById('home_order').validity.valid;
-        var entranceValid = document.getElementById('entrance_order').validity.valid;
-        var apartmentValid = document.getElementById('apartment_order').validity.valid;
-        var nameValid = document.getElementById('name_customer_order').validity.valid;
-        var phoneValid = document.getElementById('phone_customer_order').validity.valid;
-        var emailValid = document.getElementById('email_customer_order').validity.valid;
-        var commentValid = document.getElementById('comment_order').validity.valid;
+    	var validArray = [];
+        validArray.push(document.getElementById('street_order').validity.valid);
+        validArray.push(document.getElementById('home_order').validity.valid);
+        validArray.push(document.getElementById('entrance_order').validity.valid);
+        validArray.push(document.getElementById('apartment_order').validity.valid);
+        validArray.push(document.getElementById('name_customer_order').validity.valid);
+        validArray.push(document.getElementById('phone_customer_order').validity.valid);
+        validArray.push(document.getElementById('email_customer_order').validity.valid);
+        validArray.push(document.getElementById('comment_order').validity.valid);
 
-        if (streetValid && homeValid && entranceValid && apartmentValid && nameValid && phoneValid && emailValid && commentValid) {
-            var cartData = initCart();
-            $.ajax({
-                url: '../templates/save_order.php',
-                type: 'POST',
-                data: {
-                    'cartData': JSON.stringify(cartData),
-                    'name': $('#name_customer_order').val(),
-                    'phone': $('#phone_customer_order').val(),
-                    'email': $('#email_customer_order').val(),
-                    'comment': $('#comment_order').val(),
-                    'street': $('#street_order').val(),
-                    'home_number': $('#home_order').val(),
-                    'entrance': $('#entrance_order').val(),
-                    'apartment': $('#apartment_order').val(),
-                    'payment_type': 1
-                },
-                success: function(data) {
-                    // todo: Переделать alert на нормальный блок
-                    alert(data);
-                },
-            });
+        if (validArray.every(Boolean)) {
+        	saveOrder();
         }
-
     });
 
-    // Обновление всех данных
-    function reloadCart() {
-        showCart();
-        showFinalOrder();
-        editCartBlock();
-    }
+
 
     // При заходе на страницу обновляем всю инфу
     reloadCart();

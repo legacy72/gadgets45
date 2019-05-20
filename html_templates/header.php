@@ -2,7 +2,7 @@
 		<section>
 			<div class="default_container header_container">
 				<div class="logo">
-					<a href="/"><img src="../logo/white_logo.png"></a>
+					<a href="/"><img src="/logo/white_logo.png"></a>
 				</div>
 				<div class="header_menu">
 					<ul>
@@ -17,7 +17,7 @@
 				</div>
 				<div class="header_contacts">
 					<div class="header_phone">
-						<img src="../images/phone.png">
+						<img src="/images/phone.png">
 						<div class="phone_number">+7 916 448 62 84</div>
 					</div>
 					<div class="call_order">
@@ -54,12 +54,12 @@
 							</ul>
 						</div>
 						<div class="loupe">
-							<img src="../images/loupe.png">
+							<img src="/images/loupe.png">
 						</div>
 						<div class="shopping_cart_block">
 							<a href="/cart">
 								<div class="shopping_cart_text">
-									<img src="../../images/push_cart.png">
+									<img src="/images/push_cart.png">
 									<span class="cart_price"></span>
 									<span class="cart_quantity"></span>
 								</div>

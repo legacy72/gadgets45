@@ -210,3 +210,8 @@ function getProductNameWithColor($name, $color){
 		return $name .' '. getColorName($color);
 	return $name;
 }
+
+// отправка почты
+function sendEmail($email){
+	return mail($email, "Заказ в магазине phone24", "Спасибо за заказ");
+}

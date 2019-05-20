@@ -28,10 +28,10 @@ $colors = getProductColors($dbh, $productMainInfo['id']);
 <head>
 	<meta charset="utf-8">
 	<title>Товар</title>
-	<? require_once('html_templates/product_links.php'); ?>
+	<? require_once('html_templates/links.php'); ?>
 </head>
 <body>
-	<? require_once('html_templates/product_header.php'); ?>
+	<? require_once('html_templates/header.php'); ?>
 			<div class="default_container new_container">
 				<div class="navigation_menu">
 					<a href="/">Главная</a>
@@ -154,8 +154,8 @@ $colors = getProductColors($dbh, $productMainInfo['id']);
 		</section>
 	</main>
 
-	<? require_once('html_templates/product_footer.php'); ?>
-	<? require_once('html_templates/product_scripts_imports.php'); ?>
+	<? require_once('html_templates/footer.php'); ?>
+	<? require_once('html_templates/scripts_imports.php'); ?>
 
 	<script src="../../scripts/product.js" charset="utf-8"></script>
 </body>

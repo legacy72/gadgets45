@@ -27,12 +27,12 @@
 								Укажите адрес доставки
 							</div>
 							<div class="order_info_row">
-								<input id="street_order" class="order_input" type="text" placeholder="Улица" name="" value="" required>
+								<input id="street_order" class="order_input" type="text" placeholder="Улица" name="" value="тестовая улица" required>
 							</div>
 							<div class="order_info_row">
-								<input id="home_order" class="home_info order_input" type="text" placeholder="Дом" name="" value="" required>
-								<input id="entrance_order" class="home_info order_input" type="text" placeholder="Подъезд" name="" value="" required>
-								<input id="apartment_order" class="home_info order_input" type="text" placeholder="Квартира" name="" value="" required>
+								<input id="home_order" class="home_info order_input" type="text" placeholder="Дом" name="" value="777" required>
+								<input id="entrance_order" class="home_info order_input" type="text" placeholder="Подъезд" name="" value="12" required>
+								<input id="apartment_order" class="home_info order_input" type="text" placeholder="Квартира" name="" value="32" required>
 							</div>
 							<div class="paymant_block">
 								<div class="paymant_title">
@@ -53,16 +53,16 @@
 								Укажите контактные данные
 							</div>
 							<div class="order_info_row">
-								<input id="name_customer_order" class="order_input" type="text" placeholder="Ваше имя" name="" value="" required>
+								<input id="name_customer_order" class="order_input" type="text" placeholder="Ваше имя" name="" value="Василий" required>
 							</div>
 							<div class="order_info_row">
-								<input id="phone_customer_order" class="order_input" type="text" placeholder="Ваш телефон" name="" value="" required>
+								<input id="phone_customer_order" class="order_input" type="text" placeholder="Ваш телефон" name="" value="77-77-77" required>
 							</div>
 							<div class="order_info_row">
-								<input id="email_customer_order" class="order_input" type="email" placeholder="Ваш email" name="" value="" required>
+								<input id="email_customer_order" class="order_input" type="email" placeholder="Ваш email" name="" value="hoperoina2016@gmail.com" required>
 							</div>
 							<div class="order_info_row">
-								<textarea id="comment_order" class="order_rich_text_box" type="text" placeholder="Ваш комментарий (не обязательно)" name="" value=""></textarea>
+								<textarea id="comment_order" class="order_rich_text_box" type="text" placeholder="Ваш комментарий (не обязательно)" name="" value="тестовый комментарий"></textarea>
 							</div>
 							<button class="btn_order">
 								Оформить заказ

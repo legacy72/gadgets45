@@ -2,7 +2,7 @@
 	<div class="container">
 		<div class="footer_container">
 			<div class="footer_logo">
-				<img src="../logo/black_logo.png">
+				<img src="/logo/black_logo.png">
 			</div>
 			<div class="footer_menu">
 				<ul>
@@ -14,7 +14,7 @@
 			</div>
 			<div class="footer_contacts">
 				<div class="footer_phone">
-					<img src="../images/phone.png">
+					<img src="/images/phone.png">
 					+7 916 448 62 84
 				</div>
 				<div class="footer_call_order">

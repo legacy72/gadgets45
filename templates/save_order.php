@@ -12,13 +12,6 @@ if(isset($_POST)) {
     $res = insertIntoOrder($dbh, $customerData, $cartData);
     if($res === TRUE){
         echo('Ваш заказ успешно оформлен');
-        $emailSended = sendEmail('hoperoina2016@gmail.com');
-        if($emailSended === TRUE){
-            echo('. На ваш email было выслано письмо, проверьте спам');
-        }
-        else{
-            echo('. Письмо не было отправлено');
-        }
     }
     else{
     	echo('Что-то пошло не так');

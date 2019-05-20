@@ -11,27 +11,27 @@ $price_to = 999999;
 $order_by = 1; // по умолчанию сортировка по возрастанию
 $page_num = 1; // по умолчанию первая страница
 // Сортировка по возрастанию (1) или по убыванию (2)
-if(!empty($_POST['order_by'])){
-	$order_by = $_POST['order_by'];
+if(!empty($_GET['order_by'])){
+	$order_by = $_GET['order_by'];
 }
 // если выбраны чекбоксы заполняем фильтр
-if(!empty($_POST['filter'])) {
-    $filter = $_POST['filter'];
+if(!empty($_GET['filter'])) {
+    $filter = $_GET['filter'];
 }
-if(!empty($_POST['category_id'])){
-	$category_id = $_POST['category_id'];
+if(!empty($_GET['category_id'])){
+	$category_id = $_GET['category_id'];
 }
-if(!empty($_POST['category_name'])){
-	$category_name = $_POST['category_name'];
+if(!empty($_GET['category_name'])){
+	$category_name = $_GET['category_name'];
 }
-if(!empty($_POST['price_from'])){
-	$price_from = intval($_POST['price_from']);
+if(!empty($_GET['price_from'])){
+	$price_from = intval($_GET['price_from']);
 }
-if(!empty($_POST['price_to'])){
-	$price_to = intval($_POST['price_to']);
+if(!empty($_GET['price_to'])){
+	$price_to = intval($_GET['price_to']);
 }
-if(!empty($_POST['page_num'])){
-	$page_num = intval($_POST['page_num']);
+if(!empty($_GET['page_num'])){
+	$page_num = intval($_GET['page_num']);
 }
 // офсет для вывода продуктов конкретной страницы
 $offset = ($page_num - 1) * PRODUCTS_ON_PAGE;
@@ -57,7 +57,7 @@ foreach($productItems as $product){
 	echo '
 		<div class="catalog_item">
 			<div class="item_name" ptc_id="'. $product['ptc_id']. '">
-				<a href="'. concatCategoryAndFullName($_GET['category_name'], $product['url_name'], $product['color_name']) .'">
+				<a href="'. concatCategoryAndFullName($category_name, $product['url_name'], $product['color_name']) .'">
 					'. $productFullName. '
 				</a>
 			</div>

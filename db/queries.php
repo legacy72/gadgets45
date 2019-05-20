@@ -173,7 +173,7 @@ function getProducts(PDO $dbh, $filterSpecs, $category_id, $price_from, $price_t
 
 	// дополнительная строка фильтрации
 	$sql .= getAdditionaStringForlQuery($filterSpecs, $order_by, $limit, $offset);
-
+	
 	$sth = $dbh->prepare($sql);
 
 	$sth->bindParam(':category_id', $category_id, PDO::PARAM_INT);

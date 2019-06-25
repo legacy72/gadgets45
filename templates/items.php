@@ -62,7 +62,7 @@ foreach($productItems as $product){
 				</a>
 			</div>
 			<div class="item_image">
-				<a href="'. $category_name. '/'. $product['url_name']. '-'. $product['color_name'] .'">
+				<a href="'. concatCategoryAndFullName($category_name, $product['url_name'], $product['color_name']) .'">
 					<img src="../'. PRODUCT_IMAGES_PATH.$product['image_name'] .'">
 				</a>
 			</div>

@@ -27,7 +27,7 @@ $colors = getProductColors($dbh, $productMainInfo['id']);
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Товар</title>
+	<title><?=$productMainInfo['description_title'];?></title>
 	<? require_once('html_templates/links.php'); ?>
 </head>
 <body>

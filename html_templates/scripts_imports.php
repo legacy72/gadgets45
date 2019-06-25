@@ -13,3 +13,6 @@
 
 <!-- LocalStorage -->
 <script src="/scripts/local_storage.js"></script>
+
+<!-- Slick -->
+<script src="/slick-master/slick/slick.min.js" type="text/javascript"></script>

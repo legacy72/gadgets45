@@ -31,10 +31,10 @@
 								Итого:
 							</div>
 							<div class="count_orders">
-								Количество товаров: <b>1 шт</b>
+								Количество товаров: <b></b>
 							</div>
 							<div class="sum_orders">
-								Итоговая стоимость: <b>35 990 р.</b>
+								Итоговая стоимость: <b></b>
 							</div>
 						</div>
 						<div class="button_order">
@@ -194,10 +194,12 @@
 			</div>
 		</section>
 	</main>
+
 	<? require_once('html_templates/footer.php'); ?>
 	<? require_once('html_templates/scripts_imports.php'); ?>
 
 	<script src="slick-master/slick/slick.min.js" type="text/javascript"></script>
 	<script src="scripts/catalog-carousel.js" type="text/javascript"></script>
+	
 </body>
 </html>

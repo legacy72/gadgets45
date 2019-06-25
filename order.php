@@ -56,7 +56,7 @@
 								<input id="name_customer_order" class="order_input" type="text" placeholder="Ваше имя" name="" value="Василий" required>
 							</div>
 							<div class="order_info_row">
-								<input id="phone_customer_order" class="order_input" type="text" placeholder="Ваш телефон" name="" value="77-77-77" required>
+								<input id="phone_customer_order" class="order_input" type="text" placeholder="Ваш телефон" name="" value="" required>
 							</div>
 							<div class="order_info_row">
 								<input id="email_customer_order" class="order_input" type="email" placeholder="Ваш email" name="" value="hoperoina2016@gmail.com" required>
@@ -75,5 +75,6 @@
 	</main>
 	<? require_once('html_templates/footer.php'); ?>
 	<? require_once('html_templates/scripts_imports.php'); ?>
+	<script src="scripts/maskedinput.js" type="text/javascript"></script>
 </body>
 </html>

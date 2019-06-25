@@ -52,7 +52,6 @@ function getSpecificationsForFilter(PDO $dbh, $filter = array()){
 	// $filter для стартовой страртовой страницы пустой
 	// Return:
 	// dict - словарь характерстик
-	$filterSpecifications = array();
 	foreach ($filter as $filterKey => $filterValue) {
 		$filterValues = array();
 		for ($i = 0; $i < count($filterValue); $i++){

@@ -52,6 +52,7 @@
 								<li><a href="">Гаратнии</a></li>
 								<li><a href="">Возврат</a></li>
 							</ul>
+							<input type="text" id="search_input"></input>
 						</div>
 						<div class="loupe">
 							<img src="/images/loupe.png">

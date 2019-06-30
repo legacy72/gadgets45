@@ -67,8 +67,8 @@ $currentPage = 1;
 								<div class="card-body">
 									<div class="price_range">
 										<div class="price_range__inputs">
-											<input class="price_from" id="price_from" type="text" placeholder="6990" name="">
-											<input class="price_to" id="price_to" type="text" placeholder="199 000" name="">
+											<input class="price_from" id="price_from" type="text" pattern="^[0-9]+$" placeholder="6990" name="">
+											<input class="price_to" id="price_to" type="text" pattern="^[0-9]+$" placeholder="199 000" name="">
 										</div>
 									</div>
 									<div class="prices-range__checkbox">
@@ -226,7 +226,6 @@ $currentPage = 1;
 	</main>
 	<? require_once('html_templates/footer.php'); ?>
 	<? require_once('html_templates/scripts_imports.php'); ?>
-
 </body>
 </html>
 

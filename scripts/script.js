@@ -77,7 +77,23 @@ $(document).ready(function() {
         $('.product_info_specs_block').fadeIn("fast");
     });
 
-    // Маска для телефона
-    $("#phone_customer_order").mask("8(999) 999-9999");
+    // Запрет ввода цифр (для цены)
+    $('.price_from').keypress(function(key) {
+        if (key.charCode < 48 || key.charCode > 57)
+            return false;
+    });
+    $('.price_to').keypress(function(key) {
+        if (key.charCode < 48 || key.charCode > 57)
+            return false;
+    });
+    // Запрет ввода цифр в дом и подъезд
+    $('#home_order').keypress(function(key) {
+        if (key.charCode < 48 || key.charCode > 57)
+            return false;
+    });
+    $('#entrance_order').keypress(function(key) {
+        if (key.charCode < 48 || key.charCode > 57)
+            return false;
+    });
 
 });

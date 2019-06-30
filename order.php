@@ -76,5 +76,9 @@
 	<? require_once('html_templates/footer.php'); ?>
 	<? require_once('html_templates/scripts_imports.php'); ?>
 	<script src="scripts/maskedinput.js" type="text/javascript"></script>
+	<script>
+		// Маска для телефона
+		$("#phone_customer_order").mask("8(999) 999-9999");
+	</script>
 </body>
 </html>

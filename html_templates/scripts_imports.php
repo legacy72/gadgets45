@@ -16,3 +16,7 @@
 
 <!-- Slick -->
 <script src="/slick-master/slick/slick.min.js" type="text/javascript"></script>
+
+<!-- Autocomplete -->
+<script src="/jquery/jquery-ui_min.js" type="text/javascript"></script>
+<script src="/scripts/autocomplete.js" type="text/javascript"></script>

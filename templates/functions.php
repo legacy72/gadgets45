@@ -203,7 +203,7 @@ function concatProductNameAndColor($name, $color){
 function concatCategoryAndFullName($category, $name, $color){
 	return $category . '/'. concatProductNameAndColor($name, $color);
 }
-// Конкатенация названия продукта с его цветом для вывода тайтла
+// Конкатенация названия продукта с его цветом
 function getProductNameWithColor($name, $color){
 	if(getColorName($color) != '')
 		return $name .' '. getColorName($color);

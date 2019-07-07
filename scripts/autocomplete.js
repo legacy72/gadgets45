@@ -1,16 +1,17 @@
 $(document).ready(function() {
-    // или массив объектов
-    availableTags = [
-        { label: "abc", value: "https://ya.ru" },
-        { label: "gasreweq", value: "https://google.com" },
-        { label: "abcdefg", value: "https://ya.com" },
-        { label: "qwe", value: "https://lol.com" },
-        { label: "aaavb", value: "https://yandex.ru" }
-    ];
+    var autocompleteItems = [];
+    $.ajax({
+        type: "POST",
+        url: "/templates/autocomplete_items.php",
+        async: false,
+        success: function(data) {
+            autocompleteItems = JSON.parse(data);
+            console.log(autocompleteItems);
+        }
+    });
 
-    // задаем массив в качестве источника слов для автозаполнения.
     $("#search_input").autocomplete({
-        source: availableTags,
+        source: autocompleteItems,
         minLength: 1,
         messages: {
             noResults: '',

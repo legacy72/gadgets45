@@ -280,13 +280,13 @@ function getProductItems(PDO $dbh, $filterSpecs = array(), $category_id = 1, $pr
 	$products = getProducts($dbh, $filterSpecs, $category_id, $price_from, $price_to, $order_by, $limit, $offset);
 	return $products->fetchAll(PDO::FETCH_ASSOC);
 }
-
+// Количество продуктов, подходящих под фильтр
 function getCountProducts(PDO $dbh, $filterSpecs = array(), $category_id = 1, $price_from = 0, $price_to = 999999, $order_by = 1, $limit = False, $offset = 0){
 	$products = getProducts($dbh, $filterSpecs, $category_id, $price_from, $price_to, $order_by, $limit, $offset);
 	return count($products->fetchAll(PDO::FETCH_ASSOC));
 }
 
-
+// Получение цветов продукта
 function getProductColors($dbh, $product_id){
 	$sth = $dbh->prepare('
 		SELECT Color.name FROM ProductToColor
@@ -297,6 +297,23 @@ function getProductColors($dbh, $product_id){
 	$sth->execute();
 	$colors = $sth->fetchAll(PDO::FETCH_ASSOC);
 	return $colors;
+}
+
+function getSearchedProducts($dbh){
+	$sth = $dbh->prepare('
+		SELECT 
+			p.url_name, 
+			p.name, 
+			p.category_id, 
+			clr.name AS color_name, 
+			cat.name AS category_name 
+		FROM Product AS p
+		JOIN ProductToColor AS ptc ON p.id = ptc.product_id
+		JOIN Category AS cat ON p.category_id = cat.id
+		JOIN Color AS clr ON ptc.color_id = clr.id
+	');
+	$sth->execute();
+	return $sth->fetchAll(PDO::FETCH_ASSOC);
 }
 
 ?>

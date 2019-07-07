@@ -159,7 +159,7 @@ $colors = getProductColors($dbh, $productMainInfo['id']);
 	<? require_once('html_templates/footer.php'); ?>
 	<? require_once('html_templates/scripts_imports.php'); ?>
 
-	<script src="../../scripts/product.js" charset="utf-8"></script>
+	<script src="../../scripts/product.js"></script>
 </body>
 
 </html>

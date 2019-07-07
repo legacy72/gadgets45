@@ -6,7 +6,6 @@ $(document).ready(function() {
         async: false,
         success: function(data) {
             autocompleteItems = JSON.parse(data);
-            console.log(autocompleteItems);
         }
     });
 
@@ -19,12 +18,12 @@ $(document).ready(function() {
         },
         select: function(event, ui) {
             window.location.href = ui.item.value;
+            if (ui.item && ui.item.value) {
+                ui.item.value = "";
+            }
         },
         focus: function(event, ui) {
             event.preventDefault();
-        },
-        close: function(event, ui) {
-            $("#search_input").val('');
         }
     });
 });

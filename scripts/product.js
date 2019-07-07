@@ -29,10 +29,11 @@ $(document).ready(function() {
         focusOnSelect: true
     });
 
-    $('.main_page').magnificPopup({
-        type: 'image',
-        removalDelay: 300,
-        mainClass: 'mfp-fade'
-    });
+    // почему typeerror $(...).magnificpopup is not a function?
+    // $('.main_page').magnificPopup({
+    //     type: 'image',
+    //     removalDelay: 300,
+    //     mainClass: 'mfp-fade'
+    // });
 
 });

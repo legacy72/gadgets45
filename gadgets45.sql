@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.7
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Май 08 2019 г., 20:02
--- Версия сервера: 5.6.38
--- Версия PHP: 7.2.0
+-- Время создания: Июл 08 2019 г., 11:33
+-- Версия сервера: 10.3.13-MariaDB
+-- Версия PHP: 7.1.22
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,38 +25,38 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `Category`
+-- Структура таблицы `category`
 --
 
-CREATE TABLE `Category` (
+CREATE TABLE `category` (
   `id` int(11) NOT NULL,
   `name` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `Category`
+-- Дамп данных таблицы `category`
 --
 
-INSERT INTO `Category` (`id`, `name`) VALUES
+INSERT INTO `category` (`id`, `name`) VALUES
 (1, 'smartphones'),
 (2, 'notebooks');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `Color`
+-- Структура таблицы `color`
 --
 
-CREATE TABLE `Color` (
+CREATE TABLE `color` (
   `id` int(11) NOT NULL,
   `name` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `Color`
+-- Дамп данных таблицы `color`
 --
 
-INSERT INTO `Color` (`id`, `name`) VALUES
+INSERT INTO `color` (`id`, `name`) VALUES
 (1, 'standart'),
 (2, 'white'),
 (3, 'blue'),
@@ -68,10 +68,10 @@ INSERT INTO `Color` (`id`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `Image`
+-- Структура таблицы `image`
 --
 
-CREATE TABLE `Image` (
+CREATE TABLE `image` (
   `id` int(11) NOT NULL,
   `name` varchar(250) NOT NULL,
   `product_id` int(11) NOT NULL,
@@ -80,16 +80,16 @@ CREATE TABLE `Image` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `Image`
+-- Дамп данных таблицы `image`
 --
 
-INSERT INTO `Image` (`id`, `name`, `product_id`, `color_id`, `is_main`) VALUES
+INSERT INTO `image` (`id`, `name`, `product_id`, `color_id`, `is_main`) VALUES
 (1, 'Xiaomi_Redmi_Note_4_1.png', 1, 7, 1),
 (2, 'Xiaomi_Redmi_Note_4_2.png', 1, 7, NULL),
 (3, 'Xiaomi_Redmi_Note_4_3.png', 1, 2, 1),
 (4, 'Xiaomi_Redmi_Note_4_4.png', 1, 2, NULL),
-(6, 'Xiaomi_Mi_7_1.png', 2, 1, 1),
-(7, 'Xiaomi_Mi_7_2.png', 2, 4, NULL),
+(6, 'Xiaomi_Mi_7_1.png', 2, 6, 1),
+(7, 'Xiaomi_Mi_7_2.png', 2, 4, 1),
 (8, 'Xiaomi_Mi_7_3.png', 2, 3, 1),
 (9, 'Xiaomi_Mi_7_4.png', 2, 3, NULL),
 (11, 'Huawei_Honor_8_1.png', 3, 4, 1),
@@ -108,15 +108,240 @@ INSERT INTO `Image` (`id`, `name`, `product_id`, `color_id`, `is_main`) VALUES
 (34, 'Xiaomi_Redmi_Note_4_3.png', 1, 2, NULL),
 (35, 'Xiaomi_Redmi_Note_4_1.png', 1, 2, NULL),
 (36, 'Xiaomi_Redmi_Note_4_2.png', 1, 2, NULL),
-(37, 'Xiaomi_Redmi_Note_4_4.png', 1, 2, NULL);
+(37, 'Xiaomi_Redmi_Note_4_4.png', 1, 2, NULL),
+(38, 'Xiaomi_Redmi_Note_4_2.png', 1, 6, 1);
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `Product`
+-- Структура таблицы `order`
 --
 
-CREATE TABLE `Product` (
+CREATE TABLE `order` (
+  `id` int(11) NOT NULL,
+  `customer_name` varchar(100) NOT NULL,
+  `customer_street` varchar(100) NOT NULL,
+  `customer_home_number` varchar(100) NOT NULL,
+  `customer_entrance` int(11) NOT NULL,
+  `customer_apartment` varchar(100) NOT NULL,
+  `customer_phone` varchar(20) NOT NULL,
+  `customer_email` varchar(50) NOT NULL,
+  `customer_comment` text NOT NULL,
+  `payment_type` tinyint(4) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `order`
+--
+
+INSERT INTO `order` (`id`, `customer_name`, `customer_street`, `customer_home_number`, `customer_entrance`, `customer_apartment`, `customer_phone`, `customer_email`, `customer_comment`, `payment_type`) VALUES
+(1, '1', '1', '1', 1, '1', '1', '1', '1', 1),
+(2, '1', '1', '2', 3, '1', '1', '1', '1', 1),
+(3, '1', '1', '2', 3, '1', '1', '1', '1', 1),
+(4, '1', '1', '2', 3, '1', '1', '1', '1', 1),
+(5, '1', '1', '2', 3, '1', '1', '1', '1', 1),
+(6, '1', '1', '2', 3, '1', '1', '1', '1', 1),
+(7, '1', '1', '2', 3, '1', '1', '1', '1', 1),
+(8, '1', '1', '2', 3, '1', '1', '1', '1', 1),
+(9, '1', '1', '2', 3, '1', '1', '1', '1', 1),
+(10, '1', '1', '2', 3, '1', '1', '1', '1', 1),
+(11, '1', '1', '2', 3, '1', '1', '1', '1', 1),
+(12, '1', '1', '2', 3, '1', '1', '1', '1', 1),
+(13, '1', '1', '2', 3, '1', '1', '1', '1', 1),
+(14, '1', '1', '2', 3, '1', '1', '1', '1', 1),
+(15, '1', '1', '2', 3, '1', '1', '1', '1', 1),
+(16, '1', '1', '2', 3, '1', '1', '1', '1', 1),
+(17, '1', '1', '2', 3, '1', '1', '1', '1', 1),
+(18, '1', '1', '2', 3, '1', '1', '1', '1', 1),
+(19, '1', '1', '2', 3, '1', '1', '1', '1', 1),
+(20, '1', '1', '2', 3, '1', '1', '1', '1', 1),
+(21, '1', '1', '2', 3, '1', '1', '1', '1', 1),
+(22, '1', '1', '2', 3, '1', '1', '1', '1', 1),
+(23, '1', '1', '2', 3, '1', '1', '1', '1', 1),
+(24, '1', '1', '2', 3, '1', '1', '1', '1', 1),
+(25, '1', '1', '2', 3, '1', '1', '1', '1', 1),
+(26, '1', '1', '2', 3, '1', '1', '1', '1', 1),
+(27, '1', '1', '2', 3, '1', '1', '1', '1', 1),
+(28, '1', '1', '2', 3, '1', '1', '1', '1', 1),
+(29, '1', '1', '2', 3, '1', '1', '1', '1', 1),
+(30, '1', '1', '2', 3, '1', '1', '1', '1', 1),
+(31, '1', '1', '2', 3, '1', '1', '1', '1', 1),
+(32, '1', '1', '2', 3, '1', '1', '1', '1', 1),
+(33, '1', '1', '2', 3, '1', '1', '1', '1', 1),
+(34, '1', '1', '2', 3, '1', '1', '1', '1', 1),
+(35, '1', '1', '2', 3, '1', '1', '1', '1', 1),
+(36, '1', '1', '2', 3, '1', '1', '1', '1', 1),
+(37, '1', '1', '2', 3, '1', '1', '1', '1', 1),
+(38, '1', '1', '2', 3, '1', '1', '1', '1', 1),
+(39, '1', '1', '2', 3, '1', '1', '1', '1', 1),
+(40, '1', '1', '2', 3, '1', '1', '1', '1', 1),
+(41, '1', '1', '2', 3, '1', '1', '1', '1', 1),
+(42, '1', '1', '2', 3, '1', '1', '1', '1', 1),
+(43, '1', '1', '2', 3, '1', '1', '1', '1', 1),
+(44, '1', '1', '2', 3, '1', '1', '1', '1', 1),
+(45, '1', '1', '2', 3, '1', '1', '1', '1', 1),
+(46, '1', '1', '2', 3, '1', '1', '1', '1', 1),
+(47, '1', '1', '2', 3, '1', '1', '1', '1', 1),
+(48, '1', '1', '2', 3, '1', '1', '1', '1', 1),
+(49, '1', '1', '2', 3, '1', '1', '1', '1', 1),
+(50, '1', '1', '2', 3, '1', '1', '1', '1', 1),
+(51, '1', '1', '2', 3, '1', '1', '1', '1', 1),
+(52, '1', '1', '2', 3, '1', '1', '1', '1', 1),
+(53, '1', '1', '2', 3, '1', '1', '1', '1', 1),
+(54, '1', '1', '2', 3, '1', '1', '1', '1', 1),
+(55, '1', '1', '2', 3, '1', '1', '1', '1', 1),
+(56, '1', '1', '2', 3, '1', '1', '1', '1', 1),
+(57, '1', '1', '2', 3, '1', '1', '1', '1', 1),
+(58, '1', '1', '2', 3, '1', '1', '1', '1', 1),
+(59, '1', '321dsa', '2', 3, '1', '1', '1', '1', 1),
+(60, '1', 'dsa', '2', 3, '1', '1', '1', '1', 1),
+(61, '1', 'dsa', '2', 3, '1', '1', '1', '1', 1),
+(62, '1', 'dsa', '2', 3, '1', '1', '1', '1', 1),
+(63, '1', 'gsagagdzs321', '2', 3, '1', '1', '1', '1', 1),
+(64, '1', 'dsa', '12', 32, '22', '1', '1', '1', 1),
+(65, '32', '321', '321', 2, '23', '32', '32@mail.ru', 'dasdsa dasd as da', 1),
+(66, '32', '321', '321', 2, '23', '32', '32@mail.ru', 'dasdsa dasd as da', 1),
+(67, 'Василий', 'тестовая улица', '777', 12, '32', '77-77-77', 'hoperoina2016@gmail.com', '', 1),
+(68, 'Василий', 'тестовая улица', '777', 12, '32', '77-77-77', 'hoperoina2016@gmail.com', '', 1),
+(69, 'Василий', 'тестовая улица', '777', 12, '32', '77-77-77', 'hoperoina2016@gmail.com', '', 1),
+(70, 'Василий', 'тестовая улица', '777', 12, '32', '77-77-77', 'hoperoina2016@gmail.com', '', 1),
+(71, 'Василий', 'тестовая улица', '777', 12, '32', '77-77-77', 'hoperoina2016@gmail.com', '', 1),
+(72, 'Василий', 'тестовая улица', '777', 12, '32', '77-77-77', 'hoperoina2016@gmail.com', '', 1),
+(73, 'Василий', 'тестовая улица', '777', 12, '32', '77-77-77', 'hoperoina2016@gmail.com', '321', 1),
+(74, 'Василий', 'тестовая улица', '777', 12, '32', '77-77-77', 'hoperoina2016@gmail.com', '', 1),
+(75, 'Василий', 'тестовая улица', '777', 12, '32', '77-77-77', 'hoperoina2016@gmail.com', '', 1),
+(76, 'Василий', 'тестовая улица', '777', 12, '32', '8(321) 321-3123', 'hoperoina2016@gmail.com', 'dsa das dsa', 1),
+(77, 'Олег', 'тестовая улица', '777', 12, '32', '8(111) 111-1111', 'hoperoina2016@gmail.com', '', 1),
+(78, 'Олег', 'тестовая улица', '777', 12, '32', '8(111) 111-1111', 'hoperoina2016@gmail.com', '', 1),
+(79, 'Олег', 'тестовая улица', '777', 12, '32', '8(111) 111-1111', 'hoperoina2016@gmail.com', '', 1),
+(80, 'Олег', 'тестовая улица', '777', 12, '32', '8(111) 111-1111', 'hoperoina2016@gmail.com', '', 1),
+(81, 'Василий', 'тестовая улица', '777', 12, '32', '8(111) 111-1111', 'hoperoina2016@gmail.com', '12', 1),
+(82, 'rtr', 'тестовая улица', '777', 12, '32', '8(333) 333-3311', 'hoperoina2016@gmail.com', '123', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `ordersproducts`
+--
+
+CREATE TABLE `ordersproducts` (
+  `id` int(11) NOT NULL,
+  `order_id` int(11) NOT NULL,
+  `ptc_id` int(11) NOT NULL,
+  `product_quantity` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Дамп данных таблицы `ordersproducts`
+--
+
+INSERT INTO `ordersproducts` (`id`, `order_id`, `ptc_id`, `product_quantity`) VALUES
+(1, 45, 11, 4),
+(2, 45, 3, 2),
+(3, 45, 1, 1),
+(4, 46, 11, 4),
+(5, 46, 3, 2),
+(6, 46, 1, 1),
+(7, 47, 11, 4),
+(8, 47, 3, 2),
+(9, 47, 1, 1),
+(10, 48, 11, 4),
+(11, 48, 3, 2),
+(12, 48, 1, 1),
+(13, 49, 11, 4),
+(14, 49, 3, 2),
+(15, 49, 1, 1),
+(16, 50, 11, 4),
+(17, 50, 3, 2),
+(18, 50, 1, 1),
+(19, 51, 11, 4),
+(20, 51, 3, 2),
+(21, 51, 1, 1),
+(22, 52, 11, 4),
+(23, 52, 3, 2),
+(24, 52, 1, 1),
+(25, 53, 11, 4),
+(26, 53, 3, 2),
+(27, 53, 1, 1),
+(28, 54, 11, 4),
+(29, 54, 3, 2),
+(30, 54, 1, 1),
+(31, 55, 11, 4),
+(32, 55, 3, 2),
+(33, 55, 1, 1),
+(34, 56, 11, 4),
+(35, 56, 3, 2),
+(36, 56, 1, 1),
+(37, 57, 11, 4),
+(38, 57, 3, 2),
+(39, 57, 1, 1),
+(40, 58, 11, 4),
+(41, 58, 3, 2),
+(42, 58, 1, 1),
+(43, 59, 11, 4),
+(44, 59, 3, 2),
+(45, 59, 1, 1),
+(46, 60, 11, 4),
+(47, 60, 3, 2),
+(48, 60, 1, 1),
+(49, 61, 11, 4),
+(50, 61, 3, 2),
+(51, 61, 1, 1),
+(52, 62, 11, 4),
+(53, 62, 3, 2),
+(54, 62, 1, 1),
+(55, 63, 11, 4),
+(56, 63, 3, 2),
+(57, 63, 1, 1),
+(58, 64, 14, 4),
+(59, 64, 6, 2),
+(60, 65, 14, 4),
+(61, 65, 6, 2),
+(62, 66, 14, 4),
+(63, 66, 6, 2),
+(64, 67, 14, 4),
+(65, 67, 6, 2),
+(66, 68, 14, 4),
+(67, 68, 6, 2),
+(68, 69, 14, 4),
+(69, 69, 6, 2),
+(70, 70, 14, 4),
+(71, 70, 6, 2),
+(72, 71, 14, 4),
+(73, 71, 6, 2),
+(74, 72, 14, 4),
+(75, 72, 6, 2),
+(76, 73, 14, 5),
+(77, 73, 6, 1),
+(78, 73, 11, 2),
+(79, 74, 14, 5),
+(80, 74, 6, 1),
+(81, 74, 11, 2),
+(82, 75, 14, 5),
+(83, 75, 6, 1),
+(84, 75, 11, 2),
+(85, 76, 14, 5),
+(86, 76, 6, 1),
+(87, 76, 11, 2),
+(88, 77, 14, 3),
+(89, 77, 6, 1),
+(90, 78, 14, 3),
+(91, 78, 6, 1),
+(92, 79, 14, 3),
+(93, 79, 6, 1),
+(94, 80, 14, 3),
+(95, 80, 6, 1),
+(96, 81, 14, 3),
+(97, 81, 6, 1),
+(98, 82, 9, 2);
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `product`
+--
+
+CREATE TABLE `product` (
   `id` int(11) NOT NULL,
   `url_name` varchar(250) NOT NULL,
   `name` varchar(100) NOT NULL,
@@ -126,10 +351,10 @@ CREATE TABLE `Product` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `Product`
+-- Дамп данных таблицы `product`
 --
 
-INSERT INTO `Product` (`id`, `url_name`, `name`, `description_title`, `description_text`, `category_id`) VALUES
+INSERT INTO `product` (`id`, `url_name`, `name`, `description_title`, `description_text`, `category_id`) VALUES
 (1, 'xiaomi-redmi-note-4', 'Xiaomi Redmi Note 4', 'Смартфон Xiaomi Redmi Note 4', '					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod 					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 					quis nostrud exercitation ullamco laboris nisi ut  					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse 					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non 					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 1),
 (2, 'xiaomi-mi-7', 'Xiaomi Mi 7', 'Смартфон Xiaomi Mi7', '					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod 					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 					quis nostrud exercitation ullamco laboris nisi ut  					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse 					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non 					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 1),
 (3, 'huawei-honor-8', 'Huawei Honor 8', 'Смартфон Huawei Honor 8', '					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod 					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 					quis nostrud exercitation ullamco laboris nisi ut  					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse 					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non 					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 1),
@@ -139,47 +364,48 @@ INSERT INTO `Product` (`id`, `url_name`, `name`, `description_title`, `descripti
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ProductToColor`
+-- Структура таблицы `producttocolor`
 --
 
-CREATE TABLE `ProductToColor` (
+CREATE TABLE `producttocolor` (
   `id` int(11) NOT NULL,
   `product_id` int(11) NOT NULL,
   `color_id` int(11) NOT NULL,
   `quantity` int(11) NOT NULL,
   `price` decimal(10,0) NOT NULL,
   `discount_price` decimal(10,0) DEFAULT NULL,
-  `is_bestseller` tinyint(1) NOT NULL
+  `is_bestseller` tinyint(1) NOT NULL,
+  `is_stock` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `ProductToColor`
+-- Дамп данных таблицы `producttocolor`
 --
 
-INSERT INTO `ProductToColor` (`id`, `product_id`, `color_id`, `quantity`, `price`, `discount_price`, `is_bestseller`) VALUES
-(1, 1, 7, 1, '14900', '13900', 1),
-(2, 1, 3, 3, '15000', '15000', 0),
-(3, 1, 2, 3, '13999', '13999', 1),
-(4, 1, 4, 4, '14999', '14999', 0),
-(5, 1, 5, 1, '15499', '15499', 0),
-(6, 1, 6, 5, '12999', '12999', 1),
-(7, 2, 4, 1, '13499', '11490', 0),
-(8, 2, 5, 3, '19999', '19999', 0),
-(9, 2, 6, 5, '11999', '11999', 1),
-(10, 3, 7, 1, '10499', '9900', 0),
-(11, 3, 2, 3, '31999', '28990', 0),
-(12, 3, 3, 2, '23599', '23599', 1),
-(13, 3, 4, 4, '24999', '24999', 0),
-(14, 4, 1, 3, '124999', '114999', 1),
-(15, 5, 1, 4, '89999', '89999', 0);
+INSERT INTO `producttocolor` (`id`, `product_id`, `color_id`, `quantity`, `price`, `discount_price`, `is_bestseller`, `is_stock`) VALUES
+(1, 1, 7, 1, '14900', '13900', 1, 0),
+(2, 1, 3, 3, '15000', '15000', 0, 0),
+(3, 1, 2, 3, '13999', '13999', 1, 0),
+(4, 1, 4, 4, '14999', '14999', 0, 0),
+(5, 1, 5, 1, '15499', '15499', 0, 0),
+(6, 1, 6, 5, '12999', '12999', 1, 1),
+(7, 2, 4, 1, '13499', '11490', 0, 0),
+(8, 2, 5, 3, '19999', '19999', 0, 0),
+(9, 2, 6, 5, '11999', '11999', 1, 0),
+(10, 3, 7, 1, '10499', '9900', 0, 0),
+(11, 3, 2, 3, '31999', '28990', 0, 1),
+(12, 3, 3, 2, '23599', '23599', 1, 0),
+(13, 3, 4, 4, '24999', '24999', 1, 0),
+(14, 4, 1, 3, '124999', '114999', 1, 1),
+(15, 5, 1, 4, '89999', '89999', 0, 1);
 
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `ProductToSpecification`
+-- Структура таблицы `producttospecification`
 --
 
-CREATE TABLE `ProductToSpecification` (
+CREATE TABLE `producttospecification` (
   `id` int(11) NOT NULL,
   `product_id` int(11) NOT NULL,
   `specification_id` int(11) NOT NULL,
@@ -187,10 +413,10 @@ CREATE TABLE `ProductToSpecification` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `ProductToSpecification`
+-- Дамп данных таблицы `producttospecification`
 --
 
-INSERT INTO `ProductToSpecification` (`id`, `product_id`, `specification_id`, `value`) VALUES
+INSERT INTO `producttospecification` (`id`, `product_id`, `specification_id`, `value`) VALUES
 (3, 1, 109, '2018'),
 (4, 1, 2, '7.1'),
 (5, 1, 3, '1920*1080'),
@@ -457,10 +683,10 @@ INSERT INTO `ProductToSpecification` (`id`, `product_id`, `specification_id`, `v
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `Specification`
+-- Структура таблицы `specification`
 --
 
-CREATE TABLE `Specification` (
+CREATE TABLE `specification` (
   `id` int(11) NOT NULL,
   `name` varchar(100) NOT NULL,
   `name_ru` varchar(100) NOT NULL,
@@ -469,10 +695,10 @@ CREATE TABLE `Specification` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Дамп данных таблицы `Specification`
+-- Дамп данных таблицы `specification`
 --
 
-INSERT INTO `Specification` (`id`, `name`, `name_ru`, `category_id`, `specifiaction_group`) VALUES
+INSERT INTO `specification` (`id`, `name`, `name_ru`, `category_id`, `specifiaction_group`) VALUES
 (1, 'brand', 'Бренд', 1, 'common'),
 (2, 'screen_diagonal', 'Диагональ экрана', 1, 'screen'),
 (3, 'screen_resolution', 'Разрешение экрана', 1, 'screen'),
@@ -589,52 +815,66 @@ INSERT INTO `Specification` (`id`, `name`, `name_ru`, `category_id`, `specifiact
 --
 
 --
--- Индексы таблицы `Category`
+-- Индексы таблицы `category`
 --
-ALTER TABLE `Category`
+ALTER TABLE `category`
   ADD PRIMARY KEY (`id`);
 
 --
--- Индексы таблицы `Color`
+-- Индексы таблицы `color`
 --
-ALTER TABLE `Color`
+ALTER TABLE `color`
   ADD PRIMARY KEY (`id`);
 
 --
--- Индексы таблицы `Image`
+-- Индексы таблицы `image`
 --
-ALTER TABLE `Image`
+ALTER TABLE `image`
   ADD PRIMARY KEY (`id`),
   ADD KEY `image_ibfk_1` (`product_id`),
   ADD KEY `fk_color_id` (`color_id`);
 
 --
--- Индексы таблицы `Product`
+-- Индексы таблицы `order`
 --
-ALTER TABLE `Product`
+ALTER TABLE `order`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Индексы таблицы `ordersproducts`
+--
+ALTER TABLE `ordersproducts`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `order_id` (`order_id`),
+  ADD KEY `ptc_id` (`ptc_id`);
+
+--
+-- Индексы таблицы `product`
+--
+ALTER TABLE `product`
   ADD PRIMARY KEY (`id`),
   ADD KEY `product_ibfk_1` (`category_id`);
 
 --
--- Индексы таблицы `ProductToColor`
+-- Индексы таблицы `producttocolor`
 --
-ALTER TABLE `ProductToColor`
+ALTER TABLE `producttocolor`
   ADD PRIMARY KEY (`id`),
   ADD KEY `producttocolor_ibfk_1` (`color_id`),
   ADD KEY `producttocolor_ibfk_2` (`product_id`);
 
 --
--- Индексы таблицы `ProductToSpecification`
+-- Индексы таблицы `producttospecification`
 --
-ALTER TABLE `ProductToSpecification`
+ALTER TABLE `producttospecification`
   ADD PRIMARY KEY (`id`),
   ADD KEY `producttospecification_ibfk_1` (`product_id`),
   ADD KEY `producttospecification_ibfk_2` (`specification_id`);
 
 --
--- Индексы таблицы `Specification`
+-- Индексы таблицы `specification`
 --
-ALTER TABLE `Specification`
+ALTER TABLE `specification`
   ADD PRIMARY KEY (`id`),
   ADD KEY `specification_ibfk_1` (`category_id`);
 
@@ -643,45 +883,57 @@ ALTER TABLE `Specification`
 --
 
 --
--- AUTO_INCREMENT для таблицы `Category`
+-- AUTO_INCREMENT для таблицы `category`
 --
-ALTER TABLE `Category`
+ALTER TABLE `category`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT для таблицы `Color`
+-- AUTO_INCREMENT для таблицы `color`
 --
-ALTER TABLE `Color`
+ALTER TABLE `color`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
--- AUTO_INCREMENT для таблицы `Image`
+-- AUTO_INCREMENT для таблицы `image`
 --
-ALTER TABLE `Image`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+ALTER TABLE `image`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
--- AUTO_INCREMENT для таблицы `Product`
+-- AUTO_INCREMENT для таблицы `order`
 --
-ALTER TABLE `Product`
+ALTER TABLE `order`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=83;
+
+--
+-- AUTO_INCREMENT для таблицы `ordersproducts`
+--
+ALTER TABLE `ordersproducts`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=99;
+
+--
+-- AUTO_INCREMENT для таблицы `product`
+--
+ALTER TABLE `product`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT для таблицы `ProductToColor`
+-- AUTO_INCREMENT для таблицы `producttocolor`
 --
-ALTER TABLE `ProductToColor`
+ALTER TABLE `producttocolor`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
--- AUTO_INCREMENT для таблицы `ProductToSpecification`
+-- AUTO_INCREMENT для таблицы `producttospecification`
 --
-ALTER TABLE `ProductToSpecification`
+ALTER TABLE `producttospecification`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=265;
 
 --
--- AUTO_INCREMENT для таблицы `Specification`
+-- AUTO_INCREMENT для таблицы `specification`
 --
-ALTER TABLE `Specification`
+ALTER TABLE `specification`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=111;
 
 --
@@ -689,37 +941,44 @@ ALTER TABLE `Specification`
 --
 
 --
--- Ограничения внешнего ключа таблицы `Image`
+-- Ограничения внешнего ключа таблицы `image`
 --
-ALTER TABLE `Image`
-  ADD CONSTRAINT `fk_color_id` FOREIGN KEY (`color_id`) REFERENCES `Color` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `image_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `Product` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `image`
+  ADD CONSTRAINT `fk_color_id` FOREIGN KEY (`color_id`) REFERENCES `color` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `image_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ограничения внешнего ключа таблицы `Product`
+-- Ограничения внешнего ключа таблицы `ordersproducts`
 --
-ALTER TABLE `Product`
-  ADD CONSTRAINT `product_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `Category` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `ordersproducts`
+  ADD CONSTRAINT `ordersproducts_ibfk_1` FOREIGN KEY (`order_id`) REFERENCES `order` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `ordersproducts_ibfk_2` FOREIGN KEY (`ptc_id`) REFERENCES `producttocolor` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ограничения внешнего ключа таблицы `ProductToColor`
+-- Ограничения внешнего ключа таблицы `product`
 --
-ALTER TABLE `ProductToColor`
-  ADD CONSTRAINT `producttocolor_ibfk_1` FOREIGN KEY (`color_id`) REFERENCES `Color` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `producttocolor_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `Product` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `product`
+  ADD CONSTRAINT `product_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `category` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ограничения внешнего ключа таблицы `ProductToSpecification`
+-- Ограничения внешнего ключа таблицы `producttocolor`
 --
-ALTER TABLE `ProductToSpecification`
-  ADD CONSTRAINT `producttospecification_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `Product` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `producttospecification_ibfk_2` FOREIGN KEY (`specification_id`) REFERENCES `Specification` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `producttocolor`
+  ADD CONSTRAINT `producttocolor_ibfk_1` FOREIGN KEY (`color_id`) REFERENCES `color` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `producttocolor_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Ограничения внешнего ключа таблицы `Specification`
+-- Ограничения внешнего ключа таблицы `producttospecification`
 --
-ALTER TABLE `Specification`
-  ADD CONSTRAINT `specification_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `Category` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `producttospecification`
+  ADD CONSTRAINT `producttospecification_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `product` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `producttospecification_ibfk_2` FOREIGN KEY (`specification_id`) REFERENCES `specification` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Ограничения внешнего ключа таблицы `specification`
+--
+ALTER TABLE `specification`
+  ADD CONSTRAINT `specification_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `category` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

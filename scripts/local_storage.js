@@ -8,8 +8,8 @@ $(document).ready(function() {
         return price.toLocaleString('ru-RU') + ' р.';
     }
     // Пост запрос на сохранение заказа
-    function saveOrder(){
-		var cartData = initCart();
+    function saveOrder() {
+        var cartData = initCart();
         $.ajax({
             url: '../templates/save_order.php',
             type: 'POST',
@@ -193,7 +193,7 @@ $(document).ready(function() {
     });
     // обработка клика на кнопку "оформить заказ"
     $(document.body).on('click', '.btn_order', function() {
-    	var validArray = [];
+        var validArray = [];
         validArray.push(document.getElementById('street_order').validity.valid);
         validArray.push(document.getElementById('home_order').validity.valid);
         validArray.push(document.getElementById('entrance_order').validity.valid);
@@ -204,7 +204,9 @@ $(document).ready(function() {
         validArray.push(document.getElementById('comment_order').validity.valid);
 
         if (validArray.every(Boolean)) {
-        	saveOrder();
+            saveOrder();
+            localStorage.removeItem('cart');
+            reloadCart();
         }
     });
 

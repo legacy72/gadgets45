@@ -163,7 +163,7 @@ $stocks = getBestSellersOrStocks($dbh, 'stock');
 							по вкусной цене
 						</div>
 						<div class="button_see_all">
-							<button>Смотреть все</button>
+							<a href="/catalog/smartphones"><button class="btn_button_see_all">Смотреть все</button></a>
 						</div>
 					</div>
 					<div class="left_advertising_image">

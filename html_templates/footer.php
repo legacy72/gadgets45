@@ -7,7 +7,7 @@
 			<div class="footer_menu">
 				<ul>
 					<li><a href="#">О компании</a></li>
-					<li><a href="#">Каталог</a></li>
+					<li><a href="/catalog/smartphones">Каталог</a></li>
 					<li><a href="#">Контакты</a></li>
 					<li><a href="#">Помощь</a></li>
 				</ul>
@@ -24,3 +24,7 @@
 		</div>
 	</div>
 </footer>
+
+<?
+require_once 'templates/close_connection.php';
+?>

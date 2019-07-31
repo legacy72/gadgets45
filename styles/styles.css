@@ -429,6 +429,18 @@ li {
     margin-top: 30px;
 }
 
+.button_see_all a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.button_see_all a:hover .btn_button_see_all {
+    background-color: #fff;
+    color: #000;
+    cursor: pointer;
+    transition: all .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
 .button_see_all button {
     outline: none;
     color: #fff;
@@ -436,13 +448,6 @@ li {
     background-color: transparent;
     padding: 12px;
     font-size: 16px;
-    cursor: pointer;
-    transition: all .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
-}
-
-.button_see_all button:hover {
-    background-color: #fff;
-    color: #000;
 }
 
 .left_advertising_image {

@@ -48,9 +48,9 @@
 					<div class="main_top_head">
 						<div class="main_top_menu">
 							<ul>
-								<li><a href="">Оплата и доставка</a></li>
-								<li><a href="">Гаратнии</a></li>
-								<li><a href="">Возврат</a></li>
+								<li><a href="/about">Оплата и доставка</a></li>
+								<li><a href="/about">Гаратнии</a></li>
+								<li><a href="/about">Возврат</a></li>
 							</ul>
 							<input type="text" id="search_input"></input>
 						</div>

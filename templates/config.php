@@ -1,5 +1,5 @@
 <?
-define( "IMAGES_PATH", "images/" );
+define( "IMAGES_PATH", "images" );
 define( "PRODUCT_IMAGES_PATH", IMAGES_PATH."/"."product_images/" );
 define( "CATALOG_PATH", "catalog/");
 

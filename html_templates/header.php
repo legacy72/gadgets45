@@ -49,7 +49,7 @@
 						<div class="main_top_menu">
 							<ul>
 								<li><a href="/about">Оплата и доставка</a></li>
-								<li><a href="/about">Гаратнии</a></li>
+								<li><a href="/about">Гарантии</a></li>
 								<li><a href="/about">Возврат</a></li>
 							</ul>
 							<input type="text" id="search_input"></input>

@@ -234,6 +234,7 @@ function insertIntoOrderProducts(PDO $dbh, $cartData, $orderID){
 		unset($cartData[$i]['product_name']);
 		unset($cartData[$i]['product_image']);
 		unset($cartData[$i]['product_price']);
+		unset($cartData[$i]['product_reference']);
 		$cartData[$i]['order_id'] = $orderID;
 	}
 

@@ -14,6 +14,7 @@ $stocks = getBestSellersOrStocks($dbh, 'stock');
 <head>
 	<meta charset="utf-8">
 	<title>Главная</title>
+	<!-- CSS Styles -->
 	<? require_once('html_templates/links.php'); ?>
 </head>
 <body>

@@ -36,17 +36,6 @@ function sendEmail($email){
        }
        echo 'Ваше сообщение отправлено';
     }
-
-    
-    // ini_set('display_errors', 1);
-    // error_reporting(E_ALL);
-    // // $from = "test@gadgets45";
-    // $from = "testkeklol123321@gmail.com";
-    // $subject = "Заказ в магазине gadgets45";
-    // $message = "Вы сделали заказ в магазине gadgets45, подробности добавим чуть позже (:";
-    // $headers = "From:" . $from;
-    // mail($email, $subject, $message, $headers);
-    // echo('Ваш заказ успешно оформлен, проверьте почту.');
 }
 ?>
 <?

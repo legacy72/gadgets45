@@ -28,6 +28,8 @@ $(document).ready(function() {
             success: function(data) {
                 // todo: Переделать alert на нормальный блок
                 alert(data);
+                localStorage.removeItem('cart');
+                reloadCart();
             },
         });
     }
@@ -211,8 +213,6 @@ $(document).ready(function() {
 
         if (validArray.every(Boolean)) {
             saveOrder();
-            localStorage.removeItem('cart');
-            reloadCart();
         }
     });
 

@@ -209,3 +209,7 @@ function getProductNameWithColor($name, $color){
 		return $name .' '. getColorName($color);
 	return $name;
 }
+// Фильтрация текста
+function clearText($text){
+    return trim(strip_tags(stripslashes($text)));
+}

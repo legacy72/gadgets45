@@ -146,8 +146,6 @@ function priceFormat($price){
 	return number_format($price, '0', ',', ' '). ' р.';
 }
 
-
-
 // получить основные характеристики продукта на русском
 function getMainProductSpecifications($productSpecs, $category_name){
 	$mainSpecs = array();

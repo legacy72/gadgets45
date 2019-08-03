@@ -1,7 +1,18 @@
 <?
-define( "IMAGES_PATH", "images" );
-define( "PRODUCT_IMAGES_PATH", IMAGES_PATH."/"."product_images/" );
-define( "CATALOG_PATH", "catalog/");
+define("DOMEN_NAME", "http://gadgets45.site");
+define("IMAGES_PATH", "images");
+define("PRODUCT_IMAGES_PATH", IMAGES_PATH."/"."product_images/");
+define("CATALOG_PATH", "catalog/");
+
+define("EMAIL_FOR_PHPMAILER", "testkeklol123321@gmail.com");
+
+define(
+	"ADMIN_EMAILS", array(
+		"gadgets45common1@gmail.com",
+		"gadgets45common2@gmail.com",
+		"gadgets45common3@gmail.com",
+	)
+);
 
 define(
 	"CATEGORY_DICT", array(

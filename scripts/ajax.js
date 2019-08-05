@@ -71,6 +71,25 @@ $(document).ready(function() {
         });
     }
 
+    // Аякс запрос на страницу с заказом обратного звонка
+    function requestCallBack() {
+        $.ajax({
+            url: '../templates/request_call_back.php',
+            type: 'POST',
+            data: {
+                'name': $('#name_customer_call_back').val(),
+                'phone': $('#phone_customer_call_back').val(),
+                'email': $('#email_customer_call_back').val(),
+                'comment': $('#comment_call_back').val(),
+            },
+            success: function(data) {
+                // todo: Переделать alert на нормальный блок
+                alert(data);
+                // todo: Добавить нормальное закрытие модального окна, после заказа обратного звонка
+                $('.quick-order').css("display", "none");
+            },
+        });
+    }
 
     // присваивание инпутам цены значение радиобаттанов
     $(document).on('click', '.price_range', function() {
@@ -106,5 +125,18 @@ $(document).ready(function() {
     $(document.body).on('click', '.btn_accept_filters', function() {
         var data = getFiltersData();
         acceptFilters(data);
+    });
+
+    // обработка клика на кнопку "отправить" в заказе обратного звонка
+    $(document).on('click', '#request_call_back', function() {
+        var validArray = [];
+        validArray.push(document.getElementById('name_customer_call_back').validity.valid);
+        validArray.push(document.getElementById('phone_customer_call_back').validity.valid);
+        validArray.push(document.getElementById('email_customer_call_back').validity.valid);
+        validArray.push(document.getElementById('comment_call_back').validity.valid);
+
+        if (validArray.every(Boolean)) {
+            requestCallBack();
+        }
     });
 });

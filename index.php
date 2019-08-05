@@ -361,11 +361,11 @@ $stocks = getBestSellersOrStocks($dbh, 'stock');
 		       		</h3>
 		       		<div class="q-order__body d-flex">
 						<form action="#" class="form-order">
-							<input type="text" class="form-order__input" required placeholder="Ваше имя:*">
-							<input type="text" class="form-order__input" required placeholder="Ваш телефон:*">
-							<input type="text" class="form-order__input" required placeholder="Ваш e-mail:*">
-							<textarea name="message" class="form-order__message" placeholder="Ваш комементарий"></textarea>
-							<button type="submit" class="form-order__btn">
+							<input type="text" class="form-order__input" id="name_customer_call_back" required placeholder="Ваше имя:*">
+							<input type="text" class="form-order__input" id="phone_customer_call_back" required placeholder="Ваш телефон:*">
+							<input type="email" class="form-order__input" id="email_customer_call_back" required placeholder="Ваш e-mail:*">
+							<textarea name="message" class="form-order__message" id="comment_call_back" placeholder="Ваш комементарий"></textarea>
+							<button class="form-order__btn" id="request_call_back">
 								Отправить
 							</button>
 						</form>

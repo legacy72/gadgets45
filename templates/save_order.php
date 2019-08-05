@@ -66,12 +66,12 @@ function sendEmailAboutOrderForCustomer($customerData, $cartData){
 }
 // отправка сообщения о заказе администратору
 function sendEmailAboutOrderForAdmin($customerData, $cartData, $mail){
+    $mail->ClearAllRecipients();
+    $mail->Body = getOrderInfo($customerData, $cartData);
     foreach(ADMIN_EMAILS AS $adminEmail){
-        $mail->ClearAllRecipients();
-        $mail->Body = getOrderInfo($customerData, $cartData);
-        $mail->AddAddress($adminEmail);
-        $mail->Send();
+        $mail->AddCC($adminEmail);   
     }
+    $mail->Send();
 }
 // отправка сообщений о заказе
 function sendEmailAboutOrder($customerData, $cartData){

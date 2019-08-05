@@ -1,6 +1,6 @@
 <?
 use PHPMailer\PHPMailer\PHPMailer;
-require_once 'config.php';
+
 require_once '../db/queries.php';
 require_once 'functions.php';
 require_once '../php_mailer/PHPMailer.php';
@@ -8,7 +8,7 @@ require_once '../php_mailer/SMTP.php';
 ?>
 
 <?
-
+// Информация о заказе
 function getOrderInfo($customerData, $cartData){
     $info = "<b>Пользователь сделал заказ. Информация о заказчике:</b>";
     $info .= "<br>Имя: ". $customerData['name'];
@@ -31,8 +31,8 @@ function getOrderInfo($customerData, $cartData){
     }
     return $info;
 }
-
-function sendEmail($customerData, $cartData){
+// отправка сообщения о заказе покупателю
+function sendEmailAboutOrderForCustomer($customerData, $cartData){
     if($_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpRequest') {
         $email = clearText($customerData['email']);
         $mail = new PHPMailer();
@@ -56,27 +56,39 @@ function sendEmail($customerData, $cartData){
         $mail->AddAddress($email);
         if(!$mail->send()) {
             echo 'Ваше сообщение не отправлено';
+            return null;
         }
         else{
             echo 'Ваше сообщение отправлено';
-        }
-
-        foreach(ADMIN_EMAILS AS $adminEmail){
-            $mail->ClearAllRecipients();
-            $mail->Body = getOrderInfo($customerData, $cartData);
-            $mail->AddAddress($adminEmail);
-            $mail->Send();
+            return $mail;
         }
     }
 }
+// отправка сообщения о заказе администратору
+function sendEmailAboutOrderForAdmin($customerData, $cartData, $mail){
+    foreach(ADMIN_EMAILS AS $adminEmail){
+        $mail->ClearAllRecipients();
+        $mail->Body = getOrderInfo($customerData, $cartData);
+        $mail->AddAddress($adminEmail);
+        $mail->Send();
+    }
+}
+// отправка сообщений о заказе
+function sendEmailAboutOrder($customerData, $cartData){
+    $mail = sendEmailAboutOrderForCustomer($customerData, $cartData);
+    if(!is_null($mail))
+        sendEmailAboutOrderForAdmin($customerData, $cartData, $mail);
+}
 ?>
+
+
 <?
 if(isset($_POST)) {
     $customerData = $_POST;
     $cartData = json_decode($_POST['cartData'], true);
     $res = insertIntoOrder($dbh, $customerData, $cartData);
     if($res === TRUE){
-        sendEmail($customerData, $cartData); 
+        sendEmailAboutOrder($customerData, $cartData); 
     }
     else{
     	echo('Что-то пошло не так');

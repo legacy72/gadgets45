@@ -1,24 +1,44 @@
-<footer>
+<footer class="footer" id="footer">
 	<div class="container">
-		<div class="footer_container">
-			<div class="footer_logo">
-				<img src="/logo/black_logo.png">
+		<div class="row">
+			<div class="col-6 col-md-2">
+				<a href="#header" class="footer-logo">
+					<img src="images/logo/black_logo.png" alt="Gadgets45">
+				</a>
 			</div>
-			<div class="footer_menu">
-				<ul>
-					<li><a href="#">О компании</a></li>
-					<li><a href="/catalog/smartphones">Каталог</a></li>
-					<li><a href="#">Контакты</a></li>
-					<li><a href="#">Помощь</a></li>
+			<div class="col-12 order-1 order-md-0 col-md-7 col-lg-8">
+				<ul class="footer-mnu d-flex">
+					<li class="footer-mnu__item">
+						<a href="#">
+							О компании
+						</a>
+					</li>
+					<li class="footer-mnu__item">
+						<a href="#">
+							Каталог
+						</a>
+					</li>
+					<li class="footer-mnu__item">
+						<a href="#">
+							Контакты
+						</a>
+					</li>
+					<li class="footer-mnu__item">
+						<a href="#">
+							Помощь
+						</a>
+					</li>
 				</ul>
 			</div>
-			<div class="footer_contacts">
-				<div class="footer_phone">
-					<img src="/images/phone.png">
-					+7 916 448 62 84
-				</div>
-				<div class="footer_call_order">
-					Заказать звонок
+			<div class="col-6 col-md-3 col-lg-2">
+				<div class="phone footer-phone">
+					<a href="tel:+79164486284" class="phone__number">
+						<i class="fas fa-phone-alt"></i>
+						+7 916 448 62 84
+					</a>
+					<a href="#callMe" class="footer-call-me call-me">
+						Заказать звонок
+					</a>
 				</div>
 			</div>
 		</div>

@@ -99,7 +99,7 @@ $colors = getProductColors($dbh, $productMainInfo['id']);
 					<?php endforeach ?>
 				</div>
 				<div class="product_buttons">
-					<button class="button_add_product_to_cart">
+					<button class="button_add_product_to_cart" id="add_product_to_cart_from_prod">
 						Добавить в корзину
 					</button>
 					<button class="button_fast_order">

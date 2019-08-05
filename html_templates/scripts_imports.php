@@ -1,10 +1,6 @@
 <!-- jQuerry -->
 <script src="/jquery/jquery-3.4.1.min.js"></script>
 
-<!-- Bootstrap -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-
 <!-- Phone Animation -->
 <script src="/scripts/script.js" type="text/javascript"></script>
 
@@ -20,3 +16,11 @@
 <!-- Autocomplete -->
 <script src="/jquery/jquery-ui_min.js" type="text/javascript"></script>
 <script src="/scripts/autocomplete.js" type="text/javascript"></script>
+
+
+<!--  -->
+<script type="text/javascript" src="js/libs.min.js"></script>
+<script type="text/javascript" src="js/common.js"></script>
+
+<!-- Font -->
+<script src="https://kit.fontawesome.com/721d191b31.js"></script>

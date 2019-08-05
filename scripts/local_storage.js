@@ -138,7 +138,7 @@ $(document).ready(function() {
     function editCartBlock() {
         sumAndQuantity = getCartSumAndQuantity();
         sum = sumAndQuantity[0].toLocaleString() + ' р.';
-        quantity = '('.concat(sumAndQuantity[1], ')');
+        quantity = sumAndQuantity[1];
         $('.cart_price').text(sum);
         $('.cart_quantity').text(quantity);
     }
@@ -160,9 +160,21 @@ $(document).ready(function() {
         reloadCart();
     }
 
+    // Обработчик нажатия кнопки "в корзину" с главной страницы
+    $(document).on('click', '#add_product_to_cart_main', function() {
+        var ptc_id = $(this).parent().find('.slide__head').attr('ptc_id');
+        var product_name = $(this).closest('.slide').find('h4.slide__head').html().trim();
+        var product_price = getPrice($(this).closest('.slide').find('span.slide__price_new').html().trim());
+        var product_image = $(this).closest('.slide').find('img').attr('src').trim();
+        var product_reference = $(this).closest('.slide').find('a.product_ref').attr('href');
+
+        addToCart(ptc_id, product_name, product_price, product_image, product_reference);
+        editCartBlock();
+
+    });
 
     // Обработчик нажатия кнопки "добавить в корзину" со страницы продукта
-    $(document).on('click', '.button_add_product_to_cart', function() {
+    $(document).on('click', '#add_product_to_cart_from_prod', function() {
         var ptc_id = $('.product_container').attr('ptc_id');
         var product_name = $('.product_title').text().trim();
         var product_price = getPrice($('.product_price').text().trim());

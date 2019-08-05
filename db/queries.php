@@ -201,7 +201,8 @@ function getBestSellersOrStocks(PDO $dbh, $typeSelect){
             img.name AS image_name, 
             p.name, 
             p.url_name AS url_name,
-            Color.name AS color_name,
+			Color.name AS color_name,
+			ptc.id AS ptc_id,
             ptc.price,
             ptc.discount_price,
             Category.name AS category_name

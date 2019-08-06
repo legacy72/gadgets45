@@ -29,6 +29,9 @@ $colors = getProductColors($dbh, $productMainInfo['id']);
 <head>
 	<meta charset="utf-8">
 	<title><?= $productMainInfo['description_title']; ?></title>
+	<!-- Favicons -->
+	<? require_once('html_templates/links_favicons.php'); ?>
+	<!-- CSS Styles -->
 	<? require_once('html_templates/links.php'); ?>
 </head>
 

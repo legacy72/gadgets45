@@ -3,7 +3,7 @@
 		<div class="row">
 			<div class="col-6 col-md-2">
 				<a href="#header" class="footer-logo">
-					<img src="images/logo/black_logo.png" alt="Gadgets45">
+					<img src="/images/logo/black_logo.png" alt="Gadgets45">
 				</a>
 			</div>
 			<div class="col-12 order-1 order-md-0 col-md-7 col-lg-8">

@@ -19,8 +19,8 @@
 
 
 <!--  -->
-<script type="text/javascript" src="js/libs.min.js"></script>
-<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="/js/libs.min.js"></script>
+<script type="text/javascript" src="/js/common.js"></script>
 
 <!-- Font -->
 <script src="https://kit.fontawesome.com/721d191b31.js"></script>

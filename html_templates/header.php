@@ -100,7 +100,7 @@
 				<div class="search">
 					<div class="search__data">
 						<input type="text" placeholder="Введите товар..." class="search__input" id="search_input">
-							<div class="search__icon"></div>
+						<div class="search__icon"></div>
 					</div>
 				</div>
 			</div>

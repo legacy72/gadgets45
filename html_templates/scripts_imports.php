@@ -25,6 +25,7 @@
 </script>
 
 <!--  -->
+<script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.js"></script>
 <script type="text/javascript" src="/js/libs.min.js"></script>
 <script type="text/javascript" src="/js/common.js"></script>
 

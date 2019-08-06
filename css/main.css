@@ -162,6 +162,7 @@
 .bestseller-slider .slide {
     display: block;
     position: relative;
+    min-height: 460px;
     z-index: 4;
     width: 239px;
     max-height: 450px;

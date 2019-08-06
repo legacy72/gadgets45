@@ -44,7 +44,16 @@
 		</div>
 	</div>
 </footer>
+<div id="loader">
+    <img src="/images/ripple.svg" alt="">
+</div>
+    
 
+<div id="overlay">
+    <div id="thx">
+        Спасибо! Мы свяжемся с Вами в ближайшее время
+    </div>
+</div>
 <?
 require_once 'templates/close_connection.php';
 ?>

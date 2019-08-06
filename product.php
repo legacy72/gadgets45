@@ -158,8 +158,51 @@ $colors = getProductColors($dbh, $productMainInfo['id']);
 		</div>
 	</section>
 	</main>
+	<!-- Modal Quick Order -->
+	<div style="display: none;">
+	    <div class="box-modal quick-order" id="quickOrder">
+	        <div class="box-modal_close arcticmodal-close">
+	        	<i class="fas fa-times"></i>
+	        </div>
+	       <div class="q-order">
+	       		<h3 class="q-order__title">
+	       			Быстрый заказ
+	       		</h3>
+	       		<div class="q-order__body d-flex">
+	       			<div class="q-order__pic">
+	       				<img src="" alt="Товар">
+	       			</div>
+	       			<div class="q-order__info">
+						<h3 class="q-order__head">
+							Huawei Honor 8
+						</h3>
+						<span class="q-order__price">
+							26 990 р.
+						</span>
+						<form action="#" class="form-order">
+							<input type="text" class="form-order__input" required placeholder="Ваше имя:*">
+							<input type="text" class="form-order__input" required placeholder="Ваш телефон:*">
+							<input type="text" class="form-order__input" required placeholder="Ваш e-mail:*">
+							<textarea name="message" class="form-order__message" placeholder="Ваш комементарий"></textarea>
+							<div class="form-order__personal d-flex">
+								<input type="checkbox" id="personal-data">
+								<label for="personal-data" class="form-order__link">
+									Я даю согласие на <a href="#">обработку персональных данных</a>
+								</label>
+							</div>
+							<button type="submit" class="form-order__btn" disabled>
+								Купить
+							</button>
+						</form>
+	       			</div>
+	       		</div>	
+	       </div>
+	    </div>
 
 	<? require_once('html_templates/footer.php'); ?>
+	<!-- Modal Call Back -->
+	<? require_once('html_templates/modal_call_back.php') ?>;
+	<!-- Scripts -->
 	<? require_once('html_templates/scripts_imports.php'); ?>
 
 	<script src="../../scripts/product.js" charset="utf-8"></script>

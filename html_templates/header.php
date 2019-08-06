@@ -106,9 +106,11 @@
 			</div>
 			<div class="order-2 order-sm-2 order-md-0 col-6 col-sm-4 col-md-3 col-lg-2">
 				<a href="/cart" class="shopping-cart d-flex">
-					<i class="fas fa-shopping-cart"></i>
+					<div class="shopping-wrap">
+						<i class="fas fa-shopping-cart"></i>
+						<span class="quantity cart_quantity"></span>
+					</div>
 					<span class="price cart_price"></span>
-					<span class="quantity cart_quantity"></span>
 				</a>
 			</div>
 		</div>

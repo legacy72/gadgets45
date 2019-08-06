@@ -486,9 +486,9 @@ ul.slick-dots {
     height: 30px;
     background: #fff;
     border-radius: 50%;
-    -webkit-transition: all 1s ease;
-    -o-transition: all 1s ease;
-    transition: all 1s ease;
+    -webkit-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    transition: all .5s ease;
     z-index: 10; }
     .search__icon:hover {
       cursor: pointer; }
@@ -504,9 +504,9 @@ ul.slick-dots {
       -webkit-transform: rotate(45deg);
           -ms-transform: rotate(45deg);
               transform: rotate(45deg);
-      -webkit-transition: all 1s ease;
-      -o-transition: all 1s ease;
-      transition: all 1s ease; }
+      -webkit-transition: all .5s ease;
+      -o-transition: all .5s ease;
+      transition: all .5s ease; }
     .search__icon::after {
       content: "";
       position: absolute;
@@ -533,9 +533,9 @@ ul.slick-dots {
     border: 1px solid transparent;
     border-radius: 100px 0 0 100px;
     color: #383838;
-    -webkit-transition: all 1s ease;
-    -o-transition: all 1s ease;
-    transition: all 1s ease;
+    -webkit-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    transition: all .5s ease;
     font-size: 12px;
     z-index: 7;
     padding: 0 12px;
@@ -600,6 +600,9 @@ ul.slick-dots {
     margin-right: 18px;
     font-size: 20px;
     color: #383838; }
+.shopping-wrap{
+  position: relative;
+}    
     .shopping-cart i:hover {
       color: #383838; }
   .shopping-cart .price {
@@ -609,7 +612,7 @@ ul.slick-dots {
   .shopping-cart .quantity {
     position: absolute;
     top: -6px;
-    left: 52px;
+    right: 10px;
     width: 15px;
     height: 15px;
     border-radius: 50%;

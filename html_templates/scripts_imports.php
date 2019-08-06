@@ -17,6 +17,12 @@
 <script src="/jquery/jquery-ui_min.js" type="text/javascript"></script>
 <script src="/scripts/autocomplete.js" type="text/javascript"></script>
 
+<!-- PhoneMask -->
+<script src="/scripts/maskedinput.js" type="text/javascript"></script>
+<script>
+    // Маска для телефона
+    $(".phone_mask").mask("8(999) 999-9999");
+</script>
 
 <!--  -->
 <script type="text/javascript" src="/js/libs.min.js"></script>

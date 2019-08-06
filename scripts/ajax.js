@@ -91,6 +91,30 @@ $(document).ready(function() {
         });
     }
 
+    // Аякс запрос на страницу сохранения заказа, когда выбран вариант "Быстрый заказ"
+    function quickOrder(cartData, defaultInfo) {
+        $.ajax({
+            url: '/templates/save_order.php',
+            type: 'POST',
+            data: {
+                'cartData': JSON.stringify(cartData),
+                'name': $('#name_customer_quick_order').val(),
+                'phone': $('#phone_customer_quick_order').val(),
+                'email': $('#email_customer_quick_order').val(),
+                'comment': $('#comment_quick_order').val(),
+                'street': defaultInfo,
+                'home_number': defaultInfo,
+                'entrance': defaultInfo,
+                'apartment': defaultInfo,
+                'payment_type': defaultInfo
+            },
+            success: function(data) {
+                // todo: Переделать alert на нормальный блок
+                alert(data);
+            },
+        });
+    }
+
     // присваивание инпутам цены значение радиобаттанов
     $(document).on('click', '.price_range', function() {
         if ($(this).is(':checked')) {
@@ -139,4 +163,19 @@ $(document).ready(function() {
             requestCallBack();
         }
     });
+
+    // Обработка клика на кнопку "Купить" в модальном окне быстрого заказа
+    $('#quick-order__btn').click(function() {
+        var defaultInfo = -1;
+        var cartData = [{
+            'ptc_id': $('#quickOrder').attr('ptc_id'),
+            'product_name': $('.q-order__head').text().trim(),
+            'product_price': $('.q-order__price').text().trim(),
+            'product_image': $('.q-order__pic img').attr('src').trim(),
+            'product_quantity': 1,
+            'product_reference': window.location.pathname
+        }];
+        quickOrder(cartData, defaultInfo);
+    });
+
 });

@@ -180,17 +180,17 @@ $colors = getProductColors($dbh, $productMainInfo['id']);
 							26 990 р.
 						</span>
 						<form action="#" class="form-order">
-							<input type="text" class="form-order__input" required placeholder="Ваше имя:*">
-							<input type="text" class="form-order__input" required placeholder="Ваш телефон:*">
-							<input type="text" class="form-order__input" required placeholder="Ваш e-mail:*">
-							<textarea name="message" class="form-order__message" placeholder="Ваш комементарий"></textarea>
+							<input type="text" class="form-order__input" id="name_customer_quick_order" required placeholder="Ваше имя:*">
+							<input type="text" class="form-order__input phone_mask" id="phone_customer_quick_order" required placeholder="Ваш телефон:*">
+							<input type="email" class="form-order__input" id="email_customer_quick_order" required placeholder="Ваш e-mail:*">
+							<textarea name="message" class="form-order__message" id="comment_quick_order" placeholder="Ваш комементарий"></textarea>
 							<div class="form-order__personal d-flex">
 								<input type="checkbox" id="personal-data">
 								<label for="personal-data" class="form-order__link">
 									Я даю согласие на <a href="#">обработку персональных данных</a>
 								</label>
 							</div>
-							<button type="submit" class="form-order__btn" disabled>
+							<button class="form-order__btn" id="quick-order__btn" disabled>
 								Купить
 							</button>
 						</form>

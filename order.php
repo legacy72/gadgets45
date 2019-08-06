@@ -56,7 +56,7 @@
 								<input id="name_customer_order" class="order_input" type="text" placeholder="Ваше имя" name="" value="1" required>
 							</div>
 							<div class="order_info_row">
-								<input id="phone_customer_order" class="order_input" type="text" placeholder="Ваш телефон" name="" value="89991232111" required>
+								<input id="phone_customer_order" class="order_input phone_mask" type="text" placeholder="Ваш телефон" name="" value="89991232111" required>
 							</div>
 							<div class="order_info_row">
 								<input id="email_customer_order" class="order_input" type="email" placeholder="Ваш email" name="" value="1@mail.ru" required>
@@ -75,10 +75,5 @@
 	</main>
 	<? require_once('html_templates/footer.php'); ?>
 	<? require_once('html_templates/scripts_imports.php'); ?>
-	<script src="scripts/maskedinput.js" type="text/javascript"></script>
-	<script>
-		// Маска для телефона
-		$("#phone_customer_order").mask("8(999) 999-9999");
-	</script>
 </body>
 </html>

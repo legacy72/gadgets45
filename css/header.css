@@ -590,10 +590,11 @@ ul.slick-dots {
 /* == Shopping-cart Icon ==*/
 .shopping-cart {
   margin-top: 55px;
-  width: 120px;
-  display: block;
+  display: flex;
+  justify-content: flex-end;
   font-size: 16px;
-  margin-left: auto;
+  /*margin-left: auto;*/
+  width: 100%;
   position: relative; }
   .shopping-cart i {
     margin-right: 18px;
@@ -608,7 +609,7 @@ ul.slick-dots {
   .shopping-cart .quantity {
     position: absolute;
     top: -6px;
-    left: 15px;
+    left: 52px;
     width: 15px;
     height: 15px;
     border-radius: 50%;

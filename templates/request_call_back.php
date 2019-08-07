@@ -43,10 +43,10 @@ function sendEmailForAdminAboutCallBack($customerData){
             $mail->AddCC($adminEmail);
         }
         if(!$mail->send()) {
-            echo 'Извините, что-то пошло не так.';
+            echo '<div class="respond-to-call">Извините, что-то пошло не так</div>';
         }
         else{
-            echo 'Спасибо, что заказали звонок. Ожидайте, в ближайшее время с вами свяжутся.';
+            echo '<div class="respond-to-call">Спасибо, что заказали звонок. Ожидайте, в ближайшее время с вами свяжутся</div>';
         }
     }
 }

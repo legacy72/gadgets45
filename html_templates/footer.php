@@ -44,16 +44,23 @@
 		</div>
 	</div>
 </footer>
+
+<div class="respond-overlay">
+	<div class="respond-to-call">
+	</div>
+</div>
 <div id="loader">
     <img src="/images/ripple.svg" alt="">
 </div>
     
 
-<div id="overlay">
+<!-- <div id="overlay">
     <div id="thx">
-        Спасибо! Мы свяжемся с Вами в ближайшее время
+        Текст-шаблон
     </div>
-</div>
+</div> -->
+
+
 <?
 require_once 'templates/close_connection.php';
 ?>

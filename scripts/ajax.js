@@ -73,6 +73,7 @@ $(document).ready(function() {
 
     // Аякс запрос на страницу с заказом обратного звонка
     function requestCallBack() {
+        $('#loader').fadeIn();
         $.ajax({
             url: '../templates/request_call_back.php',
             type: 'POST',
@@ -83,11 +84,25 @@ $(document).ready(function() {
                 'comment': $('#comment_call_back').val(),
             },
             success: function(data) {
+                $('#loader').fadeOut();
+                setTimeout(function() {
+                    $('.respond-overlay').fadeIn();
+                }, 500);
+                // Исчезноваение формы
+                $('.arcticmodal-container').fadeOut();
+                $('.respond-to-call').html(data);
+                $('.respond-overlay').on('click', function() {
+                    $('.arcticmodal-overlay').trigger('click');
+                    $(this).fadeOut();
+                    // $('.respond-overlay').fadeOut();
+                })
                 // todo: Переделать alert на нормальный блок
-                alert(data);
+               
+                // alert(data);
                 // todo: Добавить нормальное закрытие модального окна, после заказа обратного звонка
-                $('.quick-order').css("display", "none");
-            },
+                // $('.quick-order').css("display", "none");
+            }
+            
         });
     }
 

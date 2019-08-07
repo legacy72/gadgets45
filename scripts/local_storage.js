@@ -161,7 +161,7 @@ $(document).ready(function() {
     }
 
     // Обработчик нажатия кнопки "в корзину" с главной страницы
-    $(document).on('click', '#add_product_to_cart_main', function() {
+    $(document).on('click', '.add_product_to_cart_main', function() {
         var ptc_id = $(this).parent().find('.slide__head').attr('ptc_id');
         var product_name = $(this).closest('.slide').find('h4.slide__head').html().trim();
         var product_price = getPrice($(this).closest('.slide').find('span.slide__price_new').html().trim());

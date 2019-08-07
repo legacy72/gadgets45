@@ -160,7 +160,7 @@ $stocks = getBestSellersOrStocks($dbh, 'stock');
 													<?=priceFormat($bestseller['price']); ?>
 												</span>
 											</div>
-											<button class="slide__btn buy-btn button_add_product_to_cart" id="add_product_to_cart_main">
+											<button class="slide__btn buy-btn button_add_product_to_cart add_product_to_cart_main">
 												В корзину
 											</button>
 										</div>

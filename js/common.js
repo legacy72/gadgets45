@@ -106,6 +106,7 @@ $(function() {
 
     // Quick Order Modal
     $('.button_fast_order').click(function(e) {
+        e.preventDefault();
         var ptc_id = $('.product_container').attr('ptc_id');
         var product_name = $('.product_title').text().trim();
         var product_price = $('.product_price').text().trim();
@@ -115,7 +116,6 @@ $(function() {
         $('.q-order__pic img').attr('src', product_image);
         $('.q-order__price').html(product_price);
         $('.q-order__head').html(product_name);
-        e.preventDefault();
         $('#quickOrder').arcticmodal({
             overlay: {
                 css: {
@@ -138,6 +138,15 @@ $(function() {
         });
     });
 
+  // Getter]
+
+    $( '.filter__part' ).accordion({
+        collapsible: true,
+        header: '.filter__head',
+        heightStyle: 'content',
+        active: 1
+    });
+  
 
   
 

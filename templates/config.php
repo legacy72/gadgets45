@@ -64,8 +64,8 @@ define(
 		"ram_size" => "Оперативная память", 
 		"number_of_megapixels_of_the_front" => "Количество мегапикселей основной камеры",
 		"processor_model" => "Модель процессора",
-		"number_of_processor_cores" => "Количество", 
-		"cpu_frequency" => "Частоста процессора",
+		"number_of_processor_cores" => "Количество ядер", 
+		"cpu_frequency" => "Частота процессора",
 		"amount_of_internal_memory" => "Объем встроенной памяти",
 		"operating_system_version" => "Версия операционной системы", 	
 	)

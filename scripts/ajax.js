@@ -85,25 +85,22 @@ $(document).ready(function() {
             },
             success: function(data) {
                 $('#loader').fadeOut();
+                
                 setTimeout(function() {
                     $('.respond-overlay').fadeIn();
                 }, 500);
-                // Исчезноваение формы
                 $('.arcticmodal-container').fadeOut();
                 $('.respond-to-call').html(data);
+
                 $('.respond-overlay').on('click', function() {
                     $('.arcticmodal-overlay').trigger('click');
                     $(this).fadeOut();
-                    // $('.respond-overlay').fadeOut();
-                })
-                // todo: Переделать alert на нормальный блок
-               
-                // alert(data);
-                // todo: Добавить нормальное закрытие модального окна, после заказа обратного звонка
-                // $('.quick-order').css("display", "none");
+                });     
+
             }
-            
+                
         });
+        return false;
     }
 
     // Аякс запрос на страницу сохранения заказа, когда выбран вариант "Быстрый заказ"

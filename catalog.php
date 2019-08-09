@@ -36,7 +36,180 @@ $currentPage = 1;
 </head>
 <body>
 	<? require_once('html_templates/header.php'); ?>
-			<div class="default_container new_container">
+	<section class="s-crumbs" id="s-crumbs">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<ul class="crumbs d-flex">
+						<li class="crumbs__item">
+							<a href="/">
+								Главная
+							</a>
+						</li>
+						<li class="crumbs__item">
+							<a href="/catalog/smartphones">
+								Каталог
+							</a>
+						</li>
+						<li class="crumbs__item active">
+							<?='<a href="/catalog/'. $_GET['category_name'].'">'. CATEGORY_ENG_TO_RUS[$_GET['category_name']].'</a>';?>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="s-catalog" id="s-catalog">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<h2 class="s-title">
+						Каталог
+					</h2>
+				</div>
+				<div class="col-lg-3">
+					<div class="filter">
+						<div class="filter__part">
+							<h4 class="filter__head">
+								Цена	
+							</h4>
+							<div class="filter__body">
+								<div class="price_range__inputs">
+									<input class="price_from" id="price_from" type="text" pattern="^[0-9]+$" placeholder="6990" name="">
+									<input class="price_to" id="price_to" type="text" pattern="^[0-9]+$" placeholder="199 000" name="">
+								</div>
+								<div class="prices-range__checkbox">
+									<div class="variants_row">
+										<input type="radio" id="filter-all" class="price_range" name="price_variant">
+										<label for="filter-all" class="variants_value">
+											Все цены
+										</label>
+									</div>
+									<div class="variants_row">
+										<input type="radio" data-min="10000" data-max="20000" class="price_range" name="price_variant" id="filter-12">
+										<label for="filter-12" class="variants_value">
+											10 000 - 20 000 р.
+										</label>
+									</div>
+									<div class="variants_row">
+										<input type="radio" data-min="20000" data-max="30000" class="price_range" name="price_variant" id="filter-23">
+										<label for="filter-23" class="variants_value">
+											20 000 - 30 000 р.
+										</label>
+									</div>
+									<div class="variants_row">
+										<input type="radio" data-min="30000" data-max="40000" class="price_range" name="price_variant" id="filter-34">
+										<label for="filter-34" class="variants_value">
+											30 000 - 40 000 р.
+										</label>
+									</div>
+									<div class="variants_row">
+										<input type="radio" data-min="40000" data-max="50000" class="price_range" name="price_variant" id="filter-45">
+										<label for="filter-45" class="variants_value">
+											40 000 - 50 000 р.
+										</label>
+									</div>
+									<div class="variants_row">
+										<input type="radio" data-min="50000" data-max="60000" class="price_range" name="price_variant" id="filter-56">
+										<label for="filter-56" class="variants_value">
+											50 000 - 60 000 р.
+										</label>
+									</div>
+									<div class="variants_row">
+										<input type="radio" data-min="60000" data-max="70000" class="price_range" name="price_variant" id="filter-67">
+										<label for="filter-67" class="variants_value">
+											60 000 - 70 000 р.
+										</label>
+									</div>
+									<div class="variants_row">
+										<input type="radio" data-min="70000" data-max="80000" class="price_range" name="price_variant" id="filter-78">
+										<label for="filter-78" class="variants_value">
+											70 000 - 80 000 р.
+										</label>
+									</div>
+									<div class="variants_row">
+										<input type="radio" data-min="80000" data-max="90000" class="price_range" name="price_variant"  id="filter-89">
+										<label for="filter-89" class="variants_value">
+											80 000 - 90 000 р.
+										</label>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<?
+						// вывод всех фильтров
+						foreach ($rusSpecifications as $key => $value) {
+							echo '
+								<div class="filter__part">
+									<h4 class="filter__head">
+										'.$rusSpecifications[$key].'
+									</h4>
+									<div class="filter__body">
+										<div class="prices-range__checkbox">
+								';
+							foreach($specifications as $spec){
+								if($spec['specification_id'] != $specificationIDS[$key]) 
+									continue;
+								echo '
+											<div class="variants_row">
+												<input type="checkbox" id="'.$spec['value'].'" class="price_range" name="'.$specificationIDS[$key].'" value="'.$spec['value'].'">
+												<label for="'.$spec['value'].'" class="variants_value">
+													'.$spec['value'].'
+												</label>
+											</div>			
+								';	
+							}
+							echo '	
+										</div>
+									</div>
+								</div>	
+							';
+						} 
+						?>
+							</div>		
+							<div class="accept_filters">
+								<button class="btn_accept_filters">
+									Применить
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-9">
+					<div class="catalog">
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			<!-- <div class="default_container new_container">
 				<div class="navigation_menu">
 					<a href="/">Главная</a>
 					<img src="../../images/strelka.png">
@@ -45,14 +218,13 @@ $currentPage = 1;
 					<?='<a href="/catalog/'. $_GET['category_name'].'">'. CATEGORY_ENG_TO_RUS[$_GET['category_name']].'</a>';?>
 				</div>
 			</div>
-		</section>
+		</section> -->
 		<section>
 			<div class="default_container new_container">
 				<div class="new_section_title">
 					Каталог
 				</div>
 				<div class="catalog_container">
-
 					<div class="accordion catalog_menu" id="accordionExample">
 						<div class="card">
 							<div class="card-header" id="headingOne">
@@ -62,7 +234,6 @@ $currentPage = 1;
 									</div>
 								</h2>
 							</div>
-
 							<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
 								<div class="card-body">
 									<div class="price_range">

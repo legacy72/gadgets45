@@ -13,7 +13,7 @@
                     <input type="text" name="phone" class="form-order__input phone_mask" id="phone_customer_call_back" required placeholder="Ваш телефон:*">
                     <input type="email" name="email" class="form-order__input" id="email_customer_call_back" required placeholder="Ваш e-mail:*">
                     <textarea name="message" class="form-order__message" id="comment_call_back" placeholder="Ваш комементарий"></textarea>
-                    <button class="form-order__btn" id="request_call_back">
+                    <button class="form-order__btn" id="request_call_back" type="submit">
                         Отправить
                     </button>
                 </form>

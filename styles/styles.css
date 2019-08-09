@@ -133,7 +133,7 @@ li {
 }
 
 .catalog {
-    height: 200px;
+    /*height: 200px;*/
     background-color: #f3f3f3;
 }
 
@@ -1092,6 +1092,7 @@ footer {
 }
 
 
+
 /*order*/
 
 .order_container {
@@ -1431,6 +1432,7 @@ footer {
 
 .expanded::after {
     transform: rotate(180deg);
+    right: 0;
 }
 
 .gray-colored {

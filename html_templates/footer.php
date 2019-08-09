@@ -52,13 +52,7 @@
 <div id="loader">
     <img src="/images/ripple.svg" alt="">
 </div>
-    
 
-<!-- <div id="overlay">
-    <div id="thx">
-        Текст-шаблон
-    </div>
-</div> -->
 
 
 <?

@@ -381,11 +381,10 @@ ul.slick-dots {
 
 /* ==== MAIN Page ==== */
 /* == Header == */
-.header {
-  padding: 34px 0 0; }
 
 .main-nav {
-  padding-bottom: 50px; }
+  padding-bottom: 50px; 
+  padding-top: 34px;}
 
 .mnu {
   font-size: 16px;

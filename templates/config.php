@@ -38,7 +38,7 @@ define(
 		"ram_size" => 11,
 		"number_of_megapixels_of_the_front" => 22,
 		"processor_model" => 7,
-		"number_of_proecssor_cores" => 8,
+		"number_of_processor_cores" => 8,
 		"cpu_frequency" => 9,
 		"amount_of_internal_memory" => 12,
 		"operating_system_version" => 108,

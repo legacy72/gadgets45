@@ -153,7 +153,7 @@ $currentPage = 1;
 									continue;
 								echo '
 											<div class="variants_row">
-												<input type="checkbox" id="'.$rusSpecifications[$key].''.$spec['value'].'" class="price_range" name="'.$specificationIDS[$key].'" value="'.$spec['value'].'">
+												<input type="checkbox" id="'.$rusSpecifications[$key].''.$spec['value'].'" class="price_range filterCheckBox" name="'.$specificationIDS[$key].'" value="'.$spec['value'].'">
 												<label for="'.$rusSpecifications[$key].''.$spec['value'].'" class="variants_value">
 													'.$spec['value'].'
 												</label>

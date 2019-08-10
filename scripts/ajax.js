@@ -21,8 +21,7 @@ $(document).ready(function() {
                 filter[this.name].push(this.value);
             }
         });
-
-        return filter
+        return filter;
     }
     // Получаем вид сортировки (по убыванию/возрастанию)
     function getOrderBy() {
@@ -45,7 +44,7 @@ $(document).ready(function() {
     }
     //получаем основные данные для фильтрации
     function getFiltersData() {
-        var category_text = $('.catalog_title').text().trim();
+        var category_text = $('.catalog__title').text().trim();
         return {
             filter: fillFilter(),
             category_id: getCategoryID(category_text),
@@ -158,7 +157,7 @@ $(document).ready(function() {
     });
 
     // обработка клика на применение фильтров
-    $(document.body).on('click', '.btn_accept_filters', function() {
+    $(document.body).on('click', '.accept-filters__btn', function() {
         var data = getFiltersData();
         acceptFilters(data);
     });

@@ -185,15 +185,15 @@ $(document).ready(function() {
         editCartBlock();
     });
     // Обработчик нажатия кнопки "в корзину" со страницы каталога
-    $(document).on('click', '.item_button', function() {
-        var ptc_id = $(this).parent().find('.item_name').attr('ptc_id');
-        var product_name = $(this).parent().find('.item_name').text().trim();
-        var product_price = $(this).parent().find('.discount_price').text().trim();
+    $(document).on('click', '.product__btn', function() {
+        var ptc_id = $(this).closest('.product').find('.item_name').attr('ptc_id');
+        var product_name = $(this).closest('.product').find('.item_name').text().trim();
+        var product_price = $(this).closest('.product').find('.discount_price').text().trim();
         if (product_price === '') {
-            product_price = $(this).parent().find('.standart_price').text().trim();
+            product_price = $(this).closest('.product').find('.standart_price').text().trim();
         }
-        var product_image = $(this).parent().find('.item_image')[0].children[0].children[0].src;
-        var product_reference = $(this).parent().find('.item_name a').attr('href');
+        var product_image = $(this).closest('.product').find('.item_image')[0].children[0].children[0].src;
+        var product_reference = $(this).closest('.product').find('.item_name a').attr('href');
         product_reference = '/catalog/'.concat(product_reference);
 
         addToCart(ptc_id, product_name, product_price, product_image, product_reference);

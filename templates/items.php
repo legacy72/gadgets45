@@ -51,46 +51,47 @@ $countPages = getCountPages($countProducts);
 // Текущая страница
 $currentPage = $page_num;
 
-echo '<div class="catalog_items">';
+echo '<div class="products catalog_items d-flex">';
 foreach($productItems as $product){
 	$productFullName = getProductNameWithColor($product['product_name'], $product['color_name']);
 	echo '
-		<div class="catalog_item">
-			<div class="item_name" ptc_id="'. $product['ptc_id']. '">
+		<div class="product catalog_item">
+			<h4 class="item_name product__title" ptc_id="'. $product['ptc_id']. '">
 				<a href="'. concatCategoryAndFullName($category_name, $product['url_name'], $product['color_name']) .'">
 					'. $productFullName. '
 				</a>
-			</div>
-			<div class="item_image">
+			</h4>
+			<div class="item_image product__pic">
 				<a href="'. concatCategoryAndFullName($category_name, $product['url_name'], $product['color_name']) .'">
 					<img src="../'. PRODUCT_IMAGES_PATH.$product['image_name'] .'">
 				</a>
 			</div>
-			<div class="item_count">
-				Кол-во: '. $product['quantity'].'
+			<div class="product__total item_count">
+				Кол-во на складе: '. $product['quantity'].'
 			</div>
-			<div class="item_price">
-				<div class="standart_price">';
+			<div class="product__price item_price d-flex">';
 				if ($product['discount_price'] != $product['price'])
-					echo '<strike>'. $product['price']. '</strike>';
+					echo '<span class="product__price_old dashed standart_price">'. $product['price']. '</span>';
 				else
-					echo $product['price'];
-	echo '
-			</div>
-			<div class="discount_price">';
+					echo '<span class="product__price_old standart_price">'. $product['price']. '</span>';
 				if ($product['discount_price'] != $product['price'])
-					echo $product['discount_price'];
-	echo	'</div>
-		</div>
-		<div class="item_button">
-			<button>
+				echo '<span class="product__price_new discount_price">'.$product['discount_price'].'</span>';
+	echo	'
+			</div>
+		<div class="product-wrap item_button d-flex">
+			<button class="product__btn">
 				В корзину
+				<span>
+					Товар добавлен
+				</span>
 			</button>
 		</div>
 	</div>
 	';
 }
-echo '</div>';
-echo '<div class="pages_list">';
+echo '
+</div>
+</div>';
+echo '<div class="pages_list d-flex">';
 showPageNumbers($countPages, $currentPage);
 echo '</div>';

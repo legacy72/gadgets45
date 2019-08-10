@@ -138,8 +138,7 @@ $(function() {
         });
     });
 
-  // Getter]
-
+    // Accordion
     $( '.filter__part' ).accordion({
         collapsible: true,
         header: '.filter__head',
@@ -147,8 +146,31 @@ $(function() {
         active: 1
     });
   
+    $('.filter__head').click(function () {
+        $(this).find('i').toggleClass('expanded');
+    })
 
-  
+
+
+    // Price Animation
+    $.fn.extend({ 
+
+        addTemporaryClass: function(className, duration) {
+            var elements = this;
+            setTimeout(function() {
+                elements.removeClass(className);
+            }, duration);
+
+            return this.each(function() {
+                $(this).addClass(className);
+            });
+        }
+    });
+
+    $('body').on('click', '.product__btn',  function () {  
+        $(this).find('span').addTemporaryClass('added', 1500);
+    });
+
 
 
 

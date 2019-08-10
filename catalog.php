@@ -62,16 +62,15 @@ $currentPage = 1;
 	<section class="s-catalog" id="s-catalog">
 		<div class="container">
 			<div class="row">
-				<div class="col-12">
+				<div class="col-lg-3">
 					<h2 class="s-title">
 						Каталог
 					</h2>
-				</div>
-				<div class="col-lg-3">
 					<div class="filter">
 						<div class="filter__part">
 							<h4 class="filter__head">
-								Цена	
+								Цена
+								<i class="fas fa-chevron-down"></i>	
 							</h4>
 							<div class="filter__body">
 								<div class="price_range__inputs">
@@ -144,6 +143,7 @@ $currentPage = 1;
 								<div class="filter__part">
 									<h4 class="filter__head">
 										'.$rusSpecifications[$key].'
+										<i class="fas fa-chevron-down"></i>
 									</h4>
 									<div class="filter__body">
 										<div class="prices-range__checkbox">
@@ -153,8 +153,8 @@ $currentPage = 1;
 									continue;
 								echo '
 											<div class="variants_row">
-												<input type="checkbox" id="'.$spec['value'].'" class="price_range" name="'.$specificationIDS[$key].'" value="'.$spec['value'].'">
-												<label for="'.$spec['value'].'" class="variants_value">
+												<input type="checkbox" id="'.$rusSpecifications[$key].''.$spec['value'].'" class="price_range" name="'.$specificationIDS[$key].'" value="'.$spec['value'].'">
+												<label for="'.$rusSpecifications[$key].''.$spec['value'].'" class="variants_value">
 													'.$spec['value'].'
 												</label>
 											</div>			
@@ -167,234 +167,88 @@ $currentPage = 1;
 							';
 						} 
 						?>
-							</div>		
-							<div class="accept_filters">
-								<button class="btn_accept_filters">
-									Применить
-								</button>
-							</div>
-						</div>
+					</div>		
+					<div class="accept-filters">
+						<button class="accept-filters__btn">
+							Применить
+						</button>
 					</div>
 				</div>
 				<div class="col-lg-9">
 					<div class="catalog">
-						
+						<div class="catalog__head d-flex">
+							<h3 class="catalog__title">
+								<?=CATEGORY_ENG_TO_RUS[$_GET['category_name']];?>
+							</h3>
+							<div class="catalog__filter">
+								<span class="catalog__txt">
+									Сортировать цену по:
+								</span>
+								<select name="price" class="catalog__select dropdown-toggle expanded" id="dropdownMenuButton">
+									<option value="up" class="dropdown-item price_sort_order_by dropdown-menu__row" id="order_by_asc" >
+										возрастанию
+									</option>
+									<option value="down" class="dropdown-item price_sort_order_by dropdown-menu__row" id="order_by_desc">
+										убыванию
+									</option>
+								</select>
+							</div>
+						</div>
+						<div class="catalog_items_block">
+							<div class="products catalog_items d-flex">
+								<?php foreach($productItems as $product): ?>
+								<div class="product catalog_item">
+									<?='<h4 class="product__title item_name" ptc_id="'. $product['ptc_id']. '">';?>
+										<?
+											$productFullName = getProductNameWithColor($product['product_name'], $product['color_name']);
+											echo '<a href="'. concatCategoryAndFullName($_GET['category_name'], $product['url_name'], $product['color_name']) .'">'; 
+										?>
+										<?=$productFullName;?>
+										</a>
+									</h4>	
+									<div class="item_image product__pic">
+										<? echo '<a href="'. concatCategoryAndFullName($_GET['category_name'], $product['url_name'], $product['color_name']) .'">';?> 
+											<img class="item_img" src=<?='../'. PRODUCT_IMAGES_PATH.$product['image_name']; ?>>
+										</a>
+									</div>
+									<span class="product__total item_count">
+										Кол-во на складе:
+										<?=$product['quantity'];?>
+									</span>
+									<div class="product__price item_price d-flex">
+										<?
+										if ($product['discount_price'] != $product['price'])
+											echo '<span class="product__price_old dashed standart_price">'. $product['price']. '</span>';
+										else
+											echo '<span class="product__price_old standart_price">'. $product['price']. '</span>';
+							
+										?>
+										<?
+										if ($product['discount_price'] != $product['price'])
+											echo '<span class="product__price_new discount_price">'.$product['discount_price'].'</span>';
+										?>
+									</div>
+									<div class="product-wrap item_button d-flex">
+										<button class="product__btn">
+											В корзину
+											<span>
+												Товар добавлен
+											</span>
+										</button>
+									</div>
+								</div>
+								<?php endforeach; ?>
+							</div>
+							<div class="pages_list d-flex">
+								<?showPageNumbers($countPages, $currentPage);?>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</section>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-			<!-- <div class="default_container new_container">
-				<div class="navigation_menu">
-					<a href="/">Главная</a>
-					<img src="../../images/strelka.png">
-					<a href="/catalog/smartphones">Каталог</a>
-					<img src="../../images/strelka.png">
-					<?='<a href="/catalog/'. $_GET['category_name'].'">'. CATEGORY_ENG_TO_RUS[$_GET['category_name']].'</a>';?>
-				</div>
-			</div>
-		</section> -->
-		<section>
-			<div class="default_container new_container">
-				<div class="new_section_title">
-					Каталог
-				</div>
-				<div class="catalog_container">
-					<div class="accordion catalog_menu" id="accordionExample">
-						<div class="card">
-							<div class="card-header" id="headingOne">
-								<h2 class="mb-0">
-									<div class="header-menu-link gray-colored expanded" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-										Цена
-									</div>
-								</h2>
-							</div>
-							<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-								<div class="card-body">
-									<div class="price_range">
-										<div class="price_range__inputs">
-											<input class="price_from" id="price_from" type="text" pattern="^[0-9]+$" placeholder="6990" name="">
-											<input class="price_to" id="price_to" type="text" pattern="^[0-9]+$" placeholder="199 000" name="">
-										</div>
-									</div>
-									<div class="prices-range__checkbox">
-										<div class="variants_row">
-											<input type="radio" class="price_range" name="price_variant">
-											<span class="variants_value">Все цены</span>
-										</div>
-										<div class="variants_row">
-											<input type="radio" data-min="10000" data-max="20000" class="price_range" name="price_variant">
-											<span class="variants_value">10 000 - 20 000 р.</span>
-										</div>
-										<div class="variants_row">
-											<input type="radio" data-min="20000" data-max="30000" class="price_range" name="price_variant">
-											<span class="variants_value">20 000 - 30 000 р.</span>
-										</div>
-										<div class="variants_row">
-											<input type="radio" data-min="30000" data-max="40000" class="price_range" name="price_variant">
-											<span class="variants_value">30 000 - 40 000 р.</span>
-										</div>
-										<div class="variants_row">
-											<input type="radio" data-min="40000" data-max="50000" class="price_range" name="price_variant">
-											<span class="variants_value">40 000 - 50 000 р.</span>
-										</div>
-										<div class="variants_row">
-											<input type="radio" data-min="50000" data-max="60000" class="price_range" name="price_variant">
-											<span class="variants_value">50 000 - 60 000 р.</span>
-										</div>
-										<div class="variants_row">
-											<input type="radio" data-min="60000" data-max="70000" class="price_range" name="price_variant">
-											<span class="variants_value">60 000 - 70 000 р.</span>
-										</div>
-										<div class="variants_row">
-											<input type="radio" data-min="70000" data-max="80000" class="price_range" name="price_variant">
-											<span class="variants_value">70 000 - 80 000 р.</span>
-										</div><div class="variants_row">
-											<input type="radio" data-min="80000" data-max="90000" class="price_range" name="price_variant">
-											<span class="variants_value">80 000 - 90 000 р.</span>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<?
-						// вывод всех фильтров
-						foreach ($rusSpecifications as $key => $value) {
-							echo '
-								<div class="card">
-									<div class="card-header" id="heading'.$key.'">
-										<h2 class="mb-0">
-											<div class="header-menu-link collapsed" data-toggle="collapse" data-target="#collapse'.$key.'" aria-expanded="false" aria-controls="collapse'.$key.'">
-												'.$rusSpecifications[$key].'
-											</div>
-										</h2>
-									</div>
-									<div id="collapse'.$key.'" class="collapse" aria-labelledby="heading'.$key.'" data-parent="#accordionExample">
-										<div class="card-body">
-							';
-							foreach($specifications as $spec){
-								if($spec['specification_id'] != $specificationIDS[$key]) 
-									continue;
-								echo '
-									<div class="variants_row">
-										<input class="filterCheckBox" type="checkbox" name="'.$specificationIDS[$key].'" value="'.$spec['value'].'">
-										<span class="variants_value">'.$spec['value'].'</span>
-									</div>
-								';
-							}
-							echo '
-										</div>
-									</div>
-								</div>
-							';
-						} 
-						?>
-
-
-						<div class="accept_filters">
-							<button class="btn_accept_filters">Применить</button>
-						</div>
-
-					</div>
-					<div class="catalog_block">
-						<div class="catalog_header">
-							<div class="catalog_title">
-								<?=CATEGORY_ENG_TO_RUS[$_GET['category_name']];?>
-							</div>
-							<div class="catalog_sort_block">
-								<div class="sort_text">
-									Соритровать по:
-								</div>
-								<div class="dropdown price-button">
-									<button class="btn dropdown-toggle expanded" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-										Цене
-									</button>
-									<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-										<div value="up" id="order_by_asc" class="dropdown-item price_sort_order_by dropdown-menu__row">По возрастанию</div>
-										<div value="down" id="order_by_desc" class="dropdown-item price_sort_order_by dropdown-menu__row">По убыванию</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="catalog_items_block">
-							<div class="catalog_items">
-								<?php foreach($productItems as $product): ?>
-									<div class="catalog_item">
-										<?='<div class="item_name" ptc_id="'. $product['ptc_id']. '">';?>
-											<?
-												$productFullName = getProductNameWithColor($product['product_name'], $product['color_name']);
-												echo '<a href="'. concatCategoryAndFullName($_GET['category_name'], $product['url_name'], $product['color_name']) .'">'; 
-											?>
-											<?=$productFullName;?>
-											</a>
-										</div>
-										<div class="item_image">
-											<? echo '<a href="'. concatCategoryAndFullName($_GET['category_name'], $product['url_name'], $product['color_name']) .'">';?> 
-												<img class="item_img" src=<?='../'. PRODUCT_IMAGES_PATH.$product['image_name']; ?>>
-											</a>
-										</div>
-										<div class="item_count">
-											Кол-во:
-											<?=$product['quantity'];?>
-										</div>
-										<div class="item_price">
-											<div class="standart_price">
-												<?
-												if ($product['discount_price'] != $product['price'])
-													echo '<strike>'. $product['price']. '</strike>';
-												else
-													echo $product['price'];
-												?>
-											</div>
-											<div class="discount_price">
-												<?
-												if ($product['discount_price'] != $product['price'])
-													echo $product['discount_price'];
-												?>
-											</div>
-										</div>
-										<div class="item_button">
-											<button>
-												В корзину
-											</button>
-										</div>
-									</div>
-								<?php endforeach; ?>
-						</div>
-						<div class="pages_list">
-							<?showPageNumbers($countPages, $currentPage);?>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-	</main>
 	<? require_once('html_templates/footer.php'); ?>
 	<? require_once('html_templates/scripts_imports.php'); ?>
 </body>

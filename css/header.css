@@ -101,6 +101,34 @@ button{
   cursor: pointer;
 }   
 
+/* == Pagiantion == */
+.pages_list{
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    margin-top: 25px;
+}
+
+.page_num{
+    display: block;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ccc;
+    margin: 0 5px;
+    text-align: center;
+    line-height: 30px;
+    color: #383838;
+    cursor: pointer;
+}
+
+.page_num.current_page{
+    color: #fff;
+    background: #0093ed;
+    border: 1px solid #0093ed;
+    font-family: "OpenSansSemibold", Arial, sans-serif;
+}
+
 /* == Autocomplete == */
 
 

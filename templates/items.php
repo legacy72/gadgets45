@@ -66,9 +66,10 @@ foreach($productItems as $product){
 					<img src="../'. PRODUCT_IMAGES_PATH.$product['image_name'] .'">
 				</a>
 			</div>
-			<div class="product__total item_count">
-				Кол-во на складе: '. $product['quantity'].'
-			</div>
+			<p class="product__total item_count">
+				Кол-во на складе: 
+				<span>'. $product['quantity'].'</span>
+			</p>
 			<div class="product__price item_price d-flex">';
 				if ($product['discount_price'] != $product['price'])
 					echo '<span class="product__price_old dashed standart_price">'. $product['price']. '</span>';
@@ -84,6 +85,7 @@ foreach($productItems as $product){
 				<span>
 					Товар добавлен
 				</span>
+				<i class="fas fa-shopping-cart"></i>
 			</button>
 		</div>
 	</div>

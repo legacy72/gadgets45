@@ -116,3 +116,18 @@
 		</div>
 	</div>
 </nav>
+<div class="fixed-shop">
+	<div class="fixed-visible">
+		<i class="fas fa-shopping-cart"></i>
+		<span class="quantity cart_quantity"></span>
+	</div>
+	<div class="fixed-hidden">
+		<p class="fixed-price">
+			Сумма:
+			<span class="price cart_price"></span>
+		</p>
+		<a href="/cart" class="fixed-link">
+			К оплате
+		</a>
+	</div>
+</div>

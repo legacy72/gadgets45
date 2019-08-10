@@ -171,6 +171,10 @@ $(function() {
         $(this).find('span').addTemporaryClass('added', 1500);
     });
 
+    // Fixed Shopping Cart
+    $('.fixed-shop').click(function () {
+        $(this).toggleClass('active');
+    });
 
 
 

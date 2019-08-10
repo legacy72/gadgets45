@@ -36,6 +36,7 @@ $currentPage = 1;
 </head>
 <body>
 	<? require_once('html_templates/header.php'); ?>
+	
 	<section class="s-crumbs" id="s-crumbs">
 		<div class="container">
 			<div class="row">
@@ -211,10 +212,10 @@ $currentPage = 1;
 											<img class="item_img" src=<?='../'. PRODUCT_IMAGES_PATH.$product['image_name']; ?>>
 										</a>
 									</div>
-									<span class="product__total item_count">
+									<p class="product__total item_count">
 										Кол-во на складе:
-										<?=$product['quantity'];?>
-									</span>
+										<span><?=$product['quantity'];?></span>
+									</p>
 									<div class="product__price item_price d-flex">
 										<?
 										if ($product['discount_price'] != $product['price'])
@@ -234,6 +235,7 @@ $currentPage = 1;
 											<span>
 												Товар добавлен
 											</span>
+											<i class="fas fa-shopping-cart"></i>
 										</button>
 									</div>
 								</div>

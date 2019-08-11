@@ -41,8 +41,9 @@ $filterSpecs = getSpecificationsForFilter($dbh, $filter);
 
 // Выбор всех продуктов подходящих под фильтры
 $productItems = getProductItems($dbh, $filterSpecs, $category_id, $price_from, $price_to, $order_by, $limit = True, $offset);
-
-
+if(empty($productItems)){
+	return;
+}
 
 // количество продуктов всего (чтобы посчитать сколько страниц)
 $countProducts = getCountProducts($dbh, $filterSpecs, $category_id, $price_from, $price_to);

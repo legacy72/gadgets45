@@ -65,12 +65,10 @@ $(document).ready(function() {
                 $('.catalog_items_block').html('LOADING... LOADING... LOADING... ');
             },
             success: function(data) {
-
-                $('.catalog_items_block').html(data);
-
-                if ($('.products').height() > 1) {
+                if(data !== ''){
                     $('.catalog_items_block').html(data);
-                } else {
+                }
+                else {
                     $('.catalog_items_block').html('<span class="nothing">Ничего не найдено</span>');
                 }
 

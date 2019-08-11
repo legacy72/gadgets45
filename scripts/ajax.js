@@ -26,7 +26,7 @@ $(document).ready(function() {
     // Получаем вид сортировки (по убыванию/возрастанию)
     function getOrderBy() {
         // Если есть expanded значит стоит сортировка по возрастанию
-        if ($('.dropdown-toggle').hasClass('expanded')) {
+        if ($('.dropdown-toggle').children('option:selected').hasClass('expanded')) {
             order_by = 1;
         } else {
             order_by = 2;
@@ -65,8 +65,16 @@ $(document).ready(function() {
                 $('.catalog_items_block').html('LOADING... LOADING... LOADING... ');
             },
             success: function(data) {
+
                 $('.catalog_items_block').html(data);
-            },
+
+                if ($('.products').height() > 1) {
+                    $('.catalog_items_block').html(data);
+                } else {
+                    $('.catalog_items_block').html('<span class="nothing">Ничего не найдено</span>');
+                }
+
+            }
         });
     }
 

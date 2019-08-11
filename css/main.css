@@ -86,7 +86,7 @@
 }
 
 .shares-slider .slide__head {
-    margin-bottom: 25px;
+    margin-bottom: 35px;
     line-height: 1.3em;
     font-size: 16px;
 }
@@ -94,13 +94,7 @@
 .shares-slider .slide__price_new {
     font-family: "OpenSansSemibold", Arial, sans-serif;
     margin-right: 15px;
-    display: inline-block;
-    padding: 3px 8px;
-    border-radius: 3px;
-    color: #fff;
-    background: -webkit-gradient(linear, left top, right top, from(#9a85b2), to(#0093ed));
-    background: -o-linear-gradient(left, #9a85b2, #0093ed);
-    background: linear-gradient(to right, #9a85b2, #0093ed);
+    font-size: 20px;
 }
 
 .shares-slider .slide__price_old {
@@ -170,7 +164,7 @@
     margin: 0 9px;
     height: auto;
     background: #fff;
-    padding: 50px 18px 35px;
+    padding: 50px 10px 35px;
     color: #383838;
     text-align: center;
     border: 1px solid rgba(56, 56, 56, 0.3);
@@ -194,7 +188,7 @@
 
 .bestseller-slider .slide__pic {
     width: 100%;
-    height: 188px;
+    height: 158px;
 }
 
 .bestseller-slider .slide__pic img {
@@ -218,9 +212,10 @@
 }
 
 .bestseller-slider .slide__head {
-    margin-bottom: 20px;
+    margin-bottom: 35px;
     line-height: 1.3em;
     font-size: 16px;
+    min-height: 44px;
 }
 
 .bestseller-slider .slide__price {
@@ -234,6 +229,7 @@
 
 .bestseller-slider .slide__price_new {
     margin-right: 15px;
+    font-size: 20px;
 }
 
 .bestseller-slider .slide__price_old {

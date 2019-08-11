@@ -1424,12 +1424,12 @@ footer {
 .price-button .dropdown-menu {
     padding: 0;
 }
-
+/*
 .expanded::after {
     transform: rotate(180deg);
     right: 0;
     margin-left: auto;
-}
+}*/
 
 .call_order {
     cursor: pointer;

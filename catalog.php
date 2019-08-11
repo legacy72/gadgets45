@@ -63,7 +63,7 @@ $currentPage = 1;
 	<section class="s-catalog" id="s-catalog">
 		<div class="container">
 			<div class="row">
-				<div class="col-lg-3">
+				<div class="col-md-6 col-lg-3">
 					<h2 class="s-title">
 						Каталог
 					</h2>
@@ -175,7 +175,7 @@ $currentPage = 1;
 						</button>
 					</div>
 				</div>
-				<div class="col-lg-9">
+				<div class="col-md-6 col-lg-9">
 					<div class="catalog">
 						<div class="catalog__head d-flex">
 							<h3 class="catalog__title">
@@ -185,8 +185,8 @@ $currentPage = 1;
 								<span class="catalog__txt">
 									Сортировать цену по:
 								</span>
-								<select name="price" class="catalog__select dropdown-toggle expanded" id="dropdownMenuButton">
-									<option value="up" class="dropdown-item price_sort_order_by dropdown-menu__row" id="order_by_asc" >
+								<select name="price" class="catalog__select dropdown-toggle">
+									<option value="up" class="dropdown-item price_sort_order_by dropdown-menu__row expanded" id="order_by_asc" >
 										возрастанию
 									</option>
 									<option value="down" class="dropdown-item price_sort_order_by dropdown-menu__row" id="order_by_desc">

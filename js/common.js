@@ -150,6 +150,17 @@ $(function() {
         $(this).find('i').toggleClass('expanded');
     })
 
+    // Nothing was founded 
+    $(window).on('load', function () {
+        var blockHeight = $('.products').css('height');
+
+        if($(blockHeight) < 1) {
+            $('.nothing').css('display', 'block');
+        }
+       
+    })
+
+    
 
 
     // Price Animation

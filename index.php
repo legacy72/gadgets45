@@ -115,7 +115,7 @@ $stocks = getBestSellersOrStocks($dbh, 'stock');
 												<?=getProductNameWithColor($stock['name'], $stock['color_name']); ?>
 											</h4>
 											<div class="slide__price">
-												<span class="slide__price_new">
+												<span class="slide__price_new product__price_new">
 													<?=priceFormat($stock['discount_price']); ?>
 												</span>
 												<span class="slide__price_old">
@@ -153,15 +153,19 @@ $stocks = getBestSellersOrStocks($dbh, 'stock');
 												<?=getProductNameWithColor($bestseller['name'], $bestseller['color_name']); ?>
 											</h4>
 											<div class="slide__price">
-												<span class="slide__price_new discount_price product_price">
+												<span class="slide__price_new product__price_new discount_price product_price">
 													<?=priceFormat($bestseller['discount_price']); ?>
 												</span>
 												<span class="slide__price_old standart_price">
 													<?=priceFormat($bestseller['price']); ?>
 												</span>
 											</div>
-											<button class="slide__btn buy-btn button_add_product_to_cart add_product_to_cart_main">
+											<button class="slide__btn buy-btn button_add_product_to_cart add_product_to_cart_main product__btn">
 												В корзину
+												<span>
+													Товар добавлен
+												</span>
+												<i class="fas fa-shopping-cart"></i>
 											</button>
 										</div>
 									</div>

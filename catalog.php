@@ -63,10 +63,36 @@ $currentPage = 1;
 	<section class="s-catalog" id="s-catalog">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-6 col-lg-3">
+				<div class="col-12 col-lg-4 col-xl-3">
 					<h2 class="s-title">
 						Каталог
 					</h2>
+				</div>
+				<div class="col-sm-6 order-0 order-sm-1 order-lg-0  col-lg-8 col-xl-9">
+					<div class="catalog__head d-flex">
+						<h3 class="catalog__title">
+							<?=CATEGORY_ENG_TO_RUS[$_GET['category_name']];?>
+						</h3>
+						<div class="catalog__filter">
+							<span class="catalog__txt">
+								Сортировать <br class="d-sm-none"> цену по:
+							</span>
+							<select name="price" class="catalog__select dropdown-toggle">
+								<option value="up" class="dropdown-item price_sort_order_by dropdown-menu__row expanded" id="order_by_asc" >
+									возрастанию
+								</option>
+								<option value="down" class="dropdown-item price_sort_order_by dropdown-menu__row" id="order_by_desc">
+									убыванию
+								</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-6 col-lg-4 col-xl-3">
+					<div class="filter-toggle">
+						Фильтры
+						<i class="fas fa-chevron-down"></i>	
+					</div>
 					<div class="filter">
 						<div class="filter__part">
 							<h4 class="filter__head">
@@ -175,26 +201,8 @@ $currentPage = 1;
 						</button>
 					</div>
 				</div>
-				<div class="col-md-6 col-lg-9">
+				<div class="col-12 order-0 order-sm-1 order-lg-0 col-lg-8 col-xl-9">
 					<div class="catalog">
-						<div class="catalog__head d-flex">
-							<h3 class="catalog__title">
-								<?=CATEGORY_ENG_TO_RUS[$_GET['category_name']];?>
-							</h3>
-							<div class="catalog__filter">
-								<span class="catalog__txt">
-									Сортировать цену по:
-								</span>
-								<select name="price" class="catalog__select dropdown-toggle">
-									<option value="up" class="dropdown-item price_sort_order_by dropdown-menu__row expanded" id="order_by_asc" >
-										возрастанию
-									</option>
-									<option value="down" class="dropdown-item price_sort_order_by dropdown-menu__row" id="order_by_desc">
-										убыванию
-									</option>
-								</select>
-							</div>
-						</div>
 						<div class="catalog_items_block">
 							<div class="products catalog_items d-flex">
 								<?php foreach($productItems as $product): ?>

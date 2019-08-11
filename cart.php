@@ -7,24 +7,41 @@
 </head>
 <body>
 	<? require_once('html_templates/header.php'); ?>
-			<div class="default_container new_container">
-				<div class="navigation_menu">
-					<a href="/">Главная</a>
-					<img src="../../images/strelka.png">
-					<a href="/cart">Корзина</a>
+
+	<section class="s-crumbs" id="s-crumbs">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<ul class="crumbs d-flex">
+						<li class="crumbs__item">
+							<a href="/">
+								Главная
+							</a>
+						</li>
+						<li class="crumbs__item">
+							<a href="/cart">
+								Корзина
+							</a>
+						</li>
+					</ul>
 				</div>
 			</div>
-		<section>
-			<div class="default_container new_container">
-				<div class="new_section_title">
-					Корзина
+		</div>
+	</section>
+	<section class="s-cart" id="s-cart">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<h2 class="s-title">
+						Корзина
+					</h2>
 				</div>
-
-				<div class="cart">
+				<div class="col-lg-8">
 					<div class="cart_items">
 						
 					</div>
-
+				</div>
+				<div class="col-lg-4">
 					<div class="cart_result">
 						<div class="result_info">
 							<div class="cart_res_descr">
@@ -47,11 +64,20 @@
 					</div>
 				</div>
 			</div>
+		</div>		
+	</section>
 
-		</section>
-		<section>
-			<? require_once('templates/stock_items.php'); ?>
-		</section>
+
+	<section>
+		<? require_once('templates/stock_items.php'); ?>
+	</section>
+
+		
+
+				
+
+		
+		
 		<section>
 			<div class="default_container new_section_container">
 				<div class="advantages">

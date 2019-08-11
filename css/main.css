@@ -665,6 +665,48 @@
 /* Medium Devices, Desktops */
 
 @media only screen and (max-width: 991.98px) {
+    .products{
+        justify-content: space-between;
+    }
+    .product{
+        width: 45%;
+        margin-right: 0;
+    }
+    .catalog{
+        padding: 0;
+    }
+    .catalog__head{
+        flex-direction: column;
+        margin: 0 auto 35px;
+    max-width: 400px;
+    }
+    .catalog__select{
+        max-width: 120px;
+        color: #fff;
+        background: #383838;
+    }
+
+    .catalog__select option{
+        background: #fff;
+        color: #383838;
+    }
+
+
+    .catalog__filter{
+        width: 100%;
+        border-bottom: 1px solid #ccc;
+        border-left: 1px solid #ccc;
+        border-right: 1px solid #ccc;
+        height: 71px;
+    }
+
+    .catalog__title{
+        width: 100%;
+        background: #383838;
+        color: #fff;
+        text-align: center;
+        line-height: 53px;
+    }
     .phones {
         margin: 0 7px;
         height: auto;
@@ -834,6 +876,10 @@
 /* Extra Small Devices, Phones */
 
 @media only screen and (max-width: 575.98px) {
+
+    .products{
+        justify-content: space-around;
+    }
     .s-shares .s-title {
         margin-bottom: 0;
     }
@@ -909,6 +955,11 @@
     .apps-wrapper {
         margin-bottom: 20px;
     }
+    .fixed-shop{
+        max-width: 300px;
+    }
+
+
 }
 
 

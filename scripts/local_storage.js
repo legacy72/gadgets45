@@ -74,41 +74,41 @@ $(document).ready(function() {
         var out = '';
         var length = cartData.length || 0;
         for (var i = 0; i < length; i++) {
-            out += `
-			<div class="cart_row">
-			<div class="cart_item">
-			<div class="item_image">
+           out += `
+            <div class="cart cart_item">
+            <div class="cart__close item_drop_btn" product_id="` + i + `">
+            <i class="fas fa-times cross"></i>
+            </div>
+            <div class="cart__body d-flex">
+            <div class="cart__pic item_image">
             `;
-            out += `<a href="${cartData[i]['product_reference']}">`;
-            out += `<img src="${cartData[i]['product_image']}">`;
+            out += `<a href="${cartData[i]['product_reference']}" data-title="${cartData[i]['product_name']}">`;
+            out += `<img src="${cartData[i]['product_image']}" alt="${cartData[i]['product_name']}">`;
             out += `</a>`;
             out += `
-			</div>
-			<div class="item_description">
-			`;
+            </div>
+            <h4 class="cart__head item_description">
+            `;
             out += cartData[i]['product_name'];
             out += `
-			</div>
-			<div class="item_price">
-			`;
+            </h4>
+            <span class="cart__price item_price">
+            `;
             out += priceFormat(cartData[i]['product_price'] * cartData[i]['product_quantity']);
             out += `
-			</div>
-			<div class="item_count">
-			<div class="counter_minus" product_id="` + i + `">-</div>
-			<div class="item_counter">
-			`;
+            </span>
+            <div class="cart__count d-flex">
+            <i class="fas fa-minus counter_minus" product_id="` + i + `"></i>
+            <span class="cart__number item_counter">
+            `;
             out += cartData[i]['product_quantity'];
             out += `
-			</div>
-			<div class="counter_plus" product_id="` + i + `">+</div>
-			</div>
-			<div class="item_drop">
-			<div class="item_drop_btn cross" product_id="` + i + `">X</div>
-			</div>
-			</div>
-			</div>
-			`;
+            </span>
+            <i class="fas fa-plus counter_plus" product_id="` + i + `"></i>
+            </div>
+            </div>
+            </div>
+            `;
         }
 
         $('.cart_items').html(out);

@@ -970,18 +970,18 @@ ul.slick-dots {
   .mnu {
     font-size: 14px;
     -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
+    -webkit-justify-content: space-around;
         -ms-flex-pack: justify;
-            justify-content: space-between;
+            justify-content: space-around;
     margin: 0; }
     .mnu__item {
       margin: 0; }
   .add-mnu {
     margin: 20px 0 0;
     -webkit-box-pack: justify;
-    -webkit-justify-content: space-between;
+    -webkit-justify-content: space-around;
         -ms-flex-pack: justify;
-            justify-content: space-between; }
+            justify-content: space-around; }
     .add-mnu__item {
       margin: 0; }
   .offer-slider {
@@ -1020,7 +1020,12 @@ ul.slick-dots {
   .form-order {
     width: 100%; }
     .form-order__link {
-      width: 100%; } }
+      width: 100%; }
+  .search__input{
+    max-width: 320px;
+  }    
+
+       }
 
 /* Custom, iPhone Retina */
 @media only screen and (max-width: 320px) {

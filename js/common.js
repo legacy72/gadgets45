@@ -148,7 +148,9 @@ $(function() {
   
     $('.filter__head').click(function () {
         $(this).find('i').toggleClass('expanded');
-    })
+    });
+
+   
 
     // Nothing was founded 
     $(window).on('load', function () {
@@ -160,8 +162,11 @@ $(function() {
        
     })
 
-    
-
+    // Filter Toggle
+    $('.filter-toggle').click(function () {
+        $('.filter').slideToggle();
+        $('.filter-toggle').find('i').toggleClass('expanded');
+    });
 
     // Price Animation
     $.fn.extend({ 

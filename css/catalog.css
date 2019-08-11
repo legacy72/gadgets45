@@ -82,6 +82,111 @@
 	opacity: 1;
 }
 
+/* == Product at Shopping Cart == */
+
+.cart_item{
+    width: 100%;
+    height: 255px;
+    background: #f3f3f3;
+    /*background: linear-gradient(-45deg,#f3f3f3,#ccc);*/
+    padding: 10px;
+    margin-bottom: 30px;
+    overflow: hidden;
+	/*border: 1px solid #ccc;*/
+}
+.cart__close{
+    width: 100%;
+    margin-bottom: 10px;
+    font-size: 18px;
+    padding: 5px;
+    text-align: right;
+    /*background: #ccc;*/
+    border-bottom: 1px solid #ccc;
+    padding: 10px 15px;
+}
+
+.cart__close .cross{
+    cursor: pointer;
+    color: #383838	;
+    transition: all .3s ease;
+}
+
+.cart__close .cross:hover{
+	color: #383838;
+}
+.cart__body{
+    justify-content: space-between;
+    -ms-align-items: center;
+    align-items: center;
+    padding: 0 20px 20px;
+}
+
+.cart__pic{
+    height: 160px;
+    width: 220px;
+    padding: 12px;
+    /*background: #fff;*/
+}
+
+.cart__pic a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+/*.cart__pic a::after{
+    position: absolute;
+    z-index: 1;
+    content: attr(data-title);
+    font-size: 160px;
+    color: #fff;
+    font-family: "OpenSansBold", Arial, sans-serif;
+    left: -30px;
+    opacity: .15;
+    bottom: -25px;
+    text-transform: uppercase;
+    width: 5000px;
+}*/
+
+.cart__pic a img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    position: relative;
+    z-index: 2;
+}
+
+.cart__head{
+    font-size: 20px;
+    max-width: 200px;
+}
+
+.cart__price{
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.cart__count{
+    font-size: 16px;
+    -ms-align-items: center;
+    align-items: center;
+}
+
+.cart__count i{
+    margin: 0 8px;
+    cursor: pointer;
+}
+
+.cart__number{
+    display: block;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    background: #fff;
+}
 
 
 /* == Crumbs ==*/
@@ -170,9 +275,44 @@ input[type="radio"]:checked + .variants_value::before {
 .filter{
 	width: 100%;
 	background: #f3f3f3;
+	border-left: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+	display: none;
+	max-width: 400px;
+		margin: 0 auto;
+}
+
+.filter-toggle{
+	padding: 15px;
+	background: #383838;
+	color: #fff;
+	cursor: pointer;
 	border-top: 1px solid #ccc;
 	border-left: 1px solid #ccc;
 	border-right: 1px solid #ccc;
+	transition: all .4s ease;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	justify-content: space-between;
+	max-width: 400px;
+	margin: 0 auto;
+}
+
+.filter-toggle i{
+	margin-left: auto;
+	font-size: 10px;
+	width: 15px;
+	height: 100%;
+	transform: rotate(0deg);
+	transition: all .4s ease;
+	text-align: center;
+}
+
+.filter-toggle i.expanded{
+	transform: rotate(90deg);
 }
 
 .filter__head{
@@ -245,9 +385,12 @@ input[type="radio"]:checked + .variants_value::before {
 	border-bottom: 1px solid #ccc;
 	border-left: 1px solid #ccc;
 	border-right: 1px solid #ccc;
+	max-width: 400px;
+	margin: 0 auto;
 }
 
 .accept-filters__btn{
+	max-width: 180px;
 	width: 100%;
   height: 40px;
   border: none;
@@ -281,7 +424,7 @@ input[type="radio"]:checked + .variants_value::before {
 	justify-content: space-between;
 	-ms-align-items: center;
 	align-items: center;
-	margin-bottom: 35px;
+	
 }
 
 .catalog__title{
@@ -312,7 +455,6 @@ select.catalog__select{
 	font-size: 14px;
 	text-align: right;
 	/*background: #cce9fb;*/
-  	color: #383838;
   	-moz-appearance: none;
   -webkit-appearance: none;
   appearance: none;
@@ -336,14 +478,18 @@ select::-ms-expand {  /* для IE */
 /*== Products ==*/
 .nothing{
 	width: 100%;
-	height: 500px;
-	position: absolute;
-	left: 50%;
-	transform: translateX(-50%);
 	font-size: 30px;
 	text-align: center;
 	line-height: 500px;
 	color: #ccc;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	justify-content: center;
+	-ms-align-items: center;
+	align-items: center;
 }
 
 
@@ -362,7 +508,8 @@ select::-ms-expand {  /* для IE */
 	border: 1px solid #eee;
 	padding: 30px 20px;
 	width: 30%;
-	max-width: 300px;
+	min-width: 240px;
+	max-width: 310px;
 	transition: all .25s ease;
 	box-shadow: 5px 5px 5px rgba(154,133,178,.15);
 }
@@ -597,6 +744,9 @@ select::-ms-expand {  /* для IE */
 		}
 	}
 }
+
+
+
 
 
 

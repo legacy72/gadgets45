@@ -62,7 +62,7 @@ $(document).ready(function() {
             data: data,
             beforeSend: function() {
                 // передалать на вертящуюся загрузку
-                $('.catalog_items_block').html('LOADING... LOADING... LOADING... ');
+                $('.catalog_items_block').html('<span class="nothing"><img src="/images/ripple.svg" alt="Загрузка..."></span>');
             },
             success: function(data) {
                 if(data !== ''){

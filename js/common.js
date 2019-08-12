@@ -27,7 +27,7 @@ $(function() {
     // Offer SLider
     $('.offer-slider').slick({
         infinite: true,
-        autoplay: true,
+        // autoplay: true,
         autoplaySpeed: 5000,
         speed: 1000,
         prevArrow: '<button type="button" class="slick-prev"><i class="fas fa-chevron-left"></i></button>',
@@ -51,7 +51,7 @@ $(function() {
     // Shares-Slider
     $('.shares-slider').slick({
         infinite: true,
-        autoplay: true,
+        // autoplay: true,
         autoplaySpeed: 5000,
         speed: 1000,
         prevArrow: '<button type="button" class="slick-prev"><i class="fas fa-chevron-left"></i></button>',
@@ -71,7 +71,7 @@ $(function() {
     // Bestseller-Slider
     $('.bestseller-slider').slick({
         infinite: true,
-        autoplay: true,
+        // autoplay: true,
         autoplaySpeed: 5000,
         speed: 1000,
         prevArrow: '<button type="button" class="slick-prev"><i class="fas fa-chevron-left"></i></button>',

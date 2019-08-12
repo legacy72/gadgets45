@@ -37,82 +37,110 @@ $colors = getProductColors($dbh, $productMainInfo['id']);
 
 <body>
 	<? require_once('html_templates/header.php'); ?>
-	<div class="default_container new_container">
-		<div class="navigation_menu">
-			<a href="/">Главная</a>
-			<img src="../../images/strelka.png">
-			<a href="/catalog/smartphones">Каталог</a>
-			<img src="../../images/strelka.png">
-			<?= '<a href="/catalog/' . $_GET['category_name'] . '">' . CATEGORY_ENG_TO_RUS[$_GET['category_name']] . '</a>'; ?>
-			<img src="../../images/strelka.png">
-			<?= '<a href="/catalog/smartphones/' . concatProductNameAndColor($_GET['product_url_name'], $_GET['color_name']) . '">' . $productMainInfo['name'] . ' ' . $colorName . '</a>'; ?>
-		</div>
-	</div>
-	</section>
-	<section>
-		<div class="default_container new_container">
-			<?= '<div class="product_container" ptc_id="' . $productMainInfo['ptc_id'] . '">'; ?>
-			<div class="product_images">
-				<div class="slider-main-image">
-					<?php foreach ($productImages as $productImage) : ?>
-						<div class="main_image">
-							<a <?= 'href="../../' . PRODUCT_IMAGES_PATH . $productImage['name'] . '"' ?> class='main_page'>
-								<?= '<img src="../../' . PRODUCT_IMAGES_PATH . $productImage['name'] . '">'; ?>
+	<section class="s-crumbs" id="s-crumbs">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<ul class="crumbs d-flex">
+						<li class="crumbs__item">
+							<a href="/">
+								Главная
 							</a>
-						</div>
-					<?php endforeach; ?>
-				</div>
-				<div class="small_images slider-small-images">
-					<?php foreach ($productImages as $productImage) : ?>
-						<div class="small_img">
-							<?= '<img src="../../' . PRODUCT_IMAGES_PATH . $productImage['name'] . '">'; ?>
-						</div>
-					<?php endforeach; ?>
-				</div>
-			</div>
-			<div class="product_description">
-				<div class="product_title">
-					<?= $productMainInfo['name'] . ' ' . $colorName; ?>
-				</div>
-				<div class="product_price">
-					<?= priceFormat($productMainInfo['discount_price']); ?>
-				</div>
-				<?php if (count($colors) != 1 && $colors[0]['name'] != 'standart') : ?>
-					<div class="product_color">
-						Цвет
-						<div class="product_colors_blocks">
-							<?php foreach ($colors as $color) : ?>
-								<?= '<a href="' . $_GET['product_url_name'] . '-' . $color['name'] . '">'; ?>
-								<div class="color_block" style="background-color: <?= $color['name']; ?>"></div>
-								<?= '</a>'; ?>
-							<?php endforeach; ?>
-						</div>
-					</div>
-				<?php endif; ?>
-				<div class="product_specifications">
-					<?php foreach ($mainSpec as $mainSpecKey => $mainSpecValue) : ?>
-						<div class="specification_row">
-							<div class="key">
-								<?= $mainSpecKey; ?>
-							</div>
-							<div class="value">
-								<?= $mainSpecValue; ?>
-							</div>
-						</div>
-					<?php endforeach ?>
-				</div>
-				<div class="product_buttons">
-					<button class="button_add_product_to_cart" id="add_product_to_cart_from_prod">
-						Добавить в корзину
-					</button>
-					<button class="button_fast_order">
-						Быстрый заказ
-					</button>
+						</li>
+						<li class="crumbs__item">
+							<a href="/catalog/smartphones">
+								Каталог
+							</a>
+						</li>
+						<li class="crumbs__item">
+							<?='<a href="/catalog/'. $_GET['category_name'].'">'. CATEGORY_ENG_TO_RUS[$_GET['category_name']].'</a>';?>
+						</li>
+						<li class="crumbs__item active">
+							<?= '<a href="/catalog/smartphones/' . concatProductNameAndColor($_GET['product_url_name'], $_GET['color_name']) . '">' . $productMainInfo['name'] . ' ' . $colorName . '</a>'; ?>
+						</li>
+					</ul>
 				</div>
 			</div>
-		</div>
 		</div>
 	</section>
+	<section class="s-product" id="s-product">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+
+					<div class="single-product d-flex">
+						<?= '<div class="product_container" ptc_id="' . $productMainInfo['ptc_id'] . '">'; ?>
+							<div class="product_images">
+								<div class="slider-main-image">
+									<?php foreach ($productImages as $productImage) : ?>
+										<div class="main_image">
+											<a <?= 'href="../../' . PRODUCT_IMAGES_PATH . $productImage['name'] . '"' ?> class='main_page'>
+												<?= '<img src="../../' . PRODUCT_IMAGES_PATH . $productImage['name'] . '">'; ?>
+											</a>
+										</div>
+									<?php endforeach; ?>
+								</div>
+								<div class="small_images slider-small-images">
+									<?php foreach ($productImages as $productImage) : ?>
+										<div class="small_img">
+											<?= '<img src="../../' . PRODUCT_IMAGES_PATH . $productImage['name'] . '">'; ?>
+										</div>
+									<?php endforeach; ?>
+								</div>
+							</div>
+						</div>
+						<div class="product_description">
+							<h4 class="product_title">
+								<?= $productMainInfo['name'] . ' ' . $colorName; ?>
+							</h4>
+							<span class="product_price">
+								<?= priceFormat($productMainInfo['discount_price']); ?>
+							</span>
+							<?php if (count($colors) != 1 && $colors[0]['name'] != 'standart') : ?>
+								<div class="product_color">
+									Цвет
+									<div class="product_colors_blocks">
+										<?php foreach ($colors as $color) : ?>
+											<?= '<a href="' . $_GET['product_url_name'] . '-' . $color['name'] . '">'; ?>
+											<div class="color_block" style="background-color: <?= $color['name']; ?>"></div>
+											<?= '</a>'; ?>
+										<?php endforeach; ?>
+									</div>
+								</div>
+							<?php endif; ?>
+							<div class="product_specifications">
+								<?php foreach ($mainSpec as $mainSpecKey => $mainSpecValue) : ?>
+									<div class="specification_row">
+										<div class="key">
+											<?= $mainSpecKey; ?>
+										</div>
+										<div class="value">
+											<?= $mainSpecValue; ?>
+										</div>
+									</div>
+								<?php endforeach ?>
+							</div>
+							<div class="product_buttons d-flex">
+								<button class="product__btn button_add_product_to_cart" id="add_product_to_cart_from_prod">
+									В корзину
+									<span>
+										Товар добавлен
+									</span>
+									<i class="fas fa-shopping-cart"></i>
+								</button>
+								<button class="button_fast_order">
+									<span>
+										Быстрый заказ
+									</span>
+								</button>
+							</div>
+						</div>	
+				</div>
+			</div>
+		</div>
+	</section>
+
+
 	<section>
 		<div class="default_container product_menu_background">
 			<div class="product_menu_container">

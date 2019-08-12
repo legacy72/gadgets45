@@ -83,6 +83,9 @@
 }
 
 /* == Product at Shopping Cart == */
+.s-cart{
+	padding-bottom: 0;
+}
 
 .cart_item{
     width: 100%;
@@ -124,7 +127,6 @@
 .cart__pic{
     height: 160px;
     width: 220px;
-    padding: 12px;
     /*background: #fff;*/
 }
 
@@ -166,6 +168,8 @@
 .cart__price{
     font-size: 16px;
     font-weight: 700;
+    min-width: 100px;
+    margin-right: 15px;
 }
 
 .cart__count{
@@ -188,6 +192,50 @@
     background: #fff;
 }
 
+.count_orders b,
+.sum_orders b{
+	min-width: 100px;
+	min-height: 43px;
+	line-height: 43px;
+	text-align: right;
+}
+
+/* == Input Order ==*/
+form input{
+	
+}
+
+form input:required{
+	box-shadow:none;xx
+}
+
+form input[type="text"]:focus,
+form input[type="tel"]:focus,
+form input[type="email"]:focus,
+form textarea:focus{
+	border-bottom: 3px solid #0093ed;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	outline: none!important;
+}
+
+form input[type="text"]:not(:placeholder-shown),
+form input[type="tel"]:not(:placeholder-shown),
+form input[type="email"]:not(:placeholder-shown){
+	border: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	border-bottom: 3px solid firebrick;
+}
+
+form input[type="text"]:valid,
+form input[type="tel"]:valid,
+form input[type="email"]:valid{
+	border: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	border-bottom: 3px solid green;
+}
 
 /* == Crumbs ==*/
 .s-crumbs{
@@ -669,7 +717,6 @@ select::-ms-expand {  /* для IE */
 	position: absolute;
 	left: 50%;
 	top: 50%;
-	width: 200%;
 	transform: translate(-50%, -50%);
 	font-family: "OpenSansBold", Arial, sans-serif;
 }

@@ -36,12 +36,12 @@
 						Корзина
 					</h2>
 				</div>
-				<div class="col-lg-8">
+				<div class="col-12 order-1 order-lg-0 col-lg-8">
 					<div class="cart_items">
 						
 					</div>
 				</div>
-				<div class="col-lg-4">
+				<div class="col-12 col-lg-4">
 					<div class="cart_result">
 						<div class="result_info">
 							<div class="cart_res_descr">
@@ -67,69 +67,10 @@
 		</div>		
 	</section>
 
-
-	<section>
-		<? require_once('templates/stock_items.php'); ?>
-	</section>
-
-		
-
-				
-
-		
-		
-		<section>
-			<div class="default_container new_section_container">
-				<div class="advantages">
-					<div class="advantage_item">
-						<div class="advantage_image">
-							<img src="images/truck.png">
-						</div>
-						<div class="advantage_description">
-							Бесплатная
-							<br>
-							и быстрая доставка
-						</div>
-					</div>
-					<div class="advantage_item">
-						<div class="advantage_image">
-							<img src="images/clock.png">
-						</div>
-						<div class="advantage_description">
-							Работа
-							<br>
-							Без выходных
-						</div>
-					</div>
-					<div class="advantage_item">
-						<div class="advantage_image">
-							<img src="images/coins.png">
-						</div>
-						<div class="advantage_description">
-							Отсутствие предоплаты
-							<br>
-						</div>
-					</div>
-					<div class="advantage_item">
-						<div class="advantage_image">
-							<img src="images/thumbs_up.png">
-						</div>
-						<div class="advantage_description">
-							Гарантия качества
-							<br>
-							и простой возврат
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-	</main>
-
+	<? require_once('templates/stock_items.php'); ?>
+	<? require_once('html_templates/benefits.php'); ?>
 	<? require_once('html_templates/footer.php'); ?>
 	<? require_once('html_templates/scripts_imports.php'); ?>
-
-	<script src="slick-master/slick/slick.min.js" type="text/javascript"></script>
-	<script src="scripts/catalog-carousel.js" type="text/javascript"></script>
 	
 </body>
 </html>

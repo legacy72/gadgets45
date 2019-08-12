@@ -96,87 +96,52 @@ $stocks = getBestSellersOrStocks($dbh, 'stock');
 		</div>
 	</header>
 	<main class="main" id="main">
-		<section class="s-shares" id="s-shares">
-			<div class="container">
-				<div class="row">
-					<div class="col-12">
-						<div class="shares">
-							<h2 class="s-title">
-								Наши акции
-							</h2>
-							<div class="shares-slider">
-								<?php foreach($stocks as $stock): ?>
-									<?='<a href="/catalog/'. concatCategoryAndFullName($stock['category_name'], $stock['url_name'], $stock['color_name']). '" class="slide d-flex">';?>
-										<div class="slide__pic">
-											<?='<img src="'. PRODUCT_IMAGES_PATH . $stock['image_name']. '" alt="'. getProductNameWithColor($stock['name'], $stock['color_name']). '">';?>
-										</div>
-										<div class="slide__descr d-flex">
-											<h4 class="slide__head">
-												<?=getProductNameWithColor($stock['name'], $stock['color_name']); ?>
-											</h4>
-											<div class="slide__price">
-												<span class="slide__price_new product__price_new">
-													<?=priceFormat($stock['discount_price']); ?>
-												</span>
-												<span class="slide__price_old">
-													<?=priceFormat($stock['price']); ?>
-												</span>
-											</div>
-										</div>
-									</a>
-								<?php endforeach;?>
-							</div>
-							<div class="shares-slider__dots"></div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
 		<section class="s-bestseller" id="s-bestseller">
-			<div class="container">
-				<div class="row">
-					<div class="col-12">
-						<div class="bestseller">
-							<h2 class="s-title">
-								Хиты продаж
-							</h2>
-							<div class="bestseller-slider">
-								<?php foreach($bestsellers as $bestseller): ?>
-									<div class="slide">
-										<div class="slide__pic">
-											<?='<a href="/catalog/'. concatCategoryAndFullName($bestseller['category_name'], $bestseller['url_name'], $bestseller['color_name']). '" class="product_ref">'; ?>
-											<?='<img src="'. PRODUCT_IMAGES_PATH . $bestseller['image_name']. '" alt="'. getProductNameWithColor($bestseller['name'], $bestseller['color_name']). '">';?>
-											</a>
-										</div>
-										<div class="slide__descr d-flex">
-											<?='<h4 class="slide__head" ptc_id="'. $bestseller['ptc_id']. '">'; ?>
-												<?=getProductNameWithColor($bestseller['name'], $bestseller['color_name']); ?>
-											</h4>
-											<div class="slide__price">
-												<span class="slide__price_new product__price_new discount_price product_price">
-													<?=priceFormat($bestseller['discount_price']); ?>
-												</span>
-												<span class="slide__price_old standart_price">
-													<?=priceFormat($bestseller['price']); ?>
-												</span>
-											</div>
-											<button class="slide__btn buy-btn button_add_product_to_cart add_product_to_cart_main product__btn">
-												В корзину
-												<span>
-													Товар добавлен
-												</span>
-												<i class="fas fa-shopping-cart"></i>
-											</button>
-										</div>
-									</div>
-								<?php endforeach; ?>
-							</div>
-							<div class="bestseller-slider__dots"></div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="bestseller">
+                            <h2 class="s-title">
+                                Хиты продаж
+                            </h2>
+                            <div class="bestseller-slider">
+                                <?php foreach($bestsellers as $bestseller): ?>
+                                    <div class="slide">
+                                        <div class="slide__pic">
+                                            <?='<a href="/catalog/'. concatCategoryAndFullName($bestseller['category_name'], $bestseller['url_name'], $bestseller['color_name']). '" class="product_ref">'; ?>
+                                            <?='<img src="'. PRODUCT_IMAGES_PATH . $bestseller['image_name']. '" alt="'. getProductNameWithColor($bestseller['name'], $bestseller['color_name']). '">';?>
+                                            </a>
+                                        </div>
+                                        <div class="slide__descr d-flex">
+                                            <?='<h4 class="slide__head" ptc_id="'. $bestseller['ptc_id']. '">'; ?>
+                                                <?=getProductNameWithColor($bestseller['name'], $bestseller['color_name']); ?>
+                                            </h4>
+                                            <div class="slide__price">
+                                                <span class="slide__price_new product__price_new discount_price product_price">
+                                                    <?=priceFormat($bestseller['discount_price']); ?>
+                                                </span>
+                                                <span class="slide__price_old standart_price">
+                                                    <?=priceFormat($bestseller['price']); ?>
+                                                </span>
+                                            </div>
+                                            <button class="slide__btn buy-btn button_add_product_to_cart add_product_to_cart_main product__btn">
+                                                В корзину
+                                                <span>
+                                                    Товар добавлен
+                                                </span>
+                                                <i class="fas fa-shopping-cart"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                <?php endforeach; ?>
+                            </div>
+                            <div class="bestseller-slider__dots"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+		<? require_once('templates/stock_items.php'); ?>
 		<section class="s-list" id="s-list">
 			<div class="container">
 				<div class="row">
@@ -265,52 +230,7 @@ $stocks = getBestSellersOrStocks($dbh, 'stock');
 			</div>
 		</div>
 		</section>
-		<section class="s-benefits" id="s-benefits">
-			<div class="container">
-				<div class="row">
-					<div class="col-12 col-sm-6 col-lg-3">
-						<div class="benefit">
-							<div class="benefit__pic">
-								<img src="images/icons/truck.png" alt="Бесплатная и быстрая доставка">
-							</div>
-							<h6 class="benefit__title">
-								Бесплатная <br> и быстрая доставка
-							</h6>
-						</div>
-					</div>
-					<div class="col-12 col-sm-6 col-lg-3">
-						<div class="benefit">
-							<div class="benefit__pic">
-								<img src="images/icons/clock.png" alt="Работа без выходных">
-							</div>
-							<h6 class="benefit__title">
-								Работа <br> без выходных
-							</h6>
-						</div>
-					</div>
-					<div class="col-12 col-sm-6 col-lg-3">
-						<div class="benefit">
-							<div class="benefit__pic">
-								<img src="images/icons/coins.png" alt="Отсутствие переплаты">
-							</div>
-							<h6 class="benefit__title">
-								Отсутствие переплаты
-							</h6>
-						</div>
-					</div>
-					<div class="col-12 col-sm-6 col-lg-3">
-						<div class="benefit">
-							<div class="benefit__pic">
-								<img src="images/icons/thumbs_up.png" alt="Гарантия качества и простой возврат">
-							</div>
-							<h6 class="benefit__title">
-								Гарантия качества и простой возврат
-							</h6>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
+		<? require_once('html_templates/benefits.php'); ?>
 	</main>
 	<? require_once('html_templates/footer.php'); ?>
 

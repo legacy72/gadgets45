@@ -140,4 +140,15 @@ define(
 	)
 );
 
+define(
+	"COLORS_TO_RGB", array(
+		"white" => "#fff",
+		"blue" => "#00f",
+		"red" => "#f56",
+		"grey" => "#f6f6f6",
+		"gold" => "#af3",
+		"black" => "#000",
+	)
+);
+
 ?>

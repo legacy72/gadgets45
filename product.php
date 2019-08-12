@@ -103,9 +103,9 @@ $colors = getProductColors($dbh, $productMainInfo['id']);
 										<?php foreach ($colors as $color) : ?>
 											<?= '<a href="' . $_GET['product_url_name'] . '-' . $color['name'] . '">'; ?>
 											<? if ($color['name'] == mb_strtolower($colorName)): ?>
-												<div class="color_block active" style="background-color: <?= $color['name']; ?>"></div>
+												<div class="color_block active" style="background-color: <?= COLORS_TO_RGB[$color['name']]; ?>"></div>
 											<? else: ?>
-												<div class="color_block" style="background-color: <?= $color['name']; ?>"></div>
+												<div class="color_block" style="background-color: <?= COLORS_TO_RGB[$color['name']]; ?>"></div>
 											<? endif; ?>
 											<?= '</a>'; ?>
 										<?php endforeach; ?>

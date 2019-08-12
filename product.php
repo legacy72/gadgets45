@@ -102,7 +102,11 @@ $colors = getProductColors($dbh, $productMainInfo['id']);
 									<div class="product_colors_blocks">
 										<?php foreach ($colors as $color) : ?>
 											<?= '<a href="' . $_GET['product_url_name'] . '-' . $color['name'] . '">'; ?>
-											<div class="color_block" style="background-color: <?= $color['name']; ?>"></div>
+											<? if ($color['name'] == mb_strtolower($colorName)): ?>
+												<div class="color_block active" style="background-color: <?= $color['name']; ?>"></div>
+											<? else: ?>
+												<div class="color_block" style="background-color: <?= $color['name']; ?>"></div>
+											<? endif; ?>
 											<?= '</a>'; ?>
 										<?php endforeach; ?>
 									</div>
@@ -139,53 +143,59 @@ $colors = getProductColors($dbh, $productMainInfo['id']);
 			</div>
 		</div>
 	</section>
-
-
-	<section>
-		<div class="default_container product_menu_background">
-			<div class="product_menu_container">
-				<div class="product_menu">
-					<ul>
-						<li><a id="product_description">Описание</a></li>
-						<li><a id="product_specifications">Технические характеристики</a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-
-		<div class="product_info_descr_block product_info">
-			<div class="product_info_title">
-				<?= $productMainInfo['description_title']; ?>
-			</div>
-			<div class="product_info_text">
-				<?= $productMainInfo['description_text']; ?>
-			</div>
-		</div>
-
-		<div class="product_info_specs_block product_info">
-			<?php foreach ($specificationsByGroups as $specGroupKey => $specGroupValue) : ?>
-				<div class="specifications_group_block">
-					<div class="specification_category">
-						<?= CATEGORY_GROUP_ENG_TO_RUS[$specGroupKey]; ?>
+	<section class="s-tech" id="s-tech">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<div class="tech-info">
+						<ul class="tech-mnu d-flex">
+							<li class="tech-mnu__item">
+								<a id="product_description">
+									Описание 
+								</a>
+							</li>
+							<li class="tech-mnu__item">
+								<a id="product_specifications">
+									<span class="d-none d-sm-inline">Технические</span> характеристики
+								</a>
+							</li>
+						</ul>
 					</div>
-					<?php for ($i = 0; $i < count($specGroupValue); $i++) : ?>
-						<?php foreach ($specGroupValue[$i] as $specKey => $specValue) : ?>
-							<div class="specification_block">
-								<div class="specification_key">
-									<?= $specKey; ?>
+					
+					<div class="product_info_descr_block product_info">
+						<div class="product_info_title">
+							<?= $productMainInfo['description_title']; ?>
+						</div>
+						<div class="product_info_text">
+							<?= $productMainInfo['description_text']; ?>
+						</div>
+					</div>
+					<div class="product_info_specs_block product_info">
+						<?php foreach ($specificationsByGroups as $specGroupKey => $specGroupValue) : ?>
+							<div class="specifications_group_block">
+								<div class="specification_category">
+									<?= CATEGORY_GROUP_ENG_TO_RUS[$specGroupKey]; ?>
 								</div>
-								<div class="specification_value">
-									<?= $specValue; ?>
-								</div>
+								<?php for ($i = 0; $i < count($specGroupValue); $i++) : ?>
+									<?php foreach ($specGroupValue[$i] as $specKey => $specValue) : ?>
+										<div class="specification_block">
+											<div class="specification_key">
+												<?= $specKey; ?>
+											</div>
+											<div class="specification_value">
+												<?= $specValue; ?>
+											</div>
+										</div>
+									<?php endforeach; ?>
+								<?php endfor; ?>
 							</div>
 						<?php endforeach; ?>
-					<?php endfor; ?>
+					</div>
 				</div>
-			<?php endforeach; ?>
-
+			</div>
 		</div>
 	</section>
-	</main>
+	<? require_once('html_templates/footer.php'); ?>
 	<!-- Modal Quick Order -->
 	<div style="display: none;">
 	    <div class="box-modal quick-order" id="quickOrder">
@@ -227,7 +237,7 @@ $colors = getProductColors($dbh, $productMainInfo['id']);
 	       </div>
 	    </div>
 
-	<? require_once('html_templates/footer.php'); ?>
+	
 	<!-- Modal Call Back -->
 	<? require_once('html_templates/modal_call_back.php') ?>;
 	<!-- Scripts -->

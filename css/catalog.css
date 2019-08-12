@@ -239,7 +239,8 @@ form input[type="email"]:valid{
 
 /* == Crumbs ==*/
 .s-crumbs{
-	padding: 0
+	padding: 0;
+	flex-wrap: wrap;
 }
 .crumbs__item{
 	margin-right: 20px;
@@ -294,6 +295,10 @@ form input[type="email"]:valid{
 	left: -22px;
 }
 
+input[type="radio"] + .variants_value::after{
+	border-radius: 50%;
+}
+
 .variants_value::before{
 	position: absolute;
 	content: '';
@@ -304,6 +309,10 @@ form input[type="email"]:valid{
 	left: -20px;
 	transition: all .4s ease;
 	opacity: 0;
+}
+
+input[type="radio"] + .variants_value::before{
+	border-radius: 50%;
 }
 
 input.price_range{
@@ -731,6 +740,10 @@ select::-ms-expand {  /* для IE */
 	animation-name: added;
 	-moz-animation-name: added;
 	-webkit-animation-name: added;
+}
+
+.s-tech{
+	padding-top: 0;
 }
 
 @keyframes added{

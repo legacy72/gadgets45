@@ -33,6 +33,7 @@ $currentPage = 1;
 	<meta charset="utf-8">
 	<title>Каталог</title>
 	<? require_once('html_templates/links.php'); ?>
+	<? require_once('html_templates/links_favicons.php'); ?>
 </head>
 <body>
 	<? require_once('html_templates/header.php'); ?>

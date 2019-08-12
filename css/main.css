@@ -811,6 +811,24 @@
     .cart_result{
         margin-bottom: 30px;
     }
+    .specifications_group_block{
+        width: 100%;
+    }
+    .single-product{
+        flex-direction: column;
+    }
+    .product_description{
+        width: 100%;
+        margin-top: 25px;
+    }
+    .main_image{
+        width: 400px;
+        height: 300px;
+        margin: 0 auto;
+    }
+    .product_images{
+        margin: 0 auto;
+    }
 }
 
 
@@ -935,6 +953,39 @@
 /* Extra Small Devices, Phones */
 
 @media only screen and (max-width: 575.98px) {
+    .product_description{
+        padding: 0;
+        width: 100%;
+    }
+    .single-product{
+        padding: 0;
+    }
+    .tech-mnu{
+        padding: 0;
+        font-size: 14px;    
+        text-transform: uppercase;
+        
+        /*flex-direction: column;*/
+    }
+    .tech-mnu__item a#product_description,
+    .tech-mnu__item a#product_specifications{
+        padding: 0;
+        text-align: center;
+        
+        /*flex-direction: column;*/
+    }
+    .tech-mnu__item{
+        padding: 0;
+        margin: 0;
+        width: 50%;
+    }
+    .product_images{
+        width: 100%;
+    }
+    .tech-info{
+        padding: 0;
+        height: auto;
+    }
     .slide__price{
         max-width: 100%;
     }

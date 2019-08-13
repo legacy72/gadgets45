@@ -334,7 +334,7 @@ input[type="radio"]:checked + .variants_value::before {
 	background: #f3f3f3;
 	border-left: 1px solid #ccc;
 	border-right: 1px solid #ccc;
-	display: none;
+	/*display: none;*/
 	max-width: 400px;
 		margin: 0 auto;
 }
@@ -366,10 +366,11 @@ input[type="radio"]:checked + .variants_value::before {
 	transform: rotate(0deg);
 	transition: all .4s ease;
 	text-align: center;
+	transform: rotate(90deg);
 }
 
 .filter-toggle i.expanded{
-	transform: rotate(90deg);
+	transform: rotate(0);
 }
 
 .filter__head{
@@ -378,7 +379,7 @@ input[type="radio"]:checked + .variants_value::before {
 	padding: 15px;
 	border-bottom: 1px solid #ccc;
 	cursor: pointer;
-	transition: all .4s ease;
+	transition: all .7s ease;
 	display: -webkit-flex;
 	display: -moz-flex;
 	display: -ms-flex;

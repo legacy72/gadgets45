@@ -261,6 +261,7 @@ $currentPage = 1;
 	</section>
 
 	<? require_once('html_templates/footer.php'); ?>
+	<? require_once('html_templates/modal_call_back.php'); ?>
 	<? require_once('html_templates/scripts_imports.php'); ?>
 </body>
 </html>

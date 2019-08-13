@@ -143,7 +143,8 @@ $(function() {
         collapsible: true,
         header: '.filter__head',
         heightStyle: 'content',
-        active: 1
+        active: 1,
+        animate: 700
     });
   
     $('.filter__head').click(function () {
@@ -164,7 +165,7 @@ $(function() {
 
     // Filter Toggle
     $('.filter-toggle').click(function () {
-        $('.filter').slideToggle();
+        $('.filter').slideToggle(700);
         $('.filter-toggle').find('i').toggleClass('expanded');
     });
 

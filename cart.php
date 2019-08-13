@@ -70,6 +70,7 @@
 	<? require_once('templates/stock_items.php'); ?>
 	<? require_once('html_templates/benefits.php'); ?>
 	<? require_once('html_templates/footer.php'); ?>
+	<? require_once('html_templates/modal_call_back.php'); ?>
 	<? require_once('html_templates/scripts_imports.php'); ?>
 	
 </body>

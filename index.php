@@ -28,6 +28,8 @@ $stocks = getBestSellersOrStocks($dbh, 'stock');
 	<meta property="og:image" content="images/preview.jpg">
 	<meta property="og:site_name" content="Gadgets45">
 	<meta name="robots" content="noindex, follow">
+	<!-- Phones Link Detection -->
+	<meta name = "format-detection" content = "telephone=no">
 	<!-- Head Color -->
 	<meta name="theme-color" content="#0093ed" />
 	<!-- CSS Styles -->
@@ -38,6 +40,7 @@ $stocks = getBestSellersOrStocks($dbh, 'stock');
 
 	<!-- Header -->
 	<header class="header" id="header">
+		<? require_once('html_templates/preloader.php'); ?>
 		<? require_once('html_templates/header.php'); ?>
 		<div class="offer">
 			<div class="container">

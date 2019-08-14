@@ -97,12 +97,24 @@ $(function() {
     });
 
     // Personal Data Agreement Check
-    $('#personal-data').change(function() {
-        if ($('#personal-data').prop('checked')) {
-            $('.form-order__btn').attr('disabled', false)
+    var name = $('#name_customer_quick_order');
+    var phone = $('#phone_customer_quick_order');
+    var email = $('#email_customer_quick_order');
+
+    $('#quickOrder input').keyup(function() {
+        // if(name.valid() && phone.valid() && email.valid()){
+        // if(name.val() !='' && phone.val() !='' && email.val() !=''){
+        if(name.length !=0 && phone.length !=0 && email.length !=0){
+            $('#personal-data').change(function() {
+                if ($('#personal-data').prop('checked')) {
+                    $('.form-order__btn').attr('disabled', false);
+                } else {
+                    $('.form-order__btn').attr('disabled', true);
+                }
+            }); 
         } else {
-            $('.form-order__btn').attr('disabled', true)
-        };
+            $('.form-order__btn').attr('disabled', true);
+        }
     });
 
     // Quick Order Modal
@@ -145,7 +157,7 @@ $(function() {
         header: '.filter__head',
         heightStyle: 'content',
         active: 1,
-        animate: 700
+        // animate: 700
     });
   
     $('.filter__head').click(function () {
@@ -166,7 +178,7 @@ $(function() {
 
     // Filter Toggle
     $('.filter-toggle').click(function () {
-        $('.filter').slideToggle(700);
+        $('.filter').slideToggle(400);
         $('.filter-toggle').find('i').toggleClass('expanded');
     });
 

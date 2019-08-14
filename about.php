@@ -6,6 +6,7 @@
 	<? require_once('html_templates/links.php'); ?>
 </head>
 <body class="about_background">
+	<? require_once('html_templates/preloader.php'); ?>
 	<? require_once('html_templates/header.php'); ?>
 			<div class="default_container new_container">
 				<div class="navigation_menu">

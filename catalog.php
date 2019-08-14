@@ -36,6 +36,7 @@ $currentPage = 1;
 	<? require_once('html_templates/links_favicons.php'); ?>
 </head>
 <body>
+
 	<? require_once('html_templates/header.php'); ?>
 	
 	<section class="s-crumbs" id="s-crumbs">
@@ -204,6 +205,12 @@ $currentPage = 1;
 				</div>
 				<div class="col-12 order-0 order-sm-1 order-lg-0 col-lg-8 col-xl-9">
 					<div class="catalog">
+						<div class="catalog preloader">
+							<div class="preloader-img">
+								<img class="gear" src="../images/loader.svg" alt="Загрузка">
+								Gadgets45
+							</div>
+						</div>
 						<div class="catalog_items_block">
 							<div class="products catalog_items d-flex">
 								<?php foreach($productItems as $product): ?>

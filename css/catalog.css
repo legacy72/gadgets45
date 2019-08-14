@@ -538,7 +538,7 @@ select::-ms-expand {  /* для IE */
 	width: 100%;
 	font-size: 30px;
 	text-align: center;
-	line-height: 500px;
+	height: 500px;
 	color: #ccc;
 	display: -webkit-flex;
 	display: -moz-flex;
@@ -549,6 +549,30 @@ select::-ms-expand {  /* для IE */
 	-ms-align-items: center;
 	align-items: center;
 }
+
+.nothing img{
+	width: 100px;
+	height: 100px;
+}
+.no-data{
+	height: 150px;
+	font-size: 36px;
+	color: #0093ed;
+	font-weight: 700;
+	padding-left: 25px;
+	position: relative;
+}
+
+.no-data::after{
+	position: absolute;
+	content: 'Ничего не найдено:(';
+	right: 36%;
+	bottom: 33px;
+	font-size: 14px;
+	color: #9a85b2;
+	font-weight: 400;
+}
+
 
 
 .products{

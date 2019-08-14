@@ -62,16 +62,15 @@ $(document).ready(function() {
             data: data,
             beforeSend: function() {
                 // передалать на вертящуюся загрузку
-                $('.catalog_items_block').html('<span class="nothing"><img src="/images/ripple.svg" alt="Загрузка..."></span>');
+                $('.catalog_items_block').html('<span class="nothing"><img src="/images/loader.svg" alt="Загрузка..."></span>');
             },
             success: function(data) {
                 if(data !== ''){
                     $('.catalog_items_block').html(data);
                 }
                 else {
-                    $('.catalog_items_block').html('<span class="nothing">Ничего не найдено</span>');
+                    $('.catalog_items_block').html('<div class="nothing no-data"><img class="gear" src="../images/loader.svg" alt="Загрузка"> Gadgets45</div>');
                 }
-
             }
         });
     }

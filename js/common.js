@@ -1,5 +1,6 @@
 $(function() {
 
+   
 
     // Smooth scrolling
     var $page = $('html, body');
@@ -198,9 +199,9 @@ $(function() {
 
 
 
+});
 
-
-
-
-
+ // Preloader
+$(window).on('load', function() {
+    $('.preloader').delay(1500).fadeOut(800);
 });

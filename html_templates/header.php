@@ -1,3 +1,12 @@
+<!-- Preloader -->
+<div class="preloader">
+	<div class="preloader-img">
+		<img class="gear" src="../images/loader.svg" alt="Загрузка">
+		Gadgets45
+	</div>
+</div>
+
+<!-- Navigation -->
 <nav class="main-nav">
 	<div class="container">
 		<div class="row">

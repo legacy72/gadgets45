@@ -67,7 +67,6 @@ $colors = getProductColors($dbh, $productMainInfo['id']);
 		<div class="container">
 			<div class="row">
 				<div class="col-12">
-
 					<div class="single-product d-flex">
 						<?= '<div class="product_container" ptc_id="' . $productMainInfo['ptc_id'] . '">'; ?>
 							<div class="product_images">

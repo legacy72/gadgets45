@@ -1,6 +1,7 @@
 <!-- Bootstrap -->
 <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
 <!-- CSS Styles -->
+<link rel="stylesheet" href="/Magnific-popup/magnific-popup.css">
 <link rel="stylesheet" href="/css/libs.min.css">
 <!-- Header CSS (First Sections of Website: paste after release from header.min.css here) -->
 <style></style>

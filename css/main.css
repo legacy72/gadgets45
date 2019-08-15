@@ -34,6 +34,12 @@
 
 /* ==== MAIN ==== */
 
+/* == MFP Customization == */
+.mfp-figure::after{
+    background: none;
+    box-shadow: none;
+}
+
 /* == Preloader == */
 .catalog{
     position: relative;

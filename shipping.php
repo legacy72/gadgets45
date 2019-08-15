@@ -20,8 +20,8 @@
 							</a>
 						</li>
 						<li class="crumbs__item">
-							<a href="/about">
-								О компании
+							<a href="/shipping">
+								Оплата и доставка
 							</a>
 						</li>
 					</ul>
@@ -35,31 +35,13 @@
 				<div class="col-12 col-lg-9 col-xl-7">
 					<div class="about">
 						<h2 class="s-title about__title">
-							О компании
+							Оплата и доставка
 						</h2>
-						<p class="about__txt">
-							&#171;Gadgets45&#187; - российский магазин цифровой электротехники.
-						</p>
-						<p class="about__txt">
-							Магазин &#171;Gadgets45&#187; охватывает территорию Курганской области и доставляет товар в любую ее точку.
-						</p>
-						<p class="about__txt">
-							Бренд придерживается следующей философии: 
-						</p>
 						<ul class="about__list">
 							<li>
-								Потребителю предоставляется самая актуальная информация; 
-							</li>
-							<li>
-								Потребитель не должен переплачивать; 
-							</li>
-							<li>
-								Потребителю должно быть выгодно и удобно пользоваться нашим магазином.
+								Страница в разработке :)
 							</li>
 						</ul>
-						<p class="about__txt">
-							Эти и еще многие другие принципы выполняются нами при помощи удобного, понятного интернет-магазина, оперативной службы поддержки и очень быстрой службы доставки!
-						</p>
 					</div>
 				</div>
 			</div>
@@ -171,36 +153,6 @@
 			</div>
 		</div>
 	</section>
-
-<!-- <div class="col-lg-5">
-					<div class="contacts">
-						<h2 class="s-title about__title">
-							Контакты
-						</h2>
-						<div class="contacts__body">
-							<p class="contacts__info">
-								Телефон:
-								<a href="tel:+79164486284">
-									+7 916 448 62 84
-								</a>
-							</p>
-							<p class="contacts__info">
-								E-mail:
-								<a href="mailto:sitename@gmail.com">
-									sitename@gmail.com
-								</a>
-							</p>
-							<p class="contacts__info">
-								Адрес:
-								<span>
-									город, улица, дом
-								</span>
-							</p>
-						</div>
-					</div>
-				</div> -->
-
-
 	<? require_once('html_templates/footer.php'); ?>
 	<? require_once('html_templates/scripts_imports.php'); ?>
 

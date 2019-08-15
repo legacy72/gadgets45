@@ -22,7 +22,7 @@
 						</a>
 					</li>
 					<li class="mnu__item">
-						<a href="/about">
+						<a href="/contacts">
 							Контакты
 						</a>
 					</li>
@@ -83,17 +83,17 @@
 			<div class="order-1 order-md-0 col-12 col-sm-8 col-md-6 col-lg-5">
 				<ul class="add-mnu d-flex">
 					<li class="add-mnu__item">
-						<a href="#">
+						<a href="/shipping">
 							Оплата и доставка
 						</a>
 					</li>
 					<li class="add-mnu__item">
-						<a href="#">
+						<a href="/guarantee">
 							Гарантии
 						</a>
 					</li>
 					<li class="add-mnu__item">
-						<a href="#">
+						<a href="/return">
 							Возврат
 						</a>
 					</li>

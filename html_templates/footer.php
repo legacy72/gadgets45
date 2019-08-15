@@ -14,18 +14,13 @@
 						</a>
 					</li>
 					<li class="footer-mnu__item">
-						<a href="#">
+						<a href="/catalog">
 							Каталог
 						</a>
 					</li>
 					<li class="footer-mnu__item">
-						<a href="#">
+						<a href="/contacts">
 							Контакты
-						</a>
-					</li>
-					<li class="footer-mnu__item">
-						<a href="#">
-							Помощь
 						</a>
 					</li>
 				</ul>

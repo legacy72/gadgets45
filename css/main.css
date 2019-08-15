@@ -727,6 +727,9 @@
 /* Medium Devices, Desktops */
 
 @media only screen and (max-width: 991.98px) {
+    .requisites{
+        font-size: 16px;
+    }
     .order_contacts,
     .order_info{
         width: 330px;
@@ -994,6 +997,17 @@
 /* Extra Small Devices, Phones */
 
 @media only screen and (max-width: 575.98px) {
+    .bg{
+        font-size: 50px;
+        width: 310px;
+    }
+    .requisites__data li{
+        flex-direction: column;
+    }
+    .requisites__data li span:nth-child(n){
+        width: 100%;
+        background: #fff;
+    }
     .product_description{
         padding: 0;
         width: 100%;

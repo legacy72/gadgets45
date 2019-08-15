@@ -101,10 +101,10 @@ $(function() {
     var phone = $('#phone_customer_quick_order');
     var email = $('#email_customer_quick_order');
 
-    $('#quickOrder input').keyup(function() {
+    $('#quickOrder input').on('focus', function() {
         // if(name.valid() && phone.valid() && email.valid()){
-        // if(name.val() !='' && phone.val() !='' && email.val() !=''){
-        if(name.length !=0 && phone.length !=0 && email.length !=0){
+        if(name.val() !='' && phone.val() !='' && email.val() !=''){
+        // if(name.length !=0 && phone.length !=0 && email.length !=0){
             $('#personal-data').change(function() {
                 if ($('#personal-data').prop('checked')) {
                     $('.form-order__btn').attr('disabled', false);
@@ -215,5 +215,5 @@ $(function() {
 
  // Preloader
 $(window).on('load', function() {
-    $('.preloader').delay(1500).fadeOut(800);
+    $('.preloader').fadeOut(800);
 });

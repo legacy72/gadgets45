@@ -232,17 +232,16 @@ $currentPage = 1;
 										Кол-во на складе:
 										<span><?=$product['quantity'];?></span>
 									</p>
+
 									<div class="product__price item_price d-flex">
 										<?
-										if ($product['discount_price'] != $product['price'])
-											echo '<span class="product__price_old dashed standart_price">'. $product['price']. '</span>';
+										if ($product['discount_price'] != $product['price']){
+										echo '<span class="product__price_old dashed standart_price">'. $product['price']. '</span>';
+										echo '<span class="product__price_new discount_price">'.$product['discount_price'].'</span>';
+										}
 										else
-											echo '<span class="product__price_old standart_price">'. $product['price']. '</span>';
-							
-										?>
-										<?
-										if ($product['discount_price'] != $product['price'])
-											echo '<span class="product__price_new discount_price">'.$product['discount_price'].'</span>';
+										echo '<span class="product__price_old standart_price">'. $product['price']. '</span>';
+
 										?>
 									</div>
 									<div class="product-wrap item_button d-flex">

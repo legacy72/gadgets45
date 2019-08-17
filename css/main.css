@@ -1,6 +1,6 @@
 /* OpenSans Fonts */
 
-@font-face {
+/*@font-face {
     font-family: "OpenSansRegular";
     font-style: normal;
     font-weight: normal;
@@ -8,29 +8,20 @@
 }
 
 @font-face {
-    font-family: "OpenSansSemibold";
+    font-family: "Roboto";
     font-style: normal;
     font-weight: normal;
-    src: url("../fonts/OpenSansSemibold/OpenSans-Semibold.eot?#iefix") format("embedded-opentype"), url("../fonts/OpenSansSemibold/OpenSans-Semibold.woff2") format("woff2"), url("../fonts/OpenSansSemibold/OpenSans-Semibold.woff") format("woff"), url("../fonts/OpenSansSemibold/OpenSans-Semibold.ttf") format("truetype"), url("../fonts/OpenSansSemibold/OpenSans-Semibold.svg#OpenSansSemibold") format("svg");
+    src: url("../fonts/Roboto/OpenSans-Semibold.eot?#iefix") format("embedded-opentype"), url("../fonts/Roboto/OpenSans-Semibold.woff2") format("woff2"), url("../fonts/Roboto/OpenSans-Semibold.woff") format("woff"), url("../fonts/Roboto/OpenSans-Semibold.ttf") format("truetype"), url("../fonts/Roboto/OpenSans-Semibold.svg#Roboto") format("svg");
 }
 
 @font-face {
-    font-family: "OpenSansBold";
+    font-family: "Roboto";
     font-style: normal;
     font-weight: normal;
-    src: url("../fonts/OpenSansBold/OpenSans-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/OpenSansBold/OpenSans-Bold.woff2") format("woff2"), url("../fonts/OpenSansBold/OpenSans-Bold.woff") format("woff"), url("../fonts/OpenSansBold/OpenSans-Bold.ttf") format("truetype"), url("../fonts/OpenSansBold/OpenSans-Bold.svg#OpenSansBold") format("svg");
+    src: url("../fonts/Roboto/OpenSans-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/Roboto/OpenSans-Bold.woff2") format("woff2"), url("../fonts/Roboto/OpenSans-Bold.woff") format("woff"), url("../fonts/Roboto/OpenSans-Bold.ttf") format("truetype"), url("../fonts/Roboto/OpenSans-Bold.svg#Roboto") format("svg");
 }
 
-
-
-/* Colors */
-
-
-/* Fonts */
-
-
-/* Transition */
-
+*/
 
 /* ==== MAIN ==== */
 
@@ -68,8 +59,8 @@
     align-items: center;
     z-index: 5000;
     color: #0093ed;
-    font-size: 36px;
-    font-weight: 700;
+    font-size: 50px;
+    font-weight: 400;
     background: #fff;
 }
 
@@ -145,7 +136,7 @@
 }
 
 .shares-slider .slide__price_new {
-    font-family: "OpenSansSemibold", Arial, sans-serif;
+    font-family: "Roboto", Arial, sans-serif;
     font-size: 20px;
 }
 
@@ -276,7 +267,7 @@
     -ms-flex-pack: justify;
     justify-content: space-between;
     font-size: 20px;
-    font-family: "OpenSansSemibold", Arial, sans-serif;
+    font-family: "Roboto", Arial, sans-serif;
 }
 
 .bestseller-slider .slide__price_new {
@@ -307,7 +298,7 @@
     background: -o-linear-gradient(left, #9a85b2, #0093ed);
     background: linear-gradient(to right, #9a85b2, #0093ed);
     color: #fff;
-    font-family: "OpenSansBold", Arial, sans-serif;
+    font-family: "Roboto", Arial, sans-serif;
     font-size: 16px;
     margin: 25px auto 0;
     border: none;
@@ -515,7 +506,7 @@
 
 .list-title {
     font-size: 20px;
-    font-family: "OpenSansBold", Arial, sans-serif;
+    font-family: "Roboto", Arial, sans-serif;
     line-height: 1.5em;
 }
 
@@ -622,7 +613,7 @@
 .benefit__title {
     font-size: 16px;
     text-align: center;
-    font-family: "OpenSansBold", Arial, sans-serif;
+    font-family: "Roboto", Arial, sans-serif;
     margin-top: 25px;
 }
 
@@ -733,6 +724,12 @@
 /* Medium Devices, Desktops */
 
 @media only screen and (max-width: 991.98px) {
+    .product-2-pic{
+        width: 40%
+    }
+    .product-2-body{
+        width: 60%;
+    }
     .requisites{
         font-size: 16px;
     }
@@ -885,6 +882,20 @@
 /* Small Devices, Tablets */
 
 @media only screen and (max-width: 767.98px) {
+    .product-2{
+        flex-direction: column;
+        height: auto;
+    }
+    .product-2-body,
+    .product-2-pic{
+        width: 100%;
+    }
+    .product-2-pic{
+        order: 1;
+    }
+    .main_image a img{
+        object-position: center center;
+    }
     .order_container{
         flex-direction: column;
     }
@@ -1003,6 +1014,23 @@
 /* Extra Small Devices, Phones */
 
 @media only screen and (max-width: 575.98px) {
+    .product-2 .buttons,
+    .specification_row{
+        flex-direction: column;
+    }
+    .specification_row,
+    .specification_row .key,
+    .specification_row .value{
+        padding-left: 0;
+        max-width: 100%;
+        width: 100%;
+    }
+     .specification_row{
+        padding-bottom: 8px;
+     }
+    .product-2 .buttons button{
+        margin: 0 auto 25px;
+    }
     .bg{
         font-size: 50px;
         width: 310px;
@@ -1033,7 +1061,6 @@
         padding: 0;
         text-align: center;
         
-        /*flex-direction: column;*/
     }
     .tech-mnu__item{
         padding: 0;

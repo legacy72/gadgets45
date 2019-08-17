@@ -63,41 +63,37 @@ $colors = getProductColors($dbh, $productMainInfo['id']);
 			</div>
 		</div>
 	</section>
-	<section class="s-product" id="s-product">
+	<section class="s-product2" id="s-product2">
 		<div class="container">
 			<div class="row">
 				<div class="col-12">
-					<div class="single-product d-flex">
-						<?= '<div class="product_container" ptc_id="' . $productMainInfo['ptc_id'] . '">'; ?>
-							<div class="product_images">
-								<div class="slider-main-image">
-									<?php foreach ($productImages as $productImage) : ?>
-										<div class="main_image">
-											<a <?= 'href="../../' . PRODUCT_IMAGES_PATH . $productImage['name'] . '"' ?> class='main_page'>
-												<?= '<img src="../../' . PRODUCT_IMAGES_PATH . $productImage['name'] . '">'; ?>
-											</a>
-										</div>
-									<?php endforeach; ?>
-								</div>
-								<div class="small_images slider-small-images">
-									<?php foreach ($productImages as $productImage) : ?>
-										<div class="small_img">
-											<?= '<img src="../../' . PRODUCT_IMAGES_PATH . $productImage['name'] . '">'; ?>
-										</div>
-									<?php endforeach; ?>
-								</div>
+					<div class="product-2 d-flex">
+						<div class="product-2-pic d-flex">
+							<div class="small_images slider-small-images">
+								<?php foreach ($productImages as $productImage) : ?>
+									<div class="small_img d-flex">
+										<?= '<img src="../../' . PRODUCT_IMAGES_PATH . $productImage['name'] . '">'; ?>
+									</div>
+								<?php endforeach; ?>
 							</div>
+							<div class="slider-main-image">
+								<?php foreach ($productImages as $productImage) : ?>
+									<div class="main_image">
+										<a <?= 'href="../../' . PRODUCT_IMAGES_PATH . $productImage['name'] . '"' ?> class='main_page' <?= 'data-title="' . $productMainInfo['name'] . '"' ?>>
+											<?= '<img src="../../' . PRODUCT_IMAGES_PATH . $productImage['name'] . '">'; ?>
+										</a>
+									</div>
+								<?php endforeach; ?>
+							</div>
+							
+				
 						</div>
-						<div class="product_description">
-							<h4 class="product_title">
+						<div class="product-2-body">
+							<h4 class="product-2-title d-flex">
 								<?= $productMainInfo['name'] . ' ' . $colorName; ?>
 							</h4>
-							<span class="product_price">
-								<?= priceFormat($productMainInfo['discount_price']); ?>
-							</span>
 							<?php if (count($colors) != 1 && $colors[0]['name'] != 'standart') : ?>
 								<div class="product_color">
-									Цвет
 									<div class="product_colors_blocks">
 										<?php foreach ($colors as $color) : ?>
 											<?= '<a href="' . $_GET['product_url_name'] . '-' . $color['name'] . '">'; ?>
@@ -123,8 +119,11 @@ $colors = getProductColors($dbh, $productMainInfo['id']);
 									</div>
 								<?php endforeach ?>
 							</div>
-							<div class="product_buttons d-flex">
-								<button class="product__btn button_add_product_to_cart" id="add_product_to_cart_from_prod">
+							<span class="product_price">
+								<?= priceFormat($productMainInfo['discount_price']); ?>
+							</span>
+							<div class="buttons">
+								<button class="product__btn button_add_product_to_cart product-2-btn" id="add_product_to_cart_from_prod">
 									В корзину
 									<span>
 										Товар добавлен
@@ -137,7 +136,8 @@ $colors = getProductColors($dbh, $productMainInfo['id']);
 									</span>
 								</button>
 							</div>
-						</div>	
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -153,14 +153,13 @@ $colors = getProductColors($dbh, $productMainInfo['id']);
 									Описание 
 								</a>
 							</li>
-							<li class="tech-mnu__item">
+							<li class="tech-mnu__item active">
 								<a id="product_specifications">
-									<span class="d-none d-sm-inline">Технические</span> характеристики
+									<span class="d-none d-md-inline">Технические</span> характеристики
 								</a>
 							</li>
 						</ul>
 					</div>
-					
 					<div class="product_info_descr_block product_info">
 						<div class="product_info_title">
 							<?= $productMainInfo['description_title']; ?>
@@ -194,7 +193,19 @@ $colors = getProductColors($dbh, $productMainInfo['id']);
 			</div>
 		</div>
 	</section>
+
+
+
+
+
+
+
+
+
+	
+	
 	<? require_once('html_templates/footer.php'); ?>
+
 	<!-- Modal Quick Order -->
 	<div style="display: none;">
 	    <div class="box-modal quick-order" id="quickOrder">

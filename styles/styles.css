@@ -780,28 +780,30 @@ footer {
 
 
 .main_image {
-    width: 370px;
-    height: 500px;
+    width: 100%;
+    height: 100%;
+    /*width: 370px;*/
+    /*height: 500px;*/
     /*background-color: #f8f8f8;*/
-    border: 1px solid #ccc;
+    /*border: 1px solid #ccc;*/
     cursor: pointer;
-    text-align: center;
+    /*text-align: center;*/
     
 }
-.main_image a{
+/*.main_image a{
     display: block;
     width: 100%;
     height: 100%;
     text-align: center; 
     padding: 15px; 
-}
+}*/
 
-.main_image a img{
+/*.main_image a img{
     width: 100%;
     height: 100%;
     object-fit: contain;
 }
-
+*/
 .small_images {
     max-width: 370px;
     display: flex;
@@ -912,11 +914,11 @@ button.button_add_product_to_cart {
   
     background: #fff;
     border: 3px solid transparent;
-    -webkit-border-image: -webkit-gradient(linear, left top, left bottom, from(#9a85b2), to(#0093ed));
-    -webkit-border-image: linear-gradient(to left, #9a85b2, #0093ed);
-    -o-border-image: -o-linear-gradient(top, #9a85b2, #0093ed);
-    border-image: -webkit-gradient(linear, left top, left bottom, from(#9a85b2), to(#0093ed));
-    border-image: linear-gradient(to left, #9a85b2, #0093ed);
+    -webkit-border-image: -webkit-gradient(linear, left top, left bottom, from(#6e37fb), to(#0093ed));
+    -webkit-border-image: linear-gradient(to left, #6e37fb, #0093ed);
+    -o-border-image: -o-linear-gradient(top, #6e37fb, #0093ed);
+    border-image: -webkit-gradient(linear, left top, left bottom, from(#6e37fb), to(#0093ed));
+    border-image: linear-gradient(to left, #6e37fb, #0093ed);
     border-image-slice: 1;
     transition: all .4s ease; 
     position: relative;
@@ -927,9 +929,9 @@ button.button_add_product_to_cart {
 .button_fast_order::after{
     position: absolute;
     content: '';
-  background: -webkit-linear-gradient(right, #9a85b2, #0093ed);
-  background: -o-linear-gradient(right, #9a85b2, #0093ed);
-  background: linear-gradient(to left, #9a85b2, #0093ed);
+  background: -webkit-linear-gradient(right, #6e37fb, #0093ed);
+  background: -o-linear-gradient(right, #6e37fb, #0093ed);
+  background: linear-gradient(to left, #6e37fb, #0093ed);
     top: 0;
     left: 0;
     right: 0;
@@ -940,7 +942,7 @@ button.button_add_product_to_cart {
 }
 
 .button_fast_order span{
-  background: linear-gradient(to left, #9a85b2 0%, #0093ed 100%);
+  background: linear-gradient(to left, #6e37fb 0%, #0093ed 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     /*color: #9a85b2;*/
@@ -955,7 +957,7 @@ button.button_add_product_to_cart {
 }
 
 .button_fast_order:hover span {
-     background: linear-gradient(to left, #9a85b2 0%, #0093ed 100%);
+     background: linear-gradient(to left, #6e37fb 0%, #0093ed 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: #fff;
 }
@@ -964,6 +966,8 @@ button.button_add_product_to_cart {
 /* == Tech Info == */
 .tech-info{
     width: 100%;
+    max-width: 830px;
+    margin: 0 auto;
     height: 60px;
     background: #383838;
     padding: 0 80px;
@@ -992,8 +996,13 @@ button.button_add_product_to_cart {
 
 .tech-mnu__item:hover a#product_description,
 .tech-mnu__item:hover a#product_specifications{
-    /*color: #0093ed;*/
     border-bottom: 3px solid #0093ed;
+}
+
+.tech-mnu__item.active a#product_description,
+.tech-mnu__item.active a#product_specifications{
+    border-bottom: 3px solid #0093ed;
+    background: #666;
 }
 
 
@@ -1042,6 +1051,7 @@ button.button_add_product_to_cart {
 .product_info {
     width: 100%;
     margin: 40px auto 0;
+    max-width: 830px;
 }
 
 .product_info_descr_block {
@@ -1060,7 +1070,7 @@ button.button_add_product_to_cart {
 }
 
 .specifications_group_block {
-    width: 770px;
+    /*width: 770px;*/
     margin-top: 40px;
 }
 
@@ -1523,7 +1533,7 @@ button.button_add_product_to_cart {
     cursor: pointer;
 }
 
-.slider .slick-prev:before,
+.    .slick-prev:before,
 .slider .slick-next:before {
     color: #73c3f5;
 }

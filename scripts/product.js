@@ -10,6 +10,7 @@ $(document).ready(function() {
     }
 
     $('.slider-main-image').slick({
+        // variableWidth: true,
         slidesToShow: 1,
         dots: false,
         slidesToScroll: 1,
@@ -19,16 +20,19 @@ $(document).ready(function() {
     });
 
     $('.slider-small-images').slick({
-        slidesToShow: countSmallImages > 3 ? 3 : countSmallImages,
+        // slidesToShow: countSmallImages > 3 ? 3 : countSmallImages,
+        slidesToShow: 3,
         // variableWidth: true,
         dots: false,
         slidesToScroll: 1,
         speed: 900,
+        vertical: true,
         easing: 'ease-in-out',
         asNavFor: '.slider-main-image',
         focusOnSelect: true,
-         prevArrow: '<button type="button" class="slick-prev"><i class="fas fa-chevron-left"></i></button>',
-        nextArrow: '<button type="button" class="slick-next"><i class="fas fa-chevron-right"></i></button>',
+        arrows: false,
+        //  prevArrow: '<button type="button" class="slick-prev"><i class="fas fa-chevron-left"></i></button>',
+        // nextArrow: '<button type="button" class="slick-next"><i class="fas fa-chevron-right"></i></button>',
     });
 
     // почему typeerror $(...).magnificpopup is not a function?

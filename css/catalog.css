@@ -23,6 +23,7 @@
 	height: 250px;
 	padding-top: 60px;
 	padding-left: 50px;
+	padding-right: 50px;
 }
 .contacts__body{
 	position: relative;
@@ -35,7 +36,7 @@
 	top: 0;
 	right: 0;
 	height: 100%;
-	width: 80%;
+	width: 70%;
 	 border: 8px solid transparent;
         -o-border-image: -o-linear-gradient(45deg, transparent, transparent, #9a85b2, #0093ed);
         border-image: linear-gradient(45deg, transparent, transparent, #9a85b2, #0093ed);
@@ -193,7 +194,7 @@
 	-webkit-box-shadow: 0 0 25px ;
 	box-shadow: -5px 10px 15px rgba(154,133,178,.5);
 	transition: all .4s ease;	
-	z-index: 6;
+	z-index: 60;
 	cursor: pointer;
 }
 .fixed-visible{
@@ -314,19 +315,16 @@
     z-index: 2;
 }
 
-/*.cart__pic a::after{
-    position: absolute;
-    z-index: 1;
-    content: attr(data-title);
-    font-size: 160px;
-    color: #fff;
-    font-family: "OpenSansBold", Arial, sans-serif;
-    left: -30px;
-    opacity: .15;
-    bottom: -25px;
-    text-transform: uppercase;
-    width: 5000px;
-}*/
+.about-contacts{display: -webkit-flex;
+display: -moz-flex;
+display: -ms-flex;
+display: -o-flex;
+display: flex;
+-ms-align-items: center;
+align-items: center;
+	height: 100%;
+	background: #f3f3f3;
+}
 
 .cart__pic a img{
     width: 100%;
@@ -551,7 +549,7 @@ input[type="radio"]:checked + .variants_value::before {
 
 .filter__head{
 	font-size: 16px;
-	font-family: "OpenSansSemibold", Arial, sans-serif;
+	font-family: "Roboto", Arial, sans-serif;
 	padding: 15px;
 	border-bottom: 1px solid #ccc;
 	cursor: pointer;
@@ -630,7 +628,7 @@ input[type="radio"]:checked + .variants_value::before {
   border: none;
   background: #383838;
   color: #fff;
-  font-family: "OpenSansSemibold", Arial, sans-serif;
+  font-family: "Roboto", Arial, sans-serif;
   -webkit-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease; }
@@ -663,7 +661,7 @@ input[type="radio"]:checked + .variants_value::before {
 
 .catalog__title{
 	font-size: 22px;
-	font-family: "OpenSansSemibold", Arial, sans-serif;
+	font-family: "Roboto", Arial, sans-serif;
 }
 
 .catalog__filter{
@@ -825,7 +823,7 @@ select::-ms-expand {  /* для IE */
 .product__price span{
 	display: block;
 	font-size: 24px;
-  	font-family: "OpenSansSemibold", Arial, sans-serif;
+  	font-family: "Roboto", Arial, sans-serif;
   	min-height: 32px;
 }
 
@@ -928,7 +926,7 @@ select::-ms-expand {  /* для IE */
 	left: 50%;
 	top: 50%;
 	transform: translate(-50%, -50%);
-	font-family: "OpenSansBold", Arial, sans-serif;
+	font-family: "Roboto", Arial, sans-serif;
 }
 
 .product__btn span.added{

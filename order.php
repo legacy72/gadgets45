@@ -3,6 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>Заказ</title>
+	<? require_once('html_templates/links_favicons.php'); ?>
 	<? require_once('html_templates/links.php'); ?>
 </head>
 <body>

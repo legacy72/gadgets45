@@ -69,13 +69,7 @@ $colors = getProductColors($dbh, $productMainInfo['id']);
 				<div class="col-12">
 					<div class="product-2 d-flex">
 						<div class="product-2-pic d-flex">
-							<div class="small_images slider-small-images">
-								<?php foreach ($productImages as $productImage) : ?>
-									<div class="small_img d-flex">
-										<?= '<img src="../../' . PRODUCT_IMAGES_PATH . $productImage['name'] . '">'; ?>
-									</div>
-								<?php endforeach; ?>
-							</div>
+							
 							<div class="slider-main-image">
 								<?php foreach ($productImages as $productImage) : ?>
 									<div class="main_image">
@@ -85,7 +79,13 @@ $colors = getProductColors($dbh, $productMainInfo['id']);
 									</div>
 								<?php endforeach; ?>
 							</div>
-							
+							<div class="small_images slider-small-images">
+								<?php foreach ($productImages as $productImage) : ?>
+									<div class="small_img d-flex">
+										<?= '<img src="../../' . PRODUCT_IMAGES_PATH . $productImage['name'] . '">'; ?>
+									</div>
+								<?php endforeach; ?>
+							</div>
 				
 						</div>
 						<div class="product-2-body">
@@ -119,7 +119,7 @@ $colors = getProductColors($dbh, $productMainInfo['id']);
 									</div>
 								<?php endforeach ?>
 							</div>
-							<span class="product_price">
+							<span class="product_price product-2-price">
 								<?= priceFormat($productMainInfo['discount_price']); ?>
 							</span>
 							<div class="buttons">

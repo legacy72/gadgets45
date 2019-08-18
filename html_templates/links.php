@@ -1,5 +1,4 @@
-<!-- Roboto Font -->
-<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap&subset=cyrillic" rel="stylesheet"> 
+
 <!-- Bootstrap -->
 <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
 <!-- CSS Styles -->

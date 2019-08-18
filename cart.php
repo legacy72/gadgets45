@@ -3,7 +3,10 @@
 <head>
 	<meta charset="utf-8">
 	<title>Корзина</title>
+	<!-- Favicons -->
+	<? require_once('html_templates/links_favicons.php'); ?>
 	<? require_once('html_templates/links.php'); ?>
+
 </head>
 <body>
 	<? require_once('html_templates/header.php'); ?>
@@ -37,6 +40,11 @@
 					</h2>
 				</div>
 				<div class="col-12 order-1 order-lg-0 col-lg-8">
+					<div class="empty">
+						<p class="empty__txt">
+							Корзина пока пуста
+						</p>
+					</div>
 					<div class="cart_items">
 						
 					</div>
@@ -56,9 +64,7 @@
 						</div>
 						<div class="button_order">
 							<a href="/order">
-								<button>
-									Оформить заказ
-								</button>
+								Оформить заказ
 							</a>
 						</div>
 					</div>

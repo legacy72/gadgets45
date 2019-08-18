@@ -20,13 +20,13 @@ $(document).ready(function() {
     });
 
     $('.slider-small-images').slick({
-        // slidesToShow: countSmallImages > 3 ? 3 : countSmallImages,
-        slidesToShow: 3,
+        slidesToShow: countSmallImages > 3 ? 3 : countSmallImages,
+        // slidesToShow: 3,
         // variableWidth: true,
         dots: false,
         slidesToScroll: 1,
         speed: 900,
-        vertical: true,
+        // vertical: true,
         easing: 'ease-in-out',
         asNavFor: '.slider-main-image',
         focusOnSelect: true,

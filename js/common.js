@@ -150,7 +150,7 @@ $(function() {
             }
         });
     });
-    // Tech-
+    // Tech-mnu
     $('.tech-mnu__item').click(function () {
         $('.tech-mnu__item').removeClass('active');
         $(this).addClass('active');
@@ -235,9 +235,19 @@ $(function() {
         
     });
 
-   
+    // Block Order Button
+    
+     
 
 });
+
+    $(window).on('load', function () {
+        let item = JSON.parse(localStorage.getItem("cart"));
+
+        if (item.length === 0) {
+             $('.button_order').addClass('disabled');
+        }
+    });
 
   // Preloader
     $(window).on('load', function() {

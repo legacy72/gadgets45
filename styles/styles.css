@@ -723,16 +723,39 @@ footer {
 
 .button_order {
     margin-top: 25px;
+    
+    width: 180px;
 }
 
-.button_order button {
-    outline: none;
+.button_order.disabled{
+    position: relative;
+}
+
+.button_order.disabled::after{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    cursor: not-allowed;
+    content: 'Оформить заказ';
+    color: #fff;
+    background: #ccc;
+    text-align: center;
+    line-height: 40px;
+    font-size: 16px;
+   font-family: "OpenSansRegular", Arial, sans-serif;
+}
+
+.button_order a {
+    display: block;
     color: #fff;
     border: none;
     background: linear-gradient(to right, #068eee, #6e37fb);
+    width: 180px;
+    text-align: center;
     padding: 12px;
     font-size: 16px;
-    cursor: pointer;
 }
 
 
@@ -837,7 +860,7 @@ footer {
 .color_block {
     width: 28px;
     height: 28px;
-    margin-left: 10px;
+    /*margin: 0 5px;*/
     cursor: pointer;
     /*border: 2px solid #383838;*/
     border-radius: 50%;
@@ -863,9 +886,13 @@ footer {
 }
 
 .color_block.active::after{
-  /*  background: url(../images/icons/check.png) center center no-repeat;*/ 
+    border-radius: 4px ;
    border: 2px solid #068eee;
    background: none;
+   top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
 }
 
 .product_specifications {

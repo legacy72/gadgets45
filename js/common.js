@@ -241,24 +241,18 @@ $(function() {
 
 });
 
-function disableOrderButton(){
+
+
+$(window).on('load', function () {
     let item = JSON.parse(localStorage.getItem("cart"));
 
     if (item.length === 0) {
-         $('.button_order').addClass('disabled');
+            $('.button_order').addClass('disabled');
     }
-}
+});
 
 
-    $(window).on('load', function () {
-        disableOrderButton();
-    });
-    // добавь событие на клик крестика в списке продуктов
-    $('body').on('click', '.твой_класс',  function () {
-        disableOrderButton();
-    });
-
-  // Preloader
-    $(window).on('load', function() {
-        $('.preloader').fadeOut(800);
-    });
+// Preloader
+$(window).on('load', function() {
+    $('.preloader').fadeOut(800);
+});

@@ -210,6 +210,10 @@ $(document).ready(function() {
     // Обработчик нажатия на кнопку удаления товара из корзины
     $(document).on('click', '.item_drop_btn', function() {
         dropProduct($(this).attr('product_id'));
+        // блокировка кнопки "оформить заказ", если корзина пустая
+        if (initCart().length === 0) {
+            $('.button_order').addClass('disabled');
+       }
     });
     // обработка клика на кнопку "оформить заказ"
     $(document.body).on('click', '.btn_order', function() {

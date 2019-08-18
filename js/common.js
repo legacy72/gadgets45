@@ -241,12 +241,21 @@ $(function() {
 
 });
 
-    $(window).on('load', function () {
-        let item = JSON.parse(localStorage.getItem("cart"));
+function disableOrderButton(){
+    let item = JSON.parse(localStorage.getItem("cart"));
 
-        if (item.length === 0) {
-             $('.button_order').addClass('disabled');
-        }
+    if (item.length === 0) {
+         $('.button_order').addClass('disabled');
+    }
+}
+
+
+    $(window).on('load', function () {
+        disableOrderButton();
+    });
+    // добавь событие на клик крестика в списке продуктов
+    $('body').on('click', '.твой_класс',  function () {
+        disableOrderButton();
     });
 
   // Preloader

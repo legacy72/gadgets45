@@ -63,12 +63,12 @@ $colors = getProductColors($dbh, $productMainInfo['id']);
 			</div>
 		</div>
 	</section>
-	<section class="s-product2" id="s-product2">
+	<section class="s-product-single" id="s-product-single">
 		<div class="container">
 			<div class="row">
 				<div class="col-12">
-					<div class="product-2 d-flex">
-						<div class="product-2-pic d-flex">
+					<div class="product-single d-flex">
+						<div class="product-single-pic d-flex">
 							
 							<div class="slider-main-image">
 								<?php foreach ($productImages as $productImage) : ?>
@@ -88,8 +88,8 @@ $colors = getProductColors($dbh, $productMainInfo['id']);
 							</div>
 				
 						</div>
-						<div class="product-2-body">
-							<h4 class="product-2-title d-flex">
+						<div class="product-single-body">
+							<h4 class="product-single-title product_title d-flex">
 								<?= $productMainInfo['name'] . ' ' . $colorName; ?>
 							</h4>
 							<?php if (count($colors) != 1 && $colors[0]['name'] != 'standart') : ?>
@@ -119,11 +119,11 @@ $colors = getProductColors($dbh, $productMainInfo['id']);
 									</div>
 								<?php endforeach ?>
 							</div>
-							<span class="product_price product-2-price">
+							<span class="product_price product-single-price">
 								<?= priceFormat($productMainInfo['discount_price']); ?>
 							</span>
 							<div class="buttons">
-								<button class="product__btn button_add_product_to_cart product-2-btn" id="add_product_to_cart_from_prod">
+								<button class="product__btn button_add_product_to_cart product-single-btn" id="add_product_to_cart_from_prod">
 									В корзину
 									<span>
 										Товар добавлен

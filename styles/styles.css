@@ -723,8 +723,10 @@ footer {
 
 .button_order {
     margin-top: 25px;
-    
+    font-family: "OpenSansRegular", Arial, sans-serif;
+    font-size: 16px;
     width: 180px;
+    height: 40px;
 }
 
 .button_order.disabled{
@@ -754,7 +756,9 @@ footer {
     background: linear-gradient(to right, #068eee, #6e37fb);
     width: 180px;
     text-align: center;
-    padding: 12px;
+    padding: 0 12px;
+    height: 40px;
+    line-height: 40px;
     font-size: 16px;
 }
 

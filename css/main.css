@@ -21,8 +21,6 @@
     src: url("../fonts/OpenSansBold/OpenSans-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/OpenSansBold/OpenSans-Bold.woff2") format("woff2"), url("../fonts/OpenSansBold/OpenSans-Bold.woff") format("woff"), url("../fonts/OpenSansBold/OpenSans-Bold.ttf") format("truetype"), url("../fonts/OpenSansBold/OpenSans-Bold.svg#OpenSansBold") format("svg");
 }
 
-
-
 /* ==== MAIN ==== */
 
 /* == MFP Customization == */
@@ -725,10 +723,10 @@
 /* Medium Devices, Desktops */
 
 @media only screen and (max-width: 991.98px) {
-    .product-2-pic{
+    .product-single-pic{
         width: 40%
     }
-    .product-2-body{
+    .product-single-body{
         width: 60%;
     }
     .requisites{
@@ -883,16 +881,19 @@
 /* Small Devices, Tablets */
 
 @media only screen and (max-width: 767.98px) {
-    .product-2{
+    .product-single{
         flex-direction: column;
         height: auto;
     }
-    .product-2-body,
-    .product-2-pic{
+    .product-single-body,
+    .product-single-pic{
         width: 100%;
     }
-    .product-2-pic{
+    .product-single-pic{
         order: 1;
+    }
+    .slider-small-images{
+        margin: 0 auto
     }
     .main_image a img{
         object-position: center center;
@@ -1015,7 +1016,7 @@
 /* Extra Small Devices, Phones */
 
 @media only screen and (max-width: 575.98px) {
-    .product-2 .buttons,
+    .product-single .buttons,
     .specification_row{
         flex-direction: column;
     }
@@ -1029,7 +1030,7 @@
      .specification_row{
         padding-bottom: 8px;
      }
-    .product-2 .buttons button{
+    .product-single .buttons button{
         margin: 0 auto 25px;
     }
     .bg{

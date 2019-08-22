@@ -36,8 +36,6 @@ $stocks = getBestSellersOrStocks($dbh, 'stock');
 	<? require_once('html_templates/links.php'); ?>
 </head>
 <body>
-	<!-- Preloader -->
-
 	<!-- Header -->
 	<header class="header" id="header">
 		<? require_once('html_templates/preloader.php'); ?>
@@ -46,7 +44,7 @@ $stocks = getBestSellersOrStocks($dbh, 'stock');
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-3">
-						<!-- Empty, paste after -->
+						
 					</div>
 					<div class="col-12 col-xl-9">
 						<div class="offer-slider">
@@ -262,7 +260,7 @@ $stocks = getBestSellersOrStocks($dbh, 'stock');
 							<input type="text" class="form-order__input" required placeholder="Ваше имя:*">
 							<input type="text" class="form-order__input" required placeholder="Ваш телефон:*">
 							<input type="text" class="form-order__input" required placeholder="Ваш e-mail:*">
-							<textarea name="message" class="form-order__message" placeholder="Ваш комементарий"></textarea>
+							<textarea name="message" class="form-order__message" placeholder="Ваш комментарий"></textarea>
 							<div class="form-order__personal d-flex">
 								<input type="checkbox" id="personal-data">
 								<label for="personal-data" class="form-order__link">
@@ -278,8 +276,7 @@ $stocks = getBestSellersOrStocks($dbh, 'stock');
 	       </div>
 	    </div>
 
-	<!-- Modal Call Back -->
-	<? require_once('html_templates/modal_call_back.php') ?>;
+	
 	<!-- Scripts -->
 	<? require_once('html_templates/scripts_imports.php'); ?>
 </body>

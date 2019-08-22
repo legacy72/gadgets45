@@ -71,6 +71,7 @@
     height: 100px;
 }
 
+
 /* ==== Shares ==== */
 
 .shares-slider {
@@ -97,7 +98,6 @@
 }
 
 .shares-slider .slide__pic {
-    /*height: 100%;*/
     width: 200px;
     margin-right: 20px;
 }

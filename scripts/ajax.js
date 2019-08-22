@@ -77,35 +77,38 @@ $(document).ready(function() {
 
     // Аякс запрос на страницу с заказом обратного звонка
     function requestCallBack() {
-        $('#loader').fadeIn();
-        $.ajax({
-            url: '../templates/request_call_back.php',
-            type: 'POST',
-            data: {
-                'name': $('#name_customer_call_back').val(),
-                'phone': $('#phone_customer_call_back').val(),
-                'email': $('#email_customer_call_back').val(),
-                'comment': $('#comment_call_back').val(),
-            },
-            success: function(data) {
-                $('#loader').fadeOut();
-                
-                setTimeout(function() {
-                    $('.respond-overlay').fadeIn();
-                }, 500);
-                $('.arcticmodal-container').fadeOut();
-                $('.respond-to-call').html(data);
+        $('.form-order').submit(function (e) {
+            e.preventDefault();
+            $('#loader').fadeIn();
+            $.ajax({
+                url: '../templates/request_call_back.php',
+                type: 'POST',
+                data: {
+                    'name': $('#name_customer_call_back').val(),
+                    'phone': $('#phone_customer_call_back').val(),
+                    'email': $('#email_customer_call_back').val(),
+                    'comment': $('#comment_call_back').val(),
+                },
+                success: function(data) {
+                    $('#loader').fadeOut();
+                    
+                    setTimeout(function() {
+                        $('.respond-overlay').fadeIn();
+                    }, 500);
+                    $('.arcticmodal-container').fadeOut();
+                    $('.respond-to-call').html(data);
 
-                $('.respond-overlay').on('click', function() {
-                    $('.arcticmodal-overlay').trigger('click');
-                    $(this).fadeOut();
-                });     
+                    $('.respond-overlay').on('click', function() {
+                        $('.arcticmodal-overlay').trigger('click');
+                        $(this).fadeOut();
+                    });     
 
-            }
-                
-        });
-        return false;
-    }
+                }
+                    
+            });
+            return false;
+        }
+    )};
 
     // Аякс запрос на страницу сохранения заказа, когда выбран вариант "Быстрый заказ"
     function quickOrder(cartData, defaultInfo) {

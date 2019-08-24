@@ -46,8 +46,8 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    bottom: 0;
+    right: 0;
     display: -webkit-flex;
     display: -moz-flex;
     display: -ms-flex;
@@ -70,8 +70,6 @@
     width: 100px;
     height: 100px;
 }
-
-
 /* ==== Shares ==== */
 
 .shares-slider {
@@ -1173,13 +1171,9 @@
     .fixed-shop{
         max-width: 300px;
     }
+    .preloader-img{
+        font-size: 36px;
+    }
 
 
-}
-
-
-/* Custom, iPhone Retina */
-
-@media only screen and (max-width: 320px) {
-    /**/
 }

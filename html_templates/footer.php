@@ -50,7 +50,7 @@
 
 
 <!-- Modal Call Back -->
-<? require_once('html_templates/modal_call_back.php') ?>;
+<? require_once('html_templates/modal_call_back.php'); ?>
 <?
 require_once 'templates/close_connection.php';
 ?>

@@ -113,30 +113,7 @@ $(function() {
         } else {
             $('.form-order__btn').attr('disabled', true);
         }
-    })
-    
-
-
-
-    // var name = $('#name_customer_quick_order');
-    // var phone = $('#phone_customer_quick_order');
-    // var email = $('#email_customer_quick_order');
-
-    // $('#quickOrder input').on('keyup', function() {
-    //     // if(name.valid() && phone.valid() && email.valid()){
-    //     if(name.val() !='' && phone.val() !='' && email.val() !=''){
-    //     // if(name.length !=0 && phone.length !=0 && email.length !=0){
-    //         $('#personal-data').change(function() {
-    //             if ($('#personal-data').prop('checked')) {
-    //                 $('.form-order__btn').attr('disabled', false);
-    //             } else {
-    //                 $('.form-order__btn').attr('disabled', true);
-    //             }
-    //         }); 
-    //     } else {
-    //         $('.form-order__btn').attr('disabled', true);
-    //     }
-    // });
+    });
 
     // Quick Order Modal
     $('.button_fast_order').click(function(e) {

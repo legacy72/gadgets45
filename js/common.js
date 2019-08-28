@@ -96,24 +96,53 @@ $(function() {
         ]
     });
 
-    // Personal Data Agreement Check
-    $('.form-order input').on('keyup', function () {
-        var name = $('#name_customer_quick_order').val();
-        var email = $('#email_customer_quick_order').val();
-        var phone = $('#phone_customer_quick_order').val();
-     
-        if(name.length != 0 && email.length != 0 && phone.length != 0) {
-            $('#personal-data').change(function() {
-                if ($('#personal-data').prop('checked')) {
-                    $('.form-order__btn').attr('disabled', false);
-                } else {
-                    $('.form-order__btn').attr('disabled', true);
-                }
-            });
-        } else {
-            $('.form-order__btn').attr('disabled', true);
+
+    $('form.form-order').change(function abc() {
+        $('.form-order__btn').prop('disabled', !$('#name_customer_quick_order').val() || !$('#phone_customer_quick_order').val() || !$('#email_customer_quick_order').val());
+    });
+
+    
+
+    $('body').on('change', '#personal-data', function() {
+        if ($(this).is(':checked')) {
+            abc();
+        } 
+        else {
+            $('.form-order__btn').attr('disabled', 'disabled');
         }
     });
+
+
+
+
+
+    // $('body').on('change', '#personal-data', function() {
+    //     if ($(this).is(':checked')) {
+    //         $('form.form-order input').on('keyup input', function(e) {
+    //             $('.form-order__btn').prop('disabled', !$('#name_customer_quick_order').val() || !$('#phone_customer_quick_order').val() || !$('#email_customer_quick_order').val());
+    //         });
+    //     } 
+    //     else {
+    //         $('.form-order__btn').attr('disabled', 'disabled');
+    //     }
+    // });
+
+
+    // Personal Data Agreement Check
+
+
+    // $('body').on('change', '#personal-data', function() {
+    //     if ($(this).is(':checked')) {
+    //         $('.form-order__btn').removeAttr('disabled');
+    //     } 
+    //     else {
+    //         $('.form-order__btn').attr('disabled', 'disabled');
+    //     }
+    // });
+
+    // $('form.form-order').on('change input paste', 'input', function(e) {
+    //     $('.form-order__btn').prop('disabled', !$('#name_customer_quick_order').val() || !$('#phone_customer_quick_order').val() || !$('#email_customer_quick_order').val());
+    // });
 
     // Quick Order Modal
     $('.button_fast_order').click(function(e) {
@@ -245,7 +274,7 @@ $(window).on('load', function () {
     let item = JSON.parse(localStorage.getItem("cart"));
 
     if (item.length === 0) {
-            $('.button_order').addClass('disabled');
+        $('.button_order').addClass('disabled');
     }
 });
 

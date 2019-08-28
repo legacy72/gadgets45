@@ -231,7 +231,7 @@ $colors = getProductColors($dbh, $productMainInfo['id']);
 							<input type="text" class="form-order__input" id="name_customer_quick_order" required placeholder="Ваше имя:*">
 							<input type="text" class="form-order__input phone_mask" id="phone_customer_quick_order" required placeholder="Ваш телефон:*">
 							<input type="email" class="form-order__input" id="email_customer_quick_order" required placeholder="Ваш e-mail:*">
-							<textarea name="message" class="form-order__message" id="comment_quick_order" placeholder="Ваш комементарий"></textarea>
+							<textarea name="message" class="form-order__message" id="comment_quick_order" placeholder="Ваш комментарий"></textarea>
 							<div class="form-order__personal d-flex">
 								<input type="checkbox" id="personal-data">
 								<label for="personal-data" class="form-order__link">

@@ -9,19 +9,43 @@
 			<div class="col-12 order-1 order-md-0 col-md-7 col-lg-8">
 				<ul class="footer-mnu d-flex">
 					<li class="footer-mnu__item">
-						<a href="#">
-							О компании
-						</a>
+						<?php 
+						if ($_SERVER[REQUEST_URI]=="/about")  { 
+						?>
+							<span>	
+								О компании
+							</span>
+						<?php } else { ?>
+							<a href="/about">	
+								О компании
+							</a>
+						<?php } ?>
 					</li>
 					<li class="footer-mnu__item">
-						<a href="/catalog">
-							Каталог
-						</a>
+						<?php 
+						if ($_SERVER[REQUEST_URI]=="/catalog/smartphones" || $_SERVER[REQUEST_URI]=="/catalog/notebooks" || $_SERVER[REQUEST_URI]=="/catalog/accessories")  { 
+						?>
+							<span>	
+								Каталог
+							</span>
+						<?php } else { ?>
+							<a href="/catalog/smartphones">	
+								Каталог
+							</a>
+						<?php } ?>
 					</li>
 					<li class="footer-mnu__item">
-						<a href="/contacts">
-							Контакты
-						</a>
+						<?php 
+						if ($_SERVER[REQUEST_URI]=="/contacts")  { 
+						?>
+							<span>	
+								Контакты
+							</span>
+						<?php } else { ?>
+							<a href="/contacts">	
+								Контакты
+							</a>
+						<?php } ?>
 					</li>
 				</ul>
 			</div>

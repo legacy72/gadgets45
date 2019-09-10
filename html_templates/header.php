@@ -5,26 +5,56 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-12 col-sm-3 col-md-2 col-lg-3">
-				<a href="/" class="logo">
+				<?php 
+				if ($_SERVER[REQUEST_URI]=="/")  { 
+				?>
 					<img src="/images/logo/white_logo.png" alt="Gadgets45">
-				</a>
+				<?php } else { ?>
+					<a href="/" class="logo">
+						<img src="/images/logo/white_logo.png" alt="Gadgets45">
+					</a>
+				<?php } ?>
 			</div>
 			<div class="col-sm-9 col-md-7 col-lg-5">
 				<ul class="mnu d-flex">
 					<li class="mnu__item">
-						<a href="/about">
-							О компании
-						</a>
+						<?php 
+						if ($_SERVER[REQUEST_URI]=="/about")  { 
+						?>
+							<span>	
+								О компании
+							</span>
+						<?php } else { ?>
+							<a href="/about">	
+								О компании
+							</a>
+						<?php } ?>
 					</li>
 					<li class="mnu__item">
-						<a href="/catalog/smartphones">
-							Каталог
-						</a>
+						<?php 
+						if ($_SERVER[REQUEST_URI]=="/catalog/smartphones" || $_SERVER[REQUEST_URI]=="/catalog/notebooks" || $_SERVER[REQUEST_URI]=="/catalog/accessories")  { 
+						?>
+							<span>	
+								Каталог
+							</span>
+						<?php } else { ?>
+							<a href="/catalog/smartphones">	
+								Каталог
+							</a>
+						<?php } ?>
 					</li>
 					<li class="mnu__item">
-						<a href="/contacts">
-							Контакты
-						</a>
+						<?php 
+						if ($_SERVER[REQUEST_URI]=="/contacts")  { 
+						?>
+							<span>	
+								Контакты
+							</span>
+						<?php } else { ?>
+							<a href="/contacts">	
+								Контакты
+							</a>
+						<?php } ?>
 					</li>
 				</ul>
 			</div>
@@ -83,19 +113,43 @@
 			<div class="order-1 order-md-0 col-12 col-sm-8 col-md-6 col-lg-5">
 				<ul class="add-mnu d-flex">
 					<li class="add-mnu__item">
-						<a href="/shipping">
-							Оплата и доставка
-						</a>
+						<?php 
+						if ($_SERVER[REQUEST_URI]=="/shipping")  { 
+						?>
+							<span>	
+								Оплата и доставка
+							</span>
+						<?php } else { ?>
+							<a href="/shipping">	
+								Оплата и доставка
+							</a>
+						<?php } ?>
 					</li>
 					<li class="add-mnu__item">
-						<a href="/guarantee">
-							Гарантии
-						</a>
+						<?php 
+						if ($_SERVER[REQUEST_URI]=="/guarantee")  { 
+						?>
+							<span>	
+								Гарантия
+							</span>
+						<?php } else { ?>
+							<a href="/guarantee">	
+								Гарантия
+							</a>
+						<?php } ?>
 					</li>
 					<li class="add-mnu__item">
-						<a href="/return">
-							Возврат
-						</a>
+						<?php 
+						if ($_SERVER[REQUEST_URI]=="/return")  { 
+						?>
+							<span>	
+								Возврат
+							</span>
+						<?php } else { ?>
+							<a href="/return">	
+								Возврат
+							</a>
+						<?php } ?>
 					</li>
 				</ul>
 			</div>

@@ -50,12 +50,12 @@ $currentPage = 1;
 							</a>
 						</li>
 						<li class="crumbs__item">
-							<a href="/catalog/smartphones">
+							<a href="/catalog">
 								Каталог
 							</a>
 						</li>
 						<li class="crumbs__item active">
-							<?='<a href="/catalog/'. $_GET['category_name'].'">'. CATEGORY_ENG_TO_RUS[$_GET['category_name']].'</a>';?>
+							<?='<span>'. CATEGORY_ENG_TO_RUS[$_GET['category_name']].'</span>';?>
 						</li>
 					</ul>
 				</div>

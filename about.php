@@ -20,9 +20,9 @@
 							</a>
 						</li>
 						<li class="crumbs__item">
-							<a href="/about">
+							<span>
 								О компании
-							</a>
+							</span>
 						</li>
 					</ul>
 				</div>
@@ -65,142 +65,7 @@
 			</div>
 		</div>
 	</section>
-	<section class="s-bg" id="s-bg">
-		<div class="bg">
-			Gadgets45
-		</div>
-	</section>
-	<section class="s-garantee" id="s-garantee">
-		<div class="container">
-			<div class="row">
-				<div class="col-12 col-md-4">
-					<div class="garantee">
-						<span class="garantee__icon">
-							1 год
-						</span>
-						<span class="garantee__txt">
-							гарантии на продукцию
-						</span>
-					</div>
-				</div>
-				<div class="col-12 col-md-4">
-					<div class="garantee">
-						<span class="garantee__icon">
-							14 дней
-						</span>
-						<span class="garantee__txt">
-							на возврат товара
-						</span>
-					</div>
-				</div>
-				<div class="col-12 col-md-4">
-					<div class="garantee">
-						<span class="garantee__icon">
-							5000+
-						</span>
-						<span class="garantee__txt">
-							довольных покупателей
-						</span>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<section class="s-requisites" id="s-requisites">
-		<div class="container">
-			<div class="row">
-				<div class="col-12">
-					<h2 class="s-title req-title">
-						Реквизиты
-					</h2>
-				</div>
-				<div class="col-12">
-					<div class="requisites">
-						<ul class="requisites__data">
-							<li>
-								<span>
-									Наименование организации:
-								</span>
-								<span>
-									ООО &#171;GADGETS45&#187;
-								</span>
-							</li>
-							<li>
-								<span>
-									ИНН:
-								</span>
-								<span>
-									11001301
-								</span>
-							</li>
-							<li>
-								<span>
-									ОРГН:
-								</span>
-								<span>
-									11032100321
-								</span>
-							</li>
-							<li>
-								<span>
-									Директор:
-								</span>
-								<span>
-									Иванов Иван Иванович
-								</span>
-							</li>
-							<li>
-								<span>
-									Юридический адрес:
-								</span>
-								<span>
-									г. Курган, ул. Ленина, дом 1, офис 1 
-								</span>
-							</li>
-							<li>
-								<span>
-									Фактический адрес:
-								</span>
-								<span>
-									г. Курган, ул. Ленина, дом 1, офис 1 
-								</span>
-							</li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-
-<!-- <div class="col-lg-5">
-					<div class="contacts">
-						<h2 class="s-title about__title">
-							Контакты
-						</h2>
-						<div class="contacts__body">
-							<p class="contacts__info">
-								Телефон:
-								<a href="tel:+79164486284">
-									+7 916 448 62 84
-								</a>
-							</p>
-							<p class="contacts__info">
-								E-mail:
-								<a href="mailto:sitename@gmail.com">
-									sitename@gmail.com
-								</a>
-							</p>
-							<p class="contacts__info">
-								Адрес:
-								<span>
-									город, улица, дом
-								</span>
-							</p>
-						</div>
-					</div>
-				</div> -->
-
-
+	<? require_once('html_templates/requisites.php'); ?>
 	<? require_once('html_templates/footer.php'); ?>
 	<? require_once('html_templates/scripts_imports.php'); ?>
 

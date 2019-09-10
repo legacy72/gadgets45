@@ -2,7 +2,7 @@
 <script src="/jquery/jquery-3.4.1.min.js"></script>
 
 <!-- Phone Animation -->
-<script src="/scripts/script.js"></script>
+<!-- <script src="/scripts/script.js"></script> -->
 
 <!-- Ajax -->
 <script src="/scripts/ajax.js"></script>
@@ -27,10 +27,10 @@
 <!-- Magnific Popup -->
 <script src="/Magnific-popup/jquery.magnific-popup.min.js"></script>
 
-<!--  -->
+<!-- Common Scripts -->
 <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.js"></script>
 <script src="/js/libs.min.js"></script>
 <script src="/js/common.js"></script>
 
-<!-- Font -->
+<!-- Font Awesome -->
 <script src="https://kit.fontawesome.com/721d191b31.js"></script>

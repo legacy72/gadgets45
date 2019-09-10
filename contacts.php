@@ -20,9 +20,9 @@
 							</a>
 						</li>
 						<li class="crumbs__item">
-							<a href="/contacts">
+							<span>
 								Контакты
-							</a>
+							</span>
 						</li>
 					</ul>
 				</div>

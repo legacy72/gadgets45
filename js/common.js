@@ -37,7 +37,7 @@ $(function() {
         responsive: [{
                 breakpoint: 768.02,
                 settings: {
-                    variableWidth: true
+                    // variableWidth: true
                 }
             },
             {
@@ -97,20 +97,25 @@ $(function() {
     });
 
 
-    $('form.form-order').change(function abc() {
+   function abc() {
         $('.form-order__btn').prop('disabled', !$('#name_customer_quick_order').val() || !$('#phone_customer_quick_order').val() || !$('#email_customer_quick_order').val());
+    };
+
+    $('form.form-order input').change(function () {
+        abc();
     });
-
-    
-
     $('body').on('change', '#personal-data', function() {
         if ($(this).is(':checked')) {
-            abc();
+            $('form.form-order').on('change input paste', 'input', function () {
+                abc();
+            });
         } 
         else {
             $('.form-order__btn').attr('disabled', 'disabled');
         }
     });
+
+    
 
 
 

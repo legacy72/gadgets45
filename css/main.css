@@ -662,8 +662,13 @@
     height: 3px;
 }
 
-.footer-mnu__item a {
+.footer-mnu__item a,
+.footer-mnu__item span {
     color: #adadad;
+}
+
+.footer-mnu__item span{
+    cursor: text;
 }
 
 .footer-phone .phone__number {

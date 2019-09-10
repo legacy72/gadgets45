@@ -434,7 +434,11 @@ form input[type="email"]:valid{
 }
 
 .crumbs__item a{
-	color: #383838
+	color: #383838;
+}
+
+.crumbs__item span{
+	cursor: text;
 }
 
 .crumbs__item:hover a{

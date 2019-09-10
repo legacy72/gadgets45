@@ -26,7 +26,7 @@ body {
   font-family: "OpenSansRegular", Arial, sans-serif;
   color: #383838;
   letter-spacing: 0.02em;
-  line-height: 1.2em; }
+  line-height: 1.2em;}
 
 ul, li {
   list-style: none;
@@ -141,7 +141,6 @@ button{
   position: relative;
   z-index: 30;
   background: #fff;
-  /*border: 1px solid #383838;*/
   -webkit-box-shadow: 0 0 10px rgba(0,0,0,.15);
   box-shadow: 0 10px 10px rgba(0,0,0,.15);
 }
@@ -150,12 +149,15 @@ button{
     width: 100%;
     cursor: pointer;
     margin-left: 10px;
-    padding-bottom: 5px;
-    line-height: 18px;
+    padding-bottom: 2px;
     background: #fff;
     text-decoration: none;
     transition: all .25s ease;
     border-bottom: 1px solid #ccc;
+}
+
+.ui-menu-item:last-child .ui-menu-item-wrapper{
+  border: none;
 }
 
 .ui-menu-item .ui-menu-item-wrapper:hover{
@@ -441,13 +443,17 @@ ul.slick-dots {
       background: #0093ed; }
     .mnu__item:first-child {
       margin-left: 0; }
-    .mnu__item a {
+    .mnu__item a,
+    .mnu__item span {
       color: #383838;
       font-family: "OpenSansSemibold", Arial, sans-serif; }
     .mnu__item:hover ::after {
       height: 3px; }
     .mnu__item:hover a {
       color: #0093ed; }
+ .mnu__item span{
+   cursor: inherit;
+ }
 
 .work {
   font-size: 14px;
@@ -604,6 +610,9 @@ ul.slick-dots {
       color: #0093ed; }
     .add-mnu__item a {
       color: #383838; }
+      .add-mnu__item span{
+        cursor: inherit;
+      }
 
 /* == Search == */
 .search {
@@ -690,7 +699,7 @@ ul.slick-dots {
     .search__input.active {
       width: 100%;
       opacity: 1;
-      cursor: text;
+      cursor: inherit;
       border: 1px solid #0093ed; }
       .search__input.active ~ .search__icon {
         right: 0;
@@ -922,7 +931,7 @@ ul.slick-dots {
     .q-order__head {
       text-align: center; }
     .q-order__info {
-      width: 100%; }crumbs
+      width: 100%; }
       .q-order__info input[type="text"],
       .q-order__info textarea {
         width: 50%; }

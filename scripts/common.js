@@ -267,9 +267,6 @@ $(function() {
         
     });
 
-    // Block Order Button
-    
-     
 
 });
 

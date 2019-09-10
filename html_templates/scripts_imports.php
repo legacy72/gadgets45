@@ -10,9 +10,6 @@
 <!-- LocalStorage -->
 <script src="/scripts/local_storage.js"></script>
 
-<!-- Slick -->
-<script src="/slick-master/slick/slick.min.js"></script>
-
 <!-- Autocomplete -->
 <script src="/jquery/jquery-ui_min.js"></script>
 <script src="/scripts/autocomplete.js"></script>
@@ -27,10 +24,11 @@
 <!-- Magnific Popup -->
 <script src="/Magnific-popup/jquery.magnific-popup.min.js"></script>
 
-<!-- Common Scripts -->
-<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.js"></script>
-<script src="/js/libs.min.js"></script>
-<script src="/js/common.js"></script>
-
 <!-- Font Awesome -->
 <script src="https://kit.fontawesome.com/721d191b31.js"></script>
+
+<!-- Common Scripts -->
+<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.js"></script>
+<script src="/scripts/libs.min.js"></script>
+<script src="/scripts/common.js"></script>
+

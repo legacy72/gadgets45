@@ -80,7 +80,7 @@
 										Укажите контактные данные
 									</div>
 									<div class="order_info_row">
-										<input id="email_customer_order" class="order_input" type="text" placeholder="Ваше имя" name="" required>
+										<input id="name_customer_order" class="order_input" type="text" placeholder="Ваше имя" name="" required>
 									</div>
 									<div class="order_info_row">
 										<input id="phone_customer_order" class="order_input phone_mask" type="tel" placeholder="Ваш телефон" name="" required>

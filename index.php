@@ -14,26 +14,9 @@ $stocks = getBestSellersOrStocks($dbh, 'stock');
 <head>
 	<meta charset="UTF-8">
 	<title>Gadgets45 - смартфоны, ноутбуки и аксессуары к ним по выгодным ценам</title>
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="ОПИСАНИЕ">
-	<meta name="keywords" content="смартфоны, ноутбуки, аксессуары, Meizu, Xiaomi, Huawei">
-
-	<!-- Favicons -->
-	<? require_once('html_templates/links_favicons.php'); ?>
-	<!-- OG Tags -->
-	<meta property="og:title" content="Gadgets45">
-	<meta property="og:description" content="Смартфоны и ноутбуки по выгодным ценам">
-	<meta property="og:type" content="article">
-	<meta property="og:image" content="images/preview.jpg">
-	<meta property="og:site_name" content="Gadgets45">
-	<meta name="robots" content="noindex, follow">
-	<!-- Phones Link Detection -->
-	<meta name = "format-detection" content = "telephone=no">
-	<!-- Head Color -->
-	<meta name="theme-color" content="#0093ed" />
-	<!-- CSS Styles -->
-	<? require_once('html_templates/links.php'); ?>
+	<meta name="description" content="Лучшие смартфоны, ноутбуки и аксессуры к ним по самым низким ценам на просторах России. Быстрая доставка, отличное качество и гарантия возврата товара">
+	<!-- Metas -->
+	<? require_once('html_templates/head.php'); ?>
 </head>
 <body>
 	<!-- Header -->
@@ -44,7 +27,7 @@ $stocks = getBestSellersOrStocks($dbh, 'stock');
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-3">
-						
+						<!-- Empty -->
 					</div>
 					<div class="col-12 col-xl-9">
 						<div class="offer-slider">

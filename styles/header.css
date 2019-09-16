@@ -425,8 +425,6 @@ ul.slick-dots {
           align-items: center; }
   .mnu__item {
     margin: 0 25px;
-    padding-bottom: 9px;
-    position: relative;
     -webkit-transition: all 0.4s ease;
     -o-transition: all 0.4s ease;
     transition: all 0.4s ease; }
@@ -446,8 +444,28 @@ ul.slick-dots {
     .mnu__item a,
     .mnu__item span {
       color: #383838;
-      font-family: "OpenSansSemibold", Arial, sans-serif; }
-    .mnu__item:hover ::after {
+      font-family: "OpenSansSemibold", Arial, sans-serif; 
+      position: relative;
+      display: block;
+      padding-bottom: 9px;
+    }
+    .mnu__item span{
+      color: #0093ed;
+    }
+     .mnu__item a::after {
+      position: absolute;
+      content: '';
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 0;
+      -webkit-transition: all 0.4s ease;
+      -o-transition: all 0.4s ease;
+      transition: all 0.4s ease;
+      background: #0093ed; }
+
+
+    .mnu__item a:hover::after {
       height: 3px; }
     .mnu__item:hover a {
       color: #0093ed; }
@@ -591,9 +609,19 @@ ul.slick-dots {
   .add-mnu__item {
     margin: 0 17px;
     font-size: 14px;
-    padding-bottom: 4px;
-    position: relative; }
-    .add-mnu__item ::after {
+     }
+    
+    .add-mnu__item a:hover::after {
+      height: 3px; }
+    .add-mnu__item:hover a {
+      color: #0093ed; }
+    .add-mnu__item a {
+      color: #383838; 
+      position: relative;
+      display: block;
+      padding-bottom: 4px;
+      }
+      .add-mnu__item a::after {
       position: absolute;
       content: '';
       bottom: 0;
@@ -604,14 +632,10 @@ ul.slick-dots {
       -webkit-transition: all 0.4s ease;
       -o-transition: all 0.4s ease;
       transition: all 0.4s ease; }
-    .add-mnu__item:hover ::after {
-      height: 3px; }
-    .add-mnu__item:hover a {
-      color: #0093ed; }
-    .add-mnu__item a {
-      color: #383838; }
+
       .add-mnu__item span{
         cursor: inherit;
+        color: #0093ed;
       }
 
 /* == Search == */

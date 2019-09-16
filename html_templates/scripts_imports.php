@@ -2,7 +2,7 @@
 <script src="/jquery/jquery-3.4.1.min.js"></script>
 
 <!-- Phone Animation -->
-<!-- <script src="/scripts/script.js"></script> -->
+<script src="/scripts/script.js"></script>
 
 <!-- Ajax -->
 <script src="/scripts/ajax.js"></script>

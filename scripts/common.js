@@ -98,20 +98,20 @@ $(function() {
 
 
    function abc() {
-        $('.form-order__btn').prop('disabled', !$('#name_customer_quick_order').val() || !$('#phone_customer_quick_order').val() || !$('#email_customer_quick_order').val());
+        $('form.quick-order-form.form-order__btn').prop('disabled', !$('#name_customer_quick_order').val() || !$('#phone_customer_quick_order').val() || !$('#email_customer_quick_order').val());
     };
 
-    $('form.form-order input').change(function () {
+    $('form.quick-order-form input').change(function () {
         abc();
     });
     $('body').on('change', '#personal-data', function() {
         if ($(this).is(':checked')) {
-            $('form.form-order').on('change input paste', 'input', function () {
+            $('form.quick-order-form').on('change input paste', 'input', function () {
                 abc();
             });
         } 
         else {
-            $('.form-order__btn').attr('disabled', 'disabled');
+            $('form.quick-order-form .form-order__btn').attr('disabled', 'disabled');
         }
     });
 

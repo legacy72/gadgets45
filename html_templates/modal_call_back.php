@@ -8,7 +8,7 @@
                 Обратный звонок
             </h3>
             <div class="q-order__body d-flex">
-                <form action="#" class="form-order">
+                <form action="#" class="form-order form-quick">
                     <input type="text" name="name" class="form-order__input" id="name_customer_call_back" required placeholder="Ваше имя:*">
                     <input type="tel" name="phone" class="form-order__input phone_mask" id="phone_customer_call_back" required placeholder="Ваш телефон:*">
                     <input type="email" name="email" class="form-order__input" id="email_customer_call_back" required placeholder="Ваш e-mail:*">

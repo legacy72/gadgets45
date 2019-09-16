@@ -637,11 +637,29 @@
 .footer-mnu__item {
     margin: 0 25px;
     font-size: 16px;
+}
+
+.footer-mnu .footer-mnu__item span{
+    color: #fff;
+}
+
+
+.footer-mnu__item:hover a {
+    color: #fff;
+}
+
+.footer-mnu__item a:hover::after {
+    height: 3px;
+}
+
+.footer-mnu__item a,
+.footer-mnu__item span {
+    color: #adadad;
     position: relative;
     padding-bottom: 6px;
 }
 
-.footer-mnu__item::after {
+.footer-mnu__item a::after {
     position: absolute;
     content: '';
     width: 100%;
@@ -652,19 +670,6 @@
     -webkit-transition: all 0.4s ease;
     -o-transition: all 0.4s ease;
     transition: all 0.4s ease;
-}
-
-.footer-mnu__item:hover a {
-    color: #fff;
-}
-
-.footer-mnu__item:hover::after {
-    height: 3px;
-}
-
-.footer-mnu__item a,
-.footer-mnu__item span {
-    color: #adadad;
 }
 
 .footer-mnu__item span{

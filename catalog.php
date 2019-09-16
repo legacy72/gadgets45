@@ -30,10 +30,11 @@ $currentPage = 1;
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<title>Каталог</title>
-	<? require_once('html_templates/links.php'); ?>
-	<? require_once('html_templates/links_favicons.php'); ?>
+	<meta charset="UTF-8">
+	<title>Каталог | Gadgets45</title>
+	<meta name="description" content="Каталог товаров в онлайн-магазине Gadgets45. Быстрая доставка, отличное качество и гарантия возврата товара">
+	<!-- Metas -->
+	<? require_once('html_templates/head.php'); ?>
 </head>
 <body>
 

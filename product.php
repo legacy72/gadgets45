@@ -28,11 +28,10 @@ $colors = getProductColors($dbh, $productMainInfo['id']);
 
 <head>
 	<meta charset="utf-8">
-	<title><?= $productMainInfo['description_title']; ?></title>
-	<!-- Favicons -->
-	<? require_once('html_templates/links_favicons.php'); ?>
-	<!-- CSS Styles -->
-	<? require_once('html_templates/links.php'); ?>
+	<title><?= $productMainInfo['description_title']; ?> | Gadgets45</title>
+	<meta name="description" content="Приобретите свой новенький <?= $productMainInfo['description_title']; ?> в онлайн-магазине Gadgets45. Быстрая доставка, отличное качество и гарантия возврата товара">
+	<!-- Metas -->
+	<? require_once('html_templates/head.php'); ?>
 </head>
 
 <body>
@@ -227,7 +226,7 @@ $colors = getProductColors($dbh, $productMainInfo['id']);
 						<span class="q-order__price">
 							26 990 р.
 						</span>
-						<form action="#" class="form-order">
+						<form action="#" class="form-order quick-order-form">
 							<input type="text" class="form-order__input" id="name_customer_quick_order" required placeholder="Ваше имя:*">
 							<input type="text" class="form-order__input phone_mask" id="phone_customer_quick_order" required placeholder="Ваш телефон:*">
 							<input type="email" class="form-order__input" id="email_customer_quick_order" required placeholder="Ваш e-mail:*">

@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<title>Корзина</title>
-	<!-- Favicons -->
-	<? require_once('html_templates/links_favicons.php'); ?>
-	<? require_once('html_templates/links.php'); ?>
-
+	<meta charset="UTF-8">
+	<title>Корзина | Gadgets45</title>
+	<meta name="description" content="Корзина товаров при покупке в онлайн-магазине Gadgets45. Быстрая доставка, отличное качество и гарантия возврата товара">
+	<!-- Metas -->
+	<? require_once('html_templates/head.php'); ?>
 </head>
 <body>
 	<? require_once('html_templates/header.php'); ?>

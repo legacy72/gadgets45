@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<title>О компании</title>
-	<? require_once('html_templates/links.php'); ?>
-	<? require_once('html_templates/links_favicons.php'); ?>
+	<meta charset="UTF-8">
+	<title>Доставка | Gadgets45</title>
+	<meta name="description" content="Условия доставки в онлайн-магазине Gadgets45. Быстрая доставка, отличное качество и гарантия возврата товара">
+	<!-- Metas -->
+	<? require_once('html_templates/head.php'); ?>
 </head>
 <body class="about_background">
 	<? require_once('html_templates/preloader.php'); ?>

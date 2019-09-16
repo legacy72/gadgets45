@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<title>Заказ</title>
-	<? require_once('html_templates/links_favicons.php'); ?>
-	<? require_once('html_templates/links.php'); ?>
+	<meta charset="UTF-8">
+	<title>Заказ | Gadgets45</title>
+	<meta name="description" content="Выполните свой заказ в онлайн-магазине Gadgets45. Быстрая доставка, отличное качество и гарантия возврата товара">
+	<!-- Metas -->
+	<? require_once('html_templates/head.php'); ?>
 </head>
 <body>
 	<? require_once('html_templates/header.php'); ?>
@@ -66,7 +67,7 @@
 											</label>
 										</div>
 										<div class="payment">
-											<input type="radio" name="pay" id="pay-home">
+											<input type="radio" name="pay" id="pay-home" checked>
 											<label for="pay-home" class="pay-home">
 												<img src="images/icons/hand_with_cart.png" alt="Оплата наличными">
 												<span>Наличными при получении</span>

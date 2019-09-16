@@ -272,13 +272,13 @@ $(function() {
 
 
 
-$(window).on('load', function () {
-    let item = JSON.parse(localStorage.getItem("cart"));
+// $(window).on('load', function () {
+//     let item = JSON.parse(localStorage.getItem("cart"));
 
-    if (item.length === 0) {
-        $('.button_order').addClass('disabled');
-    }
-});
+//     if (item.length === 0) {
+//         $('.button_order').addClass('disabled');
+//     }
+// });
 
 
 // Preloader

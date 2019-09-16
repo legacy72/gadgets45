@@ -1007,6 +1007,7 @@ button.button_add_product_to_cart {
 .tech-mnu__item{
     height: 100%;
     line-height: 60px;  
+    cursor: pointer;
 }
 
 .tech-mnu__item a#product_description,
